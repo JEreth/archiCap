@@ -1,6 +1,4 @@
-<img src="src/assets/logo_color.png" alt="Archicap" width="250">
-
-# ArchiCap
+# <img src="src/assets/logo_color.png" alt="Archicap" width="250">
 
 > Capability-based IT System Architecture Development
 
