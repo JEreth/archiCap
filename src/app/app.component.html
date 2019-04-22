@@ -2,10 +2,42 @@
 
   <mat-sidenav mode="side" #sidenav>
 
+    <img src="assets/logo_color.png" alt="ArchiCap" width="150px" class="sidebar-logo">
+
     <!-- SIDEBAR -->
     <mat-nav-list>
-      <a mat-list-item href="/main/account" i18n>Wizard</a>
-      <a mat-list-item href="/main/history" i18n>Management</a>
+      <a mat-list-item href="/wizard">
+        <mat-icon  mat-list-icon>flash_on</mat-icon>
+        Wizard
+      </a>
+      <a mat-list-item href="/components">
+        <mat-icon  mat-list-icon>filter_none</mat-icon>
+        Components
+      </a>
+      <a mat-list-item href="/patterns">
+        <mat-icon  mat-list-icon>view_compact</mat-icon>
+        Patterns
+      </a>
+      <a mat-list-item href="/products">
+        <mat-icon  mat-list-icon>more</mat-icon>
+        Products
+      </a>
+      <a mat-list-item href="/categories">
+        <mat-icon  mat-list-icon>dehaze</mat-icon>
+        Categories
+      </a>
+      <a mat-list-item href="/capabilities">
+        <mat-icon  mat-list-icon>gavel</mat-icon>
+        Capabilities
+      </a>
+      <a mat-list-item href="/configuration">
+        <mat-icon  mat-list-icon>build</mat-icon>
+        Configuration
+      </a>
+      <a mat-list-item href="/about">
+        <mat-icon  mat-list-icon>info</mat-icon>
+        About
+      </a>
     </mat-nav-list>
 
   </mat-sidenav>
@@ -22,7 +54,7 @@
 
       <span class="spacer"></span>
 
-      <img src="assets/logo_white.png" alt="ArchiCap" height="30px">
+      <img src="assets/signee_white.png" alt="ArchiCap" height="30px">
 
     </mat-toolbar>
 

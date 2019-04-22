@@ -1,3 +1,5 @@
+[![MIT License][license-shield]][license-url]
+
 # <img src="src/assets/logo_color.png" alt="Archicap" width="250">
 
 > Capability-based IT System Architecture Development
@@ -59,3 +61,8 @@ Todo: insert description
 ## Todo
 * Insert more pre configs
 * Complete docs
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+[license-url]: https://choosealicense.com/licenses/mit

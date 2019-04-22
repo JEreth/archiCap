@@ -1,7 +1,7 @@
-import {Product} from '../../products/shared/product';
 import {Category} from '../../categories/shared/category';
+import {Product} from '../../products/shared/product';
 
-export interface Component {
+export interface System {
   id: number;
   name: string;
   description: string;

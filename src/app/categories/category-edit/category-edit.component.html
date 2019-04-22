@@ -1,0 +1,20 @@
+<a mat-flat-button href="/categories" >
+  <mat-icon>arrow_back</mat-icon>
+ Go back
+</a>
+<section class="mat-typography">
+  <h2>Add new category</h2>
+  <h2 *ngIf="category && category.id">Edit category {{ category.name }}</h2>
+</section>
+<div class="form-wrap">
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="category.name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Short description of this category ..." [(ngModel)]="category.description"></textarea>
+  </mat-form-field>
+
+  <button  mat-flat-button color="primary" (click)="save()">Save</button>
+
+</div>
