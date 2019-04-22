@@ -4,6 +4,7 @@
 
 This is a tool that supports building reasonable IT architectures. For this is facilitates capability-based thinking which helps to ensure business-oriented architecture decisions.
 
+Web-Version can be found here https://archicap.netlify.com/
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
