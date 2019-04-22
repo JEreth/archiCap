@@ -1,40 +1,40 @@
 <mat-sidenav-container fullscreen>
 
-  <mat-sidenav mode="side" #sidenav>
+  <mat-sidenav mode="side" #sidenav [opened]="true">
 
     <img src="assets/logo_color.png" alt="ArchiCap" width="150px" class="sidebar-logo">
 
     <!-- SIDEBAR -->
     <mat-nav-list>
-      <a mat-list-item href="/wizard">
+      <a mat-list-item routerLink="/wizard">
         <mat-icon  mat-list-icon>flash_on</mat-icon>
         Wizard
       </a>
-      <a mat-list-item href="/components">
+      <a mat-list-item routerLink="/components">
         <mat-icon  mat-list-icon>filter_none</mat-icon>
         Components
       </a>
-      <a mat-list-item href="/patterns">
+      <a mat-list-item routerLink="/patterns">
         <mat-icon  mat-list-icon>view_compact</mat-icon>
         Patterns
       </a>
-      <a mat-list-item href="/products">
+      <a mat-list-item routerLink="/products">
         <mat-icon  mat-list-icon>more</mat-icon>
         Products
       </a>
-      <a mat-list-item href="/categories">
+      <a mat-list-item routerLink="/categories">
         <mat-icon  mat-list-icon>dehaze</mat-icon>
         Categories
       </a>
-      <a mat-list-item href="/capabilities">
+      <a mat-list-item routerLink="/capabilities">
         <mat-icon  mat-list-icon>gavel</mat-icon>
         Capabilities
       </a>
-      <a mat-list-item href="/configuration">
+      <a mat-list-item routerLink="/configuration">
         <mat-icon  mat-list-icon>build</mat-icon>
         Configuration
       </a>
-      <a mat-list-item href="/about">
+      <a mat-list-item routerLink="/about">
         <mat-icon  mat-list-icon>info</mat-icon>
         About
       </a>

@@ -4,7 +4,7 @@
     Categories are elements to group certain components. You can think of it as of layers in traditional layer architectures. Click a category to view or edit details
   </p>
 </section>
-<a mat-flat-button href="/categories/new" color="primary">
+<a mat-flat-button routerLink="/categories/new" color="primary">
   <mat-icon>add</mat-icon>
   Add new category
 </a>
@@ -15,7 +15,7 @@
     <mat-list-item *ngFor="let category of categories">
       <h3 matLine >{{ category.id }}: {{ category.name }}</h3>
       <p matLine class="muted" *ngIf="category.description">{{ category.description }}</p>
-      <a mat-icon-button href="/categories/{{ category.id }}">
+      <a mat-icon-button routerLink="/categories/{{ category.id }}">
         <mat-icon>edit</mat-icon>
       </a>
       <button mat-icon-button (click)="remove(category.id)" color="warn">
