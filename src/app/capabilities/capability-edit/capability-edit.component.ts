@@ -42,7 +42,7 @@ export class CapabilityEditComponent implements OnInit {
 
   save() {
     this.capabilityService.add(this.capability).subscribe( () => {
-      this.snackBar.open('Capability was sucessfully saved');
+      this.snackBar.open('Capability was successfully saved');
       this.router.navigateByUrl('/capabilities');
     });
   }

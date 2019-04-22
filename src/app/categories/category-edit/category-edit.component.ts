@@ -21,7 +21,7 @@ export class CategoryEditComponent implements OnInit {
 
   ) {
 
-    // get the id from the path and load categoriy if set
+    // get the id from the path and load category if set
     const id = this.route.snapshot.paramMap.get('id');
     const categoryId: number = Number(id);
     if (id === 'new') {
@@ -43,7 +43,7 @@ export class CategoryEditComponent implements OnInit {
 
   save() {
       this.categoryService.add(this.category).subscribe( () => {
-        this.snackBar.open('Category was sucessfully saved');
+        this.snackBar.open('Category was successfully saved');
         this.router.navigateByUrl('/categories');
       });
   }
