@@ -1,3 +1,20 @@
-<p>
-  system-edit works!
-</p>
+<a mat-flat-button routerLink="/components" >
+  <mat-icon>arrow_back</mat-icon>
+  Go back
+</a>
+<section class="mat-typography">
+  <h2>Add new component</h2>
+  <h2 *ngIf="system && system.id">Edit system {{ system.name }}</h2>
+</section>
+<div class="form-wrap">
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="system.name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Short description of this system ..." [(ngModel)]="system.description"></textarea>
+  </mat-form-field>
+
+  <button  mat-flat-button color="primary" (click)="save()">Save</button>
+
+</div>

@@ -1,3 +1,20 @@
-<p>
-  product-edit works!
-</p>
+<a mat-flat-button routerLink="/products" >
+  <mat-icon>arrow_back</mat-icon>
+  Go back
+</a>
+<section class="mat-typography">
+  <h2>Add new product</h2>
+  <h2 *ngIf="product && product.id">Edit product {{ product.name }}</h2>
+</section>
+<div class="form-wrap">
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="product.name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Short description of this product ..." [(ngModel)]="product.description"></textarea>
+  </mat-form-field>
+
+  <button  mat-flat-button color="primary" (click)="save()">Save</button>
+
+</div>

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Category } from './category';
 import {Observable, of} from 'rxjs';
 import {DataService} from '../../shared/data.service';
-import {Capability} from '../../capabilities/shared/capability';
 
 @Injectable({
   providedIn: 'root'
