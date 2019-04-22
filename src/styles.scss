@@ -1,1 +1,10 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.spacer {
+  flex: 1 1 auto;
+}
+.sidebar-btn {
+  background-color:transparent;
+  color: #fff;
+  border: 0 none;
+}
