@@ -1,27 +1,62 @@
-# Archicap
+<img src="src/assets/logo_color.png" alt="Archicap" width="250">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+# ArchiCap
 
-## Development server
+> Capability-based IT System Architecture Development
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is a tool that supports building reasonable IT architectures. For this is facilitates capability-based thinking which helps to ensure business-oriented architecture decisions.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+* [About the Project](#about-the-project)
+* [Getting Started](#getting-started)
+* [Todo](#getting-started)
 
-## Build
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Todo: insert text
 
-## Running unit tests
+<!-- GETTING STARTED -->
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Elements in the tool
 
-## Running end-to-end tests
+The tool helps you to arrange the following elements.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### Category
 
-## Further help
+Todo: insert description
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### Components
+
+Todo: insert description
+
+#### Patterns
+
+Todo: insert description
+
+#### Products
+
+Todo: insert description
+
+#### Capabilites
+
+Todo: insert description
+
+### Export and Import configs
+
+Todo: insert description
+
+## Exemplary use cases
+
+### Decentralized Analytics Architectures
+
+Todo: insert description
+
+
+<!-- TODO -->
+## Todo
+* Insert more pre configs
+* Complete docs
