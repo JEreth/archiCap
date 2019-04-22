@@ -24,10 +24,16 @@ export class CategoryEditComponent implements OnInit {
     // get the id from the path and load categoriy if set
     const id = this.route.snapshot.paramMap.get('id');
     const categoryId: number = Number(id);
-    if (id === 'new' || !categoryId) {
+    if (id === 'new') {
       this.category = <Category>{name: '', description: ''};
     } else {
-      this.category = <Category>{name: '', description: ''};
+      this.categoryService.get(categoryId).subscribe( c => {
+        if (c) {
+          this.category = <Category> c;
+        } else {
+          this.category = <Category>{name: '', description: ''};
+        }
+      });
     }
 
   }

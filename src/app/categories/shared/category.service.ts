@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Category } from './category';
 import {Observable, of} from 'rxjs';
 import {DataService} from '../../shared/data.service';
+import {Capability} from '../../capabilities/shared/capability';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,13 @@ export class CategoryService {
   }
 
   // return a category by its id
-  get(id: number): Category {
-    return this.categories.get(id);
+  get(id: number): Observable<Category> {
+    return new Observable<Category>((observer) => {
+      this.init().subscribe( () => {
+        observer.next(this.categories.get(id));
+        observer.complete();
+      });
+    });
   }
 
   // add a new category, if no id given auto increment
@@ -50,16 +56,14 @@ export class CategoryService {
   }
 
   init(): Observable<boolean> {
-    if (this.initialized) {
-      return of(true);
-    }
-    return new Observable<boolean>((observer) => {
+    return (this.initialized) ? of(true) : new Observable<boolean>((observer) => {
       const scope = this;
       this.data.get('categories').subscribe(categories => {
         if (categories) {
           categories.forEach(function (category) {
             const c: Category = <Category>category;
             const id: number = (c.id) ? c.id : scope.categories.size;
+            c.id = id;
             scope.categories.set(id, c);
           });
         }
