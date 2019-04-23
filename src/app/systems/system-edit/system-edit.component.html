@@ -3,8 +3,8 @@
   Go back
 </a>
 <section class="mat-typography">
-  <h2>Add new component</h2>
-  <h2 *ngIf="system && system.id">Edit system {{ system.name }}</h2>
+  <h2 *ngIf="system && system.name==''">Add new system</h2>
+  <h2 *ngIf="system && system.name!=''">Edit system: {{ system.name }}</h2>
 </section>
 <div class="form-wrap" *ngIf="system">
   <mat-form-field>

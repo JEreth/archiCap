@@ -3,8 +3,8 @@
   Go back
 </a>
 <section class="mat-typography">
-  <h2>Add new pattern</h2>
-  <h2 *ngIf="pattern && pattern.id">Edit pattern {{ pattern.name }}</h2>
+  <h2 *ngIf="pattern && pattern.name==''">Add new pattern</h2>
+  <h2 *ngIf="pattern && pattern.name!=''">Edit pattern: {{ pattern.name }}</h2>
 </section>
 <div class="form-wrap">
   <mat-form-field>
