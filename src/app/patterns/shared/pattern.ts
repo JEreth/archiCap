@@ -1,5 +1,5 @@
 export interface Pattern {
-  id: number;
+  id?: number;
   name: string;
-  description: string;
+  description?: string;
 }

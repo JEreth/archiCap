@@ -24,7 +24,7 @@ export class DataService {
   reset(): Observable<boolean> {
     return new Observable<boolean>((observer) => {
       const queue = [];
-      for (const key of ['categories', 'capabilites', 'patterns', 'systems']) {
+      for (const key of ['categories', 'capabilities', 'patterns', 'systems']) {
         queue.push(this.delete(key));
       }
       forkJoin(queue).subscribe(result => {

@@ -13,15 +13,19 @@ body {
   color: #fff;
   border: 0 none;
 }
-.content-wrapper {
+.content-wrapper, .general-wrapper {
   padding: 20px 70px 0;
   display: block;
-  .content-wrapper-inner {
-    display: flex;
-    align-items: flex-start;
+  text-align: center;
+  .content-wrapper-inner, .general-wrapper-inner {
+    display: block;
     text-align: left;
     max-width: 940px;
     margin: 0 auto;
+  }
+  .content-wrapper-inner {
+    display: flex;
+    align-items: flex-start;
   }
 }
 .tab-icon {
@@ -34,7 +38,6 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 150px;
-  max-width: 500px;
   width: 100%;
   input, textarea {
     width: 100%;
