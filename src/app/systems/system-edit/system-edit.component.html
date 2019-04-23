@@ -17,14 +17,14 @@
 
 
   <mat-selection-list [(ngModel)]="system.categories" [compareWith]="categorySelected">
-    <h3 matSubheader>Categories</h3>
+    <h3 matLine>Categories</h3>
     <mat-list-option *ngFor="let category of categories" [value]="category">
       {{category.name}}
     </mat-list-option>
   </mat-selection-list>
 
   <mat-selection-list [(ngModel)]="system.products" [compareWith]="categorySelected">
-    <h3 matSubheader>Products</h3>
+    <h3 matLine>Products</h3>
     <mat-list-option *ngFor="let product of products" [value]="product">
       {{product.name}}
     </mat-list-option>
@@ -32,14 +32,14 @@
 
 
   <mat-selection-list [(ngModel)]="system.patterns" [compareWith]="patternSelected">
-    <h3 matSubheader>Patterns</h3>
+    <h3 matLine>Patterns</h3>
     <mat-list-option *ngFor="let pattern of patterns" [value]="pattern">
       {{pattern.name}}
     </mat-list-option>
   </mat-selection-list>
 
   <mat-selection-list [(ngModel)]="system.capabilities" [compareWith]="capabilitySelected">
-    <h3 matSubheader>Patterns</h3>
+    <h3 matLine>Patterns</h3>
     <mat-list-option *ngFor="let capability of capabilities" [value]="capability">
       {{capability.name}}
     </mat-list-option>

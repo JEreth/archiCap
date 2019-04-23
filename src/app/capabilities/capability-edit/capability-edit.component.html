@@ -15,7 +15,13 @@
     <textarea matInput placeholder="Long description of this capability ..." [(ngModel)]="capability.description"></textarea>
   </mat-form-field>
 
-  [TODO: ADD CHECKLIST OF COMPONENTS]
+  <mat-nav-list>
+    <h3 matLine>Related components</h3>
+    <a mat-list-item [routerLink]="'/components/' + system.id" *ngFor="let system of systems">
+      {{ system.name }}
+    </a>
+  </mat-nav-list>
+  <p *ngIf="systems.length === 0">No related components</p>
 
   <button  mat-flat-button color="primary" (click)="save()">Save</button>
 
