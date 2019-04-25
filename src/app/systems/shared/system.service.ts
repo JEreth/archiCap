@@ -60,6 +60,19 @@ export class SystemService {
     return (persist) ? this.persist() :  of(true);
   }
 
+  // set multiple new values
+  set(input: System[], persist = true): Observable<boolean> {
+    const systems = new Map<number, System>();
+    input.forEach(function (system) {
+      const c: System = <System> system;
+      const id: number = (c.id) ? c.id : Number(systems.size);
+      c.id = id;
+      systems.set(id, c);
+    });
+    this.systems = systems;
+    return (persist) ? this.persist() :  of(true);
+  }
+
   // remove a system by id or object
   remove(input: any, persist = true): Observable<boolean> {
     const id = ((<System>input).id !== undefined) ? input.id : input;

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ConfigurationComponent } from './configuration.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MaterialModule} from '../../material.module';
-import {CategoriesModule} from '../../categories/categories.module';
 
 const routes: Routes = [
   {
@@ -18,7 +17,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     MaterialModule,
-    CategoriesModule,
     RouterModule.forChild(routes),
   ]
 })

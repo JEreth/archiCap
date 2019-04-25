@@ -42,6 +42,19 @@ export class CapabilityService {
     return (persist) ? this.persist() :  of(true);
   }
 
+  // set multiple new values
+  set(input: Capability[], persist = true): Observable<boolean> {
+    const capabilities = new Map<number, Capability>();
+    input.forEach(function (capability) {
+      const c: Capability = <Capability> capability;
+      const id: number = (c.id) ? c.id : Number(capabilities.size);
+      c.id = id;
+      capabilities.set(id, c);
+    });
+    this.capabilities = capabilities;
+    return (persist) ? this.persist() :  of(true);
+  }
+
   // remove a Capability by id or object
   remove(input: any, persist = true): Observable<boolean> {
     const id = ((<Capability>input).id !== undefined) ? input.id : input;

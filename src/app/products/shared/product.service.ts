@@ -41,6 +41,19 @@ export class ProductService {
     return (persist) ? this.persist() :  of(true);
   }
 
+  // set multiple new values
+  set(input: Product[], persist = true): Observable<boolean> {
+    const products = new Map<number, Product>();
+    input.forEach(function (product) {
+      const c: Product = <Product> product;
+      const id: number = (c.id) ? c.id : Number(products.size);
+      c.id = id;
+      products.set(id, c);
+    });
+    this.products = products;
+    return (persist) ? this.persist() :  of(true);
+  }
+
   // remove a product by id or object
   remove(input: any, persist = true): Observable<boolean> {
     const id = ((<Product>input).id !== undefined) ? input.id : input;

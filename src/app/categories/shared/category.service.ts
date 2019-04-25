@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Category } from './category';
 import {Observable, of} from 'rxjs';
 import {DataService} from '../../shared/data.service';
+import {Capability} from '../../capabilities/shared/capability';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,19 @@ export class CategoryService {
     const id: number = (c.id) ? c.id : Number(this.categories.size);
     c.id = id;
     this.categories.set(id, c);
+    return (persist) ? this.persist() :  of(true);
+  }
+
+  // set multiple new values
+  set(input: Category[], persist = true): Observable<boolean> {
+    const categories = new Map<number, Category>();
+    input.forEach(function (category) {
+      const c: Category = <Category> category;
+      const id: number = (c.id) ? c.id : Number(categories.size);
+      c.id = id;
+      categories.set(id, c);
+    });
+    this.categories = categories;
     return (persist) ? this.persist() :  of(true);
   }
 

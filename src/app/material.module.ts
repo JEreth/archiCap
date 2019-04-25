@@ -8,6 +8,7 @@ import {
   MatSidenavModule,
   MatSnackBarModule,
   MatTabsModule,
+  MatCardModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -24,6 +25,7 @@ import {
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatCardModule,
     MatInputModule
   ],
   exports: [
@@ -36,7 +38,8 @@ import {
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }

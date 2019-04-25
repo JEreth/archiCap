@@ -41,6 +41,19 @@ export class PatternService {
     return (persist) ? this.persist() :  of(true);
   }
 
+  // set multiple new values
+  set(input: Pattern[], persist = true): Observable<boolean> {
+    const patterns = new Map<number, Pattern>();
+    input.forEach(function (pattern) {
+      const c: Pattern = <Pattern> pattern;
+      const id: number = (c.id) ? c.id : Number(patterns.size);
+      c.id = id;
+      patterns.set(id, c);
+    });
+    this.patterns = patterns;
+    return (persist) ? this.persist() :  of(true);
+  }
+
   // remove a pattern by id or object
   remove(input: any, persist = true): Observable<boolean> {
     const id = ((<Pattern>input).id !== undefined) ? input.id : input;
