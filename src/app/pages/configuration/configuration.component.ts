@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ConfigurationPersistence, ConfigurationService} from '../../shared/configuration.service';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {MatSnackBar} from '@angular/material';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-configuration',
@@ -13,9 +14,12 @@ export class ConfigurationComponent implements OnInit {
   public downloadJsonHref: SafeUrl;
   public uploadFile: any;
   public uploading = false;
+  public loading = false;
+  public predefinedConfiguration = '';
 
   constructor(private configurationService: ConfigurationService,
               private snackBar: MatSnackBar,
+              private http: HttpClient,
               private sanitizer: DomSanitizer) {
     this.generateDownload();
   }
@@ -64,6 +68,21 @@ export class ConfigurationComponent implements OnInit {
     });
   }
 
-
+  loadConfiguration() {
+    this.loading = true;
+    const url = 'assets/configurations/' + this.predefinedConfiguration + '.json';
+    this.http.get(url)
+      .subscribe(
+        data => {
+          this.configurationService.importFromPersistence(<ConfigurationPersistence> data).subscribe( () => {
+            this.snackBar.open('Configuration has been loaded.');
+            this.loading = false;
+          });
+        },
+        () => {
+          this.snackBar.open('There has been an error. Please try again.');
+          this.loading = false;
+        });
+  }
 
 }
