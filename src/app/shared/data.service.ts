@@ -10,6 +10,9 @@ export class DataService {
   constructor(protected localStorage: LocalStorage) { }
 
   set(key: string, data: any): Observable<boolean> {
+    if (data instanceof Map) {
+      data = Array.from(data.values());
+    }
     return this.localStorage.setItem(key, data);
   }
 
