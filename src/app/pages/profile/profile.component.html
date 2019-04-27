@@ -1,0 +1,37 @@
+<div class="general-wrapper">
+  <div class="general-wrapper-inner">
+    <section class="mat-typography">
+      <h1>My Profile</h1>
+      <p>This is your current selection that drives the architecture development process.</p>
+    </section>
+
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+
+        <!-- MY CAPABILITIES -->
+        <mat-selection-list [(ngModel)]="selectedCapabilities">
+          <h3 matLine><mat-icon  mat-list-icon>gavel</mat-icon> My Capabilities</h3>
+          <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
+            {{capability.name}}
+          </mat-list-option>
+        </mat-selection-list>
+
+      </mat-grid-tile>
+      <mat-grid-tile>
+
+        <!-- MY COMPONENTS -->
+        <mat-selection-list [(ngModel)]="selectedSystems">
+          <h3 matLine><mat-icon  mat-list-icon>filter_none</mat-icon> My Components</h3>
+          <mat-list-option *ngFor="let system of systems" [value]="system.id">
+            {{system.name}}
+          </mat-list-option>
+        </mat-selection-list>
+
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <button  mat-flat-button color="primary" (click)="save()">Save Profile</button>
+
+
+  </div>
+</div>

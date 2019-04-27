@@ -4,7 +4,7 @@ import {DataService} from './data.service';
 
 export interface ProfilePersistence {
   selectedCapabilities: number[];
-  selectedComponents: number[];
+  selectedSystems: number[];
 }
 
 @Injectable({
@@ -14,7 +14,7 @@ export class ProfileService {
 
   public initialized = false;
   public selectedCapabilities: number[] = [];
-  public selectedComponents: number[] = [];
+  public selectedSystems: number[] = [];
 
   constructor(private data: DataService) { }
 
@@ -23,7 +23,7 @@ export class ProfileService {
       const scope = this;
       this.data.get('profile').subscribe(profile => {
         this.selectedCapabilities = (profile && profile.selectedCapabilities) || [];
-        this.selectedComponents = (profile && profile.selectedComponents) || [];
+        this.selectedSystems = (profile && profile.selectedSystems) || [];
         scope.initialized = true;
         observer.next(true);
         observer.complete();
@@ -35,7 +35,7 @@ export class ProfileService {
   persist(): Observable<boolean> {
     const p: ProfilePersistence = {
       selectedCapabilities: this.selectedCapabilities,
-      selectedComponents: this.selectedComponents
+      selectedSystems: this.selectedSystems
     };
     return this.data.set('profile', p);
   }

@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'capabilities', loadChildren: './capabilities/capabilities.module#CapabilitiesModule' },
   { path: 'configuration', loadChildren: './pages/configuration/configuration.module#ConfigurationModule' },
   { path: 'about', loadChildren: './pages/about/about.module#AboutModule' },
+  { path: 'profile', loadChildren: './pages/profile/profile.module#ProfileModule' },
   { path: '', redirectTo: '/about', pathMatch: 'full'},
 ];
 
