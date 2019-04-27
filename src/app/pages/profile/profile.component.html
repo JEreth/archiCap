@@ -5,32 +5,79 @@
       <p>This is your current selection that drives the architecture development process.</p>
     </section>
 
-    <mat-grid-list cols="2" rowHeight="2:1">
-      <mat-grid-tile>
+    <!-- SETUP -->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Current Setup</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile>
 
-        <!-- MY CAPABILITIES -->
-        <mat-selection-list [(ngModel)]="selectedCapabilities">
-          <h3 matLine><mat-icon  mat-list-icon>gavel</mat-icon> My Capabilities</h3>
-          <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
-            {{capability.name}}
-          </mat-list-option>
-        </mat-selection-list>
+            <!-- MY CAPABILITIES -->
+            <mat-selection-list [(ngModel)]="selectedCapabilities">
+              <h3 matLine><mat-icon  mat-list-icon>gavel</mat-icon> My Capabilities</h3>
+              <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
+                {{capability.name}}
+              </mat-list-option>
+            </mat-selection-list>
 
-      </mat-grid-tile>
-      <mat-grid-tile>
+          </mat-grid-tile>
+          <mat-grid-tile>
 
-        <!-- MY COMPONENTS -->
-        <mat-selection-list [(ngModel)]="selectedSystems">
-          <h3 matLine><mat-icon  mat-list-icon>filter_none</mat-icon> My Components</h3>
-          <mat-list-option *ngFor="let system of systems" [value]="system.id">
-            {{system.name}}
-          </mat-list-option>
-        </mat-selection-list>
+            <!-- MY COMPONENTS -->
+            <mat-selection-list [(ngModel)]="selectedSystems">
+              <h3 matLine><mat-icon  mat-list-icon>filter_none</mat-icon> My Components</h3>
+              <mat-list-option *ngFor="let system of systems" [value]="system.id">
+                {{system.name}}
+              </mat-list-option>
+            </mat-selection-list>
 
-      </mat-grid-tile>
-    </mat-grid-list>
+          </mat-grid-tile>
+        </mat-grid-list>
 
-    <button  mat-flat-button color="primary" (click)="save()">Save Profile</button>
+      </mat-card-content>
+      <mat-card-actions>
+        <button  mat-flat-button color="primary" (click)="save()">Save Profile</button>
+      </mat-card-actions>
+    </mat-card>
+
+
+
+
+    <!-- EXPORT -->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Export Profile</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Export current profile consisting out of your capability and component selection</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-flat-button [href]="downloadJsonHref" download="archicap-profile.json" color="primary" *ngIf="downloadJsonHref">
+          <mat-icon  mat-list-icon>save_alt</mat-icon>
+          Export profile
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- IMPORT -->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Import Profile</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Upload an existing profile in JSON format</p>
+        <input type='file' (change)="uploadFileChanged($event)">
+      </mat-card-content>
+      <mat-card-actions>
+        <mat-spinner *ngIf="uploading"></mat-spinner>
+        <button mat-flat-button (click)="upload()" color="primary" *ngIf="!uploading"  [disabled]="!uploadFile || uploadFile === ''">
+          <mat-icon  mat-list-icon>save_alt</mat-icon>
+          Import profile
+        </button>
+      </mat-card-actions>
+    </mat-card>
 
 
   </div>
