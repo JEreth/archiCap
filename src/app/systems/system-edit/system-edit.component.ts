@@ -81,6 +81,14 @@ export class SystemEditComponent implements OnInit {
     return (p1.id === p2.id);
   }
 
+  patternSelected(p1: Pattern, p2: Pattern): boolean {
+    return (p1.id === p2.id);
+  }
+
+  capabilitySelected(p1: Capability, p2: Capability): boolean {
+    return (p1.id === p2.id);
+  }
+
   ngOnInit() {
   }
 
