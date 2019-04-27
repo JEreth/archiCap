@@ -25,10 +25,11 @@
         </mat-card-header>
         <mat-card-content>
           <p>Upload an existing configuration in JSON format</p>
-          <input type="file">
+          <input type='file' (change)="uploadFileChanged($event)">
         </mat-card-content>
         <mat-card-actions>
-          <button mat-flat-button (click)="upload()" color="primary">
+          <mat-spinner *ngIf="uploading"></mat-spinner>
+          <button mat-flat-button (click)="upload()" color="primary" *ngIf="!uploading">
             <mat-icon  mat-list-icon>save_alt</mat-icon>
             Upload configuration
           </button>

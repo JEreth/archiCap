@@ -10,6 +10,7 @@ import {Category} from '../categories/shared/category';
 import {Pattern} from '../patterns/shared/pattern';
 import {Product} from '../products/shared/product';
 import {System} from '../systems/shared/system';
+import {DataService} from './data.service';
 
 export interface ConfigurationPersistence {
   capabilities: Capability[];
@@ -28,6 +29,7 @@ export class ConfigurationService {
               private categoryService: CategoryService,
               private patternService: PatternService,
               private productService: ProductService,
+              private dataService: DataService,
               private systemService: SystemService) { }
 
   // load current setup and save to json file
@@ -55,6 +57,22 @@ export class ConfigurationService {
     });
   }
 
+  importFromPersistence(input: ConfigurationPersistence): Observable<boolean> {
+    return new Observable<boolean>((observer) => {
+      const queue = [
+        this.capabilityService.set(input.capabilities || []),
+        this.categoryService.set(input.categories || []),
+        this.patternService.set(input.patterns || []),
+        this.productService.set(input.products || []),
+        this.systemService.set(input.systems || []),
+      ];
+      forkJoin(queue).subscribe(() => {
+        observer.next(true);
+        observer.complete();
+      });
+    });
+  }
+
   // reset current configuratuon
   reset(): Observable<boolean> {
     return new Observable<boolean>((observer) => {
@@ -70,5 +88,15 @@ export class ConfigurationService {
         observer.complete();
       });
     });
+  }
+
+  validate(input: any): boolean {
+    // we only check for the major properties here. Might be better to make a in-depth validation
+    return (input &&
+      input.capabilities && typeof(input.capabilities) === 'object' &&
+      input.categories && typeof(input.categories) === 'object' &&
+      input.patterns && typeof(input.patterns) === 'object' &&
+      input.products && typeof(input.products) === 'object' &&
+      input.systems && typeof(input.systems) === 'object');
   }
 }

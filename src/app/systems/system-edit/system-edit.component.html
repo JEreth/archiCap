@@ -23,7 +23,7 @@
     </mat-list-option>
   </mat-selection-list>
 
-  <mat-selection-list [(ngModel)]="system.products" [compareWith]="categorySelected">
+  <mat-selection-list [(ngModel)]="system.products" [compareWith]="productSelected">
     <h3 matLine>Products</h3>
     <mat-list-option *ngFor="let product of products" [value]="product">
       {{product.name}}
