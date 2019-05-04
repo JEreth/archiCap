@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <span class="spacer"></span>
+  <mat-button-toggle-group [(ngModel)]="viewMode">
+    <mat-button-toggle value="vertical">
+      <mat-icon>view_agenda</mat-icon>
+    </mat-button-toggle>
+
+    <mat-button-toggle value="horizontal">
+      <mat-icon>view_week</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-toolbar>
+
+<div id="category-box-wrap" class="{{viewMode}}">
+  <div class="category-box" *ngFor="let category of categories">
+
+    <span class="category-box-title">{{ category.name }}</span>
+
+    <div class="system-box-wrap">
+      <div class="system-box" *ngFor="let system of category.systems" (click)="showSystemInformation(system)">
+        {{ system.name }}
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

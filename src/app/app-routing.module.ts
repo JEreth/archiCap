@@ -10,6 +10,9 @@ const routes: Routes = [
   { path: 'configuration', loadChildren: './pages/configuration/configuration.module#ConfigurationModule' },
   { path: 'about', loadChildren: './pages/about/about.module#AboutModule' },
   { path: 'profile', loadChildren: './pages/profile/profile.module#ProfileModule' },
+  { path: 'stage', loadChildren: './pages/stage/stage.module#StageModule' },
+  { path: 'explore', loadChildren: './pages/explore/explore.module#ExploreModule' },
+  { path: 'wizard', loadChildren: './pages/wizard/wizard.module#WizardModule' },
   { path: '', redirectTo: '/about', pathMatch: 'full'},
 ];
 

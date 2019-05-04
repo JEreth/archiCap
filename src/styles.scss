@@ -13,15 +13,18 @@ body {
   color: #fff;
   border: 0 none;
 }
-.content-wrapper, .general-wrapper {
+.content-wrapper, .general-wrapper, .content-full-wrapper {
   padding: 20px 70px 0;
   display: block;
   text-align: center;
-  .content-wrapper-inner, .general-wrapper-inner {
+  .content-wrapper-inner, .general-wrapper-inner, .content-full-wrapper-inner {
     display: block;
     text-align: left;
     max-width: 940px;
     margin: 0 auto;
+  }
+  .content-full-wrapper-inner {
+    max-width: 1280px;
   }
   .content-wrapper-inner {
     display: flex;

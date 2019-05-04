@@ -1,0 +1,17 @@
+<div class="operations-detail-wrap" *ngIf="system">
+  <mat-card class="operations-detail-card">
+
+    <mat-card-header>
+      <mat-card-title>{{ system.name}}</mat-card-title>
+      <button mat-button (click)="closePopover()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-card-header>
+
+    <mat-card-content >
+      <p>{{system.description}}</p>
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

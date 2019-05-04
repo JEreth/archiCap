@@ -11,6 +11,8 @@ import {
   MatCardModule,
   MatToolbarModule,
   MatSelectModule,
+  MatButtonToggleModule,
+  MatDialogModule,
   MatGridListModule
 } from '@angular/material';
 
@@ -30,7 +32,9 @@ import {
     MatCardModule,
     MatInputModule,
     MatSelectModule,
-    MatGridListModule
+    MatDialogModule,
+    MatGridListModule,
+    MatButtonToggleModule
   ],
   exports: [
     MatButtonModule,
@@ -44,8 +48,10 @@ import {
     MatSnackBarModule,
     MatInputModule,
     MatCardModule,
+    MatDialogModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    MatButtonToggleModule
   ]
 })
 export class MaterialModule { }
