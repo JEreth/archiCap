@@ -8,39 +8,43 @@
     <!-- SETUP -->
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Current Setup</mat-card-title>
+        <mat-card-title><mat-icon  mat-list-icon>gavel</mat-icon> My Capabilities</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <mat-grid-list cols="2" rowHeight="2:1">
-          <mat-grid-tile>
 
-            <!-- MY CAPABILITIES -->
-            <mat-selection-list [(ngModel)]="selectedCapabilities">
-              <h3 matLine><mat-icon  mat-list-icon>gavel</mat-icon> My Capabilities</h3>
-              <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
-                {{capability.name}}
-              </mat-list-option>
-            </mat-selection-list>
-
-          </mat-grid-tile>
-          <mat-grid-tile>
-
-            <!-- MY COMPONENTS -->
-            <mat-selection-list [(ngModel)]="selectedSystems">
-              <h3 matLine><mat-icon  mat-list-icon>filter_none</mat-icon> My Components</h3>
-              <mat-list-option *ngFor="let system of systems" [value]="system.id">
-                {{system.name}}
-              </mat-list-option>
-            </mat-selection-list>
-
-          </mat-grid-tile>
-        </mat-grid-list>
+        <mat-selection-list [(ngModel)]="selectedCapabilities">
+          <h3 matLine></h3>
+          <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
+            {{capability.name}}
+          </mat-list-option>
+        </mat-selection-list>
 
       </mat-card-content>
       <mat-card-actions>
-        <button  mat-flat-button color="primary" (click)="save()">Save Profile</button>
+        <button  mat-flat-button color="primary" (click)="save()">Save</button>
       </mat-card-actions>
     </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><mat-icon  mat-list-icon>filter_none</mat-icon> My Components</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-selection-list [(ngModel)]="selectedSystems">
+          <h3 matLine></h3>
+          <mat-list-option *ngFor="let system of systems" [value]="system.id">
+            {{system.name}}
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button  mat-flat-button color="primary" (click)="save()">Save</button>
+      </mat-card-actions>
+    </mat-card>
+
+
+
 
 
 
