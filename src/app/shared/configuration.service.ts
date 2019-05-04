@@ -35,23 +35,8 @@ export class ConfigurationService {
   // load current setup and save to json file
   exportToJson(): Observable<string> {
     return new Observable<string>((observer) => {
-      const queue = [
-        this.capabilityService.getAllAsArray(),
-        this.categoryService.getAllAsArray(),
-        this.patternService.getAllAsArray(),
-        this.productService.getAllAsArray(),
-        this.systemService.getAllAsArray()
-      ];
-      forkJoin(queue).subscribe(results => {
-        const persistence: ConfigurationPersistence = {
-          capabilities: <Capability[]>results[0],
-          categories: <Category[]>results[1],
-          patterns: <Pattern[]>results[2],
-          products: <Product[]>results[3],
-          systems: <System[]>results[4]
-        };
-
-        observer.next(JSON.stringify(persistence));
+      this.getConfiguration().subscribe(r => {
+        observer.next(JSON.stringify(r));
         observer.complete();
       });
     });
@@ -68,6 +53,31 @@ export class ConfigurationService {
       ];
       forkJoin(queue).subscribe(() => {
         observer.next(true);
+        observer.complete();
+      });
+    });
+  }
+
+  // get all values as arrays
+  getConfiguration(): Observable<ConfigurationPersistence> {
+    return new Observable<ConfigurationPersistence>((observer) => {
+      const queue = [
+        this.capabilityService.getAllAsArray(),
+        this.categoryService.getAllAsArray(),
+        this.patternService.getAllAsArray(),
+        this.productService.getAllAsArray(),
+        this.systemService.getAllAsArray()
+      ];
+      forkJoin(queue).subscribe(results => {
+        const persistence: ConfigurationPersistence = {
+          capabilities: <Capability[]>results[0],
+          categories: <Category[]>results[1],
+          patterns: <Pattern[]>results[2],
+          products: <Product[]>results[3],
+          systems: <System[]>results[4]
+        };
+
+        observer.next(persistence);
         observer.complete();
       });
     });

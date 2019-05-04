@@ -6,6 +6,8 @@ import { SystemEditComponent } from './system-edit/system-edit.component';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
 import {RouterModule, Routes} from '@angular/router';
+import { CompositionComponent } from './composition/composition.component';
+import { SystemInfoComponent } from './system-info/system-info.component';
 
 const routes: Routes = [
   {
@@ -19,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SystemsComponent, SystemListComponent, SystemEditComponent],
+  declarations: [SystemsComponent, SystemListComponent, SystemEditComponent, CompositionComponent, SystemInfoComponent],
   imports: [
     CommonModule,
     FormsModule,
