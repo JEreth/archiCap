@@ -43,6 +43,11 @@
       border: 1px solid #666;
       background: #cccccc;
       cursor: pointer;
+
+      &.highlighted {
+        background: #3f51b5;
+        color: white;
+      }
     }
   }
 }

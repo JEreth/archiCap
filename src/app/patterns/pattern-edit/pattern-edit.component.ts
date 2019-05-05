@@ -14,7 +14,7 @@ import {System} from '../../systems/shared/system';
 export class PatternEditComponent implements OnInit {
 
   public pattern: Pattern;
-  public systems: System[];
+  public systems: System[] = [];
 
   constructor(
     private router: Router,

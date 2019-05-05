@@ -39,7 +39,7 @@
   </mat-selection-list>
 
   <mat-selection-list [(ngModel)]="system.capabilities" [compareWith]="capabilitySelected">
-    <h3 matLine>Patterns</h3>
+    <h3 matLine>Capabilities</h3>
     <mat-list-option *ngFor="let capability of capabilities" [value]="capability">
       {{capability.name}}
     </mat-list-option>

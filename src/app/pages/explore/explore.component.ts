@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Capability} from '../../capabilities/shared/capability';
+import {System} from '../../systems/shared/system';
+import {ConfigurationService} from '../../shared/configuration.service';
 
 @Component({
   selector: 'app-explore',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExploreComponent implements OnInit {
 
-  constructor() { }
+  public capabilities: Capability[] = [];
+  public systems: System[] = [];
+
+  constructor(private configuration: ConfigurationService) {
+    this.configuration.getConfiguration().subscribe( config => {
+      this.capabilities = config.capabilities;
+      this.systems = config.systems;
+    });
+  }
 
   ngOnInit() {
   }

@@ -11,7 +11,8 @@ export class SystemInfoComponent implements OnInit {
 
   public system: System;
 
-  constructor( public dialogRef: MatDialogRef<SystemInfoComponent>,
+  constructor(
+    public dialogRef: MatDialogRef<SystemInfoComponent>,
                @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     if (data.system) {
