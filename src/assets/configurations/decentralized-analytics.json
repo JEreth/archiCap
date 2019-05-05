@@ -1,1 +1,202 @@
-{"capabilities":[{"name":"c5","description":"c5","id":0}],"categories":[{"name":"c3","description":"c3","id":0}],"patterns":[{"name":"c1","description":"c1","id":0}],"products":[{"name":"c2","description":"c2","id":0}],"systems":[{"name":"c1","description":"c1","categories":[{"name":"c3","description":"c3","id":0}],"products":[{"name":"c2","description":"c2","id":0}],"capabilities":[{"name":"c5","description":"c5","id":0}],"patterns":[{"name":"c1","description":"c1","id":0}],"id":1},{"name":"c1","description":"c1","categories":[{"name":"c3","description":"c3","id":0}],"products":[{"name":"c2","description":"c2","id":0}],"capabilities":[{"name":"c5","description":"c5","id":0}],"patterns":[{"name":"c1","description":"c1","id":0}],"id":1}]}
+{
+  "capabilities":[
+    {
+      "name":"Extract and process data in Real-Time",
+      "description":"Real-time processing",
+      "id":0
+    },
+    {
+      "name":"Permanently store unstructured data",
+      "description":"Permanently store unstructured data",
+      "id":1
+    },
+    {
+      "name":"Be able to quickly integrate new data sources",
+      "description":"Be able to quickly integrate new data sources",
+      "id":2
+    },
+    {
+      "name":"Be able to provide different views on the same data",
+      "description":"Be able to provide different views, with individual fields, transformation and so o, on the same data",
+      "id":3
+    }
+  ],
+  "categories":[
+    {
+      "name":"Data Provisioning",
+      "description":"In this layer the data is provided to be used in other systems",
+      "id":0,
+      "systems":[
+
+      ]
+    },
+    {
+      "name":"Data Persistance",
+      "description":"In this layer the data is permanently stored",
+      "id":1,
+      "systems":[
+
+      ]
+    },
+    {
+      "name":"Data Extraction & Transport",
+      "description":"In this layer data is extracted from sources and transported between components",
+      "id":2,
+      "systems":[
+
+      ]
+    },
+    {
+      "name":"Data Transformation",
+      "description":"In this layer data is processed and transformed",
+      "id":3
+    }
+  ],
+  "patterns":[
+    {
+      "name":"Hub & Spoke",
+      "description":"Traditional Hub & Spoke structure",
+      "id":0
+    },
+    {
+      "name":"Batch-oriented ETL",
+      "description":"Batch-oriented ETL that extracts data on a regular basis",
+      "id":1
+    },
+    {
+      "name":"Event Hub",
+      "description":"An event hub that servers a central event management platform",
+      "id":2
+    },
+    {
+      "name":"Data Lake",
+      "description":"A data lake that provides a way to store unstructured content",
+      "id":3
+    },
+    {
+      "name":"Data Warehouse",
+      "description":"A relational database for structured data",
+      "id":4
+    },
+    {
+      "name":"Virtual Data Warehouse",
+      "description":"A virtual abstraction of a data warehouse",
+      "id":5
+    }
+  ],
+  "products":[
+    {
+      "name":"Apache Kafka",
+      "description":"A sophisticated event-log system",
+      "id":0
+    },
+    {
+      "name":"SAP BW",
+      "description":"A data warehouse solution from SAP",
+      "id":1
+    },
+    {
+      "name":"Denodo Virtualization",
+      "description":"A virtualization product",
+      "id":2
+    },
+    {
+      "name":"Apache Spark",
+      "description":"A system to analyze and transform real time data",
+      "id":3
+    },
+    {
+      "name":"Hadoop",
+      "description":"A filesystem to efficiently save data in a distributed manner",
+      "id":4
+    }
+  ],
+  "systems":[
+    {
+      "name":"Relational Database",
+      "description":"A traditional relational database that stores structured data and allows to query it with a structured language, e.g. SQL.",
+      "categories":[
+        1
+      ],
+      "products":[
+        1
+      ],
+      "capabilities":[
+
+      ],
+      "patterns":[
+        4
+      ],
+      "id":0
+    },
+    {
+      "name":"Event-Log",
+      "description":"A event-log system that allows to store event data and distribute it to multiple subscribers",
+      "categories":[
+        2
+      ],
+      "products":[
+        0
+      ],
+      "capabilities":[
+        0,
+        2
+      ],
+      "patterns":[
+        2
+      ],
+      "id":1
+    },
+    {
+      "name":"Complex Event Processing",
+      "description":"A system that allows to scan streaming data for certain patterns",
+      "categories":[
+        3
+      ],
+      "products":[
+
+      ],
+      "capabilities":[
+        0
+      ],
+      "patterns":[
+
+      ],
+      "id":2
+    },
+    {
+      "name":"Big Data Strore",
+      "description":"A component to save massive amounts of data.",
+      "categories":[
+        1
+      ],
+      "products":[
+        4
+      ],
+      "capabilities":[
+        1
+      ],
+      "patterns":[
+        3
+      ],
+      "id":3
+    },
+    {
+      "name":"Materialized View",
+      "description":"A view that temporarily saves  transformed data to provide it for a certain application",
+      "categories":[
+        0
+      ],
+      "products":[
+        2
+      ],
+      "capabilities":[
+        3
+      ],
+      "patterns":[
+
+      ],
+      "id":4
+    }
+  ]
+}
