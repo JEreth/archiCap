@@ -36,7 +36,16 @@ export class ConfigurationService {
   exportToJson(): Observable<string> {
     return new Observable<string>((observer) => {
       this.getConfiguration().subscribe(r => {
-        observer.next(JSON.stringify(r));
+        // trim system relation to ids only
+        const exportData: any =  <any> r; // remove strict checking
+        exportData.systems =  <any> exportData.systems; // remove strict checking
+        for (const system of exportData.systems) {
+          system.categories = system.categories.map(a => a.id);
+          system.products = system.products.map(a => a.id);
+          system.patterns = system.patterns.map(a => a.id);
+          system.capabilities = system.capabilities.map(a => a.id);
+        }
+        observer.next(JSON.stringify(exportData));
         observer.complete();
       });
     });
@@ -44,14 +53,16 @@ export class ConfigurationService {
 
   importFromPersistence(input: ConfigurationPersistence): Observable<boolean> {
     return new Observable<boolean>((observer) => {
+      // load static data
       const queue = [
         this.capabilityService.set(input.capabilities || []),
         this.categoryService.set(input.categories || []),
         this.patternService.set(input.patterns || []),
-        this.productService.set(input.products || []),
-        this.systemService.set(input.systems || []),
+        this.productService.set(input.products || [])
       ];
       forkJoin(queue).subscribe(() => {
+        // now load systems with relations
+        // this.systemService.set(input.systems || []),
         observer.next(true);
         observer.complete();
       });

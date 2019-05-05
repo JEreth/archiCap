@@ -11,7 +11,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ConfigurationComponent implements OnInit {
 
-  public downloadJsonHref: SafeUrl;
+  public downloadJsonHref: SafeUrl = '';
   public uploadFile: any;
   public uploading = false;
   public loading = false;
