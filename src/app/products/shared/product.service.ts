@@ -35,7 +35,7 @@ export class ProductService {
   // add a new product, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
     const c: Product = <Product> input;
-    const id: number = (c.id) ? c.id : Number(this.products.size);
+    const id: number = (c.id != null) ? c.id : Number(this.products.size);
     c.id = id;
     this.products.set(id, c);
     return (persist) ? this.persist() :  of(true);
@@ -46,7 +46,7 @@ export class ProductService {
     const products = new Map<number, Product>();
     input.forEach(function (product) {
       const c: Product = <Product> product;
-      const id: number = (c.id) ? c.id : Number(products.size);
+      const id: number = (c.id != null) ? c.id : Number(products.size);
       c.id = id;
       products.set(id, c);
     });
@@ -74,7 +74,7 @@ export class ProductService {
         if (products) {
           products.forEach(function (product) {
             const c: Product = <Product>product;
-            const id: number = (c.id) ? c.id : scope.products.size;
+            const id: number = (c.id != null) ? c.id : scope.products.size;
             c.id = id;
             scope.products.set(id, c);
           });

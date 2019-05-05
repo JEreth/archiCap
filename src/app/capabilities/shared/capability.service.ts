@@ -36,7 +36,7 @@ export class CapabilityService {
   // add a new Capability, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
     const c: Capability = <Capability> input;
-    const id: number = (c.id) ? c.id : Number(this.capabilities.size);
+    const id: number = (c.id != null) ? c.id : Number(this.capabilities.size);
     c.id = id;
     this.capabilities.set(id, c);
     return (persist) ? this.persist() :  of(true);
@@ -47,7 +47,7 @@ export class CapabilityService {
     const capabilities = new Map<number, Capability>();
     input.forEach(function (capability) {
       const c: Capability = <Capability> capability;
-      const id: number = (c.id) ? c.id : Number(capabilities.size);
+      const id: number = (c.id != null) ? c.id : Number(capabilities.size);
       c.id = id;
       capabilities.set(id, c);
     });
@@ -75,7 +75,7 @@ export class CapabilityService {
         if (capabilities) {
           capabilities.forEach(function (capability) {
             const c: Capability = <Capability>capability;
-            const id: number = (c.id) ? c.id : scope.capabilities.size;
+            const id: number = (c.id != null) ? c.id : scope.capabilities.size;
             c.id = id;
             scope.capabilities.set(id, c);
           });

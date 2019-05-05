@@ -54,7 +54,7 @@ export class SystemService {
   // add a new system, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
     const c: System = <System> input;
-    const id: number = (c.id) ? c.id : Number(this.systems.size);
+    const id: number = (c.id != null) ? c.id : Number(this.systems.size);
     c.id = id;
     console.log(c);
     this.systems.set(id, c);
@@ -66,7 +66,7 @@ export class SystemService {
     const systems = new Map<number, System>();
     input.forEach(function (system) {
       const c: System = <System> system;
-      const id: number = (c.id) ? c.id : Number(systems.size);
+      const id: number = (c.id != null) ? c.id : Number(systems.size);
       c.id = id;
       systems.set(id, c);
     });
@@ -94,7 +94,7 @@ export class SystemService {
         if (systems) {
           systems.forEach(function (system) {
             const c: System = <System>system;
-            const id: number = (c.id) ? c.id : scope.systems.size;
+            const id: number = (c.id != null) ? c.id : scope.systems.size;
             c.id = id;
             scope.systems.set(id, c);
           });

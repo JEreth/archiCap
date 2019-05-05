@@ -35,7 +35,7 @@ export class PatternService {
   // add a new pattern, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
     const c: Pattern = <Pattern> input;
-    const id: number = (c.id) ? c.id : Number(this.patterns.size);
+    const id: number = (c.id != null) ? c.id : Number(this.patterns.size);
     c.id = id;
     this.patterns.set(id, c);
     return (persist) ? this.persist() :  of(true);
@@ -46,7 +46,7 @@ export class PatternService {
     const patterns = new Map<number, Pattern>();
     input.forEach(function (pattern) {
       const c: Pattern = <Pattern> pattern;
-      const id: number = (c.id) ? c.id : Number(patterns.size);
+      const id: number = (c.id != null) ? c.id : Number(patterns.size);
       c.id = id;
       patterns.set(id, c);
     });
@@ -74,7 +74,7 @@ export class PatternService {
         if (patterns) {
           patterns.forEach(function (pattern) {
             const c: Pattern = <Pattern>pattern;
-            const id: number = (c.id) ? c.id : scope.patterns.size;
+            const id: number = (c.id != null) ? c.id : scope.patterns.size;
             c.id = id;
             scope.patterns.set(id, c);
           });

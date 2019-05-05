@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Category } from './category';
 import {Observable, of} from 'rxjs';
 import {DataService} from '../../shared/data.service';
-import {Capability} from '../../capabilities/shared/capability';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +35,7 @@ export class CategoryService {
   // add a new category, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
     const c: Category = <Category> input;
-    const id: number = (c.id) ? c.id : Number(this.categories.size);
+    const id: number = (c.id != null) ? c.id : Number(this.categories.size);
     c.id = id;
     this.categories.set(id, c);
     return (persist) ? this.persist() :  of(true);
@@ -47,7 +46,7 @@ export class CategoryService {
     const categories = new Map<number, Category>();
     input.forEach(function (category) {
       const c: Category = <Category> category;
-      const id: number = (c.id) ? c.id : Number(categories.size);
+      const id: number = (c.id != null) ? c.id : Number(categories.size);
       c.id = id;
       categories.set(id, c);
     });
@@ -75,7 +74,7 @@ export class CategoryService {
         if (categories) {
           categories.forEach(function (category) {
             const c: Category = <Category>category;
-            const id: number = (c.id) ? c.id : scope.categories.size;
+            const id: number = (c.id != null) ? c.id : scope.categories.size;
             c.id = id;
             scope.categories.set(id, c);
           });
