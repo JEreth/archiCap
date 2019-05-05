@@ -58,7 +58,7 @@ export class CategoryService {
   remove(input: any, persist = true): Observable<boolean> {
     const id = ((<Category>input).id !== undefined) ? input.id : input;
     this.categories.delete(id);
-    // we probably also have to clean relations?
+    // todo: we also have to clean relations
     return (persist) ? this.persist() :  of(true);
   }
 
