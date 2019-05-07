@@ -51,7 +51,7 @@ export class ConfigurationService {
     });
   }
 
-  importFromPersistence(input: ConfigurationPersistence): Observable<boolean> {
+  importFromPersistence(input: any): Observable<boolean> {
     return new Observable<boolean>((observer) => {
       // load static data
       const queue = [
@@ -61,10 +61,36 @@ export class ConfigurationService {
         this.productService.set(input.products || [])
       ];
       forkJoin(queue).subscribe(() => {
-        // now load systems with relations
-        // this.systemService.set(input.systems || []),
-        observer.next(true);
-        observer.complete();
+        // prepare systems by filling relations
+        const systems: System[] = [];
+        for (const system of input.systems) {
+          const capabilities: Capability[] = [];
+          for (const capabilityId of <number[]> system.capabilities) {
+            capabilities.push(this.capabilityService.capabilities.get(capabilityId));
+          }
+          system.capabilities = capabilities;
+          const categories: Category[] = [];
+          for (const categoryId of <number[]> system.categories) {
+            categories.push(this.categoryService.categories.get(categoryId));
+          }
+          system.categories = categories;
+          const patterns: Pattern[] = [];
+          for (const patternId of <number[]> system.patterns) {
+            patterns.push(this.patternService.patterns.get(patternId));
+          }
+          system.patterns = patterns;
+          const products: Product[] = [];
+          for (const productId of <number[]> system.products) {
+            products.push(this.productService.products.get(productId));
+          }
+          system.products = products;
+          systems.push(system);
+        }
+        console.log(systems);
+        this.systemService.set(systems).subscribe( () => {
+          observer.next(true);
+          observer.complete();
+        });
       });
     });
   }

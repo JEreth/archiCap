@@ -45,7 +45,7 @@ export class ConfigurationComponent implements OnInit {
         const input = JSON.parse(fileReader.result.toString());
         if (this.configurationService.validate(input)) {
           // schema looks good so go on and delete old config if it exists
-          this.configurationService.importFromPersistence(<ConfigurationPersistence> input).subscribe( () => {
+          this.configurationService.importFromPersistence(input).subscribe( () => {
             this.snackBar.open('Configuration has been imported.');
             this.uploading = false;
           });
@@ -74,7 +74,7 @@ export class ConfigurationComponent implements OnInit {
     this.http.get(url)
       .subscribe(
         data => {
-          this.configurationService.importFromPersistence(<ConfigurationPersistence> data).subscribe( () => {
+          this.configurationService.importFromPersistence(data).subscribe( () => {
             this.snackBar.open('Configuration has been loaded.');
             this.loading = false;
           });
