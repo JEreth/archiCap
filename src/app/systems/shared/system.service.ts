@@ -33,6 +33,22 @@ export class SystemService {
     });
   }
 
+  // return many systems by thei ids
+  getMany(ids: number[]): Observable<System[]> {
+    return new Observable<System[]>((observer) => {
+      this.init().subscribe(() => {
+        const res: System[] = [];
+        for (const id of this.systems.keys()) {
+          if (ids.includes(id)) {
+            res.push(this.systems.get(id));
+          }
+        }
+        observer.next(res);
+        observer.complete();
+      });
+    });
+  }
+
   // get components that have certain relation
   findFromRelation(property: string, id: number): Observable<System[]> {
     return new Observable<System[]>((observer) => {

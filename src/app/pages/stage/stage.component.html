@@ -1,5 +1,9 @@
-<p>
-  stage works!
-</p>
-
-<app-composition></app-composition>
+<div class="content-full-wrapper">
+  <div class="content-full-wrapper-inner">
+    <section class="mat-typography">
+      <h1>Stage</h1>
+      <p>Use this view to discover your architectural possibilities.</p>
+    </section>
+    <app-composition [relevantCapabilities]="capabilities" [relevantSystems]="systems"></app-composition>
+  </div>
+</div>

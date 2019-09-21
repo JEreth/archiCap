@@ -34,6 +34,22 @@ export class CapabilityService {
     });
   }
 
+  // return many systems by thei ids
+  getMany(ids: number[]): Observable<Capability[]> {
+    return new Observable<Capability[]>((observer) => {
+      this.init().subscribe(() => {
+        const res: Capability[] = [];
+        for (const id of this.capabilities.keys()) {
+          if (ids.includes(id)) {
+            res.push(this.capabilities.get(id));
+          }
+        }
+        observer.next(res);
+        observer.complete();
+      });
+    });
+  }
+
   // add a new Capability, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
     const c: Capability = <Capability>input;

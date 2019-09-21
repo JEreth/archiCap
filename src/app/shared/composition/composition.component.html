@@ -20,7 +20,8 @@
 
         <div class="system-box-wrap">
           <div class="system-box" *ngFor="let system of category.systems" (click)="showSystemInformation(system)"
-               [class.highlighted]="highlightedSystems.indexOf(system.id) !== -1">
+               [class.highlighted]="highlightedSystems.indexOf(system.id) !== -1"
+               [hidden]="!isRelevantSystem(system.id)">
             {{ system.name }}
           </div>
         </div>

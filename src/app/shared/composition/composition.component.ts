@@ -92,7 +92,12 @@ export class CompositionComponent implements OnInit {
         });
       }
     });
+  }
 
+  isRelevantSystem(id: number): boolean {
+    return this._relevantSystems.getValue().map(function (system) {
+      return system.id;
+    }).includes(id);
   }
 
   ngOnInit() {
