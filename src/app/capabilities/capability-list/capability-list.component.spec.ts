@@ -1,6 +1,13 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { CapabilityListComponent } from './capability-list.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {CapabilityListComponent} from './capability-list.component';
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../../material.module';
+import {CapabilityService} from '../shared/capability.service';
+import {CapabilityServiceMock} from '../shared/capability.service.mock';
+import {MatSnackBar} from '@angular/material';
+import {MatSnackBarMock} from '../../../mocks';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('CapabilityListComponent', () => {
   let component: CapabilityListComponent;
@@ -8,9 +15,19 @@ describe('CapabilityListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CapabilityListComponent ]
+      declarations: [CapabilityListComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        FormsModule,
+        MaterialModule,
+        RouterTestingModule
+      ],
+      providers: [
+        {provide: CapabilityService, useClass: CapabilityServiceMock},
+        {provide: MatSnackBar, useClass: MatSnackBarMock},
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ExploreComponent } from './explore.component';
+import {ExploreComponent} from './explore.component';
+import {ConfigurationService} from '../../shared/configuration.service';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {ConfigurationServiceMock} from '../../shared/configuration.service.mock';
+import {CompositionModule} from '../../shared/composition/composition.module';
+import {MaterialModule} from '../../material.module';
 
 describe('ExploreComponent', () => {
   let component: ExploreComponent;
@@ -8,9 +13,17 @@ describe('ExploreComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExploreComponent ]
+      declarations: [ExploreComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        CompositionModule,
+        MaterialModule
+      ],
+      providers: [
+        {provider: ConfigurationService, useClass: ConfigurationServiceMock}
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

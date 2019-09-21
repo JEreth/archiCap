@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {System} from '../shared/system';
 import {SystemService} from '../shared/system.service';
 import {Category} from '../../categories/shared/category';
@@ -35,25 +35,24 @@ export class SystemEditComponent implements OnInit {
     private patternService: PatternService,
     private capabilityService: CapabilityService,
     private snackBar: MatSnackBar
-
   ) {
     // get all available categories
-    this.categoryService.getAllAsArray().subscribe( categories => {
+    this.categoryService.getAllAsArray().subscribe(categories => {
       this.categories = categories;
     });
 
     // get all available products
-    this.productService.getAllAsArray().subscribe( products => {
+    this.productService.getAllAsArray().subscribe(products => {
       this.products = products;
     });
 
     // get all available patterns
-    this.patternService.getAllAsArray().subscribe( patterns => {
+    this.patternService.getAllAsArray().subscribe(patterns => {
       this.patterns = patterns;
     });
 
     // get all available capabilites
-    this.capabilityService.getAllAsArray().subscribe( capabilities => {
+    this.capabilityService.getAllAsArray().subscribe(capabilities => {
       this.capabilities = capabilities;
     });
 
@@ -63,9 +62,9 @@ export class SystemEditComponent implements OnInit {
     if (id === 'new') {
       this.system = <System>{name: '', description: '', categories: [], products: [], capabilities: [], patterns: []};
     } else {
-      this.systemService.get(systemId).subscribe( c => {
+      this.systemService.get(systemId).subscribe(c => {
         if (c) {
-          this.system = <System> c;
+          this.system = <System>c;
         } else {
           this.system = <System>{name: '', description: '', categories: [], products: [], capabilities: [], patterns: []};
         }
@@ -93,7 +92,7 @@ export class SystemEditComponent implements OnInit {
   }
 
   save() {
-    this.systemService.add(this.system).subscribe( () => {
+    this.systemService.add(this.system).subscribe(() => {
       this.snackBar.open('System was successfully saved');
       this.router.navigateByUrl('/components');
     });

@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SystemsComponent } from './systems.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {SystemsComponent} from './systems.component';
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../material.module';
 
 describe('SystemsComponent', () => {
   let component: SystemsComponent;
@@ -8,7 +10,12 @@ describe('SystemsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SystemsComponent ]
+      declarations: [SystemsComponent],
+      imports: [
+        FormsModule,
+        MaterialModule,
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));

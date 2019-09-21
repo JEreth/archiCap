@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {Component, OnInit} from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {CapabilityService} from '../shared/capability.service';
 import {Capability} from '../shared/capability';
 
@@ -14,7 +14,7 @@ export class CapabilityListComponent implements OnInit {
 
   constructor(private capabilityService: CapabilityService,
               private snackBar: MatSnackBar) {
-    this.capabilityService.getAllAsArray().subscribe( capabilities => {
+    this.capabilityService.getAllAsArray().subscribe(capabilities => {
       this.capabilities = capabilities;
     });
   }
@@ -23,9 +23,9 @@ export class CapabilityListComponent implements OnInit {
   }
 
   remove(id: number) {
-    this.capabilityService.remove(id).subscribe( () => {
+    this.capabilityService.remove(id).subscribe(() => {
       this.snackBar.open('Capability has been removed');
-      this.capabilityService.getAllAsArray().subscribe( capabilities => {
+      this.capabilityService.getAllAsArray().subscribe(capabilities => {
         this.capabilities = capabilities;
       });
     });

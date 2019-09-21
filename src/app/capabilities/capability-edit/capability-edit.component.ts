@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Capability} from '../../capabilities/shared/capability';
 import {ActivatedRoute, Router} from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {CapabilityService} from '../shared/capability.service';
 import {SystemService} from '../../systems/shared/system.service';
 import {System} from '../../systems/shared/system';
@@ -22,7 +22,6 @@ export class CapabilityEditComponent implements OnInit {
     private capabilityService: CapabilityService,
     private snackBar: MatSnackBar,
     private systemService: SystemService
-
   ) {
 
     // get the id from the path and load capability if set

@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ProductsComponent } from './products.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ProductsComponent} from './products.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../material.module';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -8,7 +10,12 @@ describe('ProductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductsComponent ]
+      declarations: [ProductsComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        FormsModule,
+        MaterialModule
+      ],
     })
     .compileComponents();
   }));

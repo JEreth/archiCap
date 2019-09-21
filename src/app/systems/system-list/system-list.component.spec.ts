@@ -1,6 +1,13 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SystemListComponent } from './system-list.component';
+import {SystemListComponent} from './system-list.component';
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../../material.module';
+import {RouterTestingModule} from '@angular/router/testing';
+import {SystemServiceMock} from '../shared/system.service.mock';
+import {MatSnackBarMock} from '../../../mocks';
+import {SystemService} from '../shared/system.service';
+import {MatSnackBar} from '@angular/material';
 
 describe('SystemListComponent', () => {
   let component: SystemListComponent;
@@ -8,9 +15,18 @@ describe('SystemListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SystemListComponent ]
+      declarations: [SystemListComponent],
+      imports: [
+        FormsModule,
+        MaterialModule,
+        RouterTestingModule
+      ],
+      providers: [
+        {provide: SystemService, useClass: SystemServiceMock},
+        {provide: MatSnackBar, useClass: MatSnackBarMock},
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

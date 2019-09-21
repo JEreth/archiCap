@@ -1,6 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PatternListComponent } from './pattern-list.component';
+import {PatternListComponent} from './pattern-list.component';
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../../material.module';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('PatternListComponent', () => {
   let component: PatternListComponent;
@@ -8,7 +11,12 @@ describe('PatternListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PatternListComponent ]
+      declarations: [PatternListComponent],
+      imports: [
+        FormsModule,
+        MaterialModule,
+        RouterTestingModule
+      ],
     })
     .compileComponents();
   }));

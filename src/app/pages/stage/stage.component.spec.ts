@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { StageComponent } from './stage.component';
+import {StageComponent} from './stage.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('StageComponent', () => {
   let component: StageComponent;
@@ -8,7 +9,8 @@ describe('StageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StageComponent ]
+      declarations: [StageComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));

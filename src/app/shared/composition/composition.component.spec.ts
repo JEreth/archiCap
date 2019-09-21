@@ -1,6 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CompositionComponent } from './composition.component';
+import {CompositionComponent} from './composition.component';
+import {MaterialModule} from '../../material.module';
+import {FormsModule} from '@angular/forms';
+import {ConfigurationService} from '../configuration.service';
+import {ConfigurationServiceMock} from '../configuration.service.mock';
+import {SystemService} from '../../systems/shared/system.service';
+import {SystemServiceMock} from '../../systems/shared/system.service.mock';
+import {MatDialog} from '@angular/material';
+import {MatDialogMock} from '../../../mocks';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('CompositionComponent', () => {
   let component: CompositionComponent;
@@ -8,9 +17,19 @@ describe('CompositionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CompositionComponent ]
+      declarations: [CompositionComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        MaterialModule,
+        FormsModule
+      ],
+      providers: [
+        {provide: ConfigurationService, useClass: ConfigurationServiceMock},
+        {provide: SystemService, useClass: SystemServiceMock},
+        {provide: MatDialog, useClass: MatDialogMock},
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

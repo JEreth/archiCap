@@ -1,6 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PatternsComponent } from './patterns.component';
+import {PatternsComponent} from './patterns.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../material.module';
 
 describe('PatternsComponent', () => {
   let component: PatternsComponent;
@@ -8,7 +11,12 @@ describe('PatternsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PatternsComponent ]
+      declarations: [PatternsComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        FormsModule,
+        MaterialModule,
+      ],
     })
     .compileComponents();
   }));
