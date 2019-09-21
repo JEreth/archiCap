@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {Pattern} from '../shared/pattern';
 import {PatternService} from '../shared/pattern.service';
 import {SystemService} from '../../systems/shared/system.service';
@@ -30,9 +30,9 @@ export class PatternEditComponent implements OnInit {
     if (id === 'new') {
       this.pattern = <Pattern>{name: '', description: ''};
     } else {
-      this.patternService.get(patternId).subscribe( c => {
+      this.patternService.get(patternId).subscribe(c => {
         if (c) {
-          this.pattern = <Pattern> c;
+          this.pattern = <Pattern>c;
           this.systemService.findFromRelation('patterns', patternId).subscribe(systems => {
             this.systems = systems;
           });
@@ -48,7 +48,7 @@ export class PatternEditComponent implements OnInit {
   }
 
   save() {
-    this.patternService.add(this.pattern).subscribe( () => {
+    this.patternService.add(this.pattern).subscribe(() => {
       this.snackBar.open('Pattern was successfully saved');
       this.router.navigateByUrl('/patterns');
     });

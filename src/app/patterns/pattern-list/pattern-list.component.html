@@ -1,7 +1,8 @@
 <section class="mat-typography">
   <h1>Patterns</h1>
   <p>
-    Patterns are sets of components that somehow be used together or reflect a common approach to solve certains use cases. Click a pattern to view or edit details
+    Patterns are sets of components that somehow be used together or reflect a common approach to solve certains use
+    cases. Click a pattern to view or edit details
   </p>
 </section>
 <a mat-flat-button routerLink="/patterns/new" color="primary">
@@ -13,7 +14,7 @@
   <p *ngIf="patterns.length==0" class="muted">No patterns definied yet</p>
   <mat-nav-list>
     <mat-list-item *ngFor="let pattern of patterns">
-      <h3 matLine >{{ pattern.id }}: {{ pattern.name }}</h3>
+      <h3 matLine>{{ pattern.id }}: {{ pattern.name }}</h3>
       <p matLine class="muted" *ngIf="pattern.description">{{ pattern.description }}</p>
       <a mat-icon-button routerLink="/patterns/{{ pattern.id }}">
         <mat-icon>edit</mat-icon>

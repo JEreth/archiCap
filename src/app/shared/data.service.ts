@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {LocalStorage} from '@ngx-pwa/local-storage';
 import {forkJoin, Observable} from 'rxjs';
 
@@ -7,7 +7,8 @@ import {forkJoin, Observable} from 'rxjs';
 })
 export class DataService {
 
-  constructor(protected localStorage: LocalStorage) { }
+  constructor(protected localStorage: LocalStorage) {
+  }
 
   set(key: string, data: any): Observable<boolean> {
     if (data instanceof Map) {

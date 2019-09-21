@@ -24,6 +24,7 @@
   &.vertical {
     flex-direction: column;
   }
+
   &.horizontal {
     flex-direction: row;
 
@@ -37,6 +38,7 @@
   .system-box-wrap {
     display: flex;
     flex-direction: row;
+
     .system-box {
       margin: 5px;
       padding: 5px;

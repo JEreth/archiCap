@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {Component, OnInit} from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {Product} from '../shared/product';
 import {ProductService} from '../shared/product.service';
 
@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private snackBar: MatSnackBar) {
-    this.productService.getAllAsArray().subscribe( products => {
+    this.productService.getAllAsArray().subscribe(products => {
       this.products = products;
     });
   }
@@ -23,9 +23,9 @@ export class ProductListComponent implements OnInit {
   }
 
   remove(id: number) {
-    this.productService.remove(id).subscribe( () => {
+    this.productService.remove(id).subscribe(() => {
       this.snackBar.open('Product has been removed');
-      this.productService.getAllAsArray().subscribe( products => {
+      this.productService.getAllAsArray().subscribe(products => {
         this.products = products;
       });
     });

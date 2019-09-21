@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {DataService} from '../../shared/data.service';
 import {Observable, of} from 'rxjs';
 import {System} from './system';
@@ -11,11 +11,12 @@ export class SystemService {
   public systems: Map<number, System> = new Map<number, System>();
   public initialized = false;
 
-  constructor(private data: DataService) {}
+  constructor(private data: DataService) {
+  }
 
   getAllAsArray(): Observable<System[]> {
     return new Observable<System[]>((observer) => {
-      this.init().subscribe( () => {
+      this.init().subscribe(() => {
         observer.next(Array.from(this.systems.values()));
         observer.complete();
       });
@@ -25,7 +26,7 @@ export class SystemService {
   // return a system by its id
   get(id: number): Observable<System> {
     return new Observable<System>((observer) => {
-      this.init().subscribe( () => {
+      this.init().subscribe(() => {
         observer.next(this.systems.get(id));
         observer.complete();
       });
@@ -35,7 +36,7 @@ export class SystemService {
   // get components that have certain relation
   findFromRelation(property: string, id: number): Observable<System[]> {
     return new Observable<System[]>((observer) => {
-      this.init().subscribe( () => {
+      this.init().subscribe(() => {
         const res: System[] = [];
         Array.from(this.systems.values()).forEach(function (system) {
           // check if property exists and add system if it contains id
@@ -53,25 +54,25 @@ export class SystemService {
 
   // add a new system, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
-    const c: System = <System> input;
+    const c: System = <System>input;
     const id: number = (c.id != null) ? c.id : Number(this.systems.size);
     c.id = id;
     console.log(c);
     this.systems.set(id, c);
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // set multiple new values
   set(input: System[], persist = true): Observable<boolean> {
     const systems = new Map<number, System>();
     input.forEach(function (system) {
-      const c: System = <System> system;
+      const c: System = <System>system;
       const id: number = (c.id != null) ? c.id : Number(systems.size);
       c.id = id;
       systems.set(id, c);
     });
     this.systems = systems;
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // remove a system by id or object
@@ -79,7 +80,7 @@ export class SystemService {
     const id = ((<System>input).id !== undefined) ? input.id : input;
     this.systems.delete(id);
     // we probably also have to clean relations?
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // persist current systems to local storage

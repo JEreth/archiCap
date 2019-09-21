@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Category} from '../shared/category';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../shared/category.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {SystemService} from '../../systems/shared/system.service';
 import {System} from '../../systems/shared/system';
 
@@ -30,9 +30,9 @@ export class CategoryEditComponent implements OnInit {
     if (id === 'new') {
       this.category = <Category>{name: '', description: ''};
     } else {
-      this.categoryService.get(categoryId).subscribe( c => {
+      this.categoryService.get(categoryId).subscribe(c => {
         if (c) {
-          this.category = <Category> c;
+          this.category = <Category>c;
           this.systemService.findFromRelation('categories', categoryId).subscribe(systems => {
             this.systems = systems;
           });
@@ -48,9 +48,9 @@ export class CategoryEditComponent implements OnInit {
   }
 
   save() {
-      this.categoryService.add(this.category).subscribe( () => {
-        this.snackBar.open('Category was successfully saved');
-        this.router.navigateByUrl('/categories');
-      });
+    this.categoryService.add(this.category).subscribe(() => {
+      this.snackBar.open('Category was successfully saved');
+      this.router.navigateByUrl('/categories');
+    });
   }
 }

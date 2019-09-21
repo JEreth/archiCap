@@ -8,7 +8,10 @@
     <!-- SETUP -->
     <mat-card>
       <mat-card-header>
-        <mat-card-title><mat-icon  mat-list-icon>gavel</mat-icon> My Capabilities</mat-card-title>
+        <mat-card-title>
+          <mat-icon mat-list-icon>gavel</mat-icon>
+          My Capabilities
+        </mat-card-title>
       </mat-card-header>
       <mat-card-content>
 
@@ -21,13 +24,16 @@
 
       </mat-card-content>
       <mat-card-actions>
-        <button  mat-flat-button color="primary" (click)="save()">Save</button>
+        <button mat-flat-button color="primary" (click)="save()">Save</button>
       </mat-card-actions>
     </mat-card>
 
     <mat-card>
       <mat-card-header>
-        <mat-card-title><mat-icon  mat-list-icon>filter_none</mat-icon> My Components</mat-card-title>
+        <mat-card-title>
+          <mat-icon mat-list-icon>filter_none</mat-icon>
+          My Components
+        </mat-card-title>
       </mat-card-header>
       <mat-card-content>
 
@@ -39,14 +45,9 @@
         </mat-selection-list>
       </mat-card-content>
       <mat-card-actions>
-        <button  mat-flat-button color="primary" (click)="save()">Save</button>
+        <button mat-flat-button color="primary" (click)="save()">Save</button>
       </mat-card-actions>
     </mat-card>
-
-
-
-
-
 
 
     <!-- EXPORT -->
@@ -58,8 +59,9 @@
         <p>Export current profile consisting out of your capability and component selection</p>
       </mat-card-content>
       <mat-card-actions>
-        <a mat-flat-button [href]="downloadJsonHref" download="archicap-profile.json" color="primary" *ngIf="downloadJsonHref">
-          <mat-icon  mat-list-icon>save_alt</mat-icon>
+        <a mat-flat-button [href]="downloadJsonHref" download="archicap-profile.json" color="primary"
+           *ngIf="downloadJsonHref">
+          <mat-icon mat-list-icon>save_alt</mat-icon>
           Export profile
         </a>
       </mat-card-actions>
@@ -76,8 +78,9 @@
       </mat-card-content>
       <mat-card-actions>
         <mat-spinner *ngIf="uploading"></mat-spinner>
-        <button mat-flat-button (click)="upload()" color="primary" *ngIf="!uploading"  [disabled]="!uploadFile || uploadFile === ''">
-          <mat-icon  mat-list-icon>save_alt</mat-icon>
+        <button mat-flat-button (click)="upload()" color="primary" *ngIf="!uploading"
+                [disabled]="!uploadFile || uploadFile === ''">
+          <mat-icon mat-list-icon>save_alt</mat-icon>
           Import profile
         </button>
       </mat-card-actions>

@@ -8,11 +8,13 @@
           <mat-card-title>Export Configuration</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>Export current configuration consisting out of components, patterns, products, categories and capabilites to JSON format</p>
+          <p>Export current configuration consisting out of components, patterns, products, categories and capabilites
+            to JSON format</p>
         </mat-card-content>
         <mat-card-actions>
-          <a mat-flat-button [href]="downloadJsonHref" download="archicap-configuration.json" color="primary" *ngIf="downloadJsonHref !== ''">
-            <mat-icon  mat-list-icon>save_alt</mat-icon>
+          <a mat-flat-button [href]="downloadJsonHref" download="archicap-configuration.json" color="primary"
+             *ngIf="downloadJsonHref !== ''">
+            <mat-icon mat-list-icon>save_alt</mat-icon>
             Download current configuration
           </a>
         </mat-card-actions>
@@ -29,8 +31,9 @@
         </mat-card-content>
         <mat-card-actions>
           <mat-spinner *ngIf="uploading"></mat-spinner>
-          <button mat-flat-button (click)="upload()" color="primary" *ngIf="!uploading"  [disabled]="!uploadFile || uploadFile === ''">
-            <mat-icon  mat-list-icon>save_alt</mat-icon>
+          <button mat-flat-button (click)="upload()" color="primary" *ngIf="!uploading"
+                  [disabled]="!uploadFile || uploadFile === ''">
+            <mat-icon mat-list-icon>save_alt</mat-icon>
             Upload configuration
           </button>
         </mat-card-actions>
@@ -51,8 +54,9 @@
         </mat-card-content>
         <mat-card-actions>
           <mat-spinner *ngIf="loading"></mat-spinner>
-          <button mat-flat-button (click)="loadConfiguration()" color="primary" *ngIf="!loading" [disabled]="!predefinedConfiguration || predefinedConfiguration === ''">
-            <mat-icon  mat-list-icon>save_alt</mat-icon>
+          <button mat-flat-button (click)="loadConfiguration()" color="primary" *ngIf="!loading"
+                  [disabled]="!predefinedConfiguration || predefinedConfiguration === ''">
+            <mat-icon mat-list-icon>save_alt</mat-icon>
             Load configuration
           </button>
         </mat-card-actions>

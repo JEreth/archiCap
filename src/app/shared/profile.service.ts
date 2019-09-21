@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Observable, of} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs';
 import {DataService} from './data.service';
 
 export interface ProfilePersistence {
@@ -16,7 +16,8 @@ export class ProfileService {
   public selectedCapabilities: number[] = [];
   public selectedSystems: number[] = [];
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService) {
+  }
 
   init(): Observable<boolean> {
     return (this.initialized) ? of(true) : new Observable<boolean>((observer) => {
@@ -51,8 +52,8 @@ export class ProfileService {
   validate(input: any): boolean {
     // we only check for the major properties here. Might be better to make a in-depth validation
     return (input &&
-      input.selectedCapabilities && typeof(input.selectedCapabilities) === 'object' &&
-      input.selectedSystems && typeof(input.selectedSystems) === 'object');
+      input.selectedCapabilities && typeof (input.selectedCapabilities) === 'object' &&
+      input.selectedSystems && typeof (input.selectedSystems) === 'object');
   }
 
   reset(): Observable<boolean> {

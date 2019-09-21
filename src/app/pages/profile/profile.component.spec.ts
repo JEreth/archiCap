@@ -28,7 +28,7 @@ describe('ProfileComponent', () => {
         {provider: ProfileService, useClass: ProfileServiceMock}
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

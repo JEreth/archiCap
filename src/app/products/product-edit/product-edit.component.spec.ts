@@ -18,7 +18,7 @@ describe('ProductEditComponent', () => {
         RouterTestingModule
       ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

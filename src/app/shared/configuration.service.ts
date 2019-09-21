@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {forkJoin, Observable} from 'rxjs';
 import {CapabilityService} from '../capabilities/shared/capability.service';
 import {PatternService} from '../patterns/shared/pattern.service';
@@ -30,15 +30,16 @@ export class ConfigurationService {
               private patternService: PatternService,
               private productService: ProductService,
               private dataService: DataService,
-              private systemService: SystemService) { }
+              private systemService: SystemService) {
+  }
 
   // load current setup and save to json file
   exportToJson(): Observable<string> {
     return new Observable<string>((observer) => {
       this.getConfiguration().subscribe(r => {
         // trim system relation to ids only
-        const exportData: any =  <any> r; // remove strict checking
-        exportData.systems =  <any> exportData.systems; // remove strict checking
+        const exportData: any = <any>r; // remove strict checking
+        exportData.systems = <any>exportData.systems; // remove strict checking
         for (const system of exportData.systems) {
           system.categories = system.categories.map(a => a.id);
           system.products = system.products.map(a => a.id);
@@ -65,29 +66,29 @@ export class ConfigurationService {
         const systems: System[] = [];
         for (const system of input.systems) {
           const capabilities: Capability[] = [];
-          for (const capabilityId of <number[]> system.capabilities) {
+          for (const capabilityId of <number[]>system.capabilities) {
             capabilities.push(this.capabilityService.capabilities.get(capabilityId));
           }
           system.capabilities = capabilities;
           const categories: Category[] = [];
-          for (const categoryId of <number[]> system.categories) {
+          for (const categoryId of <number[]>system.categories) {
             categories.push(this.categoryService.categories.get(categoryId));
           }
           system.categories = categories;
           const patterns: Pattern[] = [];
-          for (const patternId of <number[]> system.patterns) {
+          for (const patternId of <number[]>system.patterns) {
             patterns.push(this.patternService.patterns.get(patternId));
           }
           system.patterns = patterns;
           const products: Product[] = [];
-          for (const productId of <number[]> system.products) {
+          for (const productId of <number[]>system.products) {
             products.push(this.productService.products.get(productId));
           }
           system.products = products;
           systems.push(system);
         }
         console.log(systems);
-        this.systemService.set(systems).subscribe( () => {
+        this.systemService.set(systems).subscribe(() => {
           observer.next(true);
           observer.complete();
         });
@@ -140,10 +141,10 @@ export class ConfigurationService {
   validate(input: any): boolean {
     // we only check for the major properties here. Might be better to make a in-depth validation
     return (input &&
-      input.capabilities && typeof(input.capabilities) === 'object' &&
-      input.categories && typeof(input.categories) === 'object' &&
-      input.patterns && typeof(input.patterns) === 'object' &&
-      input.products && typeof(input.products) === 'object' &&
-      input.systems && typeof(input.systems) === 'object');
+      input.capabilities && typeof (input.capabilities) === 'object' &&
+      input.categories && typeof (input.categories) === 'object' &&
+      input.patterns && typeof (input.patterns) === 'object' &&
+      input.products && typeof (input.products) === 'object' &&
+      input.systems && typeof (input.systems) === 'object');
   }
 }

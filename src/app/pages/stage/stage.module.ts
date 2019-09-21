@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { StageComponent } from './stage.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {StageComponent} from './stage.component';
 import {MaterialModule} from '../../material.module';
 import {RouterModule, Routes} from '@angular/router';
 import {CompositionModule} from '../../shared/composition/composition.module';
@@ -21,4 +21,5 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ]
 })
-export class StageModule { }
+export class StageModule {
+}

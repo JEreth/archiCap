@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ProfileComponent } from './profile.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ProfileComponent} from './profile.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MaterialModule} from '../../material.module';
 import {FormsModule} from '@angular/forms';
@@ -21,4 +21,5 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ]
 })
-export class ProfileModule { }
+export class ProfileModule {
+}

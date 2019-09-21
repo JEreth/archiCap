@@ -41,7 +41,7 @@ describe('SystemEditComponent', () => {
         {provide: MatSnackBar, useClass: MatSnackBarMock},
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

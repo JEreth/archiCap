@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {Component, OnInit} from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {System} from '../shared/system';
 import {SystemService} from '../shared/system.service';
 
@@ -14,7 +14,7 @@ export class SystemListComponent implements OnInit {
 
   constructor(private systemService: SystemService,
               private snackBar: MatSnackBar) {
-    this.systemService.getAllAsArray().subscribe( systems => {
+    this.systemService.getAllAsArray().subscribe(systems => {
       this.systems = systems;
     });
   }
@@ -23,9 +23,9 @@ export class SystemListComponent implements OnInit {
   }
 
   remove(id: number) {
-    this.systemService.remove(id).subscribe( () => {
+    this.systemService.remove(id).subscribe(() => {
       this.snackBar.open('System has been removed');
-      this.systemService.getAllAsArray().subscribe( systems => {
+      this.systemService.getAllAsArray().subscribe(systems => {
         this.systems = systems;
       });
     });

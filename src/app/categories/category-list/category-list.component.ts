@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Category} from '../shared/category';
 import {CategoryService} from '../shared/category.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-category-list',
@@ -14,7 +14,7 @@ export class CategoryListComponent implements OnInit {
 
   constructor(private categoryService: CategoryService,
               private snackBar: MatSnackBar) {
-    this.categoryService.getAllAsArray().subscribe( categories => {
+    this.categoryService.getAllAsArray().subscribe(categories => {
       this.categories = categories;
     });
   }
@@ -23,9 +23,9 @@ export class CategoryListComponent implements OnInit {
   }
 
   remove(id: number) {
-    this.categoryService.remove(id).subscribe( () => {
+    this.categoryService.remove(id).subscribe(() => {
       this.snackBar.open('Category has been removed');
-      this.categoryService.getAllAsArray().subscribe( categories => {
+      this.categoryService.getAllAsArray().subscribe(categories => {
         this.categories = categories;
       });
     });

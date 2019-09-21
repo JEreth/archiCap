@@ -34,7 +34,7 @@ describe('CategoryEditComponent', () => {
         {provide: SystemService, useClass: SystemServiceMock},
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

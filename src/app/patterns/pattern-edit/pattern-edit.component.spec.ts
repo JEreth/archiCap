@@ -19,7 +19,7 @@ describe('PatternEditComponent', () => {
         RouterTestingModule
       ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

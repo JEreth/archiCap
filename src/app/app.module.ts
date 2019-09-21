@@ -21,4 +21,5 @@ import {StorageModule} from '@ngx-pwa/local-storage';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

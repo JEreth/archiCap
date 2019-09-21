@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {DataService} from '../../shared/data.service';
 import {Observable, of} from 'rxjs';
 import {Pattern} from './pattern';
@@ -11,11 +11,12 @@ export class PatternService {
   public patterns: Map<number, Pattern> = new Map<number, Pattern>();
   public initialized = false;
 
-  constructor(private data: DataService) {}
+  constructor(private data: DataService) {
+  }
 
   getAllAsArray(): Observable<Pattern[]> {
     return new Observable<Pattern[]>((observer) => {
-      this.init().subscribe( () => {
+      this.init().subscribe(() => {
         observer.next(Array.from(this.patterns.values()));
         observer.complete();
       });
@@ -25,7 +26,7 @@ export class PatternService {
   // return a pattern by its id
   get(id: number): Observable<Pattern> {
     return new Observable<Pattern>((observer) => {
-      this.init().subscribe( () => {
+      this.init().subscribe(() => {
         observer.next(this.patterns.get(id));
         observer.complete();
       });
@@ -34,24 +35,24 @@ export class PatternService {
 
   // add a new pattern, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
-    const c: Pattern = <Pattern> input;
+    const c: Pattern = <Pattern>input;
     const id: number = (c.id != null) ? c.id : Number(this.patterns.size);
     c.id = id;
     this.patterns.set(id, c);
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // set multiple new values
   set(input: Pattern[], persist = true): Observable<boolean> {
     const patterns = new Map<number, Pattern>();
     input.forEach(function (pattern) {
-      const c: Pattern = <Pattern> pattern;
+      const c: Pattern = <Pattern>pattern;
       const id: number = (c.id != null) ? c.id : Number(patterns.size);
       c.id = id;
       patterns.set(id, c);
     });
     this.patterns = patterns;
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // remove a pattern by id or object
@@ -59,7 +60,7 @@ export class PatternService {
     const id = ((<Pattern>input).id !== undefined) ? input.id : input;
     this.patterns.delete(id);
     // todo: we also have to clean relations
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // persist current patterns to local storage

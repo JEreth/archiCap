@@ -18,7 +18,7 @@ describe('PatternListComponent', () => {
         RouterTestingModule
       ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

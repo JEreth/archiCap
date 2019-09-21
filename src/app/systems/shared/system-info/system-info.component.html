@@ -6,22 +6,28 @@
 
     <!-- Patterns -->
     <h4 *ngIf="system.patterns.length == 0">
-      <mat-icon mat-list-icon>view_compact</mat-icon> This component is of no patterns
+      <mat-icon mat-list-icon>view_compact</mat-icon>
+      This component is of no patterns
     </h4>
     <div *ngIf="system.patterns.length > 0">
-    <h4><mat-icon mat-list-icon>view_compact</mat-icon> This component is part of the following patterns:</h4>
-    <mat-list *ngFor="let pattern of system.patterns" dense >
-      <mat-list-item> {{pattern.name}} </mat-list-item>
-    </mat-list>
+      <h4>
+        <mat-icon mat-list-icon>view_compact</mat-icon>
+        This component is part of the following patterns:
+      </h4>
+      <mat-list *ngFor="let pattern of system.patterns" dense>
+        <mat-list-item> {{pattern.name}} </mat-list-item>
+      </mat-list>
     </div>
 
     <!-- Products -->
     <h4 *ngIf="system.products.length == 0">
-      <mat-icon mat-list-icon>more</mat-icon> There are no products related to this component
+      <mat-icon mat-list-icon>more</mat-icon>
+      There are no products related to this component
     </h4>
     <div *ngIf="system.products.length > 0">
       <h4>
-        <mat-icon mat-list-icon>more</mat-icon> This component can be implemented with the following products:
+        <mat-icon mat-list-icon>more</mat-icon>
+        This component can be implemented with the following products:
       </h4>
       <mat-list *ngFor="let product of system.products" dense>
         <mat-list-item> {{product.name}} </mat-list-item>
@@ -30,17 +36,18 @@
 
     <!-- Capabilities -->
     <h4 *ngIf="system.capabilities.length == 0">
-      <mat-icon mat-list-icon>gavel</mat-icon> There are no capabilities related to this component
+      <mat-icon mat-list-icon>gavel</mat-icon>
+      There are no capabilities related to this component
     </h4>
     <div *ngIf="system.capabilities.length > 0">
       <h4>
-        <mat-icon mat-list-icon>gavel</mat-icon> This component is needed for the following capability:
+        <mat-icon mat-list-icon>gavel</mat-icon>
+        This component is needed for the following capability:
       </h4>
       <mat-list *ngFor="let capability of system.capabilities" dense>
         <mat-list-item> {{capability.name}} </mat-list-item>
       </mat-list>
     </div>
-
 
 
   </div>

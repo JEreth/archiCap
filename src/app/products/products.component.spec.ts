@@ -17,7 +17,7 @@ describe('ProductsComponent', () => {
         MaterialModule
       ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

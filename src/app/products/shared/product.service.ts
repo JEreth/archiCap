@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {DataService} from '../../shared/data.service';
 import {Observable, of} from 'rxjs';
 import {Product} from './product';
@@ -11,11 +11,12 @@ export class ProductService {
   public products: Map<number, Product> = new Map<number, Product>();
   public initialized = false;
 
-  constructor(private data: DataService) {}
+  constructor(private data: DataService) {
+  }
 
   getAllAsArray(): Observable<Product[]> {
     return new Observable<Product[]>((observer) => {
-      this.init().subscribe( () => {
+      this.init().subscribe(() => {
         observer.next(Array.from(this.products.values()));
         observer.complete();
       });
@@ -25,7 +26,7 @@ export class ProductService {
   // return a product by its id
   get(id: number): Observable<Product> {
     return new Observable<Product>((observer) => {
-      this.init().subscribe( () => {
+      this.init().subscribe(() => {
         observer.next(this.products.get(id));
         observer.complete();
       });
@@ -34,24 +35,24 @@ export class ProductService {
 
   // add a new product, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
-    const c: Product = <Product> input;
+    const c: Product = <Product>input;
     const id: number = (c.id != null) ? c.id : Number(this.products.size);
     c.id = id;
     this.products.set(id, c);
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // set multiple new values
   set(input: Product[], persist = true): Observable<boolean> {
     const products = new Map<number, Product>();
     input.forEach(function (product) {
-      const c: Product = <Product> product;
+      const c: Product = <Product>product;
       const id: number = (c.id != null) ? c.id : Number(products.size);
       c.id = id;
       products.set(id, c);
     });
     this.products = products;
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // remove a product by id or object
@@ -59,7 +60,7 @@ export class ProductService {
     const id = ((<Product>input).id !== undefined) ? input.id : input;
     this.products.delete(id);
     // todo: we also have to clean relations
-    return (persist) ? this.persist() :  of(true);
+    return (persist) ? this.persist() : of(true);
   }
 
   // persist current products to local storage

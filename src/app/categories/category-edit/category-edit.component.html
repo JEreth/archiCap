@@ -1,6 +1,6 @@
-<a mat-flat-button routerLink="/categories" >
+<a mat-flat-button routerLink="/categories">
   <mat-icon>arrow_back</mat-icon>
- Go back
+  Go back
 </a>
 <section class="mat-typography">
   <h2 *ngIf="category && category.name==''">Add new category</h2>
@@ -12,7 +12,8 @@
   </mat-form-field>
 
   <mat-form-field>
-    <textarea matInput placeholder="Short description of this category ..." [(ngModel)]="category.description"></textarea>
+    <textarea matInput placeholder="Short description of this category ..."
+              [(ngModel)]="category.description"></textarea>
   </mat-form-field>
 
   <mat-nav-list>
@@ -23,6 +24,6 @@
   </mat-nav-list>
   <p *ngIf="systems.length === 0">No related components</p>
 
-  <button  mat-flat-button color="primary" (click)="save()">Save</button>
+  <button mat-flat-button color="primary" (click)="save()">Save</button>
 
 </div>

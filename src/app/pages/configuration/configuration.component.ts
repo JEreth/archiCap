@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ConfigurationPersistence, ConfigurationService} from '../../shared/configuration.service';
+import {Component, OnInit} from '@angular/core';
+import {ConfigurationService} from '../../shared/configuration.service';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -28,7 +28,7 @@ export class ConfigurationComponent implements OnInit {
   }
 
   generateDownload() {
-    this.configurationService.exportToJson().subscribe( json => {
+    this.configurationService.exportToJson().subscribe(json => {
       this.downloadJsonHref = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(json));
     });
   }
@@ -45,7 +45,7 @@ export class ConfigurationComponent implements OnInit {
         const input = JSON.parse(fileReader.result.toString());
         if (this.configurationService.validate(input)) {
           // schema looks good so go on and delete old config if it exists
-          this.configurationService.importFromPersistence(input).subscribe( () => {
+          this.configurationService.importFromPersistence(input).subscribe(() => {
             this.snackBar.open('Configuration has been imported.');
             this.uploading = false;
           });
@@ -63,7 +63,7 @@ export class ConfigurationComponent implements OnInit {
   }
 
   reset() {
-    this.configurationService.reset().subscribe( () => {
+    this.configurationService.reset().subscribe(() => {
       this.snackBar.open('Configuration has been reset.');
     });
   }
@@ -74,7 +74,7 @@ export class ConfigurationComponent implements OnInit {
     this.http.get(url)
       .subscribe(
         data => {
-          this.configurationService.importFromPersistence(data).subscribe( () => {
+          this.configurationService.importFromPersistence(data).subscribe(() => {
             this.snackBar.open('Configuration has been loaded.');
             this.loading = false;
           });

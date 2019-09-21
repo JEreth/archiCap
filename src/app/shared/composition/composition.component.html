@@ -19,7 +19,8 @@
         <span class="category-box-title">{{ category.name }}</span>
 
         <div class="system-box-wrap">
-          <div class="system-box" *ngFor="let system of category.systems" (click)="showSystemInformation(system)" [class.highlighted]="highlightedSystems.indexOf(system.id) !== -1">
+          <div class="system-box" *ngFor="let system of category.systems" (click)="showSystemInformation(system)"
+               [class.highlighted]="highlightedSystems.indexOf(system.id) !== -1">
             {{ system.name }}
           </div>
         </div>
@@ -29,7 +30,7 @@
   <div class="col-3">
 
     <!-- HIGHLIGHT PATTERN -->
-    <mat-selection-list  [(ngModel)]="highlightedPatterns" (ngModelChange)="updateHighlightedSystems()" dense>
+    <mat-selection-list [(ngModel)]="highlightedPatterns" (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by pattern</h3>
       <mat-list-option *ngFor="let pattern of relevantPatterns" [value]="pattern.id">
         {{pattern.name}}
@@ -37,7 +38,7 @@
     </mat-selection-list>
 
     <!-- HIGHTLIGHT CAPABILITIES -->
-    <mat-selection-list  [(ngModel)]="highlightedCapabilities" (ngModelChange)="updateHighlightedSystems()" dense>
+    <mat-selection-list [(ngModel)]="highlightedCapabilities" (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by capabilities</h3>
       <mat-list-option *ngFor="let capability of relevantCapabilities" [value]="capability.id">
         {{capability.name}}

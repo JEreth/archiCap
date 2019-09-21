@@ -30,9 +30,9 @@ export class CapabilityEditComponent implements OnInit {
     if (id === 'new') {
       this.capability = <Capability>{name: '', description: ''};
     } else {
-      this.capabilityService.get(capabilityId).subscribe( c => {
+      this.capabilityService.get(capabilityId).subscribe(c => {
         if (c) {
-          this.capability = <Capability> c;
+          this.capability = <Capability>c;
           this.systemService.findFromRelation('capabilities', capabilityId).subscribe(systems => {
             this.systems = systems;
           });
@@ -47,7 +47,7 @@ export class CapabilityEditComponent implements OnInit {
   }
 
   save() {
-    this.capabilityService.add(this.capability).subscribe( () => {
+    this.capabilityService.add(this.capability).subscribe(() => {
       this.snackBar.open('Capability was successfully saved');
       this.router.navigateByUrl('/capabilities');
     });

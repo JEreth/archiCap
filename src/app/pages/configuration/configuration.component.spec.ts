@@ -16,7 +16,7 @@ describe('ConfigurationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConfigurationComponent ],
+      declarations: [ConfigurationComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [
         HttpClientTestingModule,
@@ -29,7 +29,7 @@ describe('ConfigurationComponent', () => {
         {provide: DomSanitizer, useClass: DomSanitizerMock},
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

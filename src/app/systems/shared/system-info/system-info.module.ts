@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {MaterialModule} from '../../../material.module';
 import {SystemInfoComponent} from './system-info.component';
 
@@ -12,4 +12,5 @@ import {SystemInfoComponent} from './system-info.component';
   entryComponents: [SystemInfoComponent],
   exports: [SystemInfoComponent]
 })
-export class SystemInfoModule { }
+export class SystemInfoModule {
+}

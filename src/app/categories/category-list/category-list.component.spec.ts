@@ -27,7 +27,7 @@ describe('CategoryListComponent', () => {
         {provide: MatSnackBar, useClass: MatSnackBarMock},
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

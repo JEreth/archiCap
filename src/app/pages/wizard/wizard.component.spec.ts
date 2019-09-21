@@ -12,7 +12,7 @@ describe('WizardComponent', () => {
       declarations: [WizardComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,52 +1,65 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "grid";
+
 body {
-  font: 400 14px/20px Roboto,"Helvetica Neue",sans-serif
+  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif
 }
+
 .spacer {
   flex: 1 1 auto;
 }
+
 .sidebar-logo {
   margin: 20px 15px;
 }
+
 .sidebar-btn {
-  background-color:transparent;
+  background-color: transparent;
   color: #fff;
   border: 0 none;
 }
+
 .content-wrapper, .general-wrapper, .content-full-wrapper {
   padding: 20px 70px 0;
   display: block;
   text-align: center;
+
   .content-wrapper-inner, .general-wrapper-inner, .content-full-wrapper-inner {
     display: block;
     text-align: left;
     max-width: 940px;
     margin: 0 auto;
   }
+
   .content-full-wrapper-inner {
     max-width: 1280px;
   }
+
   .content-wrapper-inner {
     display: flex;
     align-items: flex-start;
   }
 }
+
 .tab-icon {
   margin-right: 5px;
 }
+
 .muted {
   color: #666;
 }
+
 .form-wrap {
   display: flex;
   flex-direction: column;
   min-width: 150px;
   width: 100%;
+
   input, textarea {
     width: 100%;
   }
 }
+
 .system-info {
   min-width: 250px;
 }

@@ -18,7 +18,7 @@ describe('PatternsComponent', () => {
         MaterialModule,
       ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

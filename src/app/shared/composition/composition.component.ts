@@ -6,7 +6,7 @@ import {Pattern} from '../../patterns/shared/pattern';
 import {Product} from '../../products/shared/product';
 import {ConfigurationService} from '../configuration.service';
 import {SystemService} from '../../systems/shared/system.service';
-import { MatDialog } from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {SystemInfoComponent} from '../../systems/shared/system-info/system-info.component';
 import {BehaviorSubject} from 'rxjs';
 
@@ -23,6 +23,7 @@ export class CompositionComponent implements OnInit {
   @Input() set relevantSystems(value: System[]) {
     this._relevantSystems.next(value);
   }
+
   get relevantSystems() {
     return this._relevantSystems.getValue();
   }
@@ -31,6 +32,7 @@ export class CompositionComponent implements OnInit {
   @Input() set relevantCapabilities(value: Capability[]) {
     this._relevantCapabilities.next(value);
   }
+
   get relevantCapabilities() {
     return this._relevantCapabilities.getValue();
   }
@@ -58,7 +60,7 @@ export class CompositionComponent implements OnInit {
               private dialog: MatDialog) {
 
     // load stuff from configuration
-    this.configuration.getConfiguration().subscribe( c => {
+    this.configuration.getConfiguration().subscribe(c => {
       this.capabilities = c.capabilities;
       this.systems = c.systems;
       this.categories = c.categories;
@@ -66,14 +68,14 @@ export class CompositionComponent implements OnInit {
 
       // fill categories
       for (const category of this.categories) {
-        this.systemService.findFromRelation('categories', category.id ).subscribe(systems => {
+        this.systemService.findFromRelation('categories', category.id).subscribe(systems => {
           category.systems = systems;
         });
       }
     });
 
     // extract relevant patterns and capabilities from relevant systems
-    this._relevantSystems.subscribe( relevantSystems => {
+    this._relevantSystems.subscribe(relevantSystems => {
       if (relevantSystems) {
         let patterns: Pattern[] = [];
         let capabilities: Capability[] = [];
@@ -98,7 +100,7 @@ export class CompositionComponent implements OnInit {
 
   showSystemInformation(system: System) {
     const operationDetailPopover = this.dialog.open(SystemInfoComponent, {
-      data: { system: system },
+      data: {system: system},
     });
   }
 
@@ -108,13 +110,13 @@ export class CompositionComponent implements OnInit {
     for (const patternId of this.highlightedPatterns) {
       this.systemService.findFromRelation('patterns', patternId).subscribe(systems => {
         const systemsFiltered = this.highlightedSystems.concat(systems.map(a => a.id));
-        this.highlightedSystems = systemsFiltered.filter( (v, i, s) => s.indexOf(v) === i);
+        this.highlightedSystems = systemsFiltered.filter((v, i, s) => s.indexOf(v) === i);
       });
     }
     for (const capabilityId of this.highlightedCapabilities) {
       this.systemService.findFromRelation('capabilities', capabilityId).subscribe(systems => {
         const systemsFiltered = this.highlightedSystems.concat(systems.map(a => a.id));
-        this.highlightedSystems = systemsFiltered.filter( (v, i, s) => s.indexOf(v) === i);
+        this.highlightedSystems = systemsFiltered.filter((v, i, s) => s.indexOf(v) === i);
         console.log(this.highlightedSystems);
       });
     }

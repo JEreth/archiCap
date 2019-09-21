@@ -1,4 +1,4 @@
-<a mat-flat-button routerLink="/capabilities" >
+<a mat-flat-button routerLink="/capabilities">
   <mat-icon>arrow_back</mat-icon>
   Go back
 </a>
@@ -12,7 +12,8 @@
   </mat-form-field>
 
   <mat-form-field>
-    <textarea matInput placeholder="Long description of this capability ..." [(ngModel)]="capability.description"></textarea>
+    <textarea matInput placeholder="Long description of this capability ..."
+              [(ngModel)]="capability.description"></textarea>
   </mat-form-field>
 
   <mat-nav-list>
@@ -23,6 +24,6 @@
   </mat-nav-list>
   <p *ngIf="systems.length === 0">No related components</p>
 
-  <button  mat-flat-button color="primary" (click)="save()">Save</button>
+  <button mat-flat-button color="primary" (click)="save()">Save</button>
 
 </div>

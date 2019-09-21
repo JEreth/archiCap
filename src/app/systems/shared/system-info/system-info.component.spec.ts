@@ -18,7 +18,7 @@ describe('SystemInfoComponent', () => {
         {provide: MAT_DIALOG_DATA, useValue: {}},
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

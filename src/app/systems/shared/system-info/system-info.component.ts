@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {System} from '../system';
 
 @Component({
@@ -13,7 +13,7 @@ export class SystemInfoComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<SystemInfoComponent>,
-               @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     if (data.system) {
       this.system = data.system;
