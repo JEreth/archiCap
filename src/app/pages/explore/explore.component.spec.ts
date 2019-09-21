@@ -20,7 +20,7 @@ describe('ExploreComponent', () => {
         MaterialModule
       ],
       providers: [
-        {provider: ConfigurationService, useClass: ConfigurationServiceMock}
+        {provide: ConfigurationService, useClass: ConfigurationServiceMock}
       ]
     })
       .compileComponents();

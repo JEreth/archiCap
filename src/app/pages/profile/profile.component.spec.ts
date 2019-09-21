@@ -1,5 +1,4 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
 import {ProfileComponent} from './profile.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {SystemServiceMock} from '../../systems/shared/system.service.mock';
@@ -11,6 +10,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {ProfileService} from '../../shared/profile.service';
 import {DomSanitizerMock, MatSnackBarMock} from '../../../mocks';
 import {ProfileServiceMock} from '../../shared/profile.service.mock';
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../../material.module';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -20,12 +21,16 @@ describe('ProfileComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ProfileComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        FormsModule,
+        MaterialModule
+      ],
       providers: [
-        {provider: CapabilityService, useClass: CapabilityServiceMock},
-        {provider: SystemService, useClass: SystemServiceMock},
-        {provider: MatSnackBar, useClass: MatSnackBarMock},
-        {provider: DomSanitizer, useClass: DomSanitizerMock},
-        {provider: ProfileService, useClass: ProfileServiceMock}
+        {provide: CapabilityService, useClass: CapabilityServiceMock},
+        {provide: SystemService, useClass: SystemServiceMock},
+        {provide: MatSnackBar, useClass: MatSnackBarMock},
+        {provide: DomSanitizer, useClass: DomSanitizerMock},
+        {provide: ProfileService, useClass: ProfileServiceMock}
       ]
     })
       .compileComponents();
@@ -40,4 +45,5 @@ describe('ProfileComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

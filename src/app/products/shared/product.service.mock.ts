@@ -3,9 +3,6 @@ import {Observable, of} from 'rxjs';
 
 export class ProductServiceMock {
 
-  public products: Map<number, Product> = new Map<number, Product>();
-  public initialized = false;
-
   constructor() {
   }
 

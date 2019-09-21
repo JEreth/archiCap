@@ -4,6 +4,10 @@ import {ProductListComponent} from './product-list.component';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../../material.module';
 import {RouterTestingModule} from '@angular/router/testing';
+import {MatSnackBar} from '@angular/material';
+import {ProductService} from '../shared/product.service';
+import {ProductServiceMock} from '../shared/product.service.mock';
+import {MatSnackBarMock} from '../../../mocks';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -18,6 +22,10 @@ describe('ProductListComponent', () => {
         MaterialModule,
         RouterTestingModule
       ],
+      providers: [
+        {provide: MatSnackBar, useClass: MatSnackBarMock},
+        {provide: ProductService, useClass: ProductServiceMock}
+      ]
     })
       .compileComponents();
   }));
