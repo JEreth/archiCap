@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {System} from '../shared/system';
 import {SystemService} from '../shared/system.service';
 import {Category} from '../../categories/shared/category';

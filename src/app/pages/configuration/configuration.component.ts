@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ConfigurationPersistence, ConfigurationService} from '../../shared/configuration.service';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {HttpClient} from '@angular/common/http';
 
 @Component({

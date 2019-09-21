@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {CapabilityService} from '../shared/capability.service';
 import {Capability} from '../shared/capability';
 

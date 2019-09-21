@@ -4,7 +4,7 @@ import {CapabilityService} from '../../capabilities/shared/capability.service';
 import {SystemService} from '../../systems/shared/system.service';
 import {ProfilePersistence, ProfileService} from '../../shared/profile.service';
 import {System} from '../../systems/shared/system';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({

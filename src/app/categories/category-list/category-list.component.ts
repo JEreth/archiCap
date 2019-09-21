@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from '../shared/category';
 import {CategoryService} from '../shared/category.service';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-category-list',

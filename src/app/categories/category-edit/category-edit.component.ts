@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Category} from '../shared/category';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../shared/category.service';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {SystemService} from '../../systems/shared/system.service';
 import {System} from '../../systems/shared/system';
 

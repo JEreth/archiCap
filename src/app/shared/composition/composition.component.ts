@@ -6,7 +6,7 @@ import {Pattern} from '../../patterns/shared/pattern';
 import {Product} from '../../products/shared/product';
 import {ConfigurationService} from '../configuration.service';
 import {SystemService} from '../../systems/shared/system.service';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import {SystemInfoComponent} from '../../systems/shared/system-info/system-info.component';
 import {BehaviorSubject} from 'rxjs';
 
