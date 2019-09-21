@@ -5,6 +5,9 @@ body {
   font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif
 }
 
+.stepper-buttons {
+  display: flex;
+}
 .spacer {
   flex: 1 1 auto;
 }
@@ -62,4 +65,8 @@ body {
 
 .system-info {
   min-width: 250px;
+}
+
+.text-right {
+  text-align: right;
 }

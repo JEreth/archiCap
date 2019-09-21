@@ -1,3 +1,128 @@
-<p>
-  wizard works!
-</p>
+<div class="general-wrapper">
+  <div class="general-wrapper-inner">
+    <section class="mat-typography">
+
+      <mat-horizontal-stepper labelPosition="bottom">
+        <mat-step>
+          <ng-template matStepLabel>Introduction</ng-template>
+          <h1 class="mat-display-1">Welcome to ArchiCap</h1>
+          <p>This wizard helps you setting up your planing environment. More concrete, this software supports strategic
+            IT architectue planning by linking business strategy and technology compoents via business capabilites.</p>
+          <p>To get going you should first be aware that there are thee use cases that might be relevant for you:</p>
+          <ol>
+            <li><strong>Greenfield:</strong> You want to achieve some business capabilities and ask your self which
+              components fit.
+              <ul>
+                <li>If this is the case you might only want to define your capabilities in Step 2 and use some of the
+                  predefined components and patterns.
+                </li>
+              </ul>
+            </li>
+            <li><strong>Brownfield:</strong> You have a legacy IT landscape that you analyze in order to identify
+              possible capabilities.
+              <ul>
+                <li>If this is the case you might only want to define your components in Step 3 and use some of the
+                  predefined capabilities.
+                </li>
+              </ul>
+            </li>
+            <li><strong>Benchmark:</strong> You have a legacy IT landscape and some capabilities and want to check which
+              components are relevant and which might be redundant.
+              <ul>
+                <li>If this is the case feel free to use any of the predefined elements and add you own if necessary.
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <p><strong>Notes:</strong></p>
+          <p>If you are not sure what elements exists you can use the explore mode to check out the predefined
+            elements.</p>
+          <p>If you have not found an adequate set of predefined elements in the Import/Export section, please feel free
+            to add your own elements and share them with the community.</p>
+
+          <div class="text-right">
+            <button mat-raised-button matStepperNext color="primary">
+              Let's go
+            </button>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Capabilities</ng-template>
+
+          <h2>
+            <mat-icon mat-list-icon>gavel</mat-icon>
+            Select relevant Capabilities
+          </h2>
+
+          <mat-selection-list [(ngModel)]="selectedCapabilities" (ngModelChange)="save()">
+            <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
+              {{capability.name}}
+            </mat-list-option>
+          </mat-selection-list>
+
+          <div class="text-right">
+            <button mat-raised-button color="accent" routerLink="/capabilities/new" [disabled]="working">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+
+          <div class="stepper-buttons">
+            <button mat-raised-button matStepperNext>Back</button>
+            <span class="spacer"></span>
+            <button mat-raised-button matStepperNext color="primary">Next</button>
+          </div>
+
+          <p class="mat-caption">If you want to analyze an existing legacy landscape you can skip this step.</p>
+
+        </mat-step>
+
+
+        <mat-step>
+          <ng-template matStepLabel>Components</ng-template>
+
+          <h2>
+            <mat-icon mat-list-icon>gavel</mat-icon>
+            Select relevant Components
+          </h2>
+
+          <mat-selection-list [(ngModel)]="selectedSystems" (ngModelChange)="save()">
+            <mat-list-option *ngFor="let system of systems" [value]="system.id">
+              {{system.name}}
+            </mat-list-option>
+          </mat-selection-list>
+
+          <div class="text-right">
+            <button mat-raised-button color="accent" routerLink="/components/new" [disabled]="working">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+
+          <div class="stepper-buttons">
+            <button mat-raised-button matStepperNext>Back</button>
+            <span class="spacer"></span>
+            <button mat-raised-button matStepperNext color="primary">Next</button>
+          </div>
+
+          <p class="mat-caption">If you want to find adequate components to your capabilities you can skip this
+            step.</p>
+
+        </mat-step>
+
+
+        <mat-step>
+          <ng-template matStepLabel>Take off</ng-template>
+
+          <h1 class="mat-display-2">You are all set</h1>
+          <p>Your selection was saved and you can start exploring your architectural possibilities. You can always
+            adjust your settings in your profile on the left.</p>
+
+          <div class="stepper-buttons">
+            <button mat-raised-button color="primary" routerLink="/stage">Go to Stage</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+
+    </section>
+  </div>
+</div>

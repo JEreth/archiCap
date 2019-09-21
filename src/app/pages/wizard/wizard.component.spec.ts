@@ -2,6 +2,9 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {WizardComponent} from './wizard.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../../material.module';
+import {MatStepperModule} from '@angular/material';
 
 describe('WizardComponent', () => {
   let component: WizardComponent;
@@ -10,6 +13,11 @@ describe('WizardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [WizardComponent],
+      imports: [
+        FormsModule,
+        MaterialModule,
+        MatStepperModule,
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
       .compileComponents();
