@@ -28,9 +28,22 @@
   &.horizontal {
     flex-direction: row;
 
-    .category-box .category-box-title {
-      width: 100%;
-      text-align: center;
+    .category-box {
+      flex-grow: 1;
+      flex-basis: 0;
+
+      .category-box-title {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .system-box-wrap {
+      display: block;
+
+      .system-box {
+        display: block;
+      }
     }
 
   }
