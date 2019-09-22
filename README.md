@@ -18,6 +18,7 @@ Checkout the related projects:
 ## Table of Contents
 * [About the Project](#about-the-project)
 * [Getting Started](#getting-started)
+* [Contribute](#contribute)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -78,8 +79,8 @@ are enabled by a component, e.g. *distribution of event-driven data to multiple 
 
 - [x] **Export/Import** of your setup
 
-<!-- Contribution -->
-## Contribution
+<!-- Contribute -->
+## Contribute
 
 Feel free to contribute to this project. If you have any question or if you want to report a bug, please use the GitHub issue board.
 
