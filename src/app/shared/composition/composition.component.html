@@ -4,16 +4,20 @@
     <mat-button-toggle value="vertical">
       <mat-icon>view_agenda</mat-icon>
     </mat-button-toggle>
-
     <mat-button-toggle value="horizontal">
       <mat-icon>view_week</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="analyze" *ngIf="showAnalyze">
+      <mat-icon>speed</mat-icon>
     </mat-button-toggle>
   </mat-button-toggle-group>
 </mat-toolbar>
 
 <div class="row">
   <div class="col-9">
-    <div id="category-box-wrap" class="{{viewMode}}">
+
+    <!-- layer architecture -->
+    <div id="category-box-wrap" class="{{viewMode}}" *ngIf="viewMode!=='analyze'">
       <div class="category-box" *ngFor="let category of categories">
 
         <span class="category-box-title">{{ category.name }}</span>
@@ -27,8 +31,28 @@
         </div>
       </div>
     </div>
+
+    <!-- DASHBOARD -->
+    <div *ngIf="viewMode==='analyze'">
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon mat-list-icon>view_compact</mat-icon>
+          </div>
+          <mat-card-title>Identified Patterns</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list *ngFor="let result of analyzeResult">
+            <mat-list-item>{{result.pattern.name}} {{result.percentage}}%</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
   </div>
-  <div class="col-3">
+  <div class="col-3" *ngIf="viewMode!=='analyze'">
 
     <!-- HIGHLIGHT PATTERN -->
     <mat-selection-list [(ngModel)]="highlightedPatterns" (ngModelChange)="updateHighlightedSystems()" dense>

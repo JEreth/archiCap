@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'stage', loadChildren: () => import('./pages/stage/stage.module').then(m => m.StageModule)},
   {path: 'explore', loadChildren: () => import('./pages/explore/explore.module').then(m => m.ExploreModule)},
   {path: 'wizard', loadChildren: () => import('./pages/wizard/wizard.module').then(m => m.WizardModule)},
-  {path: '', redirectTo: '/about', pathMatch: 'full'},
+  {path: '', redirectTo: '/wizard', pathMatch: 'full'},
 ];
 
 @NgModule({

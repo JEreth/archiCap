@@ -9,6 +9,7 @@ import {SystemService} from '../../systems/shared/system.service';
 import {MatDialog} from '@angular/material/dialog';
 import {SystemInfoComponent} from '../../systems/shared/system-info/system-info.component';
 import {BehaviorSubject} from 'rxjs';
+import {PatternService} from '../../patterns/shared/pattern.service';
 
 @Component({
   selector: 'app-composition',
@@ -54,9 +55,13 @@ export class CompositionComponent implements OnInit {
 
   // view config
   public viewMode = 'vertical';
+  @Input() showAnalyze = false;
+
+  public analyzeResult: any = [];
 
   constructor(private configuration: ConfigurationService,
               private systemService: SystemService,
+              private patternService: PatternService,
               private dialog: MatDialog) {
 
     // load stuff from configuration
@@ -72,6 +77,7 @@ export class CompositionComponent implements OnInit {
           category.systems = systems;
         });
       }
+
     });
 
     // extract relevant patterns and capabilities from relevant systems
@@ -90,6 +96,8 @@ export class CompositionComponent implements OnInit {
         this.relevantCapabilities = capabilities.filter((obj, pos, arr) => {
           return arr.map(mapObj => mapObj['id']).indexOf(obj['id']) === pos;
         });
+        // calculate analyze values
+        this.calculateIdentifiedPatterns();
       }
     });
   }
@@ -111,7 +119,6 @@ export class CompositionComponent implements OnInit {
 
   updateHighlightedSystems() {
     this.highlightedSystems = [];
-    console.log(this.highlightedPatterns);
     for (const patternId of this.highlightedPatterns) {
       this.systemService.findFromRelation('patterns', patternId).subscribe(systems => {
         const systemsFiltered = this.highlightedSystems.concat(systems.map(a => a.id));
@@ -125,6 +132,38 @@ export class CompositionComponent implements OnInit {
         console.log(this.highlightedSystems);
       });
     }
+  }
+
+  // check how configuration and patterns match
+  calculateIdentifiedPatterns() {
+    this.patternService.getAllAsArray().subscribe(allPatterns => {
+      const availableSystemIds: number[] = this._relevantSystems.getValue().map(a => a.id);
+      for (const pattern of allPatterns) {
+        this.systemService.findFromRelation('patterns', pattern.id).subscribe(systemsOfThisPattern => {
+          const patternResult = {
+            percentage: 0,
+            pattern: pattern,
+            foundSystems: [],
+            missingSystems: []
+          };
+          for (const system of systemsOfThisPattern) {
+            if (availableSystemIds.includes(system.id)) {
+              patternResult.foundSystems.push(system);
+            } else {
+              patternResult.missingSystems.push(system);
+            }
+          }
+          const {length} = systemsOfThisPattern;
+          console.log(pattern.name);
+          console.log(patternResult.foundSystems);
+          console.log(patternResult.foundSystems.length);
+          console.log(length);
+          patternResult.percentage = Math.round((patternResult.foundSystems.length / Math.max(1, length)) * 100);
+          this.analyzeResult.push(patternResult);
+          this.analyzeResult.sort((r1, r2) => r2.percentage - r1.percentage);
+        });
+      }
+    });
   }
 
 }
