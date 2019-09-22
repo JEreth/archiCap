@@ -68,6 +68,27 @@ export class SystemService {
     });
   }
 
+  // get components that have certain relation
+  findManyFromRelation(property: string, ids: number[]): Observable<System[]> {
+    return new Observable<System[]>((observer) => {
+      this.init().subscribe(() => {
+        const res: System[] = [];
+        Array.from(this.systems.values()).forEach(function (system) {
+          // check if property exists and add system if it contains id
+          if (property in system
+            && typeof system[property][Symbol.iterator] === 'function'
+            && system[property].map(a => a.id).filter(function (n) {
+              return ids.indexOf(n) > -1;
+            }).length > 0) {
+            res.push(system);
+          }
+        });
+        observer.next(res);
+        observer.complete();
+      });
+    });
+  }
+
   // add a new system, if no id given auto increment
   add(input: any, persist = true): Observable<boolean> {
     const c: System = <System>input;

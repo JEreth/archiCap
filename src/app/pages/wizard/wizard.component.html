@@ -3,6 +3,7 @@
     <section class="mat-typography">
 
       <mat-horizontal-stepper labelPosition="bottom">
+
         <mat-step>
           <ng-template matStepLabel>Introduction</ng-template>
           <h1 class="mat-display-1">Welcome to ArchiCap</h1>
@@ -77,7 +78,6 @@
 
         </mat-step>
 
-
         <mat-step>
           <ng-template matStepLabel>Components</ng-template>
 
@@ -86,17 +86,46 @@
             Select relevant Components
           </h2>
 
-          <mat-selection-list [(ngModel)]="selectedSystems" (ngModelChange)="save()">
-            <mat-list-option *ngFor="let system of systems" [value]="system.id">
-              {{system.name}}
-            </mat-list-option>
-          </mat-selection-list>
+          <p>If you feel confident about what you need, you can select the components directly.
+            If you are looking to implement a pattern or you know that your landscape has certain pattern you can also
+            select a pattern and the wizard will select adequate components for you. If you are not sure about what
+            components you have, you can also simply select products and the wizard will take care of the rest.</p>
 
-          <div class="text-right">
-            <button mat-raised-button color="accent" routerLink="/components/new" [disabled]="working">
-              <mat-icon>add</mat-icon>
-            </button>
-          </div>
+          <mat-tab-group>
+            <mat-tab label="Select directly">
+
+              <mat-selection-list [(ngModel)]="selectedSystems" (ngModelChange)="save()">
+                <mat-list-option *ngFor="let system of systems" [value]="system.id">
+                  {{system.name}}
+                </mat-list-option>
+              </mat-selection-list>
+
+              <div class="text-right">
+                <button mat-raised-button color="accent" routerLink="/components/new" [disabled]="working">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+
+            </mat-tab>
+            <mat-tab label="Select by patterns">
+
+              <mat-selection-list [(ngModel)]="selectedPatterns" (ngModelChange)="selectAdequateComponentsByPatterns()">
+                <mat-list-option *ngFor="let pattern of patterns" [value]="pattern.id">
+                  {{pattern.name}}
+                </mat-list-option>
+              </mat-selection-list>
+
+            </mat-tab>
+            <mat-tab label="Select by products">
+
+              <mat-selection-list [(ngModel)]="selectedProducts" (ngModelChange)="selectAdequateComponentsByProducts()">
+                <mat-list-option *ngFor="let product of products" [value]="product.id">
+                  {{product.name}}
+                </mat-list-option>
+              </mat-selection-list>
+
+            </mat-tab>
+          </mat-tab-group>
 
           <div class="stepper-buttons">
             <button mat-raised-button matStepperNext>Back</button>
@@ -108,7 +137,6 @@
             step.</p>
 
         </mat-step>
-
 
         <mat-step>
           <ng-template matStepLabel>Take off</ng-template>
