@@ -33,7 +33,7 @@ export class SystemService {
     });
   }
 
-  // return many systems by thei ids
+  // return many systems by their ids
   getMany(ids: number[]): Observable<System[]> {
     return new Observable<System[]>((observer) => {
       this.init().subscribe(() => {
@@ -95,6 +95,7 @@ export class SystemService {
     const id: number = (c.id != null) ? c.id : Number(this.systems.size);
     c.id = id;
     this.systems.set(id, c);
+    // todo: update substitutions as they are bidirectional
     return (persist) ? this.persist() : of(true);
   }
 

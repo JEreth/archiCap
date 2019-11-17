@@ -49,6 +49,21 @@
       </mat-list>
     </div>
 
+    <!-- Substitutions -->
+    <h4 *ngIf="system.substitutions.length == 0">
+      <mat-icon mat-list-icon>gavel</mat-icon>
+      There are no substitutions related to this component
+    </h4>
+    <div *ngIf="system.substitutions.length > 0">
+      <h4>
+        <mat-icon mat-list-icon>gavel</mat-icon>
+        This component can be substituted with the following components:
+      </h4>
+      <mat-list *ngFor="let substitution of system.substitutions" dense>
+        <mat-list-item> {{substitution.name}} </mat-list-item>
+      </mat-list>
+    </div>
+
 
   </div>
   <div mat-dialog-actions>

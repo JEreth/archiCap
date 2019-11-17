@@ -64,7 +64,7 @@ For this you can define the following elements in the left *configuration* secti
 (e.g. Databases, Front-End Tools etc.) or to define layers in your architecutre (e.g. data management, data processing etc.)
 
 - [x] **Components** are abstract system types. It is important to understand that this are not concrete products, but more
-types of products, e.g. relational database and not MySQL.
+types of products, e.g. relational database and not MySQL. You can define substitutions when multiple components can be replaced by each other or if one component includes the functions of anouther (e.g. a message queue and an more sophisticated event-log)
 
 - [x] **Products** are concrete implementations of components. It is possible that there are more than one product to one component,
 e.g. MySQL and PostreSQL for relational databases. 

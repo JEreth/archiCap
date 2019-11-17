@@ -45,6 +45,15 @@
     </mat-list-option>
   </mat-selection-list>
 
+  <mat-selection-list [(ngModel)]="system.substitutions" [compareWith]="substitutionSelected">
+    <h3 matLine>Substitutions</h3>
+    <ng-container *ngFor="let substitution of systems">
+      <mat-list-option [value]="substitution" *ngIf="substitution.id != system.id">
+        {{substitution.name}}
+      </mat-list-option>
+    </ng-container>
+  </mat-selection-list>
+
   <button mat-flat-button color="primary" (click)="save()">Save</button>
 
 </div>

@@ -11,4 +11,5 @@ export interface System {
   products: Product[];
   patterns: Pattern[];
   capabilities: Capability[];
+  substitutions: System[];
 }

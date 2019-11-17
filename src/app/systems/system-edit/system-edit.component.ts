@@ -24,6 +24,7 @@ export class SystemEditComponent implements OnInit {
   public products: Product[] = [];
   public patterns: Pattern[] = [];
   public capabilities: Capability[] = [];
+  public systems: System[] = [];
 
 
   constructor(
@@ -51,22 +52,36 @@ export class SystemEditComponent implements OnInit {
       this.patterns = patterns;
     });
 
-    // get all available capabilites
+    // get all available capabilities
     this.capabilityService.getAllAsArray().subscribe(capabilities => {
       this.capabilities = capabilities;
+    });
+
+    // get all available systems
+    this.systemService.getAllAsArray().subscribe(systems => {
+      this.systems = systems;
     });
 
     // get the id from the path and load system if set
     const id = this.route.snapshot.paramMap.get('id');
     const systemId: number = Number(id);
     if (id === 'new') {
-      this.system = <System>{name: '', description: '', categories: [], products: [], capabilities: [], patterns: []};
+      this.system = <System>{name: '', description: '', categories: [], products: [], capabilities: [], patterns: [], substitutions: []};
     } else {
       this.systemService.get(systemId).subscribe(c => {
         if (c) {
           this.system = <System>c;
+          console.log(c);
         } else {
-          this.system = <System>{name: '', description: '', categories: [], products: [], capabilities: [], patterns: []};
+          this.system = <System>{
+            name: '',
+            description: '',
+            categories: [],
+            products: [],
+            capabilities: [],
+            patterns: [],
+            substitutions: []
+          };
         }
       });
     }
@@ -85,6 +100,12 @@ export class SystemEditComponent implements OnInit {
   }
 
   capabilitySelected(p1: Capability, p2: Capability): boolean {
+    return (p1.id === p2.id);
+  }
+
+  substitutionSelected(p1: System, p2: System): boolean {
+    console.log(p1);
+    console.log(p2);
     return (p1.id === p2.id);
   }
 
