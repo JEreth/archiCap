@@ -28,7 +28,7 @@ export class CategoryEditComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     const categoryId: number = Number(id);
     if (id === 'new') {
-      this.category = <Category>{name: '', description: ''};
+      this.category = <Category>{name: '', description: '', systems: []};
     } else {
       this.categoryService.get(categoryId).subscribe(c => {
         if (c) {
@@ -37,7 +37,7 @@ export class CategoryEditComponent implements OnInit {
             this.systems = systems;
           });
         } else {
-          this.category = <Category>{name: '', description: ''};
+          this.category = <Category>{name: '', description: '', systems: []};
         }
       });
     }
