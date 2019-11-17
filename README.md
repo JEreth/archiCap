@@ -52,6 +52,14 @@ You can simply use the **Wizard** to define your personal setup and then use the
 
 You can always edit your environment in **My Profile*
 
+Currently the tool comes with predefined environments for:
+
+- Decentralized Analytics Landscapes
+- Data Lakes
+- AI & Machine Learning Architectures
+
+Have fun with exploring the examples.
+
 ### Add a new predefined environment to archiCap
 
 This tools provides the flexibility to save and load a set of predefined elements that serve as a collection in certain scenarios.

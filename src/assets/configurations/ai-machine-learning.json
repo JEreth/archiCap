@@ -1,0 +1,204 @@
+{
+  "capabilities": [
+    {
+      "name": "I need to run my models on my own machines",
+      "description": "",
+      "id": 0
+    },
+    {
+      "name": "I need to manually create statistical models",
+      "description": "",
+      "id": 1
+    },
+    {
+      "name": "I need to incorperate external data.",
+      "description": "",
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "name": "Data Storage",
+      "description": "Data sources and storage",
+      "systems": [
+      ],
+      "id": 0
+    },
+    {
+      "name": "Model Creation & Training",
+      "description": "Components to create models",
+      "systems": [
+      ],
+      "id": 1
+    },
+    {
+      "name": "Model Execution",
+      "description": "Components to run models",
+      "systems": [
+      ],
+      "id": 2
+    },
+    {
+      "name": "Model Provision & Consumption",
+      "description": "Components to make models available or embed them in.",
+      "systems": [
+      ],
+      "id": 3
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Cloud-native",
+      "description": "Mainly cloud based",
+      "id": 0
+    }
+  ],
+  "products": [
+    {
+      "name": "Tensor Flow",
+      "description": "",
+      "id": 0
+    },
+    {
+      "name": "R Studio",
+      "description": "",
+      "id": 1
+    }
+  ],
+  "systems": [
+    {
+      "name": "Raw Data Storage",
+      "description": "",
+      "categories": [
+        0
+      ],
+      "products": [
+      ],
+      "capabilities": [
+      ],
+      "patterns": [
+      ],
+      "substitutions": [
+      ],
+      "id": 0
+    },
+    {
+      "name": "Refined Data Storage",
+      "description": "",
+      "categories": [
+        0
+      ],
+      "products": [
+      ],
+      "capabilities": [
+      ],
+      "patterns": [
+      ],
+      "substitutions": [
+        {
+          "name": "Raw Data Storage",
+          "description": "",
+          "categories": [
+            {
+              "name": "Data Storage",
+              "description": "Data sources and storage",
+              "systems": [
+              ],
+              "id": 0
+            }
+          ],
+          "products": [
+          ],
+          "capabilities": [
+          ],
+          "patterns": [
+          ],
+          "substitutions": [
+          ],
+          "id": 0
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Streaming Data Source",
+      "description": "",
+      "categories": [
+        0
+      ],
+      "products": [
+      ],
+      "capabilities": [
+      ],
+      "patterns": [
+      ],
+      "substitutions": [
+      ],
+      "id": 2
+    },
+    {
+      "name": "Statistical Model Suite",
+      "description": "",
+      "categories": [
+        1
+      ],
+      "products": [
+      ],
+      "capabilities": [
+      ],
+      "patterns": [
+      ],
+      "substitutions": [
+      ],
+      "id": 3
+    },
+    {
+      "name": "Cloud Training Service",
+      "description": "",
+      "categories": [
+        1
+      ],
+      "products": [
+      ],
+      "capabilities": [
+      ],
+      "patterns": [
+      ],
+      "substitutions": [
+      ],
+      "id": 4
+    },
+    {
+      "name": "External Data",
+      "description": "",
+      "categories": [
+        0
+      ],
+      "products": [
+      ],
+      "capabilities": [
+      ],
+      "patterns": [
+      ],
+      "substitutions": [
+      ],
+      "id": 5
+    },
+    {
+      "name": "Webservice",
+      "description": "",
+      "categories": [
+        3
+      ],
+      "products": [
+      ],
+      "capabilities": [
+      ],
+      "patterns": [
+      ],
+      "substitutions": [
+      ],
+      "id": 6
+    }
+  ]
+}
