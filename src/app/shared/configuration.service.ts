@@ -87,7 +87,6 @@ export class ConfigurationService {
           system.products = products;
           systems.push(system);
         }
-        console.log(systems);
         this.systemService.set(systems).subscribe(() => {
           observer.next(true);
           observer.complete();

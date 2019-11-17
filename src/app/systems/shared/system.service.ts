@@ -94,7 +94,6 @@ export class SystemService {
     const c: System = <System>input;
     const id: number = (c.id != null) ? c.id : Number(this.systems.size);
     c.id = id;
-    console.log(c);
     this.systems.set(id, c);
     return (persist) ? this.persist() : of(true);
   }

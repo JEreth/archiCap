@@ -129,7 +129,6 @@ export class CompositionComponent implements OnInit {
       this.systemService.findFromRelation('capabilities', capabilityId).subscribe(systems => {
         const systemsFiltered = this.highlightedSystems.concat(systems.map(a => a.id));
         this.highlightedSystems = systemsFiltered.filter((v, i, s) => s.indexOf(v) === i);
-        console.log(this.highlightedSystems);
       });
     }
   }
@@ -154,10 +153,6 @@ export class CompositionComponent implements OnInit {
             }
           }
           const {length} = systemsOfThisPattern;
-          console.log(pattern.name);
-          console.log(patternResult.foundSystems);
-          console.log(patternResult.foundSystems.length);
-          console.log(length);
           patternResult.percentage = Math.round((patternResult.foundSystems.length / Math.max(1, length)) * 100);
           this.analyzeResult.push(patternResult);
           this.analyzeResult.sort((r1, r2) => r2.percentage - r1.percentage);
