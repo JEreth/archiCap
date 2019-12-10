@@ -95,6 +95,8 @@ export class SystemService {
     const c: System = <System>input;
     const id: number = (c.id != null) ? c.id : Number(this.systems.size);
     c.id = id;
+    // remove potential circular references
+    c.substitutions = input.substitutions.map(a => ({id: a.id, name: a.name}));
     this.systems.set(id, c);
     // todo: update substitutions as they are bidirectional
     return (persist) ? this.persist() : of(true);
