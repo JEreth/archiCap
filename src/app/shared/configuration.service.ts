@@ -37,7 +37,11 @@ export class ConfigurationService {
   exportToJson(): Observable<string> {
     return new Observable<string>((observer) => {
       this.getConfiguration().subscribe(r => {
-        // trim system relation to ids only
+        // fix circular references (clean category associations)
+        r.categories = r.categories.filter(a => (a != null)).map(a => ({id: a.id, name: a.name, description: a.description}));
+        for (const system of r.systems) {
+          system.categories = system.categories.filter(a => (a != null)).map(a => ({id: a.id, name: a.name, description: a.description}));
+        }
         const exportData: any = <any>JSON.parse(JSON.stringify(r)); // clone and remove strict checking
         for (const system of exportData.systems) {
           system.categories = system.categories.filter(a => (a != null)).map(a => a.id);
