@@ -74,7 +74,7 @@ export class CompositionComponent implements OnInit {
       // fill categories
       for (const category of this.categories) {
         this.systemService.findFromRelation('categories', category.id).subscribe(systems => {
-          category.systems = systems;
+          category.systems = (systems) ? systems : [];
         });
       }
 
@@ -86,8 +86,16 @@ export class CompositionComponent implements OnInit {
         let patterns: Pattern[] = [];
         let capabilities: Capability[] = [];
         for (const system of relevantSystems) {
-          patterns = patterns.concat(system.patterns);
-          capabilities = capabilities.concat(system.capabilities);
+          for (const pattern of system.patterns) {
+            if (pattern) {
+              patterns.push(pattern);
+            }
+          }
+          for (const capability of system.capabilities) {
+            if (capability) {
+              capabilities.push(capability);
+            }
+          }
         }
         // make unique by id
         this.relevantPatterns = patterns.filter((obj, pos, arr) => {
