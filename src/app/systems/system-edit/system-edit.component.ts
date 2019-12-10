@@ -71,7 +71,6 @@ export class SystemEditComponent implements OnInit {
       this.systemService.get(systemId).subscribe(c => {
         if (c) {
           this.system = <System>c;
-          console.log(c);
         } else {
           this.system = <System>{
             name: '',
@@ -104,8 +103,6 @@ export class SystemEditComponent implements OnInit {
   }
 
   substitutionSelected(p1: System, p2: System): boolean {
-    console.log(p1);
-    console.log(p2);
     return (p1.id === p2.id);
   }
 
