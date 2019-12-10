@@ -38,13 +38,13 @@ export class ConfigurationService {
     return new Observable<string>((observer) => {
       this.getConfiguration().subscribe(r => {
         // trim system relation to ids only
-        const exportData: any = <any>r; // remove strict checking
-        exportData.systems = <any>exportData.systems; // remove strict checking
+        const exportData: any = <any>JSON.parse(JSON.stringify(r)); // clone and remove strict checking
         for (const system of exportData.systems) {
           system.categories = system.categories.map(a => a.id);
           system.products = system.products.map(a => a.id);
           system.patterns = system.patterns.map(a => a.id);
           system.capabilities = system.capabilities.map(a => a.id);
+          system.substitutions = system.substitutions.map(a => ({id: a.id, name: a.name}));
         }
         observer.next(JSON.stringify(exportData));
         observer.complete();
