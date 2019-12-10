@@ -59,7 +59,7 @@ export class SystemService {
           if (property in system
             && typeof system[property][Symbol.iterator] === 'function'
             && system[property].length > 0
-            && system[property].find(obj => obj.id === id) !== undefined) {
+            && system[property].find(obj => ((typeof obj !== 'undefined') && obj.id === id)) !== undefined) {
             res.push(system);
           }
         });
