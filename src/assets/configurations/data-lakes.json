@@ -99,57 +99,33 @@
       "name": "I want to save structured relational content in an operational context",
       "description": "I want to save structured relational content in an operational context",
       "id": 19
+    },
+    {
+      "name": "I need a security structure that handles file rights in my data lake",
+      "description": "I need a security structure that handles file rights in my data lake",
+      "id": 20
     }
   ],
   "categories": [
     {
-      "name": "Extraction",
-      "description": "Components that help to extract data from source systems",
       "id": 0,
-      "systems": [
-      ]
+      "name": "Extraction",
+      "description": "Components that help to extract data from source systems"
     },
     {
-      "name": "Connect & Coordinate",
-      "description": "Components that connect and coordinate different components.",
       "id": 1,
-      "systems": [
-      ]
+      "name": "Connect & Coordinate",
+      "description": "Components that connect and coordinate different components."
     },
     {
-      "name": "Persistence",
-      "description": "Components that are able to persist data.",
       "id": 2,
-      "systems": [
-        {
-          "name": "Distributed File System",
-          "description": "A distributed file system saves files on many machines and allows horicontal scaling.",
-          "categories": [
-            2
-          ],
-          "products": [
-            0,
-            17,
-            18
-          ],
-          "capabilities": [
-            3,
-            4
-          ],
-          "patterns": [
-            0,
-            2
-          ],
-          "id": 0
-        }
-      ]
+      "name": "Persistence",
+      "description": "Components that are able to persist data."
     },
     {
-      "name": "Management & Administration",
-      "description": "Components to stay on top of things and provide administrative capabilites.",
       "id": 3,
-      "systems": [
-      ]
+      "name": "Management & Administration",
+      "description": "Components to stay on top of things and provide administrative capabilites."
     }
   ],
   "patterns": [
@@ -417,6 +393,10 @@
         2
       ],
       "substitutions": [
+        {
+          "id": 1,
+          "name": "BLOB Storage"
+        }
       ],
       "id": 0
     },
@@ -424,23 +404,27 @@
       "name": "BLOB Storage",
       "description": "A Binary Large OBject (BLOB) is a collection of binary data stored as a single entity in a database management system.Blobs are typically images, audio or other multimedia objects, though sometimes binary executable code is stored as a blob.",
       "categories": [
-        null
+        2
       ],
       "products": [
-        null,
-        null,
-        null
+        8,
+        9,
+        10
       ],
       "capabilities": [
-        null,
-        null,
-        null
+        3,
+        4,
+        5
       ],
       "patterns": [
         0,
         2
       ],
       "substitutions": [
+        {
+          "id": 0,
+          "name": "Distributed File System"
+        }
       ],
       "id": 1
     },
@@ -448,20 +432,34 @@
       "name": "NoSQL-Database: Document-Store ",
       "description": "A document-oriented database, or document store, is a computer program designed for storing, retrieving and managing document-oriented information, also known as semi-structured data. Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term \"document-oriented database\" has grown with the use of the term NoSQL itself.",
       "categories": [
-        null
+        2
       ],
       "products": [
-        null,
-        null,
-        null
+        1,
+        2,
+        14
       ],
       "capabilities": [
-        null
+        4,
+        6,
+        13
       ],
       "patterns": [
         0
       ],
       "substitutions": [
+        {
+          "id": 4,
+          "name": "No-SQL-Databases: Key-Value-Stores"
+        },
+        {
+          "id": 5,
+          "name": "No-SQL-Databases: Wide-Column-Stores"
+        },
+        {
+          "id": 14,
+          "name": "Relational Database"
+        }
       ],
       "id": 2
     },
@@ -469,19 +467,32 @@
       "name": "No-SQL-Database: Graph-Database",
       "description": "In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges, and properties to represent and store data. A key concept of the system is the graph. The graph relates the data items in the store to a collection of nodes and edges, the edges representing the relationships between the nodes.",
       "categories": [
-        null
+        2
       ],
       "products": [
-        null,
-        null
+        15,
+        16
       ],
       "capabilities": [
-        null,
-        null
+        4,
+        12
       ],
       "patterns": [
+        0
       ],
       "substitutions": [
+        {
+          "id": 2,
+          "name": "NoSQL-Database: Document-Store "
+        },
+        {
+          "id": 5,
+          "name": "No-SQL-Databases: Wide-Column-Stores"
+        },
+        {
+          "id": 14,
+          "name": "Relational Database"
+        }
       ],
       "id": 3
     },
@@ -489,18 +500,24 @@
       "name": "No-SQL-Databases: Key-Value-Stores",
       "description": "A key–value database, or key–value store, is a data storage paradigm designed for storing, retrieving, and managing associative arrays, a data structure more commonly known today as a dictionary or hash. Dictionaries contain a collection of objects, or records, which in turn have many different fields within them, each containing data. These records are stored and retrieved using a key that uniquely identifies the record, and is used to quickly find the data within the database.",
       "categories": [
-        null
+        2
       ],
       "products": [
-        null,
-        null
+        7,
+        20
       ],
       "capabilities": [
-        null
+        4,
+        7
       ],
       "patterns": [
+        0
       ],
       "substitutions": [
+        {
+          "id": 2,
+          "name": "NoSQL-Database: Document-Store "
+        }
       ],
       "id": 4
     },
@@ -508,18 +525,29 @@
       "name": "No-SQL-Databases: Wide-Column-Stores",
       "description": "A wide column store is a type of NoSQL database. It uses tables, rows, and columns, but unlike a relational database, the names and format of the columns can vary from row to row in the same table. A wide column store can be interpreted as a two-dimensional key-value store.",
       "categories": [
-        null
+        2
       ],
       "products": [
-        null,
-        null
+        12,
+        13
       ],
       "capabilities": [
-        null
+        4,
+        6,
+        13
       ],
       "patterns": [
+        0
       ],
       "substitutions": [
+        {
+          "id": 2,
+          "name": "NoSQL-Database: Document-Store "
+        },
+        {
+          "id": 14,
+          "name": "Relational Database"
+        }
       ],
       "id": 5
     },
@@ -527,18 +555,22 @@
       "name": "Data Catalog",
       "description": "A data catalog is a completely organized service that enables users to explore their required data sources and understand the data sources explored, and at the same time assist organizations to achieve more value from their present investments. A user has to know the location of a data source to connect to the data.",
       "categories": [
-        null
+        3
       ],
       "products": [
-        null,
-        null,
-        null
+        4,
+        6,
+        39
       ],
       "capabilities": [
-        null,
-        null
+        5,
+        14,
+        15
       ],
       "patterns": [
+        0,
+        2,
+        3
       ],
       "substitutions": [
       ],
@@ -548,15 +580,16 @@
       "name": "Distirbuted Query Engine",
       "description": "Distributed queries involve data that's stored on another server, be it on a server in the same room or on a machine a half a world away. ",
       "categories": [
-        null
+        1
       ],
       "products": [
-        null
+        28
       ],
       "capabilities": [
-        null
+        16
       ],
       "patterns": [
+        0
       ],
       "substitutions": [
       ],
@@ -566,16 +599,19 @@
       "name": "Ingestion Engine",
       "description": "An ingestion engine allows to extract and transform data and load it into downstream systems.",
       "categories": [
-        null
+        0
       ],
       "products": [
-        null,
-        null
+        21,
+        32
       ],
       "capabilities": [
-        null
+        17,
+        18
       ],
       "patterns": [
+        0,
+        2
       ],
       "substitutions": [
       ],
@@ -585,17 +621,24 @@
       "name": "Edge Processing Engine",
       "description": "Edge computing is a distributed computing paradigm which brings computation and data storage closer to the location where it is needed, to improve response times and save bandwidth.",
       "categories": [
-        null
+        0
       ],
       "products": [
-        null
+        3
       ],
       "capabilities": [
-        null
+        9
       ],
       "patterns": [
+        1,
+        2,
+        3
       ],
       "substitutions": [
+        {
+          "id": 12,
+          "name": "Stream Processing Engine"
+        }
       ],
       "id": 9
     },
@@ -603,21 +646,28 @@
       "name": "Message queue",
       "description": "In computer science, message queues and mailboxes are software-engineering components used for inter-process communication, or for inter-thread communication within the same process. They use a queue for messaging – the passing of control or of content. Group communication systems provide similar kinds of functionality.",
       "categories": [
-        null
+        1
       ],
       "products": [
-        null,
-        null,
-        null
+        37,
+        38
       ],
       "capabilities": [
-        null,
-        null,
-        null
+        8
       ],
       "patterns": [
+        1,
+        3
       ],
       "substitutions": [
+        {
+          "id": 11,
+          "name": "Message Broker/Log"
+        },
+        {
+          "id": 12,
+          "name": "Stream Processing Engine"
+        }
       ],
       "id": 10
     },
@@ -625,19 +675,31 @@
       "name": "Message Broker/Log",
       "description": "Allows asynchronous commincation by provideng a publish-subscribe pattern for various components",
       "categories": [
-        null
+        1
       ],
       "products": [
-        null,
-        null
+        5,
+        11,
+        27,
+        30
       ],
       "capabilities": [
-        null,
-        null
+        0,
+        1,
+        8
       ],
       "patterns": [
+        3
       ],
       "substitutions": [
+        {
+          "id": 10,
+          "name": "Message queue"
+        },
+        {
+          "id": 12,
+          "name": "Stream Processing Engine"
+        }
       ],
       "id": 11
     },
@@ -645,40 +707,68 @@
       "name": "Stream Processing Engine",
       "description": "Stream processing is a computer programming paradigm, equivalent to dataflow programming, event stream processing, and reactive programming, that allows some applications to more easily exploit a limited form of parallel processing.",
       "categories": [
-        null
       ],
       "products": [
+        21,
+        22,
+        27,
         42
       ],
       "capabilities": [
-        null,
-        null,
-        null
+        0,
+        1,
+        10,
+        11
       ],
       "patterns": [
+        1,
+        2
       ],
       "substitutions": [
+        {
+          "id": 8,
+          "name": "Ingestion Engine"
+        },
+        {
+          "id": 10,
+          "name": "Message queue"
+        },
+        {
+          "id": 11,
+          "name": "Message Broker/Log"
+        }
       ],
       "id": 12
     },
     {
       "name": "Data Warehouse",
-      "description": "",
+      "description": "A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management's decision making process.",
       "categories": [
-        null
+        2
       ],
       "products": [
-        null,
-        null,
-        null,
-        null
+        23,
+        24,
+        25,
+        29,
+        31
       ],
       "capabilities": [
-        null
+        2
       ],
       "patterns": [
+        0,
+        2
       ],
       "substitutions": [
+        {
+          "id": 0,
+          "name": "Distributed File System"
+        },
+        {
+          "id": 2,
+          "name": "NoSQL-Database: Document-Store "
+        }
       ],
       "id": 13
     },
@@ -686,18 +776,32 @@
       "name": "Relational Database",
       "description": "A relational database is a digital database based on the relational model of data, as proposed by E. F. Codd in 1970. A software system used to maintain relational databases is a relational database management system (RDBMS).",
       "categories": [
-        null
+        2
       ],
       "products": [
-        null,
-        null
+        35,
+        36
       ],
       "capabilities": [
-        null
+        19
       ],
       "patterns": [
+        0,
+        2
       ],
       "substitutions": [
+        {
+          "id": 2,
+          "name": "NoSQL-Database: Document-Store "
+        },
+        {
+          "id": 5,
+          "name": "No-SQL-Databases: Wide-Column-Stores"
+        },
+        {
+          "id": 13,
+          "name": "Data Warehouse"
+        }
       ],
       "id": 14
     },
@@ -705,15 +809,25 @@
       "name": "Data Vault Modelling",
       "description": "Data vault modeling is a database modeling method that is designed to provide long-term historical storage of data coming in from multiple operational systems. It is also a method of looking at historical data that deals with issues such as auditing, tracing of data, loading speed and resilience to change as well as emphasizing the need to trace where all the data in the database came from.",
       "categories": [
-        null
+        2
       ],
       "products": [
-        null
+        23,
+        24,
+        25,
+        29,
+        31,
+        35,
+        36
       ],
       "capabilities": [
-        null
+        2,
+        6,
+        13
       ],
       "patterns": [
+        0,
+        2
       ],
       "substitutions": [
       ],
@@ -723,21 +837,44 @@
       "name": "Big Data Format",
       "description": "Big data formats are abstractions that can be applied to enrich raw data in order to compress it or enhance performance.",
       "categories": [
-        null
+        2,
+        3
       ],
       "products": [
-        null,
-        null,
-        null
+        0,
+        17,
+        18
       ],
       "capabilities": [
-        null
+        17,
+        18
       ],
       "patterns": [
+        0,
+        1
       ],
       "substitutions": [
       ],
       "id": 16
+    },
+    {
+      "name": "Big Data Security Management",
+      "description": "A tool to establish a comprehensive security strategy spanning over various tools.",
+      "categories": [
+        3
+      ],
+      "products": [
+        43
+      ],
+      "capabilities": [
+        20
+      ],
+      "patterns": [
+        0
+      ],
+      "substitutions": [
+      ],
+      "id": 17
     }
   ]
 }
