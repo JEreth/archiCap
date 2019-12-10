@@ -51,6 +51,7 @@
   .system-box-wrap {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     .system-box {
       margin: 5px;
