@@ -58,6 +58,7 @@ export class SystemService {
           // check if property exists and add system if it contains id
           if (property in system
             && typeof system[property][Symbol.iterator] === 'function'
+            && system[property].length > 0
             && system[property].find(obj => obj.id === id) !== undefined) {
             res.push(system);
           }
