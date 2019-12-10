@@ -40,11 +40,11 @@ export class ConfigurationService {
         // trim system relation to ids only
         const exportData: any = <any>JSON.parse(JSON.stringify(r)); // clone and remove strict checking
         for (const system of exportData.systems) {
-          system.categories = system.categories.map(a => a.id);
-          system.products = system.products.map(a => a.id);
-          system.patterns = system.patterns.map(a => a.id);
-          system.capabilities = system.capabilities.map(a => a.id);
-          system.substitutions = system.substitutions.map(a => ({id: a.id, name: a.name}));
+          system.categories = system.categories.filter(a => (a != null)).map(a => a.id);
+          system.products = system.products.filter(a => (a != null)).map(a => a.id);
+          system.patterns = system.patterns.filter(a => (a != null)).map(a => a.id);
+          system.capabilities = system.capabilities.filter(a => (a != null)).map(a => a.id);
+          system.substitutions = system.substitutions.filter(a => (a != null)).map(a => ({id: a.id, name: a.name}));
         }
         observer.next(JSON.stringify(exportData));
         observer.complete();
