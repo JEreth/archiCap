@@ -66,3 +66,7 @@
     }
   }
 }
+
+.mat-list-base[dense] .mat-list-item, .mat-list-base[dense] .mat-list-option {
+  height: auto;
+}
