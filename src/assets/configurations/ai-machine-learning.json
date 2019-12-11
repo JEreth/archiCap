@@ -1,204 +1,947 @@
 {
-  "capabilities": [
-    {
-      "name": "I need to run my models on my own machines",
-      "description": "",
-      "id": 0
-    },
-    {
-      "name": "I need to manually create statistical models",
-      "description": "",
-      "id": 1
-    },
-    {
-      "name": "I need to incorperate external data.",
-      "description": "",
-      "id": 2
-    }
-  ],
-  "categories": [
-    {
-      "name": "Data Storage",
-      "description": "Data sources and storage",
-      "systems": [
-      ],
-      "id": 0
-    },
-    {
-      "name": "Model Creation & Training",
-      "description": "Components to create models",
-      "systems": [
-      ],
-      "id": 1
-    },
-    {
-      "name": "Model Execution",
-      "description": "Components to run models",
-      "systems": [
-      ],
-      "id": 2
-    },
-    {
-      "name": "Model Provision & Consumption",
-      "description": "Components to make models available or embed them in.",
-      "systems": [
-      ],
-      "id": 3
-    }
-  ],
-  "patterns": [
-    {
-      "name": "Cloud-native",
-      "description": "Mainly cloud based",
-      "id": 0
-    }
-  ],
-  "products": [
-    {
-      "name": "Tensor Flow",
-      "description": "",
-      "id": 0
-    },
-    {
-      "name": "R Studio",
-      "description": "",
-      "id": 1
-    }
-  ],
-  "systems": [
-    {
-      "name": "Raw Data Storage",
-      "description": "",
-      "categories": [
-        0
-      ],
-      "products": [
-      ],
-      "capabilities": [
-      ],
-      "patterns": [
-      ],
-      "substitutions": [
-      ],
-      "id": 0
-    },
-    {
-      "name": "Refined Data Storage",
-      "description": "",
-      "categories": [
-        0
-      ],
-      "products": [
-      ],
-      "capabilities": [
-      ],
-      "patterns": [
-      ],
-      "substitutions": [
-        {
-          "name": "Raw Data Storage",
-          "description": "",
-          "categories": [
+   "capabilities":[
+      {
+         "name":"We need to extract and process stream data in order to get real-time input for our machine-learning model.",
+         "description":"",
+         "id":0
+      },
+      {
+         "name":"We need to regulary extract and transform data in order to get input for our machine-learning model.",
+         "description":"",
+         "id":1
+      },
+      {
+         "name":"We need to extract and transform data only a few times in order to get input for our machine-learning model.",
+         "description":"",
+         "id":2
+      },
+      {
+         "name":"We need to consider persisted data that is very structured and has stable schemas",
+         "description":"",
+         "id":3
+      },
+      {
+         "name":"We need to consider persisted data that is unstructured and/or has changing schemas",
+         "description":"",
+         "id":4
+      },
+      {
+         "name":"We need to consider persisted data that can be flawed",
+         "description":"",
+         "id":5
+      },
+      {
+         "name":"We need to consider large data sets that are very simple and only have one value per entry (e.g. sensor data)",
+         "description":"",
+         "id":6
+      },
+      {
+         "name":"We want to persist and analyze network data that contains relationsships between nodes",
+         "description":"",
+         "id":7
+      },
+      {
+         "name":"We need to consider a large amount of files that mainly contains text",
+         "description":"",
+         "id":8
+      },
+      {
+         "name":"We need to consider media files like images and videos",
+         "description":"",
+         "id":9
+      },
+      {
+         "name":"We need to save additional meta data to our input files",
+         "description":"",
+         "id":10
+      },
+      {
+         "name":"We need a model that distinguishes two classes on the basis of existing labeled data",
+         "description":"",
+         "id":11
+      },
+      {
+         "name":"We need to distinguishe between more than two classes on the basis of existing labeled data",
+         "description":"",
+         "id":12
+      },
+      {
+         "name":"We need to predict a value on the basis of different input variables and existing labeled data",
+         "description":"",
+         "id":13
+      },
+      {
+         "name":"We need a predict values on the basis of non-obvious patterns in existing data",
+         "description":"",
+         "id":14
+      },
+      {
+         "name":"We need a model that continiously adapts over time",
+         "description":"",
+         "id":15
+      },
+      {
+         "name":"We need to a explore data sets in an interactive manner",
+         "description":"",
+         "id":16
+      },
+      {
+         "name":"We need to quickly try different models in an interactive manner",
+         "description":"",
+         "id":17
+      },
+      {
+         "name":"We need to train our model with large data volumes only very few times",
+         "description":"",
+         "id":18
+      },
+      {
+         "name":"We need to train our model with privacy-critical data",
+         "description":"",
+         "id":19
+      },
+      {
+         "name":"We need to provide evidence that the selected models performance better than alternatives",
+         "description":"",
+         "id":20
+      },
+      {
+         "name":"We need to benchmark our models on a regular basis",
+         "description":"",
+         "id":21
+      },
+      {
+         "name":"We need to quickly share our models source code and data in an interactive way that allows discussion and exploration",
+         "description":"",
+         "id":22
+      },
+      {
+         "name":"We need to document and share our models source code and data in a structured and well defined way",
+         "description":"",
+         "id":23
+      },
+      {
+         "name":"We need to share our stack to quickly allow repetition in any development environment",
+         "description":"",
+         "id":24
+      },
+      {
+         "name":"We need to share our model in a packed way that can be run and integrated in other products and environments without sharing the source code",
+         "description":"",
+         "id":25
+      },
+      {
+         "name":"We need to provide our model in a production-ready that can be consumed via a standardized web api",
+         "description":"",
+         "id":26
+      },
+      {
+         "name":"We need to embed our model in a web-based application",
+         "description":"",
+         "id":27
+      },
+      {
+         "name":"We need to know the workload of our models in production",
+         "description":"",
+         "id":28
+      },
+      {
+         "name":"We need to know who is using our models",
+         "description":"",
+         "id":29
+      },
+      {
+         "name":"We need insights about our model accuracy in production",
+         "description":"",
+         "id":30
+      },
+      {
+         "name":"We need to extract data from various sources and asynchronily consume this data",
+         "description":"",
+         "id":31
+      }
+   ],
+   "categories":[
+      {
+         "id":0,
+         "name":"Data Ingestion",
+         "description":"Extract and transform data from data sources"
+      },
+      {
+         "id":1,
+         "name":"Data Storage",
+         "description":"Persist data in adequate data structures"
+      },
+      {
+         "id":2,
+         "name":"Model Selection and Creation",
+         "description":"Which model seems adequate for a problem"
+      },
+      {
+         "id":3,
+         "name":"Model Provision and Execution",
+         "description":"Where to run and how to consume the model"
+      }
+   ],
+   "patterns":[
+      {
+         "name":"Explorative Sandbox",
+         "description":"We try various models in a mainly manual manner",
+         "id":0
+      },
+      {
+         "name":"Productive Factory",
+         "description":"The models are part of a product and consumed for real-world services. Therefore the process have to be bullet-proof and highly reliable.",
+         "id":1
+      },
+      {
+         "name":"Supervised Learning",
+         "description":"Supervised learning is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples.",
+         "id":2
+      },
+      {
+         "name":"Unsupervised Learning",
+         "description":"Unsupervised learning is a type of self-organized Hebbian learning that helps find previously unknown patterns in data set without pre-existing labels. It is also known as self-organization and allows modeling probability densities of given inputs. It is one of the main three categories of machine learning, along with supervised and reinforcement learning. Semi-supervised learning has also been described, and is a hybridization of supervised and unsupervised techniques. ",
+         "id":3
+      }
+   ],
+   "products":[
+      {
+         "name":"Apache Spark",
+         "description":"",
+         "id":0
+      },
+      {
+         "name":"Apache Kafka",
+         "description":"",
+         "id":1
+      },
+      {
+         "name":"Informatica ETL",
+         "description":"",
+         "id":2
+      },
+      {
+         "name":"Apache Storm",
+         "description":"",
+         "id":3
+      },
+      {
+         "name":"MySQL",
+         "description":"",
+         "id":4
+      },
+      {
+         "name":"PostgreSQL",
+         "description":"",
+         "id":5
+      },
+      {
+         "name":"Elastic",
+         "description":"",
+         "id":6
+      },
+      {
+         "name":"SAP Hana",
+         "description":"",
+         "id":7
+      },
+      {
+         "name":"Apache Hadoop",
+         "description":"",
+         "id":8
+      },
+      {
+         "name":"AWS S3",
+         "description":"",
+         "id":9
+      },
+      {
+         "name":"IBM Object Store",
+         "description":"",
+         "id":10
+      },
+      {
+         "name":"Neo4J",
+         "description":"",
+         "id":11
+      },
+      {
+         "name":"Hypergraph DB",
+         "description":"",
+         "id":12
+      },
+      {
+         "name":"Redis",
+         "description":"",
+         "id":13
+      },
+      {
+         "name":"Riak",
+         "description":"",
+         "id":14
+      },
+      {
+         "name":"TensorFlow",
+         "description":"",
+         "id":15
+      },
+      {
+         "name":"PyTorch",
+         "description":"",
+         "id":16
+      },
+      {
+         "name":"Google Cloud",
+         "description":"",
+         "id":17
+      },
+      {
+         "name":"AWS",
+         "description":"",
+         "id":18
+      },
+      {
+         "name":"Docker",
+         "description":"",
+         "id":19
+      },
+      {
+         "name":"Jupyter Notebooks",
+         "description":"",
+         "id":20
+      },
+      {
+         "name":"GitHub",
+         "description":"",
+         "id":21
+      },
+      {
+         "name":"GitLab",
+         "description":"",
+         "id":22
+      },
+      {
+         "name":"VirtualBox",
+         "description":"",
+         "id":23
+      },
+      {
+         "name":"VMWare",
+         "description":"",
+         "id":24
+      },
+      {
+         "name":"Data Robot",
+         "description":"",
+         "id":25
+      },
+      {
+         "name":"AutoML",
+         "description":"",
+         "id":26
+      },
+      {
+         "name":"Algorithmia",
+         "description":"",
+         "id":27
+      },
+      {
+         "name":"Numericcal",
+         "description":"",
+         "id":28
+      },
+      {
+         "name":"Seldon",
+         "description":"",
+         "id":29
+      }
+   ],
+   "systems":[
+      {
+         "name":"Stream Processing",
+         "description":"Real time extraction and transformation of data.",
+         "categories":[
+            0
+         ],
+         "products":[
+            0,
+            1,
+            3
+         ],
+         "capabilities":[
+            0
+         ],
+         "patterns":[
+            1
+         ],
+         "substitutions":[
             {
-              "name": "Data Storage",
-              "description": "Data sources and storage",
-              "systems": [
-              ],
-              "id": 0
+               "id":1,
+               "name":"Batch Processing"
             }
-          ],
-          "products": [
-          ],
-          "capabilities": [
-          ],
-          "patterns": [
-          ],
-          "substitutions": [
-          ],
-          "id": 0
-        }
-      ],
-      "id": 1
-    },
-    {
-      "name": "Streaming Data Source",
-      "description": "",
-      "categories": [
-        0
-      ],
-      "products": [
-      ],
-      "capabilities": [
-      ],
-      "patterns": [
-      ],
-      "substitutions": [
-      ],
-      "id": 2
-    },
-    {
-      "name": "Statistical Model Suite",
-      "description": "",
-      "categories": [
-        1
-      ],
-      "products": [
-      ],
-      "capabilities": [
-      ],
-      "patterns": [
-      ],
-      "substitutions": [
-      ],
-      "id": 3
-    },
-    {
-      "name": "Cloud Training Service",
-      "description": "",
-      "categories": [
-        1
-      ],
-      "products": [
-      ],
-      "capabilities": [
-      ],
-      "patterns": [
-      ],
-      "substitutions": [
-      ],
-      "id": 4
-    },
-    {
-      "name": "External Data",
-      "description": "",
-      "categories": [
-        0
-      ],
-      "products": [
-      ],
-      "capabilities": [
-      ],
-      "patterns": [
-      ],
-      "substitutions": [
-      ],
-      "id": 5
-    },
-    {
-      "name": "Webservice",
-      "description": "",
-      "categories": [
-        3
-      ],
-      "products": [
-      ],
-      "capabilities": [
-      ],
-      "patterns": [
-      ],
-      "substitutions": [
-      ],
-      "id": 6
-    }
-  ]
+         ],
+         "id":0
+      },
+      {
+         "name":"Batch Processing",
+         "description":"Regular running jobs that extract, transform and load data.",
+         "categories":[
+            0
+         ],
+         "products":[
+            2
+         ],
+         "capabilities":[
+            1
+         ],
+         "patterns":[
+            0,
+            1
+         ],
+         "substitutions":[
+            {
+               "id":0,
+               "name":"Stream Processing"
+            },
+            {
+               "id":23,
+               "name":"Manual Extraction and Cleansing"
+            }
+         ],
+         "id":1
+      },
+      {
+         "name":"Message Broker",
+         "description":"A message broker consumes various data sources and provides topic-specifc queues for upstream system.",
+         "categories":[
+            0
+         ],
+         "products":[
+            1
+         ],
+         "capabilities":[
+            31
+         ],
+         "patterns":[
+
+         ],
+         "substitutions":[
+
+         ],
+         "id":2
+      },
+      {
+         "name":"Relational Data Store",
+         "description":"Relational databases that persist data in fixed schemas and follow the idea of normalization.",
+         "categories":[
+            1
+         ],
+         "products":[
+            4,
+            5,
+            7
+         ],
+         "capabilities":[
+            3
+         ],
+         "patterns":[
+
+         ],
+         "substitutions":[
+
+         ],
+         "id":3
+      },
+      {
+         "name":"Distribute File Storage",
+         "description":"A distributed file system that saves massive amounts of files on various nodes in a distributed manner.",
+         "categories":[
+            1
+         ],
+         "products":[
+            8
+         ],
+         "capabilities":[
+            4,
+            5,
+            8
+         ],
+         "patterns":[
+
+         ],
+         "substitutions":[
+            {
+               "id":5,
+               "name":"Blob Storage"
+            },
+            {
+               "id":6,
+               "name":"NoSQL Document Store"
+            }
+         ],
+         "id":4
+      },
+      {
+         "name":"Blob Storage",
+         "description":"A binary object storage that saves many large files for processing and allows to add arbitrary meta data and enhanced meta-analytics.",
+         "categories":[
+            1
+         ],
+         "products":[
+            9,
+            10
+         ],
+         "capabilities":[
+            8,
+            9,
+            10
+         ],
+         "patterns":[
+
+         ],
+         "substitutions":[
+            {
+               "id":4,
+               "name":"Distribute File Storage"
+            }
+         ],
+         "id":5
+      },
+      {
+         "name":"NoSQL Document Store",
+         "description":"A database for unstructured content that is fast and allows to save data in arbitrary semi-structed schemas (XML/JSON)",
+         "categories":[
+            1
+         ],
+         "products":[
+            6
+         ],
+         "capabilities":[
+            4,
+            5
+         ],
+         "patterns":[
+
+         ],
+         "substitutions":[
+            {
+               "id":3,
+               "name":"Relational Data Store"
+            }
+         ],
+         "id":6
+      },
+      {
+         "name":"NoSQL Key-Value-Store",
+         "description":"A fast database that simply saves one value with a key.",
+         "categories":[
+            1
+         ],
+         "products":[
+            13,
+            14
+         ],
+         "capabilities":[
+            5,
+            6
+         ],
+         "patterns":[
+
+         ],
+         "substitutions":[
+            {
+               "id":6,
+               "name":"NoSQL Document Store"
+            }
+         ],
+         "id":7
+      },
+      {
+         "name":"Graph Database",
+         "description":"A database that saves data in graph-oriented structures",
+         "categories":[
+
+         ],
+         "products":[
+            11,
+            12
+         ],
+         "capabilities":[
+            7
+         ],
+         "patterns":[
+
+         ],
+         "substitutions":[
+            {
+               "id":3,
+               "name":"Relational Data Store"
+            },
+            {
+               "id":6,
+               "name":"NoSQL Document Store"
+            }
+         ],
+         "id":8
+      },
+      {
+         "name":"Binary Classification Model",
+         "description":"A classification model that distinguishes input to be either A or B",
+         "categories":[
+            2
+         ],
+         "products":[
+            15,
+            16
+         ],
+         "capabilities":[
+            12
+         ],
+         "patterns":[
+            2
+         ],
+         "substitutions":[
+            {
+               "id":10,
+               "name":"Multiclass Classification Model"
+            }
+         ],
+         "id":9
+      },
+      {
+         "name":"Multiclass Classification Model",
+         "description":"A model that distinguishes between more than two values (e.g. Dog, Cat, Mouse, ...)",
+         "categories":[
+            2
+         ],
+         "products":[
+            15,
+            16
+         ],
+         "capabilities":[
+            12
+         ],
+         "patterns":[
+            2
+         ],
+         "substitutions":[
+
+         ],
+         "id":10
+      },
+      {
+         "name":"Regression Model",
+         "description":"A regression model that predicts a value on the basis of existing data.",
+         "categories":[
+            2
+         ],
+         "products":[
+            15,
+            16
+         ],
+         "capabilities":[
+            13
+         ],
+         "patterns":[
+            2
+         ],
+         "substitutions":[
+
+         ],
+         "id":11
+      },
+      {
+         "name":"Artificial Neural Networks",
+         "description":"Artificial neural networks (ANN) or connectionist systems are computing systems that are inspired by, but not identical to, biological neural networks that constitute animal brains. Such systems \"learn\" to perform tasks by considering examples, generally without being programmed with task-specific rules.",
+         "categories":[
+            2
+         ],
+         "products":[
+            15,
+            16
+         ],
+         "capabilities":[
+            14,
+            15
+         ],
+         "patterns":[
+            3
+         ],
+         "substitutions":[
+
+         ],
+         "id":12
+      },
+      {
+         "name":"Interactive Sandbox",
+         "description":"A interactive sandbox to explore data and quickly try different models and algorithms.",
+         "categories":[
+            2
+         ],
+         "products":[
+            16,
+            20
+         ],
+         "capabilities":[
+            16,
+            17
+         ],
+         "patterns":[
+            0
+         ],
+         "substitutions":[
+
+         ],
+         "id":13
+      },
+      {
+         "name":"Cloud-based training",
+         "description":"A cloud platform to train models",
+         "categories":[
+            2
+         ],
+         "products":[
+            17,
+            18
+         ],
+         "capabilities":[
+            18
+         ],
+         "patterns":[
+            0,
+            1
+         ],
+         "substitutions":[
+            {
+               "id":15,
+               "name":"On-Premise Model Training"
+            }
+         ],
+         "id":14
+      },
+      {
+         "name":"On-Premise Model Training",
+         "description":"Model training on local machines or a local data center",
+         "categories":[
+            2
+         ],
+         "products":[
+            16,
+            19
+         ],
+         "capabilities":[
+            19
+         ],
+         "patterns":[
+            0,
+            1
+         ],
+         "substitutions":[
+            {
+               "id":14,
+               "name":"Cloud-based training"
+            }
+         ],
+         "id":15
+      },
+      {
+         "name":"Cross Validation",
+         "description":"Cross-validation is any of various similar model validation techniques for assessing how the results of a statistical analysis will generalize to an independent data set. It is mainly used in settings where the goal is prediction, and one wants to estimate how accurately a predictive model will perform in practice. ",
+         "categories":[
+            2
+         ],
+         "products":[
+            25,
+            26,
+            27
+         ],
+         "capabilities":[
+            20,
+            21
+         ],
+         "patterns":[
+            0
+         ],
+         "substitutions":[
+
+         ],
+         "id":16
+      },
+      {
+         "name":"Notebooks",
+         "description":"Interactive web-based notebooks that present data and models",
+         "categories":[
+            3
+         ],
+         "products":[
+            20
+         ],
+         "capabilities":[
+            22
+         ],
+         "patterns":[
+            0
+         ],
+         "substitutions":[
+            {
+               "id":18,
+               "name":"Source Code Management"
+            }
+         ],
+         "id":17
+      },
+      {
+         "name":"Source Code Management",
+         "description":"Save source code and persist changes. Often also contains additional features like issue management, wiki and the like.",
+         "categories":[
+            3
+         ],
+         "products":[
+            21,
+            22
+         ],
+         "capabilities":[
+            23,
+            24
+         ],
+         "patterns":[
+            0
+         ],
+         "substitutions":[
+            {
+               "id":17,
+               "name":"Notebooks"
+            }
+         ],
+         "id":18
+      },
+      {
+         "name":"Container / Virtual Machines",
+         "description":"Provision of an entire environment/stack via a container or virtual machine",
+         "categories":[
+            3
+         ],
+         "products":[
+            19,
+            23,
+            24
+         ],
+         "capabilities":[
+            24
+         ],
+         "patterns":[
+            0,
+            1
+         ],
+         "substitutions":[
+
+         ],
+         "id":19
+      },
+      {
+         "name":"Executable Binary",
+         "description":"Provision of model as a executable binary without the possibility to access the source code.",
+         "categories":[
+            3
+         ],
+         "products":[
+
+         ],
+         "capabilities":[
+            25
+         ],
+         "patterns":[
+            1
+         ],
+         "substitutions":[
+            {
+               "id":19,
+               "name":"Container / Virtual Machines"
+            }
+         ],
+         "id":20
+      },
+      {
+         "name":"Web-Service",
+         "description":"Provision of the results as a (REST)-API that can be consumed via the internet.",
+         "categories":[
+            3
+         ],
+         "products":[
+
+         ],
+         "capabilities":[
+            26,
+            27
+         ],
+         "patterns":[
+            1
+         ],
+         "substitutions":[
+            {
+               "id":19,
+               "name":"Container / Virtual Machines"
+            },
+            {
+               "id":20,
+               "name":"Executable Binary"
+            }
+         ],
+         "id":21
+      },
+      {
+         "name":"Model Monitoring",
+         "description":"A way to track calls, scaling and result accuracy.",
+         "categories":[
+            3
+         ],
+         "products":[
+            25,
+            26,
+            27,
+            28,
+            29
+         ],
+         "capabilities":[
+            28,
+            29,
+            30
+         ],
+         "patterns":[
+            1
+         ],
+         "substitutions":[
+
+         ],
+         "id":22
+      },
+      {
+         "name":"Manual Extraction and Cleansing",
+         "description":"Manual extraction and cleansing of data",
+         "categories":[
+            0
+         ],
+         "products":[
+
+         ],
+         "capabilities":[
+            2
+         ],
+         "patterns":[
+            0
+         ],
+         "substitutions":[
+            {
+               "id":0,
+               "name":"Stream Processing"
+            },
+            {
+               "id":1,
+               "name":"Batch Processing"
+            }
+         ],
+         "id":23
+      }
+   ]
 }
