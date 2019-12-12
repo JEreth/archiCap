@@ -1,15 +1,28 @@
 <mat-toolbar>
-  <span class="spacer"></span>
-  <mat-button-toggle-group [(ngModel)]="viewMode">
+
+  <!-- STACK STYLE -->
+  <mat-button-toggle-group [(ngModel)]="stackMode" *ngIf="viewMode!='analyze'">
     <mat-button-toggle value="vertical">
       <mat-icon>view_agenda</mat-icon>
-      <span *ngIf="showLabel"> Vertical</span>
     </mat-button-toggle>
     <mat-button-toggle value="horizontal">
       <mat-icon>view_week</mat-icon>
-      <span *ngIf="showLabel"> Horizontal</span>
     </mat-button-toggle>
-    <mat-button-toggle value="analyze" *ngIf="showAnalyze">
+  </mat-button-toggle-group>
+
+  <span class="spacer"></span>
+
+  <!-- VIEW MODES -->
+  <mat-button-toggle-group [(ngModel)]="viewMode" *ngIf="showAnalyze">
+    <mat-button-toggle value="currentStack">
+      <mat-icon>filter_none</mat-icon>
+      <span *ngIf="showLabel">Current Stack (Component-Driven)</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="desiredCapabilities">
+      <mat-icon>gavel</mat-icon>
+      <span *ngIf="showLabel">Desired Stack (Capability-Driven)</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="analyze">
       <mat-icon>image_search</mat-icon>
       <span *ngIf="showLabel"> Analyze Setup</span>
     </mat-button-toggle>
@@ -21,9 +34,8 @@
 <div class="stack-warp row" *ngIf="viewMode!='analyze'">
 
   <div class="col-9">
-
     <!-- layer architecture -->
-    <div id="category-box-wrap" class="{{viewMode}}" *ngIf="viewMode!=='analyze'">
+    <div id="category-box-wrap" class="{{stackMode}}" *ngIf="viewMode!=='analyze'">
       <div class="category-box" *ngFor="let category of categories">
 
         <span class="category-box-title">{{ category.name }}</span>
@@ -31,7 +43,9 @@
         <div class="system-box-wrap">
           <div class="system-box" *ngFor="let system of category.systems" (click)="showSystemInformation(system)"
                [class.highlighted]="highlightedSystems.indexOf(system.id) !== -1"
-               [class.hidden]="showAnalyze && !isRelevantSystem(system.id)">
+               [class.hidden]="showAnalyze &&
+               ((viewMode==='currentStack' && !isCurrentSystem(system.id)) ||
+               (viewMode==='desiredCapabilities' && !isDesiredSystem(system.id)))">
             {{ system.name }}
           </div>
         </div>
@@ -80,7 +94,7 @@
     </mat-selection-list>
 
     <!-- HIGHLIGHT AVAILABLE CAPABILITIES -->
-    <mat-selection-list [(ngModel)]="highlightedCapabilities" *ngIf="showAnalyze"
+    <mat-selection-list [(ngModel)]="highlightedCapabilities" *ngIf="showAnalyze && viewMode !== 'desiredCapabilities'"
                         (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by available capabilities</h3>
       <mat-list-option *ngFor="let capability of availableCapabilities" [value]="capability.id">

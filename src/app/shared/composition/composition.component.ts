@@ -20,7 +20,8 @@ import {ProfileService} from '../profile.service';
 export class CompositionComponent implements OnInit {
 
   // view config
-  public viewMode = 'vertical';
+  public viewMode = 'currentStack';
+  public stackMode = 'vertical';
   @Input() showAnalyze = false;
   @Input() showLabel = true;
   @Input() showSwitchModes = true;
@@ -38,6 +39,7 @@ export class CompositionComponent implements OnInit {
   public availablePatterns: Pattern[] = [];
   public availableCapabilities: Capability[] = [];
   public desiredCapabilities: Capability[] = [];
+  public desiredSystems: System[] = [];
 
   // selected stuff
   public highlightedSystems: number[] = [];
@@ -103,16 +105,25 @@ export class CompositionComponent implements OnInit {
         this.availableSystems = r;
       });
 
-      // extract desired capabilities from profile
-      this.capabilityService.getMany(this.profileService.selectedCapabilities).subscribe(r => {
-        this.desiredCapabilities = r;
+      // extract desired capabilities and therefrom desired systems from profile
+      this.capabilityService.getMany(this.profileService.selectedCapabilities).subscribe(capabilities => {
+        this.desiredCapabilities = capabilities;
+        this.systemService.findManyFromRelation('capabilities', this.desiredCapabilities.map(a => a.id)).subscribe(systems => {
+          this.desiredSystems = systems;
+        });
       });
     });
 
   }
 
-  isRelevantSystem(id: number): boolean {
+  isCurrentSystem(id: number): boolean {
     return this.availableSystems.map(function (system) {
+      return system.id;
+    }).includes(id);
+  }
+
+  isDesiredSystem(id: number): boolean {
+    return this.desiredSystems.map(function (system) {
       return system.id;
     }).includes(id);
   }
