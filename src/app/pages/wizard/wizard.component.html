@@ -54,6 +54,7 @@
           <h2>
             <mat-icon mat-list-icon>gavel</mat-icon>
             Select relevant Capabilities
+            <button mat-stroked-button matStepperNext color="default">Skip</button>
           </h2>
 
           <mat-selection-list [(ngModel)]="selectedCapabilities" (ngModelChange)="save()">
@@ -84,6 +85,7 @@
           <h2>
             <mat-icon mat-list-icon>gavel</mat-icon>
             Select relevant Components
+            <button mat-stroked-button matStepperNext color="default">Skip</button>
           </h2>
 
           <p>If you feel confident about what you need, you can select the components directly.
