@@ -8,8 +8,9 @@ import {ConfigurationService} from '../configuration.service';
 import {SystemService} from '../../systems/shared/system.service';
 import {MatDialog} from '@angular/material/dialog';
 import {SystemInfoComponent} from '../../systems/shared/system-info/system-info.component';
-import {BehaviorSubject} from 'rxjs';
 import {PatternService} from '../../patterns/shared/pattern.service';
+import {CapabilityService} from '../../capabilities/shared/capability.service';
+import {ProfileService} from '../profile.service';
 
 @Component({
   selector: 'app-composition',
@@ -18,27 +19,12 @@ import {PatternService} from '../../patterns/shared/pattern.service';
 })
 export class CompositionComponent implements OnInit {
 
-  // systems and capabilities to visualize, we receive them from the page where this component is embedded
-  // we use observables to listen for changes)
-  private _relevantSystems = new BehaviorSubject<System[]>(null);
-  @Input() set relevantSystems(value: System[]) {
-    this._relevantSystems.next(value);
-  }
-
-  get relevantSystems() {
-    return this._relevantSystems.getValue();
-  }
-
-  private _relevantCapabilities = new BehaviorSubject<Capability[]>(null);
-  @Input() set relevantCapabilities(value: Capability[]) {
-    this._relevantCapabilities.next(value);
-  }
-
-  get relevantCapabilities() {
-    return this._relevantCapabilities.getValue();
-  }
-
+  // view config
+  public viewMode = 'vertical';
+  @Input() showAnalyze = false;
+  @Input() showLabel = true;
   @Input() showSwitchModes = true;
+
 
   // get current configuration
   public capabilities: Capability[];
@@ -47,72 +33,86 @@ export class CompositionComponent implements OnInit {
   public patterns: Pattern[];
   public products: Product[];
 
-  public relevantPatterns: Pattern[] = [];
-  public highlightedSystems: number[] = [];
+  // capabilities and patterns that are available
+  public availableSystems: System[] = [];
+  public availablePatterns: Pattern[] = [];
+  public availableCapabilities: Capability[] = [];
+  public desiredCapabilities: Capability[] = [];
 
+  // selected stuff
+  public highlightedSystems: number[] = [];
   public highlightedPatterns: number[] = [];
   public highlightedCapabilities: number[] = [];
 
-  // view config
-  public viewMode = 'vertical';
-  @Input() showAnalyze = false;
-  @Input() showLabel = false;
-
+  // other values
   public analyzeResult: any = [];
 
   constructor(private configuration: ConfigurationService,
               private systemService: SystemService,
               private patternService: PatternService,
+              private capabilityService: CapabilityService,
+              private profileService: ProfileService,
               private dialog: MatDialog) {
 
     // load stuff from configuration
     this.configuration.getConfiguration().subscribe(c => {
       this.capabilities = c.capabilities;
       this.systems = c.systems;
-      this.categories = c.categories;
       this.patterns = c.patterns;
-
-      // fill categories
+      this.categories = c.categories;
       for (const category of this.categories) {
         this.systemService.findFromRelation('categories', category.id).subscribe(systems => {
           category.systems = (systems) ? systems : [];
         });
       }
-
     });
 
-    // extract relevant patterns and capabilities from relevant systems
-    this._relevantSystems.subscribe(relevantSystems => {
-      if (relevantSystems) {
+    // extract desired capabilities from profile
+    this.profileService.init().subscribe(() => {
+
+      // extract relevant patterns and capabilities from relevant systems
+      this.systemService.getMany(this.profileService.selectedSystems).subscribe(selectedSystems => {
         const patterns: Pattern[] = [];
         const capabilities: Capability[] = [];
-        for (const system of relevantSystems) {
-          for (const pattern of system.patterns) {
-            if (pattern) {
-              patterns.push(pattern);
+        if (selectedSystems) {
+          for (const system of selectedSystems) {
+            for (const pattern of system.patterns) {
+              if (pattern) {
+                patterns.push(pattern);
+              }
             }
-          }
-          for (const capability of system.capabilities) {
-            if (capability) {
-              capabilities.push(capability);
+            for (const capability of system.capabilities) {
+              if (capability) {
+                capabilities.push(capability);
+              }
             }
           }
         }
         // make unique by id
-        this.relevantPatterns = patterns.filter((obj, pos, arr) => {
+        this.availablePatterns = patterns.filter((obj, pos, arr) => {
           return arr.map(mapObj => mapObj['id']).indexOf(obj['id']) === pos;
         });
-        this.relevantCapabilities = capabilities.filter((obj, pos, arr) => {
+        this.availableCapabilities = capabilities.filter((obj, pos, arr) => {
           return arr.map(mapObj => mapObj['id']).indexOf(obj['id']) === pos;
         });
         // calculate analyze values
         this.calculateIdentifiedPatterns();
-      }
+      });
+
+      this.systemService.getMany(this.profileService.selectedSystems).subscribe(r => {
+        this.availableSystems = r;
+      });
+
+      // extract desired capabilities from profile
+      this.capabilityService.getMany(this.profileService.selectedCapabilities).subscribe(r => {
+        this.desiredCapabilities = r;
+      });
     });
+
   }
 
   isRelevantSystem(id: number): boolean {
-    return this._relevantSystems.getValue().map(function (system) {
+    return this.availableSystems.map(function (system) {
       return system.id;
     }).includes(id);
   }
@@ -145,7 +145,7 @@ export class CompositionComponent implements OnInit {
   // check how configuration and patterns match
   calculateIdentifiedPatterns() {
     this.patternService.getAllAsArray().subscribe(allPatterns => {
-      const availableSystemIds: number[] = this._relevantSystems.getValue().map(a => a.id);
+      const availableSystemIds: number[] = this.availableSystems.map(a => a.id);
       const patternResults: any[] = [];
       for (const pattern of allPatterns) {
         this.systemService.findFromRelation('patterns', pattern.id).subscribe(systemsOfThisPattern => {

@@ -7,6 +7,7 @@ export interface System {
   id: number;
   name: string;
   description?: string;
+  relevant?: boolean;
   categories: Category[];
   products: Product[];
   patterns: Pattern[];
