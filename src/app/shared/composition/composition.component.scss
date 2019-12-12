@@ -83,3 +83,30 @@
 .mat-button-toggle-label-content {
   font-size: 0.8rem;
 }
+
+// compare mode
+#category-box-wrap.view-compare {
+  .system-box-wrap {
+    .system-box {
+      &.current {
+        border-width: 3px;
+        border-color: red;
+        text-decoration: line-through;
+      }
+
+      &.desired {
+        border-width: 3px;
+        border-color: black;
+        border-style: dashed;
+      }
+
+      &.current.desired {
+        border-width: 3px;
+        border-color: green;
+        text-decoration: none;
+        border-style: solid;
+      }
+    }
+  }
+}
+

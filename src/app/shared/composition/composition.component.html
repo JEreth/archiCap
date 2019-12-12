@@ -22,6 +22,10 @@
       <mat-icon>gavel</mat-icon>
       <span *ngIf="showLabel">Desired Stack (Capability-Driven)</span>
     </mat-button-toggle>
+    <mat-button-toggle value="compare">
+      <mat-icon>compare</mat-icon>
+      <span *ngIf="showLabel">Compare (Roadmap)</span>
+    </mat-button-toggle>
     <mat-button-toggle value="analyze">
       <mat-icon>image_search</mat-icon>
       <span *ngIf="showLabel"> Analyze Setup</span>
@@ -35,7 +39,7 @@
 
   <div class="col-9">
     <!-- layer architecture -->
-    <div id="category-box-wrap" class="{{stackMode}}" *ngIf="viewMode!=='analyze'">
+    <div id="category-box-wrap" class="{{stackMode}} view-{{viewMode}}" *ngIf="viewMode!=='analyze'">
       <div class="category-box" *ngFor="let category of categories">
 
         <span class="category-box-title">{{ category.name }}</span>
@@ -43,9 +47,12 @@
         <div class="system-box-wrap">
           <div class="system-box" *ngFor="let system of category.systems" (click)="showSystemInformation(system)"
                [class.highlighted]="highlightedSystems.indexOf(system.id) !== -1"
+               [class.current]="isCurrentSystem(system.id)"
+               [class.desired]="isDesiredSystem(system.id)"
                [class.hidden]="showAnalyze &&
                ((viewMode==='currentStack' && !isCurrentSystem(system.id)) ||
-               (viewMode==='desiredCapabilities' && !isDesiredSystem(system.id)))">
+               (viewMode==='desiredCapabilities' && !isDesiredSystem(system.id)) ||
+               (viewMode==='compare' && (!isCurrentSystem(system.id) && !isDesiredSystem(system.id))))">
             {{ system.name }}
           </div>
         </div>
