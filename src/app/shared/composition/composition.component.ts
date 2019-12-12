@@ -56,6 +56,7 @@ export class CompositionComponent implements OnInit {
   // view config
   public viewMode = 'vertical';
   @Input() showAnalyze = false;
+  @Input() showLabel = false;
 
   public analyzeResult: any = [];
 
@@ -83,8 +84,8 @@ export class CompositionComponent implements OnInit {
     // extract relevant patterns and capabilities from relevant systems
     this._relevantSystems.subscribe(relevantSystems => {
       if (relevantSystems) {
-        let patterns: Pattern[] = [];
-        let capabilities: Capability[] = [];
+        const patterns: Pattern[] = [];
+        const capabilities: Capability[] = [];
         for (const system of relevantSystems) {
           for (const pattern of system.patterns) {
             if (pattern) {
@@ -145,6 +146,7 @@ export class CompositionComponent implements OnInit {
   calculateIdentifiedPatterns() {
     this.patternService.getAllAsArray().subscribe(allPatterns => {
       const availableSystemIds: number[] = this._relevantSystems.getValue().map(a => a.id);
+      const patternResults: any[] = [];
       for (const pattern of allPatterns) {
         this.systemService.findFromRelation('patterns', pattern.id).subscribe(systemsOfThisPattern => {
           const patternResult = {
@@ -162,10 +164,11 @@ export class CompositionComponent implements OnInit {
           }
           const {length} = systemsOfThisPattern;
           patternResult.percentage = Math.round((patternResult.foundSystems.length / Math.max(1, length)) * 100);
-          this.analyzeResult.push(patternResult);
-          this.analyzeResult.sort((r1, r2) => r2.percentage - r1.percentage);
+          patternResults.push(patternResult);
         });
       }
+      patternResults.sort((r1, r2) => r2.percentage - r1.percentage);
+      this.analyzeResult = patternResults;
     });
   }
 

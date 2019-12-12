@@ -8,12 +8,16 @@
       <mat-icon>view_week</mat-icon>
     </mat-button-toggle>
     <mat-button-toggle value="analyze" *ngIf="showAnalyze">
-      <mat-icon>speed</mat-icon>
+      <mat-icon>image_search</mat-icon>
+      <span *ngIf="showLabel"> Analyze Setup</span>
     </mat-button-toggle>
   </mat-button-toggle-group>
 </mat-toolbar>
 
-<div class="row">
+
+<!-- STACK VIEW -->
+<div class="stack-warp row" *ngIf="viewMode!='analyze'">
+
   <div class="col-9">
 
     <!-- layer architecture -->
@@ -32,26 +36,8 @@
       </div>
     </div>
 
-    <!-- DASHBOARD -->
-    <div *ngIf="viewMode==='analyze'">
-
-      <mat-card class="analyze-card">
-        <mat-card-header>
-          <div mat-card-avatar>
-            <mat-icon mat-list-icon>speed</mat-icon>
-          </div>
-          <mat-card-title>Identified Patterns</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <mat-list *ngFor="let result of analyzeResult">
-            <mat-list-item>{{result.pattern.name}} {{result.percentage}}%</mat-list-item>
-          </mat-list>
-        </mat-card-content>
-      </mat-card>
-
-    </div>
-
   </div>
+
   <div class="col-3" *ngIf="viewMode!=='analyze'">
 
     <!-- HIGHLIGHT PATTERN -->
@@ -62,7 +48,7 @@
       </mat-list-option>
     </mat-selection-list>
 
-    <!-- HIGHTLIGHT CAPABILITIES -->
+    <!-- HIGHLIGHT CAPABILITIES -->
     <mat-selection-list [(ngModel)]="highlightedCapabilities" (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by capabilities</h3>
       <mat-list-option *ngFor="let capability of relevantCapabilities" [value]="capability.id">
@@ -71,6 +57,59 @@
     </mat-selection-list>
 
   </div>
+
 </div>
 
+<!-- ANALYZE VIEW -->
+<div *ngIf="viewMode==='analyze'" class="row">
+
+  <div class="col-6">
+    <mat-card class="analyze-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon mat-list-icon>view_compact</mat-icon>
+        </div>
+        <mat-card-title>Identified <b>patterns</b> in your current setup</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list *ngFor="let result of analyzeResult">
+          <mat-list-item>{{result.pattern.name}} {{result.percentage}}%</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-6">
+    <mat-card class="analyze-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon mat-list-icon>filter_none</mat-icon>
+        </div>
+        <mat-card-title><b>Components</b> in your current setup</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list *ngFor="let system of relevantSystems" (click)="showSystemInformation(system)">
+          <mat-list-item>{{system.name}}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-6">
+    <mat-card class="analyze-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon mat-list-icon>gavel</mat-icon>
+        </div>
+        <mat-card-title><b>Capabilities</b> that you can implement with your current setup</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list *ngFor="let capability of relevantCapabilities">
+          <mat-list-item>{{capability.name}}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
 
