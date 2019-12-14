@@ -97,12 +97,11 @@ export class CompositionComponent implements OnInit {
         this.availableCapabilities = capabilities.filter((obj, pos, arr) => {
           return arr.map(mapObj => mapObj['id']).indexOf(obj['id']) === pos;
         });
+        
+        this.availableSystems = selectedSystems;
+        
         // calculate analyze values
         this.calculateIdentifiedPatterns();
-      });
-
-      this.systemService.getMany(this.profileService.selectedSystems).subscribe(r => {
-        this.availableSystems = r;
       });
 
       // extract desired capabilities and therefrom desired systems from profile
