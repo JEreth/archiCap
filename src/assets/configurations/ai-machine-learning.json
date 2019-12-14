@@ -159,6 +159,11 @@
          "name":"We need to extract data from various sources and asynchronily consume this data",
          "description":"",
          "id":31
+      },
+      {
+         "name":"We need to find patterns in a network",
+         "description":"",
+         "id":32
       }
    ],
    "categories":[
@@ -203,6 +208,11 @@
          "name":"Unsupervised Learning",
          "description":"Unsupervised learning is a type of self-organized Hebbian learning that helps find previously unknown patterns in data set without pre-existing labels. It is also known as self-organization and allows modeling probability densities of given inputs. It is one of the main three categories of machine learning, along with supervised and reinforcement learning. Semi-supervised learning has also been described, and is a hybridization of supervised and unsupervised techniques. ",
          "id":3
+      },
+      {
+         "name":"Network Analysis",
+         "description":"Finding patterns in networks",
+         "id":4
       }
    ],
    "products":[
@@ -561,7 +571,7 @@
          "name":"Graph Database",
          "description":"A database that saves data in graph-oriented structures",
          "categories":[
-
+            1
          ],
          "products":[
             11,
@@ -571,7 +581,7 @@
             7
          ],
          "patterns":[
-
+            4
          ],
          "substitutions":[
             {
@@ -652,8 +662,8 @@
          "id":11
       },
       {
-         "name":"Artificial Neural Networks",
-         "description":"Artificial neural networks (ANN) or connectionist systems are computing systems that are inspired by, but not identical to, biological neural networks that constitute animal brains. Such systems \"learn\" to perform tasks by considering examples, generally without being programmed with task-specific rules.",
+         "name":"Deep Neural Networks",
+         "description":"Deep neural networks (ANN) or connectionist systems are computing systems that are inspired by, but not identical to, biological neural networks that constitute animal brains. Such systems \"learn\" to perform tasks by considering examples, generally without being programmed with task-specific rules.",
          "categories":[
             2
          ],
@@ -942,6 +952,27 @@
             }
          ],
          "id":23
+      },
+      {
+         "name":"Network Analysis",
+         "description":"Network focused algorithms",
+         "categories":[
+            2
+         ],
+         "products":[
+            15,
+            16
+         ],
+         "capabilities":[
+            32
+         ],
+         "patterns":[
+            4
+         ],
+         "substitutions":[
+
+         ],
+         "id":24
       }
    ]
 }
