@@ -4,7 +4,7 @@ import {WizardComponent} from './wizard.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../../material.module';
-import {MatStepperModule} from '@angular/material';
+import {MatStepperModule} from '@angular/material/stepper';
 
 describe('WizardComponent', () => {
   let component: WizardComponent;

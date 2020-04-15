@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../../material.module';
 import {CapabilityService} from '../shared/capability.service';
 import {CapabilityServiceMock} from '../shared/capability.service.mock';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatSnackBarMock} from '../../../mocks';
 import {RouterTestingModule} from '@angular/router/testing';
 

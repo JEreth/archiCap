@@ -11,7 +11,7 @@ import {SystemService} from '../shared/system.service';
 import {ProductService} from '../../products/shared/product.service';
 import {PatternService} from '../../patterns/shared/pattern.service';
 import {CapabilityService} from '../../capabilities/shared/capability.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {CategoryServiceMock} from '../../categories/shared/category.service.mock';
 import {SystemServiceMock} from '../shared/system.service.mock';
 import {PatternServiceMock} from '../../patterns/shared/pattern.service.mock';

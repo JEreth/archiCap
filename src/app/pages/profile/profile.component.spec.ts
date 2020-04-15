@@ -5,7 +5,7 @@ import {SystemServiceMock} from '../../systems/shared/system.service.mock';
 import {CapabilityServiceMock} from '../../capabilities/shared/capability.service.mock';
 import {CapabilityService} from '../../capabilities/shared/capability.service';
 import {SystemService} from '../../systems/shared/system.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {DomSanitizer} from '@angular/platform-browser';
 import {ProfileService} from '../../shared/profile.service';
 import {DomSanitizerMock, MatSnackBarMock} from '../../../mocks';

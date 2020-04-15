@@ -6,7 +6,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {ActivatedRouteMock, MatSnackBarMock, RouterMock} from '../../../mocks';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../shared/product.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {SystemService} from '../../systems/shared/system.service';
 import {ProductServiceMock} from '../shared/product.service.mock';
 import {SystemServiceMock} from '../../systems/shared/system.service.mock';

@@ -4,7 +4,7 @@ import {CategoryEditComponent} from './category-edit.component';
 import {ActivatedRouteMock, MatSnackBarMock, RouterMock} from '../../../mocks';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../shared/category.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {SystemService} from '../../systems/shared/system.service';
 import {CategoryServiceMock} from '../shared/category.service.mock';
 import {SystemServiceMock} from '../../systems/shared/system.service.mock';

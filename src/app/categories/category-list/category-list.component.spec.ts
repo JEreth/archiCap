@@ -3,7 +3,7 @@ import {CategoryListComponent} from './category-list.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {MatSnackBarMock} from '../../../mocks';
 import {CategoryService} from '../shared/category.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {CategoryServiceMock} from '../shared/category.service.mock';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../../material.module';

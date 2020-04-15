@@ -7,7 +7,7 @@ import {MaterialModule} from '../../material.module';
 import {ActivatedRouteMock, MatSnackBarMock, RouterMock} from '../../../mocks';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CapabilityService} from '../shared/capability.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {SystemService} from '../../systems/shared/system.service';
 import {SystemServiceMock} from '../../systems/shared/system.service.mock';
 import {CapabilityServiceMock} from '../shared/capability.service.mock';

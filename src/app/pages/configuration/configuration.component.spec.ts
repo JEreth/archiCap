@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../../material.module';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {ConfigurationService} from '../../shared/configuration.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {DomSanitizer} from '@angular/platform-browser';
 import {ConfigurationServiceMock} from '../../shared/configuration.service.mock';
 import {DomSanitizerMock, MatSnackBarMock} from '../../../mocks';

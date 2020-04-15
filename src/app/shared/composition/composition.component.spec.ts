@@ -7,7 +7,7 @@ import {ConfigurationService} from '../configuration.service';
 import {ConfigurationServiceMock} from '../configuration.service.mock';
 import {SystemService} from '../../systems/shared/system.service';
 import {SystemServiceMock} from '../../systems/shared/system.service.mock';
-import {MatDialog} from '@angular/material';
+import {MatDialog} from '@angular/material/dialog';
 import {MatDialogMock} from '../../../mocks';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 

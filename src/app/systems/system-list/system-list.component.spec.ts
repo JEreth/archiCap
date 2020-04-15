@@ -7,7 +7,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {SystemServiceMock} from '../shared/system.service.mock';
 import {MatSnackBarMock} from '../../../mocks';
 import {SystemService} from '../shared/system.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 describe('SystemListComponent', () => {
   let component: SystemListComponent;
