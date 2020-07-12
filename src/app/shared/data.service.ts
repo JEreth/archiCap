@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {LocalStorage} from '@ngx-pwa/local-storage';
+import {StorageMap} from '@ngx-pwa/local-storage';
 import {forkJoin, Observable} from 'rxjs';
 
 @Injectable({
@@ -7,34 +7,35 @@ import {forkJoin, Observable} from 'rxjs';
 })
 export class DataService {
 
-  constructor(protected localStorage: LocalStorage) {
+  constructor(private storage: StorageMap) {
   }
 
   set(key: string, data: any): Observable<boolean> {
     if (data instanceof Map) {
       data = Array.from(data.values());
     }
-    return this.localStorage.setItem(key, data);
+    return this.storage.set(key, data);
   }
 
   get(key: string): Observable<any> {
-    return this.localStorage.getItem<any>(key);
+    return this.storage.get<any>(key);
   }
 
   delete(key: string): Observable<boolean> {
-    return this.localStorage.removeItem(key);
+    return this.storage.delete(key);
   }
 
-  reset(): Observable<boolean> {
-    return new Observable<boolean>((observer) => {
-      const queue = [];
-      for (const key of ['categories', 'capabilities', 'patterns', 'systems']) {
-        queue.push(this.delete(key));
+  async reset(): Promise<boolean> {
+    return new Promise<boolean>(async resolve => {
+      try {
+        for (const key of ['categories', 'capabilities', 'patterns', 'systems']) {
+          await this.delete(key).toPromise();
+        }
+        resolve(true);
+      } catch(e) {
+        console.log(e);
+        resolve(false);
       }
-      forkJoin(queue).subscribe(result => {
-        observer.next(true);
-        observer.complete();
-      });
     });
   }
 
