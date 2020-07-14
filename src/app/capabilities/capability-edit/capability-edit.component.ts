@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Capability} from '../../capabilities/shared/capability';
+import {Capability} from '../shared/capability';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {CapabilityService} from '../shared/capability.service';
-import {SystemService} from '../../systems/shared/system.service';
-import {System} from '../../systems/shared/system';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-capability-edit',
@@ -13,44 +12,38 @@ import {System} from '../../systems/shared/system';
 })
 export class CapabilityEditComponent implements OnInit {
 
-  public capability: Capability;
-  public systems: System[] = [];
+  public form: FormGroup;
+  public capability: Capability = {name: '', description: ''};
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private capabilityService: CapabilityService,
     private snackBar: MatSnackBar,
-    private systemService: SystemService
+    private formBuilder: FormBuilder
   ) {
+  }
 
-    // get the id from the path and load capability if set
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    const capabilityId: number = Number(id);
-    if (id === 'new') {
-      this.capability = <Capability>{name: '', description: ''};
-    } else {
-      this.capabilityService.get(capabilityId).subscribe(c => {
-        if (c) {
-          this.capability = <Capability>c;
-          this.systemService.findFromRelation('capabilities', capabilityId).subscribe(systems => {
-            this.systems = systems;
-          });
-        } else {
-          this.capability = <Capability>{name: '', description: ''};
-        }
-      });
+    if (id) {
+      this.capability = (await this.capabilityService.get(id)) as Capability;
     }
-  }
-
-  ngOnInit() {
-  }
-
-  save() {
-    this.capabilityService.add(this.capability).subscribe(() => {
-      this.snackBar.open('Capability was successfully saved');
-      this.router.navigateByUrl('/capabilities');
+    this.form = this.formBuilder.group({
+      name: [this.capability.name, Validators.required],
+      description: [this.capability.description]
     });
+
+  }
+
+  async save() {
+    this.capability = {...this.capability, ...this.form.value};
+    if (await this.capabilityService.add(this.capability)) {
+      this.snackBar.open('Capability was successfully saved');
+      await this.router.navigateByUrl('/capabilities');
+    } else {
+      this.snackBar.open('There has been an error.');
+    }
   }
 
 }

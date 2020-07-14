@@ -21,16 +21,15 @@ export class ConfigurationComponent implements OnInit {
               private snackBar: MatSnackBar,
               private http: HttpClient,
               private sanitizer: DomSanitizer) {
-    this.generateDownload();
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.generateDownload();
   }
 
-  generateDownload() {
-    this.configurationService.exportToJson().subscribe(json => {
-      this.downloadJsonHref = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(json));
-    });
+  async generateDownload() {
+    this.downloadJsonHref = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' +
+      encodeURIComponent(await this.configurationService.export()));
   }
 
   uploadFileChanged(e) {
@@ -40,15 +39,14 @@ export class ConfigurationComponent implements OnInit {
   upload() {
     this.uploading = true;
     const fileReader = new FileReader();
-    fileReader.onload = () => {
+    fileReader.onload = async () => {
       try {
         const input = JSON.parse(fileReader.result.toString());
         if (this.configurationService.validate(input)) {
           // schema looks good so go on and delete old config if it exists
-          this.configurationService.importFromPersistence(input).subscribe(() => {
-            this.snackBar.open('Configuration has been imported.');
-            this.uploading = false;
-          });
+          await this.configurationService.import(input);
+          this.snackBar.open('Configuration has been imported.');
+          this.uploading = false;
         } else {
           // error
           this.snackBar.open('The uploaded configuration is not valid.');
@@ -62,10 +60,9 @@ export class ConfigurationComponent implements OnInit {
     fileReader.readAsText(this.uploadFile);
   }
 
-  reset() {
-    this.configurationService.reset().subscribe(() => {
-      this.snackBar.open('Configuration has been reset.');
-    });
+  async reset() {
+    await this.configurationService.reset();
+    this.snackBar.open('Configuration has been reset.');
   }
 
   loadConfiguration() {
@@ -73,11 +70,16 @@ export class ConfigurationComponent implements OnInit {
     const url = 'assets/configurations/' + this.predefinedConfiguration + '.json';
     this.http.get(url)
       .subscribe(
-        data => {
-          this.configurationService.importFromPersistence(data).subscribe(() => {
+        async data => {
+          try {
+            await this.configurationService.import(data);
             this.snackBar.open('Configuration has been loaded.');
             this.loading = false;
-          });
+          } catch (e) {
+            console.log(e);
+            this.snackBar.open('There has been an error.');
+            this.loading = false;
+          }
         },
         () => {
           this.snackBar.open('There has been an error. Please try again.');

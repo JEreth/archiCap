@@ -4,7 +4,7 @@ import {CapabilitiesComponent} from './capabilities.component';
 import {CapabilityEditComponent} from './capability-edit/capability-edit.component';
 import {CapabilityListComponent} from './capability-list/capability-list.component';
 import {RouterModule, Routes} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
 
 const routes: Routes = [
@@ -23,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     RouterModule.forChild(routes),
   ]

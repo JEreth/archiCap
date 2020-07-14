@@ -14,21 +14,22 @@ export class CategoryListComponent implements OnInit {
 
   constructor(private categoryService: CategoryService,
               private snackBar: MatSnackBar) {
-    this.categoryService.getAllAsArray().subscribe(categories => {
-      this.categories = categories;
-    });
   }
 
   ngOnInit() {
   }
 
-  remove(id: number) {
-    this.categoryService.remove(id).subscribe(() => {
+  async update() {
+    this.categories = (await this.categoryService.all()) as Category[];
+  }
+
+  async remove(id: string) {
+    if (await this.categoryService.remove(id)) {
+      await this.update();
       this.snackBar.open('Category has been removed');
-      this.categoryService.getAllAsArray().subscribe(categories => {
-        this.categories = categories;
-      });
-    });
+    } else {
+      this.snackBar.open('There has been an error');
+    }
   }
 
 }

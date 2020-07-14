@@ -3,8 +3,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Pattern} from '../shared/pattern';
 import {PatternService} from '../shared/pattern.service';
-import {SystemService} from '../../systems/shared/system.service';
-import {System} from '../../systems/shared/system';
 
 @Component({
   selector: 'app-pattern-edit',
@@ -13,45 +11,30 @@ import {System} from '../../systems/shared/system';
 })
 export class PatternEditComponent implements OnInit {
 
-  public pattern: Pattern;
-  public systems: System[] = [];
+  public pattern: Pattern = {name: '', description: '', systems: [], capabilities: []};
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private patternService: PatternService,
-    private snackBar: MatSnackBar,
-    private systemService: SystemService
+    private snackBar: MatSnackBar
   ) {
+  }
 
-    // get the id from the path and load pattern if set
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    const patternId: number = Number(id);
-    if (id === 'new') {
-      this.pattern = <Pattern>{name: '', description: ''};
-    } else {
-      this.patternService.get(patternId).subscribe(c => {
-        if (c) {
-          this.pattern = <Pattern>c;
-          this.systemService.findFromRelation('patterns', patternId).subscribe(systems => {
-            this.systems = systems;
-          });
-        } else {
-          this.pattern = <Pattern>{name: '', description: ''};
-        }
-      });
+    if (id) {
+      this.pattern = await this.patternService.get(id) as Pattern;
     }
-
   }
 
-  ngOnInit() {
-  }
-
-  save() {
-    this.patternService.add(this.pattern).subscribe(() => {
+  async save() {
+    if (await this.patternService.add(this.pattern)) {
       this.snackBar.open('Pattern was successfully saved');
-      this.router.navigateByUrl('/patterns');
-    });
+      await this.router.navigateByUrl('/patterns');
+    } else {
+      this.snackBar.open('There has been an error');
+    }
   }
 
 }

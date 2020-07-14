@@ -3,14 +3,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {System} from '../shared/system';
 import {SystemService} from '../shared/system.service';
-import {Category} from '../../categories/shared/category';
-import {CategoryService} from '../../categories/shared/category.service';
-import {ProductService} from '../../products/shared/product.service';
-import {Product} from '../../products/shared/product';
-import {PatternService} from '../../patterns/shared/pattern.service';
-import {Capability} from '../../capabilities/shared/capability';
-import {CapabilityService} from '../../capabilities/shared/capability.service';
-import {Pattern} from '../../patterns/shared/pattern';
 
 @Component({
   selector: 'app-system-edit',
@@ -19,100 +11,28 @@ import {Pattern} from '../../patterns/shared/pattern';
 })
 export class SystemEditComponent implements OnInit {
 
-  public system: System;
-  public categories: Category[] = [];
-  public products: Product[] = [];
-  public patterns: Pattern[] = [];
-  public capabilities: Capability[] = [];
-  public systems: System[] = [];
-
+  public system: System = {name: '', description: '', categories: [], products: [], substitutions: []};
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private systemService: SystemService,
-    private categoryService: CategoryService,
-    private productService: ProductService,
-    private patternService: PatternService,
-    private capabilityService: CapabilityService,
     private snackBar: MatSnackBar
-  ) {
-    // get all available categories
-    this.categoryService.getAllAsArray().subscribe(categories => {
-      this.categories = categories;
-    });
+  ) {  }
 
-    // get all available products
-    this.productService.getAllAsArray().subscribe(products => {
-      this.products = products;
-    });
-
-    // get all available patterns
-    this.patternService.getAllAsArray().subscribe(patterns => {
-      this.patterns = patterns;
-    });
-
-    // get all available capabilities
-    this.capabilityService.getAllAsArray().subscribe(capabilities => {
-      this.capabilities = capabilities;
-    });
-
-    // get all available systems
-    this.systemService.getAllAsArray().subscribe(systems => {
-      this.systems = systems;
-    });
-
-    // get the id from the path and load system if set
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    const systemId: number = Number(id);
-    if (id === 'new') {
-      this.system = <System>{name: '', description: '', categories: [], products: [], capabilities: [], patterns: [], substitutions: []};
-    } else {
-      this.systemService.get(systemId).subscribe(c => {
-        if (c) {
-          this.system = <System>c;
-        } else {
-          this.system = <System>{
-            name: '',
-            description: '',
-            categories: [],
-            products: [],
-            capabilities: [],
-            patterns: [],
-            substitutions: []
-          };
-        }
-      });
+    if (id) {
+      this.system = (await this.systemService.get(id)) as System;
     }
   }
 
-  categorySelected(c1: Category, c2: Category): boolean {
-    return (c1 && c2 && c1.id === c2.id);
-  }
-
-  productSelected(p1: Product, p2: Product): boolean {
-    return (p1 && p2 && p1.id === p2.id);
-  }
-
-  patternSelected(p1: Pattern, p2: Pattern): boolean {
-    return (p1 && p2 && p1.id === p2.id);
-  }
-
-  capabilitySelected(p1: Capability, p2: Capability): boolean {
-    return (p1 && p2 && p1.id === p2.id);
-  }
-
-  substitutionSelected(p1: System, p2: System): boolean {
-    return (p1 && p2 && p1.id === p2.id);
-  }
-
-  ngOnInit() {
-  }
-
-  save() {
-    this.systemService.add(this.system).subscribe(() => {
+  async save() {
+    if (await this.systemService.add(this.system)) {
       this.snackBar.open('System was successfully saved');
-      this.router.navigateByUrl('/components');
-    });
+      await this.router.navigateByUrl('/components');
+    } else {
+      this.snackBar.open('There has been an error');
+    }
   }
 }

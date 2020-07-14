@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
 import {DataService} from './data.service';
 
-export interface ProfilePersistence {
-  selectedCapabilities: number[];
-  selectedSystems: number[];
+export interface Profile {
+  capabilities: string[];
+  systems: string[];
+  products: string[];
 }
 
 @Injectable({
@@ -12,59 +12,60 @@ export interface ProfilePersistence {
 })
 export class ProfileService {
 
-  public initialized = false;
-  public selectedCapabilities: number[] = [];
-  public selectedSystems: number[] = [];
+  public profile;
 
   constructor(private data: DataService) {
   }
 
-  init(): Observable<boolean> {
-    return (this.initialized) ? of(true) : new Observable<boolean>((observer) => {
-      const scope = this;
-      this.data.get('profile').subscribe(profile => {
-        this.selectedCapabilities = (profile && profile.selectedCapabilities) || [];
-        this.selectedSystems = (profile && profile.selectedSystems) || [];
-        scope.initialized = true;
-        observer.next(true);
-        observer.complete();
-      });
-    });
+  async init(): Promise<boolean> {
+    if (!this.profile) {
+      this.profile = {
+        capabilities: (await this.data.get('profile_capabilities')) || [],
+        systems: (await this.data.get('profile_systems')) || [],
+        products: (await this.data.get('profile_products')) || []
+      };
+    }
+    return true;
+  }
+
+  async get(): Promise<Profile> {
+    await this.init();
+    return this.profile;
   }
 
   // persist current capabilities to local storage
-  persist(): Observable<boolean> {
-    const p: ProfilePersistence = {
-      selectedCapabilities: this.selectedCapabilities,
-      selectedSystems: this.selectedSystems
-    };
-    return this.data.set('profile', p);
+  async persist(): Promise<boolean> {
+    try {
+      await this.data.set('profile', this.profile || {});
+      return true;
+    } catch (e) {
+      console.log(e);
+      return false;
+    }
   }
 
-  exportToJson(): string {
-    const p: ProfilePersistence = {
-      selectedCapabilities: this.selectedCapabilities,
-      selectedSystems: this.selectedSystems
-    };
-    return JSON.stringify(p);
+  async export(): Promise<string> {
+    return JSON.stringify(await this.get());
   }
 
   validate(input: any): boolean {
     // we only check for the major properties here. Might be better to make a in-depth validation
     return (input &&
-      input.selectedCapabilities && typeof (input.selectedCapabilities) === 'object' &&
-      input.selectedSystems && typeof (input.selectedSystems) === 'object');
+      input.capabilities && Array.isArray(input.capabilities)  &&
+      input.systems && Array.isArray(input.systems));
   }
 
-  reset(): Observable<boolean> {
-    this.selectedCapabilities = [];
-    this.selectedSystems = [];
+  async reset(): Promise<boolean> {
+    this.profile = {};
     return this.persist();
   }
 
-  importFromPersistence(input: ProfilePersistence): Observable<boolean> {
-    this.selectedCapabilities = input.selectedCapabilities || [];
-    this.selectedSystems = input.selectedSystems || [];
+  async import(input: any): Promise<boolean> {
+    this.profile = {
+      capabilities: input.capabilities || [],
+      systems: input.systems || [],
+      products: input.products || []
+    };
     return this.persist();
   }
 

@@ -14,21 +14,22 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private snackBar: MatSnackBar) {
-    this.productService.getAllAsArray().subscribe(products => {
-      this.products = products;
-    });
   }
 
   ngOnInit() {
   }
 
-  remove(id: number) {
-    this.productService.remove(id).subscribe(() => {
+  async update() {
+    this.products = (await this.productService.all()) as Product[];
+  }
+
+  async remove(id: string) {
+    if (await this.productService.remove(id)) {
+      await this.update();
       this.snackBar.open('Product has been removed');
-      this.productService.getAllAsArray().subscribe(products => {
-        this.products = products;
-      });
-    });
+    } else {
+      this.snackBar.open('There has been an error');
+    }
   }
 
 }

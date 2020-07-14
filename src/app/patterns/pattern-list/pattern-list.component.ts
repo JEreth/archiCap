@@ -14,21 +14,23 @@ export class PatternListComponent implements OnInit {
 
   constructor(private patternService: PatternService,
               private snackBar: MatSnackBar) {
-    this.patternService.getAllAsArray().subscribe(patterns => {
-      this.patterns = patterns;
-    });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.update();
   }
 
-  remove(id: number) {
-    this.patternService.remove(id).subscribe(() => {
+  async update() {
+    this.patterns = await this.patternService.all() as Pattern[];
+  }
+
+  async remove(id: string) {
+    if (await this.patternService.remove(id)) {
+      await this.update();
       this.snackBar.open('Pattern has been removed');
-      this.patternService.getAllAsArray().subscribe(patterns => {
-        this.patterns = patterns;
-      });
-    });
+    } else {
+      this.snackBar.open('There has been an error');
+    }
   }
 
 }

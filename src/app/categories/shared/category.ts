@@ -1,8 +1,7 @@
-import {System} from '../../systems/shared/system';
+import {Entity} from '../../shared/entity.service';
 
-export interface Category {
-  id?: number;
+export interface Category extends Entity {
+  id?: string;
   name: string;
   description?: string;
-  systems?: System[];
 }

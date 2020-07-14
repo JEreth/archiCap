@@ -14,20 +14,22 @@ export class SystemListComponent implements OnInit {
 
   constructor(private systemService: SystemService,
               private snackBar: MatSnackBar) {
-    this.systemService.getAllAsArray().subscribe(systems => {
-      this.systems = systems;
-    });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.update();
   }
 
-  remove(id: number) {
-    this.systemService.remove(id).subscribe(() => {
+  async update() {
+    this.systems = (await this.systemService.all()) as System[];
+  }
+
+  async remove(id: string) {
+    if (await this.systemService.remove(id)) {
+      await this.update();
       this.snackBar.open('System has been removed');
-      this.systemService.getAllAsArray().subscribe(systems => {
-        this.systems = systems;
-      });
-    });
+    } else {
+      this.snackBar.open('There has been an error');
+    }
   }
 }

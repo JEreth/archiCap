@@ -2,10 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Capability} from '../../capabilities/shared/capability';
 import {CapabilityService} from '../../capabilities/shared/capability.service';
 import {SystemService} from '../../systems/shared/system.service';
-import {ProfilePersistence, ProfileService} from '../../shared/profile.service';
+import {Profile, ProfileService} from '../../shared/profile.service';
 import {System} from '../../systems/shared/system';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+import {Configuration, ConfigurationService} from '../../shared/configuration.service';
 
 @Component({
   selector: 'app-profile',
@@ -14,8 +15,9 @@ import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 })
 export class ProfileComponent implements OnInit {
 
-  public selectedSystems: number[];
-  public selectedCapabilities: number[];
+  public configuration: Configuration;
+  public profile: Profile;
+
   public capabilities: Capability[] = [];
   public systems: System[] = [];
 
@@ -23,41 +25,28 @@ export class ProfileComponent implements OnInit {
   public uploadFile: any;
   public uploading = false;
 
-  constructor(private capabilityService: CapabilityService,
+  constructor(private configurationService: ConfigurationService,
+              private capabilityService: CapabilityService,
               private systemService: SystemService,
               private snackBar: MatSnackBar,
               private sanitizer: DomSanitizer,
-              private profile: ProfileService) {
-
-    this.capabilityService.getAllAsArray().subscribe(capabilities => {
-      this.capabilities = capabilities;
-    });
-
-    this.systemService.getAllAsArray().subscribe(systems => {
-      this.systems = systems;
-    });
-
-    this.profile.init().subscribe(() => {
-      this.selectedSystems = this.profile.selectedSystems;
-      this.selectedCapabilities = this.profile.selectedCapabilities;
-      this.generateDownload();
-    });
+              private profileService: ProfileService) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.profile = await this.profileService.get();
+    this.configuration = await this.configurationService.get();
+    await this.generateDownload();
   }
 
-  save() {
-    this.profile.selectedSystems = this.selectedSystems;
-    this.profile.selectedCapabilities = this.selectedCapabilities;
-    this.profile.persist().subscribe(() => {
-      this.snackBar.open('Profile was saved');
-      this.generateDownload();
-    });
+  async save() {
+    await this.profileService.persist();
+    this.snackBar.open('Profile was saved');
+    await this.generateDownload();
   }
 
-  generateDownload() {
-    const url = 'data:text/json;charset=UTF-8,' + encodeURIComponent(this.profile.exportToJson());
+  async generateDownload() {
+    const url = 'data:text/json;charset=UTF-8,' + encodeURIComponent(await this.profileService.export());
     this.downloadJsonHref = this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
@@ -65,20 +54,18 @@ export class ProfileComponent implements OnInit {
     this.uploadFile = e.target.files[0];
   }
 
-  upload() {
+  async upload() {
     this.uploading = true;
     const fileReader = new FileReader();
-    fileReader.onload = () => {
+    fileReader.onload = async () => {
       try {
         const input = JSON.parse(fileReader.result.toString());
-        if (this.profile.validate(input)) {
+        if (this.profileService.validate(input)) {
           // schema looks good so go on and delete old config if it exists
-          this.profile.importFromPersistence(<ProfilePersistence>input).subscribe(() => {
-            this.snackBar.open('Profile has been imported.');
-            this.uploading = false;
-            this.selectedSystems = this.profile.selectedSystems;
-            this.selectedCapabilities = this.profile.selectedCapabilities;
-          });
+          await this.profileService.import(<Profile>input);
+          this.snackBar.open('Profile has been imported.');
+          this.uploading = false;
+          this.profile = await this.profileService.get();
         } else {
           // error
           this.snackBar.open('The uploaded profile is not valid.');

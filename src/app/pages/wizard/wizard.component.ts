@@ -16,10 +16,9 @@ import {ProductService} from '../../products/shared/product.service';
 })
 export class WizardComponent implements OnInit {
 
-  public selectedSystems: number[];
-  public selectedCapabilities: number[];
-  public selectedPatterns: number[];
-  public selectedProducts: number[];
+  public selectedSystems: string[];
+  public selectedCapabilities: string[];
+  public selectedProducts: string[];
 
   public capabilities: Capability[] = [];
   public systems: System[] = [];
@@ -33,57 +32,43 @@ export class WizardComponent implements OnInit {
               private patterService: PatternService,
               private productService: ProductService,
               private profile: ProfileService) {
-
-    this.capabilityService.getAllAsArray().subscribe(capabilities => {
-      this.capabilities = capabilities;
-    });
-
-    this.systemService.getAllAsArray().subscribe(systems => {
-      this.systems = systems;
-    });
-
-    this.patterService.getAllAsArray().subscribe(systems => {
-      this.patterns = systems;
-    });
-
-    this.productService.getAllAsArray().subscribe(systems => {
-      this.products = systems;
-    });
-
-    this.profile.init().subscribe(() => {
-      this.selectedSystems = this.profile.selectedSystems;
-      this.selectedCapabilities = this.profile.selectedCapabilities;
-      this.working = false;
-    });
-
   }
 
-  save() {
+  async save() {
     this.working = true;
-    this.profile.selectedSystems = this.selectedSystems;
-    this.profile.selectedCapabilities = this.selectedCapabilities;
-    this.profile.persist().subscribe(() => {
-      this.working = false;
-    });
+    /*this.profile.systems = this.selectedSystems;
+    this.profile.capabilities = this.selectedCapabilities;
+    this.profile.products = this.selectedProducts; */
+    await this.profile.persist();
+    this.working = false;
+  }
+
+  async ngOnInit() {
+    this.capabilities = (await this.capabilityService.all()) as Capability[];
+    this.systems = (await this.systemService.all()) as System[];
+    this.patterns = (await this.patterService.all()) as Pattern[];
+    this.products = (await this.productService.all()) as Product[];
+    const p = await this.profile.get();
+    this.selectedSystems = p.systems;
+    this.selectedCapabilities = p.capabilities;
+    this.selectedProducts = p.products;
+    this.working = false;
   }
 
   selectAdequateComponentsByPatterns() {
-    this.working = true;
+    /*this.working = true;
     this.systemService.findManyFromRelation('patterns', this.selectedPatterns).subscribe(r => {
       this.selectedSystems = r.map(a => a.id);
       this.save();
-    });
+    });*/
   }
 
   selectAdequateComponentsByProducts() {
-    this.working = true;
+    /*this.working = true;
     this.systemService.findManyFromRelation('products', this.selectedProducts).subscribe(r => {
       this.selectedSystems = r.map(a => a.id);
       this.save();
-    });
-  }
-
-  ngOnInit() {
+    });*/
   }
 
 }

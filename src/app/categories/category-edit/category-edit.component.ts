@@ -3,8 +3,6 @@ import {Category} from '../shared/category';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../shared/category.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {SystemService} from '../../systems/shared/system.service';
-import {System} from '../../systems/shared/system';
 
 @Component({
   selector: 'app-category-edit',
@@ -13,44 +11,30 @@ import {System} from '../../systems/shared/system';
 })
 export class CategoryEditComponent implements OnInit {
 
-  public category: Category;
-  public systems: System[];
+  public category: Category = {name: '', description: ''};
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private categoryService: CategoryService,
     private snackBar: MatSnackBar,
-    private systemService: SystemService
   ) {
+  }
 
-    // get the id from the path and load category if set
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    const categoryId: number = Number(id);
-    if (id === 'new') {
-      this.category = <Category>{name: '', description: '', systems: []};
-    } else {
-      this.categoryService.get(categoryId).subscribe(c => {
-        if (c) {
-          this.category = <Category>c;
-          this.systemService.findFromRelation('categories', categoryId).subscribe(systems => {
-            this.systems = systems;
-          });
-        } else {
-          this.category = <Category>{name: '', description: '', systems: []};
-        }
-      });
+    if (id) {
+      this.category = await (this.categoryService.get(id)) as Category;
     }
-
   }
 
-  ngOnInit() {
+  async save() {
+    if (await this.categoryService.add(this.category)) {
+      this.snackBar.open('Capability was successfully saved');
+      await this.router.navigateByUrl('/capabilities');
+    } else {
+      this.snackBar.open('There has been an error.');
+    }
   }
 
-  save() {
-    this.categoryService.add(this.category).subscribe(() => {
-      this.snackBar.open('Category was successfully saved');
-      this.router.navigateByUrl('/categories');
-    });
-  }
 }

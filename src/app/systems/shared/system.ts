@@ -1,16 +1,10 @@
-import {Category} from '../../categories/shared/category';
-import {Product} from '../../products/shared/product';
-import {Pattern} from '../../patterns/shared/pattern';
-import {Capability} from '../../capabilities/shared/capability';
+import {Entity} from '../../shared/entity.service';
 
-export interface System {
-  id: number;
+export interface System extends Entity {
   name: string;
   description?: string;
   relevant?: boolean;
-  categories: Category[];
-  products: Product[];
-  patterns: Pattern[];
-  capabilities: Capability[];
-  substitutions: System[];
+  categories: string[];
+  products: string[];
+  substitutions?: string[];
 }

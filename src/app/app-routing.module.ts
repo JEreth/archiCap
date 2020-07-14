@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'stage', loadChildren: () => import('./pages/stage/stage.module').then(m => m.StageModule)},
   {path: 'explore', loadChildren: () => import('./pages/explore/explore.module').then(m => m.ExploreModule)},
   {path: 'wizard', loadChildren: () => import('./pages/wizard/wizard.module').then(m => m.WizardModule)},
+  {path: 'setup', loadChildren: () => import('./pages/setup/setup.module').then(m => m.SetupModule)},
   {path: '', redirectTo: '/wizard', pathMatch: 'full'},
 ];
 

@@ -14,20 +14,20 @@ export class CapabilityListComponent implements OnInit {
 
   constructor(private capabilityService: CapabilityService,
               private snackBar: MatSnackBar) {
-    this.capabilityService.getAllAsArray().subscribe(capabilities => {
-      this.capabilities = capabilities;
-    });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.update();
   }
 
-  remove(id: number) {
-    this.capabilityService.remove(id).subscribe(() => {
-      this.snackBar.open('Capability has been removed');
-      this.capabilityService.getAllAsArray().subscribe(capabilities => {
-        this.capabilities = capabilities;
-      });
-    });
+  async update() {
+    this.capabilities = (await this.capabilityService.all()) as Capability[];
   }
+
+  async remove(id: string) {
+    await this.capabilityService.remove(id);
+    await this.update();
+    this.snackBar.open('Capability has been removed');
+  }
+
 }

@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {forkJoin, Observable} from 'rxjs';
 import {CapabilityService} from '../capabilities/shared/capability.service';
 import {PatternService} from '../patterns/shared/pattern.service';
 import {ProductService} from '../products/shared/product.service';
@@ -10,14 +9,17 @@ import {Category} from '../categories/shared/category';
 import {Pattern} from '../patterns/shared/pattern';
 import {Product} from '../products/shared/product';
 import {System} from '../systems/shared/system';
-import {DataService} from './data.service';
+import {Attribute, AttributeSet} from './eav/models';
+import {AttributeService} from './eav/attribute.service';
 
-export interface ConfigurationPersistence {
+export interface Configuration {
   capabilities: Capability[];
   categories: Category[];
   patterns: Pattern[];
   products: Product[];
   systems: System[];
+  attributeSets: AttributeSet[];
+  attributes: Attribute[];
 }
 
 @Injectable({
@@ -29,125 +31,72 @@ export class ConfigurationService {
               private categoryService: CategoryService,
               private patternService: PatternService,
               private productService: ProductService,
-              private dataService: DataService,
-              private systemService: SystemService) {
+              private systemService: SystemService,
+              private attributeService: AttributeService,
+              private attributeSetService: AttributeService
+  ) {
   }
 
   // load current setup and save to json file
-  exportToJson(): Observable<string> {
-    return new Observable<string>((observer) => {
-      this.getConfiguration().subscribe(r => {
-        // fix circular references (clean category associations)
-        r.categories = r.categories.filter(a => (a != null)).map(a => ({id: a.id, name: a.name, description: a.description}));
-        for (const system of r.systems) {
-          system.categories = system.categories.filter(a => (a != null)).map(a => ({id: a.id, name: a.name, description: a.description}));
-        }
-        const exportData: any = <any>JSON.parse(JSON.stringify(r)); // clone and remove strict checking
-        for (const system of exportData.systems) {
-          system.categories = system.categories.filter(a => (a != null)).map(a => a.id);
-          system.products = system.products.filter(a => (a != null)).map(a => a.id);
-          system.patterns = system.patterns.filter(a => (a != null)).map(a => a.id);
-          system.capabilities = system.capabilities.filter(a => (a != null)).map(a => a.id);
-          system.substitutions = system.substitutions.filter(a => (a != null)).map(a => ({id: a.id, name: a.name}));
-        }
-        observer.next(JSON.stringify(exportData));
-        observer.complete();
-      });
-    });
+  async export(): Promise<string> {
+    return JSON.stringify(await this.get());
   }
 
-  importFromPersistence(input: any): Observable<boolean> {
-    return new Observable<boolean>((observer) => {
-      // load static data
-      const queue = [
-        this.capabilityService.set(input.capabilities || []),
-        this.categoryService.set(input.categories || []),
-        this.patternService.set(input.patterns || []),
-        this.productService.set(input.products || [])
-      ];
-      forkJoin(queue).subscribe(() => {
-        // prepare systems by filling relations
-        const systems: System[] = [];
-        for (const system of input.systems) {
-          const capabilities: Capability[] = [];
-          for (const capabilityId of <number[]>system.capabilities) {
-            capabilities.push(this.capabilityService.capabilities.get(capabilityId));
-          }
-          system.capabilities = capabilities;
-          const categories: Category[] = [];
-          for (const categoryId of <number[]>system.categories) {
-            categories.push(this.categoryService.categories.get(categoryId));
-          }
-          system.categories = categories;
-          const patterns: Pattern[] = [];
-          for (const patternId of <number[]>system.patterns) {
-            patterns.push(this.patternService.patterns.get(patternId));
-          }
-          system.patterns = patterns;
-          const products: Product[] = [];
-          for (const productId of <number[]>system.products) {
-            products.push(this.productService.products.get(productId));
-          }
-          system.products = products;
-          systems.push(system);
-        }
-        this.systemService.set(systems).subscribe(() => {
-          observer.next(true);
-          observer.complete();
-        });
-      });
-    });
+  async import(input: any): Promise<boolean> {
+    try {
+      await this.capabilityService.add(input.capabilities || [], true, true);
+      await this.categoryService.add(input.categories || [], true, true);
+      await this.patternService.add(input.patterns || [], true, true);
+      await this.productService.add(input.products || [], true, true);
+      await this.systemService.add(input.systems || [], true, true);
+      await this.attributeSetService.add(input.attributeSets || [], true, true);
+      await this.attributeService.add(input.attributes || [], true, true);
+      return true;
+    } catch (e) {
+      console.log(e);
+      return false;
+    }
   }
 
-  // get all values as arrays
-  getConfiguration(): Observable<ConfigurationPersistence> {
-    return new Observable<ConfigurationPersistence>((observer) => {
-      const queue = [
-        this.capabilityService.getAllAsArray(),
-        this.categoryService.getAllAsArray(),
-        this.patternService.getAllAsArray(),
-        this.productService.getAllAsArray(),
-        this.systemService.getAllAsArray()
-      ];
-      forkJoin(queue).subscribe(results => {
-        const persistence: ConfigurationPersistence = {
-          capabilities: <Capability[]>results[0],
-          categories: <Category[]>results[1],
-          patterns: <Pattern[]>results[2],
-          products: <Product[]>results[3],
-          systems: <System[]>results[4]
-        };
-
-        observer.next(persistence);
-        observer.complete();
-      });
-    });
+  // Build configuration entity from different services
+  async get(): Promise<Configuration> {
+    return {
+      capabilities: (await this.capabilityService.all()) as Capability[],
+      categories: (await this.categoryService.all()) as Category[],
+      patterns: (await this.patternService.all()) as Pattern[],
+      products: (await this.productService.all()) as Product[],
+      systems: (await this.systemService.all()) as System[],
+      attributes: (await this.attributeService.all()) as Attribute[],
+      attributeSets: (await this.attributeSetService.all()) as AttributeSet[],
+    } as Configuration;
   }
 
-  // reset current configuratuon
-  reset(): Observable<boolean> {
-    return new Observable<boolean>((observer) => {
-      const queue = [
-        this.capabilityService.set([]),
-        this.categoryService.set([]),
-        this.patternService.set([]),
-        this.productService.set([]),
-        this.systemService.set([]),
-      ];
-      forkJoin(queue).subscribe(() => {
-        observer.next(true);
-        observer.complete();
-      });
-    });
+  // reset current configuration
+  async reset(): Promise<boolean> {
+    try {
+      await this.capabilityService.reset();
+      await this.categoryService.reset();
+      await this.patternService.reset();
+      await this.productService.reset();
+      await this.systemService.reset();
+      await this.attributeService.reset();
+      await this.attributeSetService.reset();
+      return true;
+    } catch (e) {
+      console.log(e);
+      return false;
+    }
   }
 
   validate(input: any): boolean {
     // we only check for the major properties here. Might be better to make a in-depth validation
     return (input &&
-      input.capabilities && typeof (input.capabilities) === 'object' &&
-      input.categories && typeof (input.categories) === 'object' &&
-      input.patterns && typeof (input.patterns) === 'object' &&
-      input.products && typeof (input.products) === 'object' &&
-      input.systems && typeof (input.systems) === 'object');
+      input.capabilities && Array.isArray(input.capabilities) &&
+      input.categories && Array.isArray(input.categories) &&
+      input.patterns && Array.isArray(input.patterns) &&
+      input.products && Array.isArray(input.products) &&
+      input.attributes && Array.isArray(input.attributes) &&
+      input.attributeSets && Array.isArray(input.attributeSets) &&
+      input.systems && Array.isArray(input.systems));
   }
 }

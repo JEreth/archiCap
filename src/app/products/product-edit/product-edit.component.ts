@@ -3,7 +3,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ProductService} from '../shared/product.service';
 import {Product} from '../shared/product';
-import {SystemService} from '../../systems/shared/system.service';
 import {System} from '../../systems/shared/system';
 
 @Component({
@@ -20,38 +19,24 @@ export class ProductEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService,
-    private snackBar: MatSnackBar,
-    private systemService: SystemService
+    private snackBar: MatSnackBar
   ) {
+  }
 
-    // get the id from the path and load product if set
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    const productId: number = Number(id);
-    if (id === 'new') {
-      this.product = <Product>{name: '', description: ''};
-    } else {
-      this.productService.get(productId).subscribe(c => {
-        if (c) {
-          this.product = <Product>c;
-          this.systemService.findFromRelation('products', productId).subscribe(systems => {
-            this.systems = systems;
-          });
-        } else {
-          this.product = <Product>{name: '', description: ''};
-        }
-      });
+    if (id) {
+      this.product =  (await this.productService.get(id)) as Product;
     }
-
   }
 
-  ngOnInit() {
-  }
-
-  save() {
-    this.productService.add(this.product).subscribe(() => {
+  async save() {
+    if (await this.productService.add(this.product)) {
       this.snackBar.open('Product was successfully saved');
-      this.router.navigateByUrl('/products');
-    });
+      await this.router.navigateByUrl('/products');
+    } else {
+      this.snackBar.open('There has been an error');
+    }
   }
 
 }
