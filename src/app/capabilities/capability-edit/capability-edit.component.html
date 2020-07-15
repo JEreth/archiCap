@@ -1,4 +1,4 @@
-<a mat-flat-button routerLink="/capabilities">
+<a mat-button routerLink="/capabilities" style="">
   <mat-icon>arrow_back</mat-icon>
   Go back
 </a>
@@ -6,17 +6,20 @@
   <h2 *ngIf="capability && capability.name==''">Add new capability</h2>
   <h2 *ngIf="capability && capability.name!=''">Edit capability: {{ capability.name }}</h2>
 </section>
-<div class="form-wrap">
+<div *ngIf="form" class="form-wrap">
   <form [formGroup]="form" (ngSubmit)="save()">
-  <mat-form-field>
-    <input matInput placeholder="Short formulation" formControlName="name">
-  </mat-form-field>
 
-  <mat-form-field>
-    <textarea matInput placeholder="Long description of this capability ..."
+    <mat-form-field appearance="standard">
+      <mat-label>Short formulation</mat-label>
+      <input matInput placeholder="Short formulation" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Long description of this capability ..."
               formControlName="description"></textarea>
-  </mat-form-field>
+    </mat-form-field>
 
-  <button mat-flat-button color="primary" type="submit">Save</button>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
   </form>
 </div>

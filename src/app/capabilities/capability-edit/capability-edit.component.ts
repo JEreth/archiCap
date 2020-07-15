@@ -27,8 +27,9 @@ export class CapabilityEditComponent implements OnInit {
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.capability = (await this.capabilityService.get(id)) as Capability;
+      this.capability = (await this.capabilityService.get(id)) as Capability || this.capability;
     }
+    console.log(this.capability);
     this.form = this.formBuilder.group({
       name: [this.capability.name, Validators.required],
       description: [this.capability.description]
@@ -38,6 +39,7 @@ export class CapabilityEditComponent implements OnInit {
 
   async save() {
     this.capability = {...this.capability, ...this.form.value};
+    console.log(this.capability);
     if (await this.capabilityService.add(this.capability)) {
       this.snackBar.open('Capability was successfully saved');
       await this.router.navigateByUrl('/capabilities');
