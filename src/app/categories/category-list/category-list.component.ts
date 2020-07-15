@@ -16,7 +16,8 @@ export class CategoryListComponent implements OnInit {
               private snackBar: MatSnackBar) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.update();
   }
 
   async update() {
