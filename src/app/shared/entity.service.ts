@@ -115,4 +115,57 @@ export abstract class EntityService {
     return this.persist();
   }
 
+  // Create relation between elements by passing ids and foreign ids
+  async relate(ids: string | string[] | Entity | Entity[], foreignIds: string | string[] | Entity | Entity[],
+               property: string, persist = true): Promise<boolean> {
+    await this.init();
+
+    // check if property is valid
+    if (this.entities.length > 0 &&
+      (!(this.entities[0] as any).hasOwnProperty(property)) || !Array.isArray(this.entities[0][property])
+    ) {
+      console.log(`Property ${property} does not exist or is not relation.`);
+      return false;
+    }
+
+    // if we get an object transform to id array
+    if (!Array.isArray(ids) && typeof ids === 'object') {
+      ids = [(ids as Entity).id];
+    }
+    if (!Array.isArray(foreignIds) && typeof foreignIds === 'object') {
+      foreignIds = [(foreignIds as Entity).id];
+    }
+    if (Array.isArray(ids) && typeof ids[0] === 'object')  {
+      ids = (ids as Entity[]).map(i => i.id);
+    }
+    if (Array.isArray(foreignIds) && typeof foreignIds[0] === 'object') {
+      foreignIds = (foreignIds as Entity[]).map(i => i.id);
+    }
+    if (typeof ids === 'string') {
+      ids = [ids];
+    }
+    if (typeof foreignIds === 'string') {
+      foreignIds = [foreignIds];
+    }
+
+    for (let i = 0; i < this.entities.length; i++) {
+        if (ids.includes(this.entities[i].id)) {
+          foreignIds.forEach(foreignId => {
+            if (!this.entities[i][property].includes(foreignId)) {
+              this.entities[i][property].push(foreignId);
+            }
+          });
+        } else {
+          // remove relation
+          foreignIds.forEach(foreignId => {
+            const index = this.entities[i][property].indexOf(foreignId, 0);
+            if (index > -1) {
+              this.entities[i][property].splice(index, 1);
+            }
+          });
+        }
+    }
+    return (persist) ? this.persist() : true;
+  }
+
 }
