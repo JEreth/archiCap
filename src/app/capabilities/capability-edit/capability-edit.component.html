@@ -23,3 +23,13 @@
     <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
   </form>
 </div>
+
+<!-- Patterns -->
+<div *ngIf="configuration">
+  <mat-selection-list [(ngModel)]="relatedPatters">
+    <h3 matSubheader>Capability is part of the following patterns</h3>
+    <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern">
+      {{ pattern.name }}
+    </mat-list-option>
+  </mat-selection-list>
+</div>

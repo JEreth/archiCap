@@ -3,10 +3,10 @@ import {Category} from '../shared/category';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../shared/category.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {System} from "../../systems/shared/system";
-import {SystemService} from "../../systems/shared/system.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Configuration, ConfigurationService} from "../../shared/configuration.service";
+import {System} from '../../systems/shared/system';
+import {SystemService} from '../../systems/shared/system.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Configuration, ConfigurationService} from '../../shared/configuration.service';
 
 @Component({
   selector: 'app-category-edit',

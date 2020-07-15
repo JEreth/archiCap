@@ -22,3 +22,13 @@
     <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
   </form>
 </div>
+
+<!-- Systems -->
+<div *ngIf="configuration">
+  <mat-selection-list [(ngModel)]="relatedSystems">
+    <h3 matSubheader>Product can help to implement the following components</h3>
+    <mat-list-option *ngFor="let system of configuration.systems" [value]="system">
+      {{ system.name }}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
