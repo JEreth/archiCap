@@ -49,7 +49,6 @@ export class CategoryEditComponent implements OnInit {
     if (await this.categoryService.add(this.category)) {
       // update relations
       await this.systemService.relate(this.relatedSystems, this.category, 'categories');
-      return;
       this.snackBar.open('Category was successfully saved');
       await this.router.navigateByUrl('/categories');
     } else {
