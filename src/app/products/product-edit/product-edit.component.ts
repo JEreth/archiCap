@@ -4,6 +4,9 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {ProductService} from '../shared/product.service';
 import {Product} from '../shared/product';
 import {System} from '../../systems/shared/system';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {SystemService} from '../../systems/shared/system.service';
+import {Category} from "../../categories/shared/category";
 
 @Component({
   selector: 'app-product-edit',
@@ -12,25 +15,33 @@ import {System} from '../../systems/shared/system';
 })
 export class ProductEditComponent implements OnInit {
 
-  public product: Product;
-  public systems: System[] = [];
+  public form: FormGroup;
+  public product: Product = {name: '', description: ''};
+  public relatedSystems: System[];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService,
-    private snackBar: MatSnackBar
-  ) {
-  }
+    private snackBar: MatSnackBar,
+    private formBuilder: FormBuilder,
+    private systemService: SystemService
+  ) {}
 
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.product =  (await this.productService.get(id)) as Product;
+      this.product =  (await this.productService.get(id)) as Product || this.product;
+      this.relatedSystems = await (this.systemService.findBy(id, 'products')) as System[];
     }
+    this.form = this.formBuilder.group({
+      name: [this.product.name, Validators.required],
+      description: [this.product.description]
+    });
   }
 
   async save() {
+    this.product = {...this.product, ...this.form.value};
     if (await this.productService.add(this.product)) {
       this.snackBar.open('Product was successfully saved');
       await this.router.navigateByUrl('/products');

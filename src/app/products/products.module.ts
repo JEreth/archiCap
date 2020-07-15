@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ProductsComponent} from './products.component';
 import {ProductListComponent} from './product-list/product-list.component';
 import {ProductEditComponent} from './product-edit/product-edit.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
 import {RouterModule, Routes} from '@angular/router';
 
@@ -23,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     RouterModule.forChild(routes),
   ]
