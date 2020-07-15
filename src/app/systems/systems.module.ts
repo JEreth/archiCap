@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {SystemsComponent} from './systems.component';
 import {SystemListComponent} from './system-list/system-list.component';
 import {SystemEditComponent} from './system-edit/system-edit.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
 import {RouterModule, Routes} from '@angular/router';
 
@@ -23,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     RouterModule.forChild(routes),
   ]

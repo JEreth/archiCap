@@ -1,4 +1,4 @@
-<a mat-flat-button routerLink="/components">
+<a mat-button routerLink="/components">
   <mat-icon>arrow_back</mat-icon>
   Go back
 </a>
@@ -6,54 +6,21 @@
   <h2 *ngIf="system && system.name==''">Add new system</h2>
   <h2 *ngIf="system && system.name!=''">Edit system: {{ system.name }}</h2>
 </section>
-<div class="form-wrap" *ngIf="system">
-  <mat-form-field>
-    <input matInput placeholder="Name" [(ngModel)]="system.name" required>
-  </mat-form-field>
+<div class="form-wrap" *ngIf="form">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name of the Category" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Description of this category ..."
+                formControlName="description"></textarea>
+    </mat-form-field>
 
-  <mat-form-field>
-    <textarea matInput placeholder="Short description of this system ..." [(ngModel)]="system.description"></textarea>
-  </mat-form-field>
+    <!-- TODO: Add relations -->
 
-
-  <mat-selection-list [(ngModel)]="system.categories" [compareWith]="categorySelected">
-    <h3 matLine>Categories</h3>
-    <mat-list-option *ngFor="let category of categories" [value]="category">
-      {{category.name}}
-    </mat-list-option>
-  </mat-selection-list>
-
-  <mat-selection-list [(ngModel)]="system.products" [compareWith]="productSelected">
-    <h3 matLine>Products</h3>
-    <mat-list-option *ngFor="let product of products" [value]="product">
-      {{product.name}}
-    </mat-list-option>
-  </mat-selection-list>
-
-
-  <mat-selection-list [(ngModel)]="system.patterns" [compareWith]="patternSelected">
-    <h3 matLine>Patterns</h3>
-    <mat-list-option *ngFor="let pattern of patterns" [value]="pattern">
-      {{pattern.name}}
-    </mat-list-option>
-  </mat-selection-list>
-
-  <mat-selection-list [(ngModel)]="system.capabilities" [compareWith]="capabilitySelected">
-    <h3 matLine>Capabilities</h3>
-    <mat-list-option *ngFor="let capability of capabilities" [value]="capability">
-      {{capability.name}}
-    </mat-list-option>
-  </mat-selection-list>
-
-  <mat-selection-list [(ngModel)]="system.substitutions" [compareWith]="substitutionSelected">
-    <h3 matLine>Substitutions</h3>
-    <ng-container *ngFor="let substitution of systems">
-      <mat-list-option [value]="substitution" *ngIf="substitution.id != system.id">
-        {{substitution.name}}
-      </mat-list-option>
-    </ng-container>
-  </mat-selection-list>
-
-  <button mat-flat-button color="primary" (click)="save()">Save</button>
-
+    <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
+  </form>
 </div>
