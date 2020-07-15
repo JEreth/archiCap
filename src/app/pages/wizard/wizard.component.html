@@ -57,7 +57,7 @@
             <button mat-stroked-button matStepperNext color="default">Skip</button>
           </h2>
 
-          <mat-selection-list [(ngModel)]="selectedCapabilities" (ngModelChange)="save()">
+          <mat-selection-list [(ngModel)]="profile.capabilities" (ngModelChange)="save()">
             <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
               {{capability.name}}
             </mat-list-option>
@@ -96,7 +96,7 @@
           <mat-tab-group>
             <mat-tab label="Select directly">
 
-              <mat-selection-list [(ngModel)]="selectedSystems" (ngModelChange)="save()">
+              <mat-selection-list [(ngModel)]="profile.systems" (ngModelChange)="save()">
                 <mat-list-option *ngFor="let system of systems" [value]="system.id">
                   {{system.name}}
                 </mat-list-option>
@@ -111,16 +111,18 @@
             </mat-tab>
             <mat-tab label="Select by patterns">
 
+              <!--
               <mat-selection-list [(ngModel)]="selectedPatterns" (ngModelChange)="selectAdequateComponentsByPatterns()">
                 <mat-list-option *ngFor="let pattern of patterns" [value]="pattern.id">
                   {{pattern.name}}
                 </mat-list-option>
               </mat-selection-list>
+              -->
 
             </mat-tab>
             <mat-tab label="Select by products">
 
-              <mat-selection-list [(ngModel)]="selectedProducts" (ngModelChange)="selectAdequateComponentsByProducts()">
+              <mat-selection-list [(ngModel)]="profile.products" (ngModelChange)="selectAdequateComponentsByProducts()">
                 <mat-list-option *ngFor="let product of products" [value]="product.id">
                   {{product.name}}
                 </mat-list-option>

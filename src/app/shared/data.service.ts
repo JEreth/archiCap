@@ -10,10 +10,13 @@ export class DataService {
   }
 
   async set(key: string, data: any): Promise<boolean> {
-    if (data instanceof Map) {
-      data = Array.from(data.values());
+    try {
+      await this.storage.set(key, data).toPromise();
+      return true;
+    } catch (e) {
+      console.log(e);
+      return false;
     }
-    return this.storage.set(key, data).toPromise();
   }
 
   async get(key: string): Promise<any> {

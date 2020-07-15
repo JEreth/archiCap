@@ -58,7 +58,8 @@ body {
   min-width: 150px;
   width: 100%;
 
-  input, textarea {
+  input, textarea, mat-form-field {
+    display: block;
     width: 100%;
   }
 }

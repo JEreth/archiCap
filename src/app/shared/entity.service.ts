@@ -23,7 +23,7 @@ export abstract class EntityService {
 
   // Generate random uid from timestamp and object hash
   protected uid(object: any): string {
-    return (new Date().getTime()).toString(36) + '_' + window.btoa(JSON.stringify(object)).substr(12);
+    return (new Date().getTime()).toString(36) + window.btoa(JSON.stringify(object)).substr(4);
   }
 
   async init(): Promise<boolean> {
@@ -61,8 +61,14 @@ export abstract class EntityService {
   // Returns entities identified by certain property (default by id)
   async findBy(searchValues: string | string[], property: string = 'id'): Promise<Entity[]> {
     await this.init();
-    searchValues = (Array.isArray(searchValues)) ? searchValues : [ searchValues ];
-    return this.entities.filter(i => (i.hasOwnProperty(property) && searchValues.includes(i[property])));
+    searchValues = ((Array.isArray(searchValues)) ? searchValues : [ searchValues ]) as string[];
+    return this.entities.filter(i => {
+      if (i.hasOwnProperty(property) && Array.isArray(i[property])) {
+        return (i[property].filter(j => searchValues.includes(j)).length) > 0;
+      } else {
+        return searchValues.includes(i[property]);
+      }
+    });
   }
 
   // Add one or more entities
@@ -74,10 +80,10 @@ export abstract class EntityService {
     }
     for (const inputItem of input) {
       inputItem.id = (inputItem.id != null) ? inputItem.id : this.uid(inputItem);
-      if (!(await this.has(input.id))) {
-        this.entities.push(input as Entity);
+      if (!(await this.has(inputItem.id))) {
+        this.entities.push(inputItem as Entity);
       } else {
-        await this.update(input, false); // update if element exists
+        await this.update(inputItem, false); // update if element exists
       }
     }
     return (persist) ? this.persist() : true;
@@ -98,8 +104,8 @@ export abstract class EntityService {
   // remove a Capability by id or object
   async remove(input: string | Entity, persist = true): Promise<boolean> {
     await this.init();
-    input = (typeof input !== 'string') ? input : (input as Entity).id;
-    this.entities = this.entities.filter(i => i !== input);
+    input = (typeof input === 'string') ? input : (input as Entity).id;
+    this.entities = this.entities.filter(i => i.id !== input);
     // todo: Clean relations ?
     return (persist) ? this.persist() : true;
   }

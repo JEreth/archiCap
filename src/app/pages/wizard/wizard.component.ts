@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Capability} from '../../capabilities/shared/capability';
 import {CapabilityService} from '../../capabilities/shared/capability.service';
-import {ProfileService} from '../../shared/profile.service';
+import {Profile, ProfileService} from '../../shared/profile.service';
 import {SystemService} from '../../systems/shared/system.service';
 import {System} from '../../systems/shared/system';
 import {Pattern} from '../../patterns/shared/pattern';
@@ -16,9 +16,7 @@ import {ProductService} from '../../products/shared/product.service';
 })
 export class WizardComponent implements OnInit {
 
-  public selectedSystems: string[];
-  public selectedCapabilities: string[];
-  public selectedProducts: string[];
+  public profile: Profile;
 
   public capabilities: Capability[] = [];
   public systems: System[] = [];
@@ -31,7 +29,7 @@ export class WizardComponent implements OnInit {
               private systemService: SystemService,
               private patterService: PatternService,
               private productService: ProductService,
-              private profile: ProfileService) {
+              private profileService: ProfileService) {
   }
 
   async save() {
@@ -39,7 +37,7 @@ export class WizardComponent implements OnInit {
     /*this.profile.systems = this.selectedSystems;
     this.profile.capabilities = this.selectedCapabilities;
     this.profile.products = this.selectedProducts; */
-    await this.profile.persist();
+    await this.profileService.persist();
     this.working = false;
   }
 
@@ -48,10 +46,7 @@ export class WizardComponent implements OnInit {
     this.systems = (await this.systemService.all()) as System[];
     this.patterns = (await this.patterService.all()) as Pattern[];
     this.products = (await this.productService.all()) as Product[];
-    const p = await this.profile.get();
-    this.selectedSystems = p.systems;
-    this.selectedCapabilities = p.capabilities;
-    this.selectedProducts = p.products;
+    this.profile = await this.profileService.get();
     this.working = false;
   }
 
