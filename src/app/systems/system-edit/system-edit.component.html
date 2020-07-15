@@ -23,7 +23,7 @@
 
       <!-- CATEGORIES -->
       <mat-selection-list formControlName="categories">
-        <h3 matSubheader>Categories</h3>
+        <h3 matHeader>Categories</h3>
         <mat-list-option *ngFor="let category of configuration.categories" [value]="category.id">
           {{ category.name }}
         </mat-list-option>
@@ -31,7 +31,7 @@
 
       <!-- PRODUCTS -->
       <mat-selection-list formControlName="products">
-        <h3 matSubheader>Products</h3>
+        <h3 matHeader>Products</h3>
         <mat-list-option *ngFor="let product of configuration.products" [value]="product.id">
           {{ product.name }}
         </mat-list-option>
@@ -39,7 +39,7 @@
 
       <!-- SUBSTITUTIONS -->
       <mat-selection-list formControlName="substitutions">
-        <h3 matSubheader>Substitutions</h3>
+        <h3 matHeader>Substitutions</h3>
         <mat-list-option *ngFor="let substitute of configuration.systems" [value]="substitute.id">
           {{ substitute.name }}
         </mat-list-option>
@@ -47,8 +47,16 @@
 
     </div>
 
-    <!-- TODO: Add relations -->
-
     <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
   </form>
+</div>
+
+<!-- Patterns -->
+<div *ngIf="configuration">
+  <mat-selection-list [(ngModel)]="relatedPatters">
+    <h3 matSubheader>Component is part of the following patterns</h3>
+    <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern">
+      {{ pattern.name }}
+    </mat-list-option>
+  </mat-selection-list>
 </div>

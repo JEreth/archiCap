@@ -4,6 +4,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {Pattern} from '../shared/pattern';
 import {PatternService} from '../shared/pattern.service';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Configuration, ConfigurationService} from "../../shared/configuration.service";
 
 @Component({
   selector: 'app-pattern-edit',
@@ -14,13 +15,15 @@ export class PatternEditComponent implements OnInit {
 
   public form: FormGroup;
   public pattern: Pattern = {name: '', description: '', systems: [], capabilities: []};
+  public configuration: Configuration;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private patternService: PatternService,
     private snackBar: MatSnackBar,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private configurationService: ConfigurationService
   ) {
   }
 
@@ -29,9 +32,12 @@ export class PatternEditComponent implements OnInit {
     if (id) {
       this.pattern = await this.patternService.get(id) as Pattern || this.pattern;
     }
+    this.configuration = await this.configurationService.get();
     this.form = this.formBuilder.group({
       name: [this.pattern.name, Validators.required],
-      description: [this.pattern.description]
+      description: [this.pattern.description],
+      systems: [this.pattern.systems],
+      capabilities: [this.pattern.capabilities],
     });
   }
 

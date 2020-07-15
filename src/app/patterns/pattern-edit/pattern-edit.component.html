@@ -19,17 +19,24 @@
                 formControlName="description"></textarea>
     </mat-form-field>
 
+    <div *ngIf="configuration">
+      <!-- SYSTEMS -->
+      <mat-selection-list formControlName="systems">
+        <h3 matHeader>Systems</h3>
+        <mat-list-option *ngFor="let system of configuration.systems" [value]="system.id">
+          {{ system.name }}
+        </mat-list-option>
+      </mat-selection-list>
+
+      <!-- CAPABILITIES -->
+      <mat-selection-list formControlName="capabilities">
+        <h3 matHeader>Capabilities</h3>
+        <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
+          {{ capability.name }}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+
     <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
   </form>
 </div>
-
-  <!-- TODO: Find related and add checkboxes or so -->
-  <!--
-  <mat-nav-list>
-    <h3 matLine>Related components</h3>
-    <a mat-list-item [routerLink]="'/components/' + system.id" *ngFor="let system of systems">
-      {{ system.name }}
-    </a>
-  </mat-nav-list>
-  <p *ngIf="systems.length === 0">No related components</p>
-  -->

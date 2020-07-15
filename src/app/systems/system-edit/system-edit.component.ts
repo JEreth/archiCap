@@ -5,6 +5,8 @@ import {System} from '../shared/system';
 import {SystemService} from '../shared/system.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
+import {Pattern} from "../../patterns/shared/pattern";
+import {PatternService} from "../../patterns/shared/pattern.service";
 
 @Component({
   selector: 'app-system-edit',
@@ -15,6 +17,7 @@ export class SystemEditComponent implements OnInit {
 
   public form: FormGroup;
   public system: System = {name: '', description: '', categories: [], products: [], substitutions: []};
+  public relatedPatters: Pattern[] = [];
   public configuration: Configuration;
 
   constructor(
@@ -23,13 +26,15 @@ export class SystemEditComponent implements OnInit {
     private systemService: SystemService,
     private snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
-    private configurationService: ConfigurationService
+    private configurationService: ConfigurationService,
+    private patternService: PatternService
   ) {}
 
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.system = (await this.systemService.get(id)) as System || this.system;
+      this.relatedPatters = await (this.patternService.findBy(id, 'systems')) as Pattern[];
     }
     this.configuration = await this.configurationService.get();
     this.form = this.formBuilder.group({
@@ -44,6 +49,7 @@ export class SystemEditComponent implements OnInit {
   async save() {
     this.system = {...this.system, ...this.form.value};
     if (await this.systemService.add(this.system)) {
+      await this.patternService.relate(this.relatedPatters, this.system, 'systems');
       this.snackBar.open('System was successfully saved');
       await this.router.navigateByUrl('/components');
     } else {
