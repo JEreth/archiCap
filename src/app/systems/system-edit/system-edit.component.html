@@ -19,6 +19,34 @@
                 formControlName="description"></textarea>
     </mat-form-field>
 
+    <div *ngIf="configuration">
+
+      <!-- CATEGORIES -->
+      <mat-selection-list formControlName="categories">
+        <h3 matSubheader>Categories</h3>
+        <mat-list-option *ngFor="let category of configuration.categories" [value]="category.id">
+          {{ category.name }}
+        </mat-list-option>
+      </mat-selection-list>
+
+      <!-- PRODUCTS -->
+      <mat-selection-list formControlName="products">
+        <h3 matSubheader>Products</h3>
+        <mat-list-option *ngFor="let product of configuration.products" [value]="product.id">
+          {{ product.name }}
+        </mat-list-option>
+      </mat-selection-list>
+
+      <!-- SUBSTITUTIONS -->
+      <mat-selection-list formControlName="substitutions">
+        <h3 matSubheader>Substitutions</h3>
+        <mat-list-option *ngFor="let substitute of configuration.systems" [value]="substitute.id">
+          {{ substitute.name }}
+        </mat-list-option>
+      </mat-selection-list>
+
+    </div>
+
     <!-- TODO: Add relations -->
 
     <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
