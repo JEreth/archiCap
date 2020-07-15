@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Pattern} from '../shared/pattern';
 import {PatternService} from '../shared/pattern.service';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-pattern-edit',
@@ -11,24 +12,31 @@ import {PatternService} from '../shared/pattern.service';
 })
 export class PatternEditComponent implements OnInit {
 
+  public form: FormGroup;
   public pattern: Pattern = {name: '', description: '', systems: [], capabilities: []};
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private patternService: PatternService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private formBuilder: FormBuilder
   ) {
   }
 
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.pattern = await this.patternService.get(id) as Pattern;
+      this.pattern = await this.patternService.get(id) as Pattern || this.pattern;
     }
+    this.form = this.formBuilder.group({
+      name: [this.pattern.name, Validators.required],
+      description: [this.pattern.description]
+    });
   }
 
   async save() {
+    this.pattern = {...this.pattern, ...this.form.value};
     if (await this.patternService.add(this.pattern)) {
       this.snackBar.open('Pattern was successfully saved');
       await this.router.navigateByUrl('/patterns');

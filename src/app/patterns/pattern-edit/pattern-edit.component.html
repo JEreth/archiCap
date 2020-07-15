@@ -6,15 +6,25 @@
   <h2 *ngIf="pattern && pattern.name==''">Add new pattern</h2>
   <h2 *ngIf="pattern && pattern.name!=''">Edit pattern: {{ pattern.name }}</h2>
 </section>
-<div class="form-wrap">
-  <mat-form-field>
-    <input matInput placeholder="Name" [(ngModel)]="pattern.name" required>
-  </mat-form-field>
+<div class="form-wrap" *ngIf="form">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name of the Pattern" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Description of this pattern ..."
+                formControlName="description"></textarea>
+    </mat-form-field>
 
-  <mat-form-field>
-    <textarea matInput placeholder="Short description of this pattern ..." [(ngModel)]="pattern.description"></textarea>
-  </mat-form-field>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
+  </form>
+</div>
 
+  <!-- TODO: Find related and add checkboxes or so -->
+  <!--
   <mat-nav-list>
     <h3 matLine>Related components</h3>
     <a mat-list-item [routerLink]="'/components/' + system.id" *ngFor="let system of systems">
@@ -22,7 +32,4 @@
     </a>
   </mat-nav-list>
   <p *ngIf="systems.length === 0">No related components</p>
-
-  <button mat-flat-button color="primary" (click)="save()">Save</button>
-
-</div>
+  -->
