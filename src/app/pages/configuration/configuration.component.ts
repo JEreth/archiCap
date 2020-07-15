@@ -61,8 +61,10 @@ export class ConfigurationComponent implements OnInit {
   }
 
   async reset() {
-    await this.configurationService.reset();
-    this.snackBar.open('Configuration has been reset.');
+    if (confirm('Are you sure?')) {
+      await this.configurationService.reset();
+      this.snackBar.open('Configuration has been reset.');
+    }
   }
 
   loadConfiguration() {
