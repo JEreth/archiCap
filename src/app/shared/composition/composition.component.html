@@ -40,12 +40,12 @@
   <div class="col-9">
     <!-- layer architecture -->
     <div id="category-box-wrap" class="{{stackMode}} view-{{viewMode}}" *ngIf="viewMode!=='analyze'">
-      <div class="category-box" *ngFor="let category of categories">
+      <div class="category-box" *ngFor="let layer of layers">
 
-        <span class="category-box-title">{{ category.name }}</span>
+        <span class="category-box-title">{{ layer.category.name }}</span>
 
         <div class="system-box-wrap">
-          <div class="system-box" *ngFor="let system of category.systems" (click)="showSystemInformation(system)"
+          <div class="system-box" *ngFor="let system of layer.systems" (click)="showSystemInformation(system)"
                [class.highlighted]="highlightedSystems.indexOf(system.id) !== -1"
                [class.current]="isCurrentSystem(system.id)"
                [class.desired]="isDesiredSystem(system.id)"
@@ -67,7 +67,7 @@
     <mat-selection-list [(ngModel)]="highlightedPatterns" *ngIf="!showAnalyze"
                         (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by pattern</h3>
-      <mat-list-option *ngFor="let pattern of patterns" [value]="pattern.id">
+      <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern">
         {{pattern.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -76,7 +76,7 @@
     <mat-selection-list [(ngModel)]="highlightedPatterns" *ngIf="showAnalyze"
                         (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by available pattern</h3>
-      <mat-list-option *ngFor="let pattern of availablePatterns" [value]="pattern.id">
+      <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern.id">
         {{pattern.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -86,7 +86,7 @@
     <mat-selection-list [(ngModel)]="highlightedCapabilities" *ngIf="!showAnalyze"
                         (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by capabilities</h3>
-      <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
+      <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
         {{capability.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -95,7 +95,7 @@
     <mat-selection-list [(ngModel)]="highlightedCapabilities" *ngIf="showAnalyze"
                         (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by desired capabilities</h3>
-      <mat-list-option *ngFor="let capability of desiredCapabilities" [value]="capability.id">
+      <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
         {{capability.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -104,7 +104,7 @@
     <mat-selection-list [(ngModel)]="highlightedCapabilities" *ngIf="showAnalyze && viewMode !== 'desiredCapabilities'"
                         (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by available capabilities</h3>
-      <mat-list-option *ngFor="let capability of availableCapabilities" [value]="capability.id">
+      <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
         {{capability.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -141,7 +141,7 @@
         <mat-card-title><b>Components</b> in your current setup</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <mat-list *ngFor="let system of availableSystems" (click)="showSystemInformation(system)">
+        <mat-list *ngFor="let system of configuration.systems" (click)="showSystemInformation(system)">
           <mat-list-item>{{system.name}}</mat-list-item>
         </mat-list>
       </mat-card-content>
@@ -157,7 +157,7 @@
         <mat-card-title><b>Capabilities</b> that you can implement with your current setup</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <mat-list *ngFor="let capability of availableCapabilities">
+        <mat-list *ngFor="let capability of configuration.capabilities">
           <mat-list-item>{{capability.name}}</mat-list-item>
         </mat-list>
       </mat-card-content>

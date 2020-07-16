@@ -1,14 +1,16 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {System} from '../../systems/shared/system';
-import {Capability} from '../../capabilities/shared/capability';
-import {Pattern} from '../../patterns/shared/pattern';
 import {ConfigurationService, Configuration} from '../configuration.service';
 import {SystemService} from '../../systems/shared/system.service';
 import {MatDialog} from '@angular/material/dialog';
-import {SystemInfoComponent} from '../../systems/shared/system-info/system-info.component';
-import {PatternService} from '../../patterns/shared/pattern.service';
-import {CapabilityService} from '../../capabilities/shared/capability.service';
 import {Profile, ProfileService} from '../profile.service';
+import {Category} from '../../categories/shared/category';
+import {System} from '../../systems/shared/system';
+import {Pattern} from "../../patterns/shared/pattern";
+
+interface StackLayer {
+  category: Category;
+  systems: System[];
+}
 
 @Component({
   selector: 'app-composition',
@@ -20,6 +22,7 @@ export class CompositionComponent implements OnInit {
   // view config
   public viewMode = 'currentStack';
   public stackMode = 'vertical';
+
   @Input() showAnalyze = false;
   @Input() showLabel = true;
   @Input() showSwitchModes = true;
@@ -29,56 +32,58 @@ export class CompositionComponent implements OnInit {
   public configuration: Configuration;
   public profile: Profile;
 
-  // capabilities and patterns that are available
-  public availableSystems: System[] = [];
-  public availablePatterns: Pattern[] = [];
-  public availableCapabilities: Capability[] = [];
-  public desiredCapabilities: Capability[] = [];
-  public desiredSystems: System[] = [];
-
   // selected stuff
-  public highlightedSystems: number[] = [];
-  public highlightedPatterns: number[] = [];
-  public highlightedCapabilities: number[] = [];
+  public highlightedSystems: string[] = [];
+  public highlightedPatterns: Pattern[] = [];
+  public highlightedCapabilities: string[] = [];
 
   // other values
   public analyzeResult: any = [];
+  public layers: StackLayer[] = [];
 
   constructor(private configurationService: ConfigurationService,
               private profileService: ProfileService,
-              private systemService: SystemService,
-              private patternService: PatternService,
-              private capabilityService: CapabilityService,
+              public systemService: SystemService,
               private dialog: MatDialog) {
   }
 
   async ngOnInit() {
     this.configuration = await this.configurationService.get();
     this.profile = await this.profileService.get();
+    for (const c of this.configuration.categories) {
+      this.layers.push({
+        category: c,
+        systems: await this.systemService.findBy(c.id, 'categories') as System[]
+      });
+    }
   }
 
   isCurrentSystem(id: string): boolean {
-    return this.availableSystems.map(function (system) {
+    return false;
+    /* return this.availableSystems.map(function (system) {
       return system.id;
-    }).includes(id);
+    }).includes(id); */
   }
 
   isDesiredSystem(id: string): boolean {
-    return this.desiredSystems.map(function (system) {
+    return false;
+    /* return this.desiredSystems.map(function (system) {
       return system.id;
-    }).includes(id);
+    }).includes(id); */
   }
 
 
 
-  showSystemInformation(system: System) {
-    const operationDetailPopover = this.dialog.open(SystemInfoComponent, {
+  showSystemInformation(system: any) {
+    /*const operationDetailPopover = this.dialog.open(SystemInfoComponent, {
       data: {system: system},
-    });
+    });*/
   }
 
-  updateHighlightedSystems() {
-    this.highlightedSystems = [];
+  async updateHighlightedSystems() {
+    /* this.highlightedSystems = this.highlightedPatterns.reduce( (p1, p2) => {
+      return p1.systems.concat(p2.systems) as string[];
+    }, {systems: []}); */
     /*for (const patternId of this.highlightedPatterns) {
       this.systemService.findFromRelation('patterns', patternId).subscribe(systems => {
         const systemsFiltered = this.highlightedSystems.concat(systems.map(a => a.id));
