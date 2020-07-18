@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Category} from '../shared/category';
 import {CategoryService} from '../shared/category.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-category-list',
@@ -31,6 +32,11 @@ export class CategoryListComponent implements OnInit {
     } else {
       this.snackBar.open('There has been an error');
     }
+  }
+
+  async drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.categories, event.previousIndex, event.currentIndex);
+    await this.categoryService.persist(this.categories);
   }
 
 }

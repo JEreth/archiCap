@@ -36,7 +36,10 @@ export abstract class EntityService {
   }
 
   // Persist entities in localstorage
-  async persist(): Promise<boolean> {
+  async persist(overwrite: Entity[] = null): Promise<boolean> {
+    if (overwrite) {
+      this.entities = overwrite;
+    }
     return this.data.set(this.entityCode, this.entities);
   }
 
