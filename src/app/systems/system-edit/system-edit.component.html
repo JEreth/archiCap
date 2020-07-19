@@ -51,9 +51,11 @@
       <!-- SUBSTITUTIONS -->
       <mat-selection-list formControlName="substitutions">
         <h3 matHeader>Substitutions</h3>
-        <mat-list-option *ngFor="let substitute of configuration.systems" [value]="substitute.id">
-          {{ substitute.name }}
-        </mat-list-option>
+        <div *ngFor="let substitute of configuration.systems">
+          <mat-list-option [value]="substitute.id" *ngIf="substitute.id !== system.id">
+            {{ substitute.name }}
+          </mat-list-option>
+        </div>
       </mat-selection-list>
 
     </div>
