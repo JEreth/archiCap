@@ -15,3 +15,7 @@ export interface Attribute extends Entity {
   type: 'capability' | 'component';
 }
 
+export interface AttributeSelection {
+  attribute: string;
+  value: string;
+}

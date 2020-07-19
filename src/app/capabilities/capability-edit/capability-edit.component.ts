@@ -17,7 +17,7 @@ import {AttributeSet} from '../../eav/shared/models';
 export class CapabilityEditComponent implements OnInit {
 
   public form: FormGroup;
-  public capability: Capability = {name: '', description: '', attributeSet: ''};
+  public capability: Capability = {name: '', description: '', attributeSet: '', attributeSelection: []};
   public relatedPatters: Pattern[] = [];
   public configuration: Configuration;
   public attributeSets: AttributeSet[] = [];

@@ -38,7 +38,7 @@
       <h3 matLine>{{ attribute.name }} ({{ attribute.values }})</h3>
       <p matLine class="muted" *ngIf="attribute.description">{{ attribute.description }}</p>
       <div matLine>
-        <a mat-icon-button routerLink="attribute/{{ type }}/edit/{{ attribute.id }}">
+        <a mat-icon-button routerLink="/eav/attribute/{{ type }}/edit/{{ attribute.id }}">
           <mat-icon>edit</mat-icon>
         </a>
         <button mat-icon-button (click)="removeAttribute(attribute.id)" color="warn">

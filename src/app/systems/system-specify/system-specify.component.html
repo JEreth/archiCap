@@ -1,0 +1,14 @@
+<a mat-button routerLink="/capabilities" style="">
+  <mat-icon>arrow_back</mat-icon>
+  Go back
+</a>
+<section class="mat-typography">
+  <h2 *ngIf="system && system.name!=''">Specify system: {{ system.name }}</h2>
+</section>
+
+<app-attribute-selection [attributeSetId]="system.attributeSet"
+                         [attributeSelection]="system.attributeSelection"
+                         [persistService]="systemService"
+                         [entityId]="system.id"
+                         *ngIf="system"></app-attribute-selection>
+

@@ -1,0 +1,20 @@
+<div *ngIf="attributes && attributeSelection && entityId">
+  Type: {{ attributeSet.name }}
+  <div class="specification-block">
+    <div *ngFor="let attribute of attributes" class="specification-row">
+      <div class="lbl-col">
+        {{ attribute.name }}
+      </div>
+      <div class="selection-col">
+        <mat-button-toggle-group>
+          <mat-button-toggle [value]="value" *ngFor="let value of attribute.values"
+                             [checked]="isSelected(attribute.id, value)"
+                             (click)="select(attribute.id, value)">
+            {{value}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+  </div>
+  <button mat-flat-button color="accent" type="submit" (click)="save()">Save</button>
+</div>

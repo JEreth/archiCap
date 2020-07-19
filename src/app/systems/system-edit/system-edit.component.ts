@@ -21,6 +21,7 @@ export class SystemEditComponent implements OnInit {
     name: '',
     description: '',
     attributeSet: '',
+    attributeSelection: [],
     categories: [],
     products: [],
     substitutions: []

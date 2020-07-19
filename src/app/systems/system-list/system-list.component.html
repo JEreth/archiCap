@@ -5,7 +5,7 @@
     or edit details
   </p>
 </section>
-<a mat-flat-button routerLink="/components/new" color="primary">
+<a mat-flat-button routerLink="/components/add" color="primary">
   <mat-icon>add</mat-icon>
   Add new component
 </a>
@@ -16,7 +16,10 @@
     <mat-list-item *ngFor="let system of systems">
       <h3 matLine>{{ system.name }}</h3>
       <p matLine class="muted" *ngIf="system.description">{{ system.description }}</p>
-      <a mat-icon-button routerLink="/components/{{ system.id }}">
+      <a mat-icon-button routerLink="/components/specify/{{ system.id }}" *ngIf="system.attributeSet">
+        <mat-icon>tune</mat-icon>
+      </a>
+      <a mat-icon-button routerLink="/components/edit/{{ system.id }}">
         <mat-icon>edit</mat-icon>
       </a>
       <button mat-icon-button (click)="remove(system.id)" color="warn">
