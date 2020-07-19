@@ -1,0 +1,49 @@
+<a mat-button (click)="back()">
+  <mat-icon>arrow_back</mat-icon>
+  Go back
+</a>
+<section class="mat-typography">
+  <h2 *ngIf="attribute && attribute.name==''">Add new attribute</h2>
+  <h2 *ngIf="attribute && attribute.name!=''">Edit attribute: {{ attribute.name }}</h2>
+</section>
+<div *ngIf="form" class="form-wrap">
+  <form [formGroup]="form" (ngSubmit)="save()">
+
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name of attribute set" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Long description of this attribute ..."
+                formControlName="description"></textarea>
+    </mat-form-field>
+
+    <button mat-flat-button color="accent" type="submit" [disabled]="!form.valid">Save</button>
+  </form>
+</div>
+
+<!-- VALUES -->
+<h3>Values</h3>
+<p *ngIf="attribute.values.length === 0">No values defined yet. Add new value now.</p>
+<mat-list class="sort-list" cdkDropList (cdkDropListDropped)="dropValue($event)">
+  <mat-list-item *ngFor="let value of attribute.values; index as i; trackBy:trackByFn" cdkDrag>
+    <div class="sort-placeholder" *cdkDragPlaceholder></div>
+    <input matInput placeholder="Enter value" [(ngModel)]="attribute.values[i]">
+    <button mat-icon-button (click)="removeValue(i)" color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <div class="sort-handle" cdkDragHandle>
+      <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+      </svg>
+    </div>
+  </mat-list-item>
+</mat-list>
+<button mat-mini-fab color="primary" type="submit" (click)="addValue()">
+  <mat-icon>add</mat-icon>
+</button>
+

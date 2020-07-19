@@ -1,0 +1,21 @@
+<mat-spinner *ngIf="!attributeSets"></mat-spinner>
+<div id="attribute-set-list" *ngIf="attributeSets">
+  <p *ngIf="attributeSets.length==0" class="muted">No attribute attributeSets defined yet</p>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let attributeSet of attributeSets">
+      <h3 matLine>{{ attributeSet.name }}</h3>
+      <p matLine class="muted" *ngIf="attributeSet.description">{{ attributeSet.description }}</p>
+      <a mat-icon-button routerLink="/eav/attribute-set/{{type}}/edit/{{attributeSet.id}}">
+        <mat-icon>edit</mat-icon>
+      </a>
+      <button mat-icon-button (click)="remove(attributeSet.id)" color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
+
+  <a mat-flat-button routerLink="/eav/attribute-set/{{type}}/add" color="primary">
+    <mat-icon>add</mat-icon>
+    Add new Attribute Set
+  </a>
+</div>

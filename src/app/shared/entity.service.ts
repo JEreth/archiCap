@@ -125,7 +125,7 @@ export abstract class EntityService {
 
     // check if property is valid
     if (this.entities.length > 0 &&
-      (!(this.entities[0] as any).hasOwnProperty(property)) || !Array.isArray(this.entities[0][property])
+      ((!(this.entities[0] as any).hasOwnProperty(property)) || !Array.isArray(this.entities[0][property]))
     ) {
       console.log(`Property ${property} does not exist or is not relation.`);
       return false;

@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import {EntityService} from '../entity.service';
-import {DataService} from '../data.service';
+import {Injectable} from '@angular/core';
+import {EntityService} from '../../shared/entity.service';
+import {DataService} from '../../shared/data.service';
 
 @Injectable({
   providedIn: 'root'

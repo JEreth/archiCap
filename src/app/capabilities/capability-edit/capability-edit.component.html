@@ -17,10 +17,17 @@
     <mat-form-field appearance="standard">
       <mat-label>Description</mat-label>
       <textarea matInput placeholder="Long description of this capability ..."
-              formControlName="description"></textarea>
+                formControlName="description"></textarea>
     </mat-form-field>
-
-    <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Capability Set</mat-label>
+      <mat-select formControlName="attributeSet">
+        <mat-option *ngFor="let attributeSet of attributeSets"
+                    [value]="attributeSet.id">{{attributeSet.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-flat-button color="accent" type="submit" [disabled]="!form.valid">Save</button>
   </form>
 </div>
 

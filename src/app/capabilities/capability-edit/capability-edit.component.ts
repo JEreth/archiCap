@@ -4,10 +4,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {CapabilityService} from '../shared/capability.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Configuration, ConfigurationService} from "../../shared/configuration.service";
-import {Pattern} from "../../patterns/shared/pattern";
-import {System} from "../../systems/shared/system";
-import {PatternService} from "../../patterns/shared/pattern.service";
+import {Configuration, ConfigurationService} from '../../shared/configuration.service';
+import {Pattern} from '../../patterns/shared/pattern';
+import {PatternService} from '../../patterns/shared/pattern.service';
+import {AttributeSet} from "../../eav/shared/models";
 
 @Component({
   selector: 'app-capability-edit',
@@ -17,9 +17,10 @@ import {PatternService} from "../../patterns/shared/pattern.service";
 export class CapabilityEditComponent implements OnInit {
 
   public form: FormGroup;
-  public capability: Capability = {name: '', description: ''};
+  public capability: Capability = {name: '', description: '', attributeSet: ''};
   public relatedPatters: Pattern[] = [];
   public configuration: Configuration;
+  public attributeSets: AttributeSet[] = [];
 
   constructor(
     private router: Router,
@@ -39,9 +40,11 @@ export class CapabilityEditComponent implements OnInit {
       this.relatedPatters = await (this.patternService.findBy(id, 'capabilities')) as Pattern[];
     }
     this.configuration = await this.configurationService.get();
+    this.attributeSets = this.configuration.attributeSets.filter(i => i.type === 'capability');
     this.form = this.formBuilder.group({
       name: [this.capability.name, Validators.required],
-      description: [this.capability.description]
+      description: [this.capability.description],
+      attributeSet: [this.capability.attributeSet]
     });
   }
 

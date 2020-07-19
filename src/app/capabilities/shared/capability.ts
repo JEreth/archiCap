@@ -4,4 +4,5 @@ export interface Capability extends Entity {
   id?: string;
   name: string;
   description?: string;
+  attributeSet: string;
 }

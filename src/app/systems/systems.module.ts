@@ -6,6 +6,7 @@ import {SystemEditComponent} from './system-edit/system-edit.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
 import {RouterModule, Routes} from '@angular/router';
+import {AttributesetListModule} from '../eav/attributeset-list/attributeset-list.module';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    AttributesetListModule,
     RouterModule.forChild(routes),
   ]
 })
