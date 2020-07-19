@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { AttributeSetService } from './attribute-set.service';
+import {AttributeSetService} from './attribute-set.service';
 
 describe('AttributeSetService', () => {
   let service: AttributeSetService;

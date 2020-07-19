@@ -28,7 +28,8 @@ export class SystemEditComponent implements OnInit {
     private formBuilder: FormBuilder,
     private configurationService: ConfigurationService,
     private patternService: PatternService
-  ) {}
+  ) {
+  }
 
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');

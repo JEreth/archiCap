@@ -5,7 +5,8 @@ export abstract class EntityServiceMock {
   public entityCode = 'entity';
   public entities: Entity[] = [];
 
-  protected constructor() { }
+  protected constructor() {
+  }
 
   // Generate random uid from timestamp and object hash
   protected uid(object: any): string {

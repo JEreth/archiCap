@@ -3,8 +3,7 @@ import {CapabilityService} from './capability.service';
 
 describe('CapabilityService', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    providers: [
-    ]
+    providers: []
   }));
 
   it('should be created', () => {

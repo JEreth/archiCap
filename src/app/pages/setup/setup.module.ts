@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SetupComponent } from './setup.component';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SetupComponent} from './setup.component';
 
 
 @NgModule({
@@ -10,4 +9,5 @@ import { SetupComponent } from './setup.component';
     CommonModule
   ]
 })
-export class SetupModule { }
+export class SetupModule {
+}

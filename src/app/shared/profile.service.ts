@@ -51,7 +51,7 @@ export class ProfileService {
   validate(input: any): boolean {
     // we only check for the major properties here. Might be better to make a in-depth validation
     return (input &&
-      input.capabilities && Array.isArray(input.capabilities)  &&
+      input.capabilities && Array.isArray(input.capabilities) &&
       input.systems && Array.isArray(input.systems));
   }
 

@@ -29,12 +29,13 @@ export class ProductEditComponent implements OnInit {
     private formBuilder: FormBuilder,
     private systemService: SystemService,
     private configurationService: ConfigurationService
-  ) {}
+  ) {
+  }
 
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.product =  (await this.productService.get(id)) as Product || this.product;
+      this.product = (await this.productService.get(id)) as Product || this.product;
       this.relatedSystems = await (this.systemService.findBy(id, 'products')) as System[];
     }
     this.configuration = await this.configurationService.get();

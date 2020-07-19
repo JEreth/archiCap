@@ -73,7 +73,6 @@ export class CompositionComponent implements OnInit {
   }
 
 
-
   showSystemInformation(system: any) {
     /*const operationDetailPopover = this.dialog.open(SystemInfoComponent, {
       data: {system: system},
