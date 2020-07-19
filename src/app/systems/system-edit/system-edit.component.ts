@@ -5,8 +5,9 @@ import {System} from '../shared/system';
 import {SystemService} from '../shared/system.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
-import {Pattern} from "../../patterns/shared/pattern";
-import {PatternService} from "../../patterns/shared/pattern.service";
+import {Pattern} from '../../patterns/shared/pattern';
+import {PatternService} from '../../patterns/shared/pattern.service';
+import {AttributeSet} from '../../eav/shared/models';
 
 @Component({
   selector: 'app-system-edit',
@@ -16,9 +17,17 @@ import {PatternService} from "../../patterns/shared/pattern.service";
 export class SystemEditComponent implements OnInit {
 
   public form: FormGroup;
-  public system: System = {name: '', description: '', categories: [], products: [], substitutions: []};
+  public system: System = {
+    name: '',
+    description: '',
+    attributeSet: '',
+    categories: [],
+    products: [],
+    substitutions: []
+  };
   public relatedPatters: Pattern[] = [];
   public configuration: Configuration;
+  public attributeSets: AttributeSet[] = [];
 
   constructor(
     private router: Router,
@@ -38,9 +47,11 @@ export class SystemEditComponent implements OnInit {
       this.relatedPatters = await (this.patternService.findBy(id, 'systems')) as Pattern[];
     }
     this.configuration = await this.configurationService.get();
+    this.attributeSets = this.configuration.attributeSets.filter(i => i.type === 'component');
     this.form = this.formBuilder.group({
       name: [this.system.name, Validators.required],
       description: [this.system.description],
+      attributeSet: [this.system.attributeSet],
       categories: [this.system.categories],
       products: [this.system.products],
       substitutions: [this.system.substitutions],

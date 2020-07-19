@@ -19,6 +19,17 @@
                 formControlName="description"></textarea>
     </mat-form-field>
 
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Capability Set</mat-label>
+      <mat-select formControlName="attributeSet">
+        <mat-option *ngFor="let attributeSet of attributeSets"
+                    [value]="attributeSet.id">{{attributeSet.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-flat-button color="accent" type="submit" [disabled]="!form.valid">Save</button>
+
     <div *ngIf="configuration">
 
       <!-- CATEGORIES -->
@@ -46,15 +57,13 @@
       </mat-selection-list>
 
     </div>
-
-    <button mat-flat-button color="accent" type="submit" [disabled]="!form.valid">Save</button>
   </form>
 </div>
 
 <!-- Patterns -->
 <div *ngIf="configuration">
+  <h3>Component is part of the following patterns</h3>
   <mat-selection-list [(ngModel)]="relatedPatters">
-    <h3 matSubheader>Component is part of the following patterns</h3>
     <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern">
       {{ pattern.name }}
     </mat-list-option>

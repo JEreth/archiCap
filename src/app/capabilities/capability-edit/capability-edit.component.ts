@@ -7,7 +7,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
 import {Pattern} from '../../patterns/shared/pattern';
 import {PatternService} from '../../patterns/shared/pattern.service';
-import {AttributeSet} from "../../eav/shared/models";
+import {AttributeSet} from '../../eav/shared/models';
 
 @Component({
   selector: 'app-capability-edit',
