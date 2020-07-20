@@ -5,7 +5,8 @@ import {MatDialog} from '@angular/material/dialog';
 import {Profile, ProfileService} from '../profile.service';
 import {Category} from '../../categories/shared/category';
 import {System} from '../../systems/shared/system';
-import {Pattern} from "../../patterns/shared/pattern";
+import {Pattern} from '../../patterns/shared/pattern';
+import {PatternService} from "../../patterns/shared/pattern.service";
 
 interface StackLayer {
   category: Category;
@@ -43,6 +44,7 @@ export class CompositionComponent implements OnInit {
 
   constructor(private configurationService: ConfigurationService,
               private profileService: ProfileService,
+              private patternService: PatternService,
               public systemService: SystemService,
               private dialog: MatDialog) {
   }
@@ -80,21 +82,18 @@ export class CompositionComponent implements OnInit {
   }
 
   async updateHighlightedSystems() {
-    /* this.highlightedSystems = this.highlightedPatterns.reduce( (p1, p2) => {
-      return p1.systems.concat(p2.systems) as string[];
-    }, {systems: []}); */
-    /*for (const patternId of this.highlightedPatterns) {
-      this.systemService.findFromRelation('patterns', patternId).subscribe(systems => {
-        const systemsFiltered = this.highlightedSystems.concat(systems.map(a => a.id));
-        this.highlightedSystems = systemsFiltered.filter((v, i, s) => s.indexOf(v) === i);
-      });
-    }
-    for (const capabilityId of this.highlightedCapabilities) {
-      this.systemService.findFromRelation('capabilities', capabilityId).subscribe(systems => {
-        const systemsFiltered = this.highlightedSystems.concat(systems.map(a => a.id));
-        this.highlightedSystems = systemsFiltered.filter((v, i, s) => s.indexOf(v) === i);
-      });
-    }*/
+    this.highlightedPatterns = await this.patternService.findBy(this.highlightedSystems, 'systems') as Pattern[];
+    this.highlightedCapabilities = this.highlightedPatterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
+  }
+
+  async updateHighlightedPatterns() {
+    this.highlightedCapabilities = this.highlightedPatterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
+    this.highlightedSystems = this.highlightedPatterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
+  }
+
+  async updateHighlightedCapabilities() {
+    this.highlightedPatterns = await this.patternService.findBy(this.highlightedCapabilities, 'capabilities') as Pattern[];
+    this.highlightedSystems = this.highlightedPatterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
   }
 
   // check how configuration and patterns match
