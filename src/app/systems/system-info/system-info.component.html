@@ -1,0 +1,45 @@
+<div class="system-info general-wrapper" *ngIf="system">
+  <h1 mat-dialog-title>Component: {{ system.name}}</h1>
+  <div mat-dialog-content>
+
+    <div [innerHTML]="system.description"></div>
+
+    <app-attribute-selection [attributeSetId]="system.attributeSet"
+                             [attributeSelection]="system.attributeSelection"
+                             [entityId]="system.id"
+                             [readonly]="true"
+                             *ngIf="system"></app-attribute-selection>
+
+
+    <!-- PRODUCTS -->
+    <mat-list>
+      <h3>Products to implement this component</h3>
+      <p *ngIf="relatedProducts.length === 0">No items</p>
+      <mat-list-item *ngFor="let product of relatedProducts">
+        {{ product.name }}
+      </mat-list-item>
+    </mat-list>
+
+    <!-- PATTERN -->
+    <mat-list>
+      <h3>This component is part of the following pattern</h3>
+      <p *ngIf="relatedPatterns.length === 0">No items</p>
+      <mat-list-item *ngFor="let product of relatedPatterns">
+        {{ product.name }}
+      </mat-list-item>
+    </mat-list>
+
+    <!-- SUBSTITUES -->
+    <mat-list>
+      <h3>This component can be replaced by these substitutes</h3>
+      <p *ngIf="relatedSubstitutes.length === 0">No items</p>
+      <mat-list-item *ngFor="let system of relatedSubstitutes">
+        {{ system.name }}
+      </mat-list-item>
+    </mat-list>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="closePopover()">Close</button>
+  </div>
+</div>

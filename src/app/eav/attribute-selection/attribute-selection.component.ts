@@ -17,6 +17,7 @@ export class AttributeSelectionComponent implements OnInit {
   @Input() attributeSetId: string;
   @Input() attributeSelection: AttributeSelection[] = [];
   @Input() persistService: EntityService;
+  @Input() readonly = false;
 
   attributeSet: AttributeSet;
   attributes: Attribute[];
@@ -39,6 +40,9 @@ export class AttributeSelectionComponent implements OnInit {
   }
 
   select(attributeId: string, value: string) {
+    if (this.readonly) {
+      return;
+    }
     this.attributeSelection = this.attributeSelection.filter(i => {
       return (i.attribute !== attributeId);
     });

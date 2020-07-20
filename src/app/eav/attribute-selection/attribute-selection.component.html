@@ -6,7 +6,7 @@
         {{ attribute.name }}
       </div>
       <div class="selection-col">
-        <mat-button-toggle-group>
+        <mat-button-toggle-group [disabled]="readonly">
           <mat-button-toggle [value]="value" *ngFor="let value of attribute.values"
                              [checked]="isSelected(attribute.id, value)"
                              (click)="select(attribute.id, value)">
@@ -16,5 +16,5 @@
       </div>
     </div>
   </div>
-  <button mat-flat-button color="accent" type="submit" (click)="save()">Save</button>
+  <button mat-flat-button color="accent" type="submit" (click)="save()" *ngIf="!readonly">Save</button>
 </div>

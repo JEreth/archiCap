@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {CompositionComponent} from './composition.component';
 import {MaterialModule} from '../../material.module';
 import {FormsModule} from '@angular/forms';
-import {SystemInfoModule} from '../../systems/shared/system-info/system-info.module';
+import {SystemInfoModule} from '../../systems/system-info/system-info.module';
 
 @NgModule({
   declarations: [CompositionComponent],

@@ -6,7 +6,8 @@ import {Profile, ProfileService} from '../profile.service';
 import {Category} from '../../categories/shared/category';
 import {System} from '../../systems/shared/system';
 import {Pattern} from '../../patterns/shared/pattern';
-import {PatternService} from "../../patterns/shared/pattern.service";
+import {PatternService} from '../../patterns/shared/pattern.service';
+import {SystemInfoComponent} from '../../systems/system-info/system-info.component';
 
 interface StackLayer {
   category: Category;
@@ -76,9 +77,9 @@ export class CompositionComponent implements OnInit {
 
 
   showSystemInformation(system: any) {
-    /*const operationDetailPopover = this.dialog.open(SystemInfoComponent, {
+    this.dialog.open(SystemInfoComponent, {
       data: {system: system},
-    });*/
+    });
   }
 
   async updateHighlightedSystems() {

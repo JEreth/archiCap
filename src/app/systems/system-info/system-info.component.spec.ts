@@ -1,7 +1,7 @@
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {SystemInfoComponent} from './system-info.component';
-import {MaterialModule} from '../../../material.module';
+import {MaterialModule} from '../../material.module';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 describe('SystemInfoComponent', () => {

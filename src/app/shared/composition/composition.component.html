@@ -62,7 +62,7 @@
 
   </div>
 
-  <div class="col-4">
+  <div class="col-4" *ngIf="configuration">
 
     <!-- HIGHLIGHT ALL PATTERN -->
     <mat-selection-list [(ngModel)]="highlightedPatterns" *ngIf="!showAnalyze"
@@ -82,7 +82,8 @@
       </mat-list-option>
     </mat-selection-list> -->
   </div>
-  <div class="col-4">
+
+  <div class="col-4" *ngIf="configuration">
     <!-- HIGHLIGHT BY SYSTEMS -->
     <mat-selection-list [(ngModel)]="highlightedSystems" *ngIf="!showAnalyze"
                         (ngModelChange)="updateHighlightedSystems()">
@@ -92,7 +93,8 @@
       </mat-list-option>
     </mat-selection-list>
   </div>
-  <div class="col-4">
+
+  <div class="col-4" *ngIf="configuration">
 
     <!-- HIGHLIGHT ALL CAPABILITIES -->
     <mat-selection-list [(ngModel)]="highlightedCapabilities" *ngIf="!showAnalyze"
