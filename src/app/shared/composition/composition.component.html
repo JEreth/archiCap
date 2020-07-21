@@ -46,7 +46,7 @@
         <span class="category-box-title">{{ layer.category.name }}</span>
 
         <div class="system-box-wrap">
-          <div class="system-box" *ngFor="let system of layer.systems" (click)="showSystemInformation(system)"
+          <div class="system-box" *ngFor="let system of layer.systems" (click)="showSystemInfo($event, system)"
                [class.highlighted]="highlightedSystems.indexOf(system.id) !== -1"
                [class.current]="isCurrentSystem(system.id)"
                [class.desired]="isDesiredSystem(system.id)"
@@ -69,6 +69,7 @@
                         (ngModelChange)="updateHighlightedPatterns()">
       <h3>Highlight by pattern</h3>
       <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern">
+        <mat-icon mat-list-icon (click)="showPatternInfo($event, pattern)" color="primary">info</mat-icon>
         {{pattern.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -89,6 +90,7 @@
                         (ngModelChange)="updateHighlightedSystems()">
       <h3>Highlight by Systems</h3>
       <mat-list-option *ngFor="let system of configuration.systems" [value]="system.id">
+        <mat-icon mat-list-icon (click)="showSystemInfo($event, system)" color="primary">info</mat-icon>
         {{system.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -101,6 +103,7 @@
                         (ngModelChange)="updateHighlightedCapabilities()">
       <h3>Highlight by capabilities</h3>
       <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
+        <mat-icon mat-list-icon (click)="showCapabilityInfo($event, capability)" color="primary">info</mat-icon>
         {{capability.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -119,6 +122,7 @@
                         (ngModelChange)="updateHighlightedSystems()" dense>
       <h3 matSubheader>Highlight by available capabilities</h3>
       <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
+        <mat-icon mat-list-icon (click)="showCapabilityInfo($event, capability)" color="primary">info</mat-icon>
         {{capability.name}}
       </mat-list-option>
     </mat-selection-list>
@@ -155,7 +159,7 @@
         <mat-card-title><b>Components</b> in your current setup</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <mat-list *ngFor="let system of configuration.systems" (click)="showSystemInformation(system)">
+        <mat-list *ngFor="let system of configuration.systems" (click)="showSystemInfo($event, system)">
           <mat-list-item>{{system.name}}</mat-list-item>
         </mat-list>
       </mat-card-content>
@@ -172,7 +176,9 @@
       </mat-card-header>
       <mat-card-content>
         <mat-list *ngFor="let capability of configuration.capabilities">
-          <mat-list-item>{{capability.name}}</mat-list-item>
+          <mat-list-item>
+            {{capability.name}}
+          </mat-list-item>
         </mat-list>
       </mat-card-content>
     </mat-card>

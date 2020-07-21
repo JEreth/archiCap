@@ -8,6 +8,9 @@ import {System} from '../../systems/shared/system';
 import {Pattern} from '../../patterns/shared/pattern';
 import {PatternService} from '../../patterns/shared/pattern.service';
 import {SystemInfoComponent} from '../../systems/system-info/system-info.component';
+import {Capability} from '../../capabilities/shared/capability';
+import {CapabilityInfoComponent} from '../../capabilities/capability-info/capability-info.component';
+import {PatternInfoComponent} from '../../patterns/pattern-info/pattern-info.component';
 
 interface StackLayer {
   category: Category;
@@ -76,9 +79,24 @@ export class CompositionComponent implements OnInit {
   }
 
 
-  showSystemInformation(system: any) {
+  showSystemInfo(event, system: System) {
+    event.stopPropagation();
     this.dialog.open(SystemInfoComponent, {
       data: {system: system},
+    });
+  }
+
+  showPatternInfo(event, pattern: Pattern) {
+    event.stopPropagation();
+    this.dialog.open(PatternInfoComponent, {
+      data: {pattern},
+    });
+  }
+
+  showCapabilityInfo(event, capability: Capability) {
+    event.stopPropagation();
+    this.dialog.open(CapabilityInfoComponent, {
+      data: {capability},
     });
   }
 

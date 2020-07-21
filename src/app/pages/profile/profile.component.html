@@ -1,90 +1,106 @@
-<div class="general-wrapper">
+<div class="general-wrapper" *ngIf="configuration && profile">
   <div class="general-wrapper-inner">
     <section class="mat-typography">
       <h1>My Profile</h1>
       <p>This is your current selection that drives the architecture development process.</p>
     </section>
 
-    <!-- SETUP -->
+    <!-- CAPABILITIES -->
     <mat-card>
       <mat-card-header>
         <mat-card-title>
           <mat-icon mat-list-icon>gavel</mat-icon>
-          My Capabilities
+          Capabilities that are relevant for me
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
 
         <mat-selection-list [(ngModel)]="profile.capabilities">
-          <h3 matLine></h3>
-          <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
+          <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
+            <mat-icon mat-list-icon (click)="showCapabilityInfo($event, capability)" color="primary">info</mat-icon>
             {{capability.name}}
           </mat-list-option>
         </mat-selection-list>
 
       </mat-card-content>
       <mat-card-actions>
-        <button mat-flat-button color="primary" (click)="save()">Save</button>
+        <button mat-flat-button color="accent" (click)="save()">Save</button>
       </mat-card-actions>
     </mat-card>
 
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <mat-icon mat-list-icon>filter_none</mat-icon>
-          My Components
+          <mat-icon mat-list-icon>local_offer</mat-icon>
+          Products in my landscape
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
 
-        <mat-selection-list [(ngModel)]="profile.systems">
-          <h3 matLine></h3>
-          <mat-list-option *ngFor="let system of systems" [value]="system.id">
-            {{system.name}}
+        <mat-selection-list [(ngModel)]="profile.products">
+          <mat-list-option *ngFor="let product of configuration.products" [value]="product.id">
+            <mat-icon mat-list-icon (click)="showProductInfo($event, product)" color="primary">info</mat-icon>
+            {{product.name}}
           </mat-list-option>
         </mat-selection-list>
+
       </mat-card-content>
       <mat-card-actions>
-        <button mat-flat-button color="primary" (click)="save()">Save</button>
+        <button mat-flat-button color="accent" (click)="save()">Save</button>
       </mat-card-actions>
     </mat-card>
 
 
-    <!-- EXPORT -->
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Export Profile</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Export current profile consisting out of your capability and component selection</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-flat-button [href]="downloadJsonHref" download="archicap-profile.json" color="primary"
-           *ngIf="downloadJsonHref">
-          <mat-icon mat-list-icon>save_alt</mat-icon>
-          Export profile
-        </a>
-      </mat-card-actions>
-    </mat-card>
+    <!-- IMPORT EXPORT -->
+    <div class="row">
+      <div class="col-6">
 
-    <!-- IMPORT -->
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Import Profile</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Upload an existing profile in JSON format</p>
-        <input type='file' (change)="uploadFileChanged($event)">
-      </mat-card-content>
-      <mat-card-actions>
-        <mat-spinner *ngIf="uploading"></mat-spinner>
-        <button mat-flat-button (click)="upload()" color="primary" *ngIf="!uploading"
-                [disabled]="!uploadFile || uploadFile === ''">
-          <mat-icon mat-list-icon>save_alt</mat-icon>
-          Import profile
-        </button>
-      </mat-card-actions>
-    </mat-card>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon mat-list-icon>save_alt</mat-icon>
+              Export Profile
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Export current profile consisting out of your capability and product landscape.</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <br/>
+            <a mat-flat-button [href]="downloadJsonHref" download="archicap-profile.json" color="accent"
+               *ngIf="downloadJsonHref">
+              <mat-icon mat-list-icon>save_alt</mat-icon>
+              Download
+            </a>
+          </mat-card-actions>
+        </mat-card>
+
+      </div>
+      <div class="col-6">
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon mat-list-icon>cloud_upload</mat-icon>
+              Import Profile
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Upload an existing profile in JSON format</p>
+            <input type='file' (change)="uploadFileChanged($event)">
+          </mat-card-content>
+          <mat-card-actions>
+            <mat-spinner *ngIf="uploading"></mat-spinner>
+            <button mat-flat-button (click)="upload()" color="accent" *ngIf="!uploading"
+                    [disabled]="!uploadFile || uploadFile === ''">
+              <mat-icon mat-list-icon>cloud_upload</mat-icon>
+              Upload
+            </button>
+          </mat-card-actions>
+        </mat-card>
+
+      </div>
+    </div>
 
 
   </div>

@@ -1,0 +1,26 @@
+<div class="system-info general-wrapper" *ngIf="capability">
+  <h1 mat-dialog-title>Capability: {{ capability.name}}</h1>
+  <div mat-dialog-content>
+
+    <div [innerHTML]="capability.description"></div>
+
+    <app-attribute-selection [attributeSetId]="capability.attributeSet"
+                             [attributeSelection]="capability.attributeSelection"
+                             [entityId]="capability.id"
+                             readonly="true"
+                             *ngIf="capability"></app-attribute-selection>
+
+
+    <!-- COMPONENTS -->
+    <mat-list *ngIf="relatedPatterns">
+      <h3>Pattern is used in these components:</h3>
+      <p *ngIf="relatedPatterns.length === 0">No items</p>
+      <mat-list-item *ngFor="let pattern of relatedPatterns">
+        {{ pattern.name }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="closePopover()">Close</button>
+  </div>
+</div>

@@ -1,12 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {Capability} from '../../capabilities/shared/capability';
 import {CapabilityService} from '../../capabilities/shared/capability.service';
 import {SystemService} from '../../systems/shared/system.service';
 import {Profile, ProfileService} from '../../shared/profile.service';
-import {System} from '../../systems/shared/system';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
+import {Product} from '../../products/shared/product';
+import {MatDialog} from '@angular/material/dialog';
+import {ProductInfoComponent} from '../../products/product-info/product-info.component';
+import {CapabilityInfoComponent} from "../../capabilities/capability-info/capability-info.component";
+import {Capability} from "../../capabilities/shared/capability";
 
 @Component({
   selector: 'app-profile',
@@ -18,9 +21,6 @@ export class ProfileComponent implements OnInit {
   public configuration: Configuration;
   public profile: Profile;
 
-  public capabilities: Capability[] = [];
-  public systems: System[] = [];
-
   public downloadJsonHref: SafeUrl;
   public uploadFile: any;
   public uploading = false;
@@ -29,6 +29,7 @@ export class ProfileComponent implements OnInit {
               private capabilityService: CapabilityService,
               private systemService: SystemService,
               private snackBar: MatSnackBar,
+              private dialog: MatDialog,
               private sanitizer: DomSanitizer,
               private profileService: ProfileService) {
   }
@@ -77,6 +78,20 @@ export class ProfileComponent implements OnInit {
       }
     };
     fileReader.readAsText(this.uploadFile);
+  }
+
+  showProductInfo(event, product: Product) {
+    event.stopPropagation();
+    this.dialog.open(ProductInfoComponent, {
+      data: {product},
+    });
+  }
+
+  showCapabilityInfo(event, capability: Capability) {
+    event.stopPropagation();
+    this.dialog.open(CapabilityInfoComponent, {
+      data: {capability},
+    });
   }
 
 }

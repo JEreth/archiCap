@@ -12,7 +12,7 @@
             to JSON format</p>
         </mat-card-content>
         <mat-card-actions>
-          <a mat-flat-button [href]="downloadJsonHref" download="archicap-configuration.json" color="primary"
+          <a mat-flat-button [href]="downloadJsonHref" download="archicap-configuration.json" color="accent"
              *ngIf="downloadJsonHref !== ''">
             <mat-icon mat-list-icon>save_alt</mat-icon>
             Download current configuration
@@ -31,9 +31,9 @@
         </mat-card-content>
         <mat-card-actions>
           <mat-spinner *ngIf="uploading"></mat-spinner>
-          <button mat-flat-button (click)="upload()" color="primary" *ngIf="!uploading"
+          <button mat-flat-button (click)="upload()" color="accent" *ngIf="!uploading"
                   [disabled]="!uploadFile || uploadFile === ''">
-            <mat-icon mat-list-icon>save_alt</mat-icon>
+            <mat-icon mat-list-icon>cloud_upload</mat-icon>
             Upload configuration
           </button>
         </mat-card-actions>

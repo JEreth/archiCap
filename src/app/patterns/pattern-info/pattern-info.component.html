@@ -1,0 +1,31 @@
+<div class="system-info general-wrapper" *ngIf="pattern">
+  <h1 mat-dialog-title>Capability: {{ pattern.name}}</h1>
+  <div mat-dialog-content>
+
+    <div [innerHTML]="pattern.description"></div>
+
+
+    <!-- COMPONENTS -->
+    <mat-nav-list *ngIf="relatedSystems">
+      <h3>Components of pattern:</h3>
+      <p *ngIf="relatedSystems.length === 0">No items</p>
+      <mat-list-item *ngFor="let system of relatedSystems" (click)="showSystemInfo($event, system)">
+        <mat-icon mat-list-icon color="primary">info</mat-icon>
+        {{ system.name }}
+      </mat-list-item>
+    </mat-nav-list>
+
+    <!-- CAPABILITIES -->
+    <mat-nav-list *ngIf="relatedCapabilities">
+      <h3>Capabilities of pattern:</h3>
+      <p *ngIf="relatedCapabilities.length === 0">No items</p>
+      <mat-list-item *ngFor="let capability of relatedCapabilities" (click)="showCapabilityInfo($event, capability)">
+        {{ capability.name }}
+        <mat-icon mat-list-icon color="primary">info</mat-icon>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="closePopover()">Close</button>
+  </div>
+</div>
