@@ -28,6 +28,29 @@
       </mat-card-actions>
     </mat-card>
 
+    <!-- SYSTEMS -->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon mat-list-icon>filter_none</mat-icon>
+          Components in my setup
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-selection-list [(ngModel)]="profile.systems">
+          <mat-list-option *ngFor="let system of configuration.systems" [value]="system.id">
+            <mat-icon mat-list-icon (click)="showSystemInfo($event, system)" color="primary">info</mat-icon>
+            {{system.name}}
+          </mat-list-option>
+        </mat-selection-list>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="accent" (click)="save()">Save</button>
+      </mat-card-actions>
+    </mat-card>
+
     <mat-card>
       <mat-card-header>
         <mat-card-title>

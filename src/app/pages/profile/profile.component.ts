@@ -10,6 +10,8 @@ import {MatDialog} from '@angular/material/dialog';
 import {ProductInfoComponent} from '../../products/product-info/product-info.component';
 import {CapabilityInfoComponent} from "../../capabilities/capability-info/capability-info.component";
 import {Capability} from "../../capabilities/shared/capability";
+import {System} from "../../systems/shared/system";
+import {SystemInfoComponent} from "../../systems/system-info/system-info.component";
 
 @Component({
   selector: 'app-profile',
@@ -91,6 +93,13 @@ export class ProfileComponent implements OnInit {
     event.stopPropagation();
     this.dialog.open(CapabilityInfoComponent, {
       data: {capability},
+    });
+  }
+
+  showSystemInfo(event, system: System) {
+    event.stopPropagation();
+    this.dialog.open(SystemInfoComponent, {
+      data: {system: system},
     });
   }
 

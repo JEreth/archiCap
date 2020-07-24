@@ -19,10 +19,11 @@ export class ProfileService {
 
   async init(): Promise<boolean> {
     if (!this.profile) {
+      const p = await this.data.get('profile');
       this.profile = {
-        capabilities: (await this.data.get('profile_capabilities')) || [],
-        systems: (await this.data.get('profile_systems')) || [],
-        products: (await this.data.get('profile_products')) || []
+        capabilities: p.capabilities || [],
+        systems: p.systems || [],
+        products: p.products || []
       };
     }
     return true;
