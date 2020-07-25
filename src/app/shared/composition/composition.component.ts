@@ -49,7 +49,12 @@ export class CompositionComponent implements OnInit {
 
   // other values
   desiredSystems: string[] = [];
-  analyzeResult: any = [];
+  possibleCapabilites: Capability[] = [];
+  desiredCapabilites: Capability[] = [];
+  analyzeResult: {
+    pattern: Pattern,
+    percentage: number
+  }[] = [];
   layers: StackLayer[] = [];
 
   constructor(private configurationService: ConfigurationService,
@@ -63,6 +68,7 @@ export class CompositionComponent implements OnInit {
 
   async ngOnInit() {
     await this.updateStage();
+    await this.analyze();
   }
 
   // Get data for stage
@@ -88,7 +94,7 @@ export class CompositionComponent implements OnInit {
       c.patterns = await this.patternService.findBy(this.profile.capabilities, 'capabilities') as Pattern[];
       const systemIds = c.patterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
       c.systems = await this.systemService.findBy(systemIds) as System[];
-    } else if (mode === 'compare') {
+    } else if (mode === 'compare' || mode === 'analyze') {
       // Compare and show both existing and desired stack
       const patternByCapabilites = (await this.patternService.findBy(this.profile.capabilities, 'capabilities') as Pattern[]);
       this.desiredSystems = patternByCapabilites.map(i => i.systems)
@@ -179,7 +185,7 @@ export class CompositionComponent implements OnInit {
   }
 
   async updateHighlightedCapabilities() {
-    const patterns = await this.patternService.findBy(this.highlightedPatterns) as Pattern[];
+    const patterns = await this.patternService.findBy(this.highlightedCapabilities, 'capabilities') as Pattern[];
     this.highlightedPatterns = patterns.map(i => i.id);
     this.highlightedSystems = patterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
     this.highlightedProducts = (await this.systemService.findBy(this.highlightedSystems) as System[])
@@ -193,34 +199,28 @@ export class CompositionComponent implements OnInit {
       .map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
   }
 
+  async analyze() {
+    await this.calculateIdentifiedPatterns();
+    // calculate other stuff
+    const patternBySystems = (await this.patternService.findBy(this.profile.systems, 'systems') as Pattern[]);
+    this.possibleCapabilites = (await this.capabilityService.findBy(patternBySystems.map(i => i.capabilities)
+      .reduce((a, b) => a.concat(b), []))) as Capability[];
+    this.desiredCapabilites = await this.capabilityService.findBy(this.profile.capabilities) as Capability[];
+  }
+
   // check how configuration and patterns match
-  calculateIdentifiedPatterns() {
-    /*this.patternService.getAllAsArray().subscribe(allPatterns => {
-      const availableSystemIds: number[] = this.availableSystems.map(a => a.id);
-      const patternResults: any[] = [];
-      for (const pattern of allPatterns) {
-        this.systemService.findFromRelation('patterns', pattern.id).subscribe(systemsOfThisPattern => {
-          const patternResult = {
-            percentage: 0,
-            pattern: pattern,
-            foundSystems: [],
-            missingSystems: []
-          };
-          for (const system of systemsOfThisPattern) {
-            if (availableSystemIds.includes(system.id)) {
-              patternResult.foundSystems.push(system);
-            } else {
-              patternResult.missingSystems.push(system);
-            }
-          }
-          const {length} = systemsOfThisPattern;
-          patternResult.percentage = Math.round((patternResult.foundSystems.length / Math.max(1, length)) * 100);
-          patternResults.push(patternResult);
+  async calculateIdentifiedPatterns() {
+    this.analyzeResult = [];
+    for (const pattern of (await this.patternService.all()) as Pattern[]) {
+      const intersectionCount = pattern.systems.filter(s => this.profile.systems.includes(s)).length;
+      const percentage = Math.round((intersectionCount / Math.max(1, length)) * 100);
+      if (percentage > 0) {
+        this.analyzeResult.push({
+          pattern,
+          percentage
         });
       }
-      patternResults.sort((r1, r2) => r2.percentage - r1.percentage);
-      this.analyzeResult = patternResults;
-    });*/
+    }
   }
 
 }

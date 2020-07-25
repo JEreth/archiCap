@@ -111,7 +111,8 @@
 <!-- ANALYZE VIEW -->
 <div *ngIf="viewMode==='analyze'" class="row">
 
-  <div class="col-6">
+  <!-- PATTERN MATCH -->
+  <div class="col-12" *ngIf="analyzeResult">
     <mat-card class="analyze-card">
       <mat-card-header>
         <div mat-card-avatar>
@@ -120,43 +121,85 @@
         <mat-card-title>Identified <b>patterns</b> in your current setup</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <mat-list *ngFor="let result of analyzeResult">
-          <mat-list-item>{{result.pattern.name}} {{result.percentage}}%</mat-list-item>
+        <mat-list *ngFor="let result of analyzeResult" class="styled-list">
+          <mat-list-item (click)="showPatternInfo($event, result.pattern)">
+            <mat-icon mat-list-icon color="primary">info</mat-icon>
+            {{result.pattern.name}}
+            <span class="spacer"></span>
+            <b>{{result.percentage}}%</b>
+          </mat-list-item>
         </mat-list>
       </mat-card-content>
     </mat-card>
   </div>
 
-  <div class="col-6">
+  <!-- ROADMAP -->
+  <div class="col-12">
     <mat-card class="analyze-card">
       <mat-card-header>
         <div mat-card-avatar>
-          <mat-icon mat-list-icon>filter_none</mat-icon>
+          <mat-icon mat-list-icon>compare</mat-icon>
         </div>
-        <mat-card-title><b>Components</b> in your current setup</mat-card-title>
+        <mat-card-title><b>Roadmap</b></mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <mat-list *ngFor="let system of configuration.systems" (click)="showSystemInfo($event, system)">
-          <mat-list-item>{{system.name}}</mat-list-item>
-        </mat-list>
+        <div class="row">
+          <!-- SYSTEMS THAT ARE NOT NECESSARY ANYMRORE -->
+          <div class="col-6">
+            <h3>Components that render redundant</h3>
+            <mat-list *ngFor="let system of configuration.systems" class="styled-list">
+              <mat-list-item *ngIf="!isDesiredSystem(system) && isCurrentSystem(system)"
+                             (click)="showSystemInfo($event, system)">
+                <mat-icon mat-list-icon color="primary">info</mat-icon>
+                {{system.name}}
+              </mat-list-item>
+            </mat-list>
+          </div>
+          <div class="col-6">
+            <h3>Components that you might need</h3>
+            <mat-list *ngFor="let system of configuration.systems" class="styled-list">
+              <mat-list-item *ngIf="isDesiredSystem(system) && !isCurrentSystem(system)"
+                             (click)="showSystemInfo($event, system)">
+                <mat-icon mat-list-icon color="primary">info</mat-icon>
+                {{system.name}}
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
 
-  <div class="col-6">
+  <!-- CAPABILITY MATCH -->
+  <div class="col-12">
     <mat-card class="analyze-card">
       <mat-card-header>
         <div mat-card-avatar>
           <mat-icon mat-list-icon>gavel</mat-icon>
         </div>
-        <mat-card-title><b>Capabilities</b> that you can implement with your current setup</mat-card-title>
+        <mat-card-title><b>Capabilities</b></mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <mat-list *ngFor="let capability of configuration.capabilities">
-          <mat-list-item>
-            {{capability.name}}
-          </mat-list-item>
-        </mat-list>
+        <div class="row">
+          <div class="col-6">
+            <h3>Capabilities that you have with your current stack</h3>
+            <mat-list *ngFor="let capability of possibleCapabilites" class="styled-list">
+              <mat-list-item (click)="showCapabilityInfo($event, capability)">
+                <mat-icon mat-list-icon color="primary">info</mat-icon>
+                {{capability.name}}
+              </mat-list-item>
+            </mat-list>
+          </div>
+          <div class="col-6">
+            <h3>Capabilities that you want to have</h3>
+            <mat-list *ngFor="let capability of desiredCapabilites" class="styled-list">
+              <mat-list-item (click)="showCapabilityInfo($event, capability)">
+                <mat-icon mat-list-icon color="primary">info</mat-icon>
+                {{capability.name}}
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
