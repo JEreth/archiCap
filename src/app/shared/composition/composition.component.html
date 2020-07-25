@@ -67,7 +67,7 @@
     <mat-selection-list [(ngModel)]="highlightedPatterns" *ngIf="!showAnalyze"
                         (ngModelChange)="updateHighlightedPatterns()">
       <h3>Highlight by pattern</h3>
-      <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern">
+      <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern.id">
         <mat-icon mat-list-icon (click)="showPatternInfo($event, pattern)" color="primary">info</mat-icon>
         {{pattern.name}}
       </mat-list-option>

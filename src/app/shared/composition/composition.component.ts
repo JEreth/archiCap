@@ -40,7 +40,7 @@ export class CompositionComponent implements OnInit {
 
   // selected stuff
   highlightedSystems: string[] = [];
-  highlightedPatterns: Pattern[] = [];
+  highlightedPatterns: string[] = [];
   highlightedCapabilities: string[] = [];
   highlightedProducts: string[] = [];
 
@@ -110,30 +110,34 @@ export class CompositionComponent implements OnInit {
   }
 
   async updateHighlightedSystems() {
-    this.highlightedPatterns = await this.patternService.findBy(this.highlightedSystems, 'systems') as Pattern[];
-    this.highlightedCapabilities = this.highlightedPatterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
+    this.highlightedPatterns = (await this.patternService.findBy(this.highlightedSystems, 'systems') as Pattern[]).map(i => i.id);
+    this.highlightedCapabilities = (await this.patternService.findBy(this.highlightedPatterns) as Pattern[])
+      .map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
     this.highlightedProducts = (await this.systemService.findBy(this.highlightedSystems) as System[])
       .map(i => i.products).reduce((a, b) => a.concat(b), []);
   }
 
   async updateHighlightedPatterns() {
-    this.highlightedCapabilities = this.highlightedPatterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
-    this.highlightedSystems = this.highlightedPatterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
+    const patterns = await this.patternService.findBy(this.highlightedPatterns) as Pattern[];
+    this.highlightedCapabilities = patterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
+    this.highlightedSystems = patterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
     this.highlightedProducts = (await this.systemService.findBy(this.highlightedSystems) as System[])
       .map(i => i.products).reduce((a, b) => a.concat(b), []);
   }
 
   async updateHighlightedCapabilities() {
-    this.highlightedPatterns = await this.patternService.findBy(this.highlightedCapabilities, 'capabilities') as Pattern[];
-    this.highlightedSystems = this.highlightedPatterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
+    const patterns = await this.patternService.findBy(this.highlightedPatterns) as Pattern[];
+    this.highlightedPatterns = patterns.map(i => i.id);
+    this.highlightedSystems = patterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
     this.highlightedProducts = (await this.systemService.findBy(this.highlightedSystems) as System[])
       .map(i => i.products).reduce((a, b) => a.concat(b), []);
   }
 
   async updateHighlightedProducts() {
     this.highlightedSystems = (await this.systemService.findBy(this.highlightedProducts, 'products') as System[]).map(i => i.id);
-    this.highlightedPatterns = await this.patternService.findBy(this.highlightedSystems, 'systems') as Pattern[];
-    this.highlightedCapabilities = this.highlightedPatterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
+    this.highlightedPatterns = (await this.patternService.findBy(this.highlightedSystems, 'systems') as Pattern[]).map(i => i.id);
+    this.highlightedCapabilities = (await this.patternService.findBy(this.highlightedPatterns) as Pattern[])
+      .map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
   }
 
   // check how configuration and patterns match
