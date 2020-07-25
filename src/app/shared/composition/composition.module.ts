@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {SystemInfoModule} from '../../systems/system-info/system-info.module';
 import {PatternInfoModule} from '../../patterns/pattern-info/pattern-info.module';
 import {CapabilityInfoModule} from '../../capabilities/capability-info/capability-info.module';
+import {ProductInfoModule} from '../../products/product-info/product-info.module';
 
 @NgModule({
   declarations: [CompositionComponent],
@@ -15,6 +16,7 @@ import {CapabilityInfoModule} from '../../capabilities/capability-info/capabilit
     FormsModule,
     SystemInfoModule,
     PatternInfoModule,
+    ProductInfoModule,
     CapabilityInfoModule,
   ],
   exports: [CompositionComponent]
