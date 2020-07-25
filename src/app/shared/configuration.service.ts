@@ -11,7 +11,7 @@ import {Product} from '../products/shared/product';
 import {System} from '../systems/shared/system';
 import {Attribute, AttributeSet} from '../eav/shared/models';
 import {AttributeService} from '../eav/shared/attribute.service';
-import {AttributeSetService} from "../eav/shared/attribute-set.service";
+import {AttributeSetService} from '../eav/shared/attribute-set.service';
 
 export interface Configuration {
   capabilities: Capability[];

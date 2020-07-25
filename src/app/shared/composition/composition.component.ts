@@ -11,8 +11,10 @@ import {SystemInfoComponent} from '../../systems/system-info/system-info.compone
 import {Capability} from '../../capabilities/shared/capability';
 import {CapabilityInfoComponent} from '../../capabilities/capability-info/capability-info.component';
 import {PatternInfoComponent} from '../../patterns/pattern-info/pattern-info.component';
-import {Product} from "../../products/shared/product";
-import {ProductInfoComponent} from "../../products/product-info/product-info.component";
+import {Product} from '../../products/shared/product';
+import {ProductInfoComponent} from '../../products/product-info/product-info.component';
+import {CapabilityService} from '../../capabilities/shared/capability.service';
+import {ProductService} from '../../products/shared/product.service';
 
 interface StackLayer {
   category: Category;
@@ -38,46 +40,97 @@ export class CompositionComponent implements OnInit {
   configuration: Configuration;
   profile: Profile;
 
-  // selected stuff
+
+  // selected elements
   highlightedSystems: string[] = [];
   highlightedPatterns: string[] = [];
   highlightedCapabilities: string[] = [];
   highlightedProducts: string[] = [];
 
   // other values
-  public analyzeResult: any = [];
-  public layers: StackLayer[] = [];
+  desiredSystems: string[] = [];
+  analyzeResult: any = [];
+  layers: StackLayer[] = [];
 
   constructor(private configurationService: ConfigurationService,
               private profileService: ProfileService,
               private patternService: PatternService,
-              public systemService: SystemService,
+              private capabilityService: CapabilityService,
+              private productService: ProductService,
+              private systemService: SystemService,
               private dialog: MatDialog) {
   }
 
   async ngOnInit() {
-    this.configuration = await this.configurationService.get();
+    await this.updateStage();
+  }
+
+  // Get data for stage
+  async updateStage() {
+    const mode = (this.showAnalyze) ? this.viewMode : 'explore';
+
+    const c = await this.configurationService.get();
     this.profile = await this.profileService.get();
-    for (const c of this.configuration.categories) {
+    this.desiredSystems = [];
+
+    // Filter configuration
+    if (mode === 'currentStack') {
+      // Use profile systems to filter
+      c.systems = await this.systemService.findBy(this.profile.systems) as System[];
+
+      c.patterns = await this.patternService.findBy(this.profile.systems, 'systems') as Pattern[];
+      const capabilityIds = c.patterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
+      c.capabilities = await this.capabilityService.findBy(capabilityIds) as Capability[];
+    } else if (mode === 'desiredCapabilities') {
+      // Use profile capabilites to filter
+      c.capabilities = await this.capabilityService.findBy(this.profile.capabilities) as Capability[];
+
+      c.patterns = await this.patternService.findBy(this.profile.capabilities, 'capabilities') as Pattern[];
+      const systemIds = c.patterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
+      c.systems = await this.systemService.findBy(systemIds) as System[];
+    } else if (mode === 'compare') {
+      // Compare and show both existing and desired stack
+      const patternByCapabilites = (await this.patternService.findBy(this.profile.capabilities, 'capabilities') as Pattern[]);
+      this.desiredSystems = patternByCapabilites.map(i => i.systems)
+        .reduce((a, b) => a.concat(b), []);
+      const relevantSystemIds = this.profile.systems.concat(this.desiredSystems);
+
+      const patternBySystems = (await this.patternService.findBy(this.profile.systems, 'systems') as Pattern[]);
+      const relevantCapabilityIds = this.profile.capabilities.concat(patternBySystems.map(i => i.capabilities)
+        .reduce((a, b) => a.concat(b), []));
+
+      const relevantPatternIds = (patternByCapabilites.map(i => i.id)).concat(patternBySystems.map(i => i.id));
+
+      c.systems = await this.systemService.findBy(relevantSystemIds) as System[];
+      c.capabilities = await this.capabilityService.findBy(relevantCapabilityIds) as Capability[];
+      c.patterns = await this.patternService.findBy(relevantPatternIds) as Pattern[];
+    }
+
+    // find relevant relations
+    const productsIds = c.systems.map(i => i.products).reduce((a, b) => a.concat(b), []);
+    c.products = await this.productService.findBy(productsIds) as Product[];
+
+
+    // fill layers with relevant systems
+    this.layers = [];
+    const availableSystemIds = c.systems.map(i => i.id);
+    for (const cat of c.categories) {
       this.layers.push({
-        category: c,
-        systems: await this.systemService.findBy(c.id, 'categories') as System[]
+        category: cat,
+        systems: (await this.systemService.findBy(cat.id, 'categories') as System[])
+          .filter(i => availableSystemIds.includes(i.id)) // only include available systems
       });
     }
+
+    this.configuration = c;
   }
 
-  isCurrentSystem(id: string): boolean {
-    return false;
-    /* return this.availableSystems.map(function (system) {
-      return system.id;
-    }).includes(id); */
+  isCurrentSystem(system: System): boolean {
+    return this.profile.systems.includes(system.id);
   }
 
-  isDesiredSystem(id: string): boolean {
-    return false;
-    /* return this.desiredSystems.map(function (system) {
-      return system.id;
-    }).includes(id); */
+  isDesiredSystem(system: System): boolean {
+    return this.desiredSystems.includes(system.id);
   }
 
 
