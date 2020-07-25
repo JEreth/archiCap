@@ -1,5 +1,5 @@
 import {Entity} from '../../shared/entity.service';
-import {AttributeSelection} from "../../eav/shared/models";
+import {AttributeSelection} from '../../eav/shared/models';
 
 export interface System extends Entity {
   name: string;

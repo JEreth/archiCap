@@ -34,13 +34,13 @@ export class CompositionComponent implements OnInit {
 
 
   // get current configuration
-  public configuration: Configuration;
-  public profile: Profile;
+  configuration: Configuration;
+  profile: Profile;
 
   // selected stuff
-  public highlightedSystems: string[] = [];
-  public highlightedPatterns: Pattern[] = [];
-  public highlightedCapabilities: string[] = [];
+  highlightedSystems: string[] = [];
+  highlightedPatterns: Pattern[] = [];
+  highlightedCapabilities: string[] = [];
 
   // other values
   public analyzeResult: any = [];

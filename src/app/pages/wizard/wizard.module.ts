@@ -5,6 +5,9 @@ import {MaterialModule} from '../../material.module';
 import {RouterModule, Routes} from '@angular/router';
 import {MatStepperModule} from '@angular/material/stepper';
 import {FormsModule} from '@angular/forms';
+import {ProductInfoModule} from '../../products/product-info/product-info.module';
+import {CapabilityInfoModule} from '../../capabilities/capability-info/capability-info.module';
+import {SystemInfoModule} from "../../systems/system-info/system-info.module";
 
 const routes: Routes = [
   {
@@ -20,6 +23,9 @@ const routes: Routes = [
     FormsModule,
     MaterialModule,
     MatStepperModule,
+    ProductInfoModule,
+    CapabilityInfoModule,
+    SystemInfoModule,
     RouterModule.forChild(routes),
   ]
 })

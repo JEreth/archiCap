@@ -1,17 +1,29 @@
-<div class="general-wrapper">
+<div class="general-wrapper" *ngIf="profile && configuration">
   <div class="general-wrapper-inner">
     <section class="mat-typography">
 
-      <mat-horizontal-stepper labelPosition="bottom">
+      <mat-horizontal-stepper labelPosition="bottom" #stepper>
 
         <mat-step>
           <ng-template matStepLabel>Introduction</ng-template>
-          <h1 class="mat-display-1">Welcome to ArchiCap</h1>
+
+          <mat-toolbar>
+            <h1>
+              Welcome to ArchiCap
+            </h1>
+            <span class="spacer"></span>
+            <button mat-flat-button matStepperNext color="accent">
+              Let's go
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+          </mat-toolbar>
           <p>This wizard helps you setting up your planing environment. More concrete, this software supports strategic
-            IT architectue planning by linking business strategy and technology compoents via business capabilites.</p>
+            IT architecture planning by linking business strategy and technology components via business
+            capabilites.</p>
           <p>To get going you should first be aware that there are thee use cases that might be relevant for you:</p>
           <ol>
-            <li><strong>Greenfield:</strong> You want to achieve some business capabilities and ask your self which
+            <li><strong>Greenfield (Capability-First)</strong>
+              <br/>You want to achieve some business capabilities and ask your self which
               components fit.
               <ul>
                 <li>If this is the case you might only want to define your capabilities in Step 2 and use some of the
@@ -19,7 +31,8 @@
                 </li>
               </ul>
             </li>
-            <li><strong>Brownfield:</strong> You have a legacy IT landscape that you analyze in order to identify
+            <li><strong>Brownfield (System-First)</strong>
+              <br/>You have a legacy IT landscape that you analyze in order to identify
               possible capabilities.
               <ul>
                 <li>If this is the case you might only want to define your components in Step 3 and use some of the
@@ -27,7 +40,8 @@
                 </li>
               </ul>
             </li>
-            <li><strong>Benchmark:</strong> You have a legacy IT landscape and some capabilities and want to check which
+            <li><strong>Benchmark:</strong>
+              <br/>You have a legacy IT landscape and some capabilities and want to check which
               components are relevant and which might be redundant.
               <ul>
                 <li>If this is the case feel free to use any of the predefined elements and add you own if necessary.
@@ -41,9 +55,10 @@
           <p>If you have not found an adequate set of predefined elements in the Import/Export section, please feel free
             to add your own elements and share them with the community.</p>
 
-          <div class="text-right">
-            <button mat-raised-button matStepperNext color="primary">
+          <div class="text-center">
+            <button mat-raised-button (click)="next(stepper)" color="accent">
               Let's go
+              <mat-icon>keyboard_arrow_right</mat-icon>
             </button>
           </div>
         </mat-step>
@@ -51,106 +66,150 @@
         <mat-step>
           <ng-template matStepLabel>Capabilities</ng-template>
 
-          <h2>
-            <mat-icon mat-list-icon>gavel</mat-icon>
-            Select relevant Capabilities
-            <button mat-stroked-button matStepperNext color="default">Skip</button>
-          </h2>
+          <mat-toolbar>
+            <h2>
+              <mat-icon mat-list-icon>gavel</mat-icon>
+              Select relevant Capabilities
+            </h2>
+            <span class="spacer"></span>
+            <button mat-flat-button matStepperNext color="accent">Skip</button>
+          </mat-toolbar>
 
-          <mat-selection-list [(ngModel)]="profile.capabilities" (ngModelChange)="save()">
-            <mat-list-option *ngFor="let capability of capabilities" [value]="capability.id">
+          <p>Select capabilities that seems to be relevant for you in order to allow a capability-first analysis
+            that represents the business side. If you want to analyze an existing legacy landscape you can skip this
+            step.</p>
+
+
+          <mat-selection-list [(ngModel)]="profile.capabilities">
+            <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
               {{capability.name}}
             </mat-list-option>
           </mat-selection-list>
 
           <div class="text-right">
-            <button mat-raised-button color="accent" routerLink="/capabilities/new" [disabled]="working">
+            <button mat-mini-fab color="primary" routerLink="/capabilities/new">
               <mat-icon>add</mat-icon>
             </button>
           </div>
 
           <div class="stepper-buttons">
-            <button mat-raised-button matStepperNext>Back</button>
+            <button mat-raised-button (click)="back(stepper)">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+              Back
+            </button>
             <span class="spacer"></span>
-            <button mat-raised-button matStepperNext color="primary">Next</button>
+            <button mat-raised-button (click)="next(stepper)" color="accent">
+              Next
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
           </div>
 
-          <p class="mat-caption">If you want to analyze an existing legacy landscape you can skip this step.</p>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Products</ng-template>
+
+          <mat-toolbar>
+            <h2>
+              <mat-icon mat-list-icon>local_offer</mat-icon>
+              Select relevant products
+            </h2>
+            <span class="spacer"></span>
+            <button mat-flat-button matStepperNext color="accent">Skip</button>
+          </mat-toolbar>
+
+          <p>Select products that you have in your landscape or that you plan to integrate.
+            If you want to only use the business perspective on a green field you can skip this step.</p>
+
+
+          <mat-selection-list [(ngModel)]="profile.products">
+            <mat-list-option *ngFor="let products of configuration.products" [value]="products.id">
+              {{products.name}}
+            </mat-list-option>
+          </mat-selection-list>
+
+          <div class="text-right">
+            <button mat-mini-fab color="primary" routerLink="/products/new">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+
+          <div class="stepper-buttons">
+            <button mat-raised-button (click)="back(stepper)">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+              Back
+            </button>
+            <span class="spacer"></span>
+            <button mat-raised-button (click)="next(stepper)" color="accent">
+              Next
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+          </div>
 
         </mat-step>
 
         <mat-step>
           <ng-template matStepLabel>Components</ng-template>
 
-          <h2>
-            <mat-icon mat-list-icon>gavel</mat-icon>
-            Select relevant Components
-            <button mat-stroked-button matStepperNext color="default">Skip</button>
-          </h2>
 
-          <p>If you feel confident about what you need, you can select the components directly.
-            If you are looking to implement a pattern or you know that your landscape has certain pattern you can also
-            select a pattern and the wizard will select adequate components for you. If you are not sure about what
-            components you have, you can also simply select products and the wizard will take care of the rest.</p>
-
-          <mat-tab-group>
-            <mat-tab label="Select directly">
-
-              <mat-selection-list [(ngModel)]="profile.systems" (ngModelChange)="save()">
-                <mat-list-option *ngFor="let system of systems" [value]="system.id">
-                  {{system.name}}
-                </mat-list-option>
-              </mat-selection-list>
-
-              <div class="text-right">
-                <button mat-raised-button color="accent" routerLink="/components/new" [disabled]="working">
-                  <mat-icon>add</mat-icon>
-                </button>
-              </div>
-
-            </mat-tab>
-            <mat-tab label="Select by patterns">
-
-              <!--
-              <mat-selection-list [(ngModel)]="selectedPatterns" (ngModelChange)="selectAdequateComponentsByPatterns()">
-                <mat-list-option *ngFor="let pattern of patterns" [value]="pattern.id">
-                  {{pattern.name}}
-                </mat-list-option>
-              </mat-selection-list>
-              -->
-
-            </mat-tab>
-            <mat-tab label="Select by products">
-
-              <mat-selection-list [(ngModel)]="profile.products" (ngModelChange)="selectAdequateComponentsByProducts()">
-                <mat-list-option *ngFor="let product of products" [value]="product.id">
-                  {{product.name}}
-                </mat-list-option>
-              </mat-selection-list>
-
-            </mat-tab>
-          </mat-tab-group>
-
-          <div class="stepper-buttons">
-            <button mat-raised-button matStepperNext>Back</button>
+          <mat-toolbar>
+            <h2>
+              <mat-icon mat-list-icon>filter_none</mat-icon>
+              Select relevant Components
+            </h2>
             <span class="spacer"></span>
-            <button mat-raised-button matStepperNext color="primary">Next</button>
-          </div>
+            <button mat-flat-button matStepperNext color="accent">Skip</button>
+          </mat-toolbar>
 
-          <p class="mat-caption">If you want to find adequate components to your capabilities you can skip this
+          <p>Components are abstract construction elements that are implemented by certain products.
+            If you feel confident about the concept, you can select the components directly.
+            If not, you can also preselect components by the products you selected in the last step.
+            If you only want to find adequate components to your capabilities you can skip this
             step.</p>
 
+          <button mat-flat-button (click)="suggestComponents()" color="primary">Suggest components by products</button>
+
+          <mat-selection-list [(ngModel)]="profile.systems">
+            <mat-list-option *ngFor="let system of configuration.systems" [value]="system.id">
+              {{system.name}}
+            </mat-list-option>
+          </mat-selection-list>
+
+          <div class="text-right">
+            <button mat-mini-fab color="primary" routerLink="/components/new">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+
+          <div class="stepper-buttons">
+            <button mat-raised-button (click)="back(stepper)">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+              Back
+            </button>
+            <span class="spacer"></span>
+            <button mat-raised-button (click)="next(stepper)" color="accent">
+              Next
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+          </div>
         </mat-step>
 
         <mat-step>
           <ng-template matStepLabel>Take off</ng-template>
 
-          <h1 class="mat-display-2">You are all set</h1>
+          <mat-toolbar>
+            <h1>
+              You are all set
+            </h1>
+          </mat-toolbar>
           <p>Your selection was saved and you can start exploring your architectural possibilities. You can always
             adjust your settings in your profile on the left.</p>
 
-          <div class="stepper-buttons">
-            <button mat-raised-button color="primary" routerLink="/stage">Go to Stage</button>
+          <div class="text-center">
+            <button mat-raised-button color="accent" routerLink="/stage">
+              Start analyzing your stage
+              <mat-icon>widgets</mat-icon>
+            </button>
           </div>
         </mat-step>
       </mat-horizontal-stepper>

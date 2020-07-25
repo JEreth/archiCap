@@ -1,13 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Capability} from '../../capabilities/shared/capability';
-import {CapabilityService} from '../../capabilities/shared/capability.service';
 import {Profile, ProfileService} from '../../shared/profile.service';
-import {SystemService} from '../../systems/shared/system.service';
-import {System} from '../../systems/shared/system';
-import {Pattern} from '../../patterns/shared/pattern';
-import {Product} from '../../products/shared/product';
-import {PatternService} from '../../patterns/shared/pattern.service';
-import {ProductService} from '../../products/shared/product.service';
+import {Configuration, ConfigurationService} from '../../shared/configuration.service';
+import {MatStepper} from "@angular/material/stepper";
+import {SystemService} from "../../systems/shared/system.service";
+import {System} from "../../systems/shared/system";
 
 @Component({
   selector: 'app-wizard',
@@ -16,54 +12,37 @@ import {ProductService} from '../../products/shared/product.service';
 })
 export class WizardComponent implements OnInit {
 
-  public profile: Profile;
+  profile: Profile;
+  configuration: Configuration;
 
-  public capabilities: Capability[] = [];
-  public systems: System[] = [];
-  public patterns: Pattern[] = [];
-  public products: Product[] = [];
-
-  public working = true;
-
-  constructor(private capabilityService: CapabilityService,
+  constructor(private configurationService: ConfigurationService,
               private systemService: SystemService,
-              private patterService: PatternService,
-              private productService: ProductService,
               private profileService: ProfileService) {
   }
 
   async save() {
-    this.working = true;
-    /*this.profile.systems = this.selectedSystems;
-    this.profile.capabilities = this.selectedCapabilities;
-    this.profile.products = this.selectedProducts; */
     await this.profileService.persist();
-    this.working = false;
   }
 
   async ngOnInit() {
-    this.capabilities = (await this.capabilityService.all()) as Capability[];
-    this.systems = (await this.systemService.all()) as System[];
-    this.patterns = (await this.patterService.all()) as Pattern[];
-    this.products = (await this.productService.all()) as Product[];
     this.profile = await this.profileService.get();
-    this.working = false;
+    this.configuration = await this.configurationService.get();
   }
 
-  selectAdequateComponentsByPatterns() {
-    /*this.working = true;
-    this.systemService.findManyFromRelation('patterns', this.selectedPatterns).subscribe(r => {
-      this.selectedSystems = r.map(a => a.id);
-      this.save();
-    });*/
+  async next(stepper: MatStepper) {
+    await this.save();
+    stepper.next();
   }
 
-  selectAdequateComponentsByProducts() {
-    /*this.working = true;
-    this.systemService.findManyFromRelation('products', this.selectedProducts).subscribe(r => {
-      this.selectedSystems = r.map(a => a.id);
-      this.save();
-    });*/
+  async back(stepper: MatStepper) {
+    await this.save();
+    stepper.previous();
+  }
+
+  // select components by selected products
+  async suggestComponents() {
+    const systems: System[] = await this.systemService.findBy(this.profile.products, 'products') as System[];
+    this.profile.systems = systems.map(i => i.id);
   }
 
 }
