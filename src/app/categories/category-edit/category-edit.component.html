@@ -26,7 +26,7 @@
 <!-- Systems -->
 <div *ngIf="configuration">
   <mat-selection-list [(ngModel)]="relatedSystems">
-    <h3 matSubheader>Components in this category</h3>
+    <h3>Components in this category</h3>
     <mat-list-option *ngFor="let system of configuration.systems" [value]="system">
       {{ system.name }}
     </mat-list-option>
