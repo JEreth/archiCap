@@ -38,7 +38,7 @@
 <!-- STACK -->
 <div class="stack-warp row" *ngIf="viewMode!='analyze'">
 
-  <div class="col-12">
+  <div class="col-9">
     <!-- layer architecture -->
     <div id="category-box-wrap" class="{{stackMode}} view-{{viewMode}}" *ngIf="viewMode!=='analyze'">
       <div class="category-box" *ngFor="let layer of layers">
@@ -55,57 +55,53 @@
         </div>
       </div>
     </div>
-
   </div>
-</div>
-
-<!-- HIGHLIGHTING -->
-<div class="highlight-wrap row" *ngIf="viewMode!='analyze'">
-  <!-- HIGHLIGHT PATTERN -->
   <div class="col-3" *ngIf="configuration">
-    <mat-selection-list [(ngModel)]="highlightedPatterns" (ngModelChange)="updateHighlightedPatterns()">
-      <h3>Highlight by pattern</h3>
-      <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern.id">
-        <mat-icon mat-list-icon (click)="showPatternInfo($event, pattern)" color="primary">info</mat-icon>
-        {{pattern.name}}
-      </mat-list-option>
-    </mat-selection-list>
-  </div>
-
-  <!-- HIGHLIGHT CAPABILITIES -->
-  <div class="col-3" *ngIf="configuration">
-    <mat-selection-list [(ngModel)]="highlightedCapabilities" (ngModelChange)="updateHighlightedCapabilities()">
-      <h3>Highlight by capabilities</h3>
-      <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
-        <mat-icon mat-list-icon (click)="showCapabilityInfo($event, capability)" color="primary">info</mat-icon>
-        {{capability.name}}
-      </mat-list-option>
-    </mat-selection-list>
-  </div>
-
-  <!-- HIGHLIGHT SYSTEMS -->
-  <div class="col-3" *ngIf="configuration">
-    <mat-selection-list [(ngModel)]="highlightedSystems" (ngModelChange)="updateHighlightedSystems()">
-      <h3>Highlight by Systems</h3>
+    <mat-selection-list [(ngModel)]="highlightedSystems" (ngModelChange)="updateHighlightedSystems()" dense>
       <mat-list-option *ngFor="let system of configuration.systems" [value]="system.id">
         <mat-icon mat-list-icon (click)="showSystemInfo($event, system)" color="primary">info</mat-icon>
         {{system.name}}
       </mat-list-option>
     </mat-selection-list>
   </div>
+</div>
 
-  <!-- HIGHLIGHT PRODUCTS -->
-  <div class="col-3" *ngIf="configuration">
-    <mat-selection-list [(ngModel)]="highlightedProducts" (ngModelChange)="updateHighlightedProducts()">
-      <h3>Highlight by Products</h3>
-      <mat-list-option *ngFor="let product of configuration.products" [value]="product.id">
-        <mat-icon mat-list-icon (click)="showProductInfo($event, product)" color="primary">info</mat-icon>
-        {{product.name}}
-      </mat-list-option>
-    </mat-selection-list>
+<!-- HIGHLIGHTING -->
+<div class="highlight-wrap" *ngIf="viewMode!='analyze'">
+  <div class="row">
+    <!-- HIGHLIGHT PATTERN -->
+    <div class="col-3" *ngIf="configuration">
+      <mat-selection-list [(ngModel)]="highlightedPatterns" (ngModelChange)="updateHighlightedPatterns()" dense>
+        <h3>Highlight by Pattern</h3>
+        <mat-list-option *ngFor="let pattern of configuration.patterns" [value]="pattern.id">
+          <mat-icon mat-list-icon (click)="showPatternInfo($event, pattern)" color="primary">info</mat-icon>
+          {{pattern.name}}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+
+    <!-- HIGHLIGHT CAPABILITIES -->
+    <div class="col-6" *ngIf="configuration">
+      <mat-selection-list [(ngModel)]="highlightedCapabilities" (ngModelChange)="updateHighlightedCapabilities()" dense>
+        <h3>Highlight by Capabilities</h3>
+        <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
+          <mat-icon mat-list-icon (click)="showCapabilityInfo($event, capability)" color="primary">info</mat-icon>
+          {{capability.name}}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+
+    <!-- HIGHLIGHT PRODUCTS -->
+    <div class="col-3" *ngIf="configuration">
+      <mat-selection-list [(ngModel)]="highlightedProducts" (ngModelChange)="updateHighlightedProducts()" dense>
+        <h3>Highlight by Products</h3>
+        <mat-list-option *ngFor="let product of configuration.products" [value]="product.id">
+          <mat-icon mat-list-icon (click)="showProductInfo($event, product)" color="primary">info</mat-icon>
+          {{product.name}}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
   </div>
-
-
 </div>
 
 <!-- ANALYZE VIEW -->
