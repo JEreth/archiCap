@@ -213,7 +213,7 @@ export class CompositionComponent implements OnInit {
     this.analyzeResult = [];
     for (const pattern of (await this.patternService.all()) as Pattern[]) {
       const intersectionCount = pattern.systems.filter(s => this.profile.systems.includes(s)).length;
-      const percentage = Math.round((intersectionCount / Math.max(1, length)) * 100);
+      const percentage = Math.round((intersectionCount / Math.max(1, pattern.systems.length)) * 100);
       if (percentage > 0) {
         this.analyzeResult.push({
           pattern,
