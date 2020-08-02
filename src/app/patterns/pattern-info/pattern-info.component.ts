@@ -5,8 +5,8 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog
 import {System} from '../../systems/shared/system';
 import {SystemService} from '../../systems/shared/system.service';
 import {CapabilityService} from '../../capabilities/shared/capability.service';
-import {SystemInfoComponent} from "../../systems/system-info/system-info.component";
-import {CapabilityInfoComponent} from "../../capabilities/capability-info/capability-info.component";
+import {SystemInfoComponent} from '../../systems/system-info/system-info.component';
+import {CapabilityInfoComponent} from '../../capabilities/capability-info/capability-info.component';
 
 @Component({
   selector: 'app-pattern-info',
@@ -44,7 +44,7 @@ export class PatternInfoComponent implements OnInit {
   showSystemInfo(event, system: System) {
     event.stopPropagation();
     this.dialog.open(SystemInfoComponent, {
-      data: {system: system},
+      data: {system},
     });
   }
 

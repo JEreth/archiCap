@@ -2,7 +2,7 @@
 <mat-toolbar>
 
   <!-- STACK STYLE -->
-  <mat-button-toggle-group [(ngModel)]="stackMode" *ngIf="viewMode!='analyze'">
+  <mat-button-toggle-group [(ngModel)]="stackMode" *ngIf="viewMode!='analyze'  && viewMode!='patternFinder'">
     <mat-button-toggle value="vertical">
       <mat-icon>view_agenda</mat-icon>
     </mat-button-toggle>
@@ -32,11 +32,23 @@
       <span *ngIf="showLabel"> Analyze Setup</span>
     </mat-button-toggle>
   </mat-button-toggle-group>
+
+  <mat-button-toggle-group [(ngModel)]="viewMode" *ngIf="!showAnalyze" (ngModelChange)="updateStage()">
+    <mat-button-toggle value="currentStack">
+      <mat-icon>widgets</mat-icon>
+      <span *ngIf="showLabel">Stack</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="patternFinder">
+      <mat-icon>format_shapes</mat-icon>
+      <span *ngIf="showLabel">Pattern Finder</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
 </mat-toolbar>
 
 
 <!-- STACK -->
-<div class="stack-warp row" *ngIf="viewMode!='analyze'">
+<div class="stack-warp row" *ngIf="viewMode!='analyze' && viewMode!='patternFinder'">
 
   <div class="col-9">
     <!-- layer architecture -->
@@ -67,7 +79,7 @@
 </div>
 
 <!-- HIGHLIGHTING -->
-<div class="highlight-wrap" *ngIf="viewMode!='analyze'">
+<div class="highlight-wrap" *ngIf="viewMode!='analyze' && viewMode!='patternFinder'">
   <div class="row">
     <!-- HIGHLIGHT PATTERN -->
     <div class="col-3" *ngIf="configuration">
@@ -202,3 +214,7 @@
 
 </div>
 
+<!-- PATTERN FINDER -->
+<div *ngIf="viewMode === 'patternFinder'">
+  <app-pattern-finder></app-pattern-finder>
+</div>

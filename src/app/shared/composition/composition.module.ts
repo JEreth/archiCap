@@ -7,6 +7,7 @@ import {SystemInfoModule} from '../../systems/system-info/system-info.module';
 import {PatternInfoModule} from '../../patterns/pattern-info/pattern-info.module';
 import {CapabilityInfoModule} from '../../capabilities/capability-info/capability-info.module';
 import {ProductInfoModule} from '../../products/product-info/product-info.module';
+import {PatternFinderModule} from '../../patterns/pattern-finder/pattern-finder.module';
 
 @NgModule({
   declarations: [CompositionComponent],
@@ -18,6 +19,7 @@ import {ProductInfoModule} from '../../products/product-info/product-info.module
     PatternInfoModule,
     ProductInfoModule,
     CapabilityInfoModule,
+    PatternFinderModule
   ],
   exports: [CompositionComponent]
 })

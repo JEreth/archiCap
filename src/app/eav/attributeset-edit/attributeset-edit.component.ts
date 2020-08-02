@@ -5,8 +5,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
 import {AttributeSetService} from '../shared/attribute-set.service';
 import {Attribute, AttributeSet} from '../shared/models';
-import {AttributeService} from "../shared/attribute.service";
-import {moveItemInArray} from "@angular/cdk/drag-drop";
+import {AttributeService} from '../shared/attribute.service';
+import {moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-attributeset-edit',

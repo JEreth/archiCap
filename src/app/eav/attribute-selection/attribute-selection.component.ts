@@ -14,10 +14,21 @@ import {Location} from '@angular/common';
 export class AttributeSelectionComponent implements OnInit {
 
   @Input() entityId: string;
-  @Input() attributeSetId: string;
+  _attributeSetId: string;
   @Input() attributeSelection: AttributeSelection[] = [];
   @Input() persistService: EntityService;
   @Input() readonly = false;
+
+  // Getter and setter to listen on update
+  get attributeSetId(): string {
+    return this._attributeSetId;
+  }
+
+  @Input()
+  set attributeSetId(val: string) {
+    this._attributeSetId = val;
+    this.update();
+  }
 
   attributeSet: AttributeSet;
   attributes: Attribute[];
@@ -29,6 +40,10 @@ export class AttributeSelectionComponent implements OnInit {
   }
 
   async ngOnInit() {
+    await this.update();
+  }
+
+  async update() {
     this.attributeSet = await this.attributeSetService.get(this.attributeSetId) as AttributeSet;
     this.attributes = await this.attributeService.findBy(this.attributeSet.attributes) as Attribute[];
   }

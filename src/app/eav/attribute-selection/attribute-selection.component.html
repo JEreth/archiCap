@@ -1,4 +1,4 @@
-<div *ngIf="attributes && attributeSelection && entityId">
+<div *ngIf="attributes && attributeSelection">
   Type: {{ attributeSet.name }}
   <div class="specification-block">
     <div *ngFor="let attribute of attributes" class="specification-row">
@@ -16,5 +16,6 @@
       </div>
     </div>
   </div>
-  <button mat-flat-button color="accent" type="submit" (click)="save()" *ngIf="!readonly">Save</button>
+  <button mat-flat-button color="accent" type="submit" (click)="save()" *ngIf="!readonly && persistService">Save
+  </button>
 </div>
