@@ -1,6 +1,6 @@
 [![MIT License][license-shield]][license-url] [![Netlify Status](https://api.netlify.com/api/v1/badges/746c09b5-a33e-435a-aceb-df892fbadabf/deploy-status)](https://app.netlify.com/sites/archicap/deploys)  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)  
 
-# <img src="src/assets/logo_color.png" alt="Archicap" width="250">
+# <img src="src/assets/logo_color.png" alt="ArchiCap" width="250">
 
 > Capability-based IT System Architecture Development
 
@@ -37,7 +37,7 @@ If you have any questions or notes please use the github page for interaction.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-### Using archiCap as an architectural decision support
+### Using ArchiCap as an architectural decision support
 
 To get going you should first be aware that there are thee use cases that might be relevant for you:
 
@@ -52,7 +52,7 @@ You can simply use the **Wizard** to define your personal setup and then use the
 
 You can always edit your environment in **My Profile*
 
-Currently the tool comes with predefined environments for:
+Currently, the tool comes with predefined environments for:
 
 - Decentralized Analytics Landscapes
 - Data Lakes
@@ -60,19 +60,19 @@ Currently the tool comes with predefined environments for:
 
 Have fun with exploring the examples.
 
-### Add a new predefined environment to archiCap
+### Add a new predefined environment to ArchiCap
 
-This tools provides the flexibility to save and load a set of predefined elements that serve as a collection in certain scenarios.
+This tool provides the flexibility to save and load a set of predefined elements that serve as a collection in certain scenarios.
 It is for example possible to define possible elements for a use case such as *the Internet of Things* and then save all the relations
 of components, patterns and capabilities. Later, any user can load this setup and adjust it to his own needs.
 
 For this you can define the following elements in the left *configuration* sections.
 
 - [x] **Categories** are helpers to structure you architecture. You can for instance use them as component categories 
-(e.g. Databases, Front-End Tools etc.) or to define layers in your architecutre (e.g. data management, data processing etc.)
+(e.g. Databases, Front-End Tools etc.) or to define layers in your architecture (e.g. data management, data processing etc.)
 
-- [x] **Components** are abstract system types. It is important to understand that this are not concrete products, but more
-types of products, e.g. relational database and not MySQL. You can define substitutions when multiple components can be replaced by each other or if one component includes the functions of anouther (e.g. a message queue and an more sophisticated event-log)
+- [x] **Components** are abstract system types. It is important to understand that these are not concrete products, but more
+types of products, e.g. relational database and not MySQL. You can define substitutions when multiple components can be replaced by each other or if one component includes the functions of another (e.g. a "Message Queue" and a more sophisticated "Event Log"). Components can be further specified with individual attribute sets.
 
 - [x] **Products** are concrete implementations of components. It is possible that there are more than one product to one component,
 e.g. MySQL and PostreSQL for relational databases. 
@@ -81,7 +81,7 @@ e.g. MySQL and PostreSQL for relational databases.
 of functions, e.g. edge processing, event logs and stream processing are often used together to build a so-called event hub.
 
 - [x] **Capabilities** constitute the business link (i.e. the actual reason why a component is used) and the possibilities that
-are enabled by a component, e.g. *distribution of event-driven data to multiple receivers* for an event log.
+are enabled by a component, e.g. *distribution of event-driven data to multiple receivers* for an event log. Capabilities can be further specified with individual attribute sets.
 
 ### Other features
 
