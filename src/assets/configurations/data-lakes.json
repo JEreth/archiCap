@@ -1,880 +1,330 @@
 {
   "capabilities": [
-    {
-      "name": " I want to process data in (near) real time (without persisting it)",
-      "description": "I want to process data in order to get immidate insights and there is no need to persist that data (at least not the raw data) for later processing.",
-      "id": 0
-    },
-    {
-      "name": " I want to persist and process data in (near) real time",
-      "description": "I need to process real time data and at the same time I need to save the (raw) data for later processing.",
-      "id": 1
-    },
-    {
-      "name": "I want to save large amounts of structured (relational) data in a consistent way for further processing",
-      "description": "I need to save large relational and structured data sets that can be mapped to a fixed structure and come with low veracity.",
-      "id": 2
-    },
-    {
-      "name": "I need to save large amounts of unstructured data which comes in many files.",
-      "description": "I have data sources that produces many files with unstructured data and I need a way to cheaply and efficiently save this data.",
-      "id": 3
-    },
-    {
-      "name": "I need to save large files of unstructured content",
-      "description": "I need to save large files of unstrucutured content (e.g. audio/video files).",
-      "id": 4
-    },
-    {
-      "name": "I want to add analyzable meta data to my unstructured content to allow enhanced exploration",
-      "description": "I need to add meta data to files that go beyond created_at, author etc. E.g. custom attributes like responsibility, related content and the like.",
-      "id": 5
-    },
-    {
-      "name": "I need to save and access semi-structured content with changing schemas",
-      "description": "I have semi-structured content (e.g. JSON/XML) and schemas that are not fixed and need a way to efficiently save and access that data.",
-      "id": 6
-    },
-    {
-      "name": "I need to efficiently cache simple key-value data",
-      "description": "I need a cache that quickly saves and provides that that can be saved as a key-value-pair (e.g. repetetive API calls).",
-      "id": 7
-    },
-    {
-      "name": "I want to provide an asynchronous way for communication between components",
-      "description": "Components should not directly communicate, but should use a broker that enables an asychronous communication.",
-      "id": 8
-    },
-    {
-      "name": "I need to process data right at the data source (Edge Processing)",
-      "description": "Some data sets need to be processed before transfering it into the analtycal landscape (e.g. due to volumes/transfer rates or privacy compliance).",
-      "id": 9
-    },
-    {
-      "name": "I need to apply real time transformations to streaming data",
-      "description": "I need to process real time data and apply certain transformations to the data.",
-      "id": 10
-    },
-    {
-      "name": "I need to monitor streaming data in order to discover certain patterns in real time",
-      "description": "I need to monitor streaming data in order to discover certain patterns in real time",
-      "id": 11
-    },
-    {
-      "name": "I need to save and process data that represents mosly relations between entities (Graph data)",
-      "description": "I have data sets that respresents graphs (nodes and relations) and need to apply graph algorithms to the data set.",
-      "id": 12
-    },
-    {
-      "name": "I need to model data in a flexible way that allows me to easily extend schemas without breaking downstream systems",
-      "description": "I need a data model that allows me to model raw data in a strucuted way but is flexible enough to be extendedn in a not-breakable way",
-      "id": 13
-    },
-    {
-      "name": "I need a overarching structure to search for metadata in the entire data lake.",
-      "description": "A way to search meta data and contens that spans over all components in the data lake",
-      "id": 14
-    },
-    {
-      "name": "I need a way to document data transformations (data lineage)",
-      "description": "I need a way to document data transformations (data lineage)",
-      "id": 15
-    },
-    {
-      "name": "I need to run distributed queries across different data sources",
-      "description": "I need to run (interactive( analytic queries against data sources of all sizes ranging from gigabytes to petabytes in my data lake.",
-      "id": 16
-    },
-    {
-      "name": "I need to scan and ingest large amounts of log data",
-      "description": "I need to scan and ingest large amounts of log data",
-      "id": 17
-    },
-    {
-      "name": "I need a way to optimize raw data for big data processing",
-      "description": "I need a way to optimize raw data for big data processing, e.g. make it smaller, typesafe or faster",
-      "id": 18
-    },
-    {
-      "name": "I want to save structured relational content in an operational context",
-      "description": "I want to save structured relational content in an operational context",
-      "id": 19
-    },
-    {
-      "name": "I need a security structure that handles file rights in my data lake",
-      "description": "I need a security structure that handles file rights in my data lake",
-      "id": 20
-    }
   ],
   "categories": [
     {
-      "id": 0,
       "name": "Extraction",
-      "description": "Components that help to extract data from source systems"
+      "description": "Components that help to extract data from source systems",
+      "id": "kd31jw3dYW1lIjoiRXh0cmFjdGlvbiIsImRlc2NyaXB0aW9uIjoiQ29tcG9uZW50cyB0aGF0IGhlbHAgdG8gZXh0cmFjdCBkYXRhIGZyb20gc291cmNlIHN5c3RlbXMifQ=="
     },
     {
-      "id": 1,
       "name": "Connect & Coordinate",
-      "description": "Components that connect and coordinate different components."
+      "description": "Components that connect and coordinate different components.",
+      "id": "kd31k210YW1lIjoiQ29ubmVjdCAmIENvb3JkaW5hdGUiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBjb25uZWN0IGFuZCBjb29yZGluYXRlIGRpZmZlcmVudCBjb21wb25lbnRzLiJ9"
     },
     {
-      "id": 2,
       "name": "Persistence",
-      "description": "Components that are able to persist data."
+      "description": "Components that are able to persist data.",
+      "id": "kd31kbihYW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBhcmUgYWJsZSB0byBwZXJzaXN0IGRhdGEuIn0="
     },
     {
-      "id": 3,
       "name": "Management & Administration",
-      "description": "Components to stay on top of things and provide administrative capabilites."
+      "description": "Components to stay on top of things and provide administrative capabilites.",
+      "id": "kd31kjdsYW1lIjoiTWFuYWdlbWVudCAmIEFkbWluaXN0cmF0aW9uIiwiZGVzY3JpcHRpb24iOiJDb21wb25lbnRzIHRvIHN0YXkgb24gdG9wIG9mIHRoaW5ncyBhbmQgcHJvdmlkZSBhZG1pbmlzdHJhdGl2ZSBjYXBhYmlsaXRlcy4ifQ=="
     }
   ],
   "patterns": [
-    {
-      "name": "Massive Data Store",
-      "description": "The data lake needs to save massive amounts of structured and/or unstructured data.",
-      "id": 0
-    },
-    {
-      "name": "Stream-oriented Data Lake",
-      "description": "One important purpose is the processing of fast data",
-      "id": 1
-    },
-    {
-      "name": "Hybrid approach (Lampda architecture)",
-      "description": "Use a massive data store and streaming comonents in order to provide best of both worlds",
-      "id": 2
-    },
-    {
-      "name": "Event-driven architecture",
-      "description": "Use an event-driven strucutre in order to become more flexible.",
-      "id": 3
-    }
   ],
   "products": [
-    {
-      "name": "Hadoop (HDFS + Map Reduce)",
-      "description": "",
-      "id": 0
-    },
-    {
-      "name": "MongoDB",
-      "description": "",
-      "id": 1
-    },
-    {
-      "name": "ElasticSearch",
-      "description": "",
-      "id": 2
-    },
-    {
-      "name": "Nifi",
-      "description": "",
-      "id": 3
-    },
-    {
-      "name": "Apache Atlas",
-      "description": "",
-      "id": 4
-    },
-    {
-      "name": "Apache Kafka",
-      "description": "",
-      "id": 5
-    },
-    {
-      "name": "Alation",
-      "description": "",
-      "id": 6
-    },
-    {
-      "name": "Redis",
-      "description": "",
-      "id": 7
-    },
-    {
-      "name": "AWS S3",
-      "description": "",
-      "id": 8
-    },
-    {
-      "name": "Azure Blob Storage",
-      "description": "",
-      "id": 9
-    },
-    {
-      "name": "IBM Object Store",
-      "description": "",
-      "id": 10
-    },
-    {
-      "name": "Apache Samza",
-      "description": "",
-      "id": 11
-    },
-    {
-      "name": "Cassandra",
-      "description": "",
-      "id": 12
-    },
-    {
-      "name": "AWS SimpleDB",
-      "description": "",
-      "id": 13
-    },
-    {
-      "name": "Apache HBase",
-      "description": "",
-      "id": 14
-    },
-    {
-      "name": "Neo4J",
-      "description": "",
-      "id": 15
-    },
-    {
-      "name": "HyperGraph DB",
-      "description": "",
-      "id": 16
-    },
-    {
-      "name": "Cloudera Hadoop",
-      "description": "",
-      "id": 17
-    },
-    {
-      "name": "MapR Hadoop",
-      "description": "",
-      "id": 18
-    },
-    {
-      "name": "Azure Event Hub",
-      "description": "",
-      "id": 19
-    },
-    {
-      "name": "Aerospike",
-      "description": "",
-      "id": 20
-    },
-    {
-      "name": "Apache Storm",
-      "description": "",
-      "id": 21
-    },
-    {
-      "name": "Apache Spark",
-      "description": "",
-      "id": 22
-    },
-    {
-      "name": "IBM DB2",
-      "description": "",
-      "id": 23
-    },
-    {
-      "name": "SAP Hana",
-      "description": "",
-      "id": 24
-    },
-    {
-      "name": "Oracle DWH",
-      "description": "",
-      "id": 25
-    },
-    {
-      "name": "Apache Flume",
-      "description": "",
-      "id": 26
-    },
-    {
-      "name": "AWS Kinesis",
-      "description": "",
-      "id": 27
-    },
-    {
-      "name": "Presto",
-      "description": "",
-      "id": 28
-    },
-    {
-      "name": "Teradata",
-      "description": "",
-      "id": 29
-    },
-    {
-      "name": "IBM Streams",
-      "description": "",
-      "id": 30
-    },
-    {
-      "name": "AWS Redshift",
-      "description": "",
-      "id": 31
-    },
-    {
-      "name": "LogStash",
-      "description": "",
-      "id": 32
-    },
-    {
-      "name": "Avro",
-      "description": "",
-      "id": 33
-    },
-    {
-      "name": "Parquet",
-      "description": "",
-      "id": 34
-    },
-    {
-      "name": "MySQL",
-      "description": "",
-      "id": 35
-    },
-    {
-      "name": "PostgreSQL",
-      "description": "",
-      "id": 36
-    },
-    {
-      "name": "ZeroMQ",
-      "description": "",
-      "id": 37
-    },
-    {
-      "name": "NanoMSG",
-      "description": "",
-      "id": 38
-    },
-    {
-      "name": "Informatica Data Catalog",
-      "description": "",
-      "id": 39
-    },
-    {
-      "name": "Apache ORC",
-      "description": "",
-      "id": 40
-    },
-    {
-      "name": "DataVault",
-      "description": "",
-      "id": 41
-    },
-    {
-      "name": "Apache Druid",
-      "description": "",
-      "id": 42
-    },
-    {
-      "name": "Apache Ranger",
-      "description": "",
-      "id": 43
-    }
   ],
   "systems": [
     {
       "name": "Distributed File System",
       "description": "A distributed file system saves files on many machines and allows horicontal scaling.",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd31kbihYW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBhcmUgYWJsZSB0byBwZXJzaXN0IGRhdGEuIn0="
       ],
       "products": [
-        0,
-        17,
-        18
-      ],
-      "capabilities": [
-        3,
-        4
-      ],
-      "patterns": [
-        0,
-        2
       ],
       "substitutions": [
-        {
-          "id": 1,
-          "name": "BLOB Storage"
-        }
       ],
-      "id": 0
+      "id": "kd31lyshYW1lIjoiRGlzdHJpYnV0ZWQgRmlsZSBTeXN0ZW0iLCJkZXNjcmlwdGlvbiI6IkEgZGlzdHJpYnV0ZWQgZmlsZSBzeXN0ZW0gc2F2ZXMgZmlsZXMgb24gbWFueSBtYWNoaW5lcyBhbmQgYWxsb3dzIGhvcmljb250YWwgc2NhbGluZy4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMxbDRrallXMWxJam9pUkdGMFlTQlRkRzl5WlNJc0ltUmxjMk55YVhCMGFXOXVJam9pSWl3aVlYUjBjbWxpZFhSbGN5STZXMTBzSW5SNWNHVWlPaUpqYjIxd2IyNWxiblFpZlE9PSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOlsia2QzMWtiaWhZVzFsSWpvaVVHVnljMmx6ZEdWdVkyVWlMQ0prWlhOamNtbHdkR2x2YmlJNklrTnZiWEJ2Ym1WdWRITWdkR2hoZENCaGNtVWdZV0pzWlNCMGJ5QndaWEp6YVhOMElHUmhkR0V1SW4wPSJdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ=="
     },
     {
       "name": "BLOB Storage",
-      "description": "A Binary Large OBject (BLOB) is a collection of binary data stored as a single entity in a database management system.Blobs are typically images, audio or other multimedia objects, though sometimes binary executable code is stored as a blob.",
+      "description": "A Binary Large Object (BLOB) is a collection of binary data stored as a single entity in a database management system.Blobs are typically images, audio or other multimedia objects, though sometimes binary executable code is stored as a blob.",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd31kbihYW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBhcmUgYWJsZSB0byBwZXJzaXN0IGRhdGEuIn0="
       ],
       "products": [
-        8,
-        9,
-        10
-      ],
-      "capabilities": [
-        3,
-        4,
-        5
-      ],
-      "patterns": [
-        0,
-        2
       ],
       "substitutions": [
-        {
-          "id": 0,
-          "name": "Distributed File System"
-        }
       ],
-      "id": 1
+      "id": "kd31mb2fYW1lIjoiQkxPQiBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiJBIEJpbmFyeSBMYXJnZSBPYmplY3QgKEJMT0IpIGlzIGEgY29sbGVjdGlvbiBvZiBiaW5hcnkgZGF0YSBzdG9yZWQgYXMgYSBzaW5nbGUgZW50aXR5IGluIGEgZGF0YWJhc2UgbWFuYWdlbWVudCBzeXN0ZW0uQmxvYnMgYXJlIHR5cGljYWxseSBpbWFnZXMsIGF1ZGlvIG9yIG90aGVyIG11bHRpbWVkaWEgb2JqZWN0cywgdGhvdWdoIHNvbWV0aW1lcyBiaW5hcnkgZXhlY3V0YWJsZSBjb2RlIGlzIHN0b3JlZCBhcyBhIGJsb2IuIiwiYXR0cmlidXRlU2V0Ijoia2QzMWw0a2pZVzFsSWpvaVJHRjBZU0JUZEc5eVpTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lZWFIwY21saWRYUmxjeUk2VzEwc0luUjVjR1VpT2lKamIyMXdiMjVsYm5RaWZRPT0iLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbImtkMzFrYmloWVcxbElqb2lVR1Z5YzJsemRHVnVZMlVpTENKa1pYTmpjbWx3ZEdsdmJpSTZJa052YlhCdmJtVnVkSE1nZEdoaGRDQmhjbVVnWVdKc1pTQjBieUJ3WlhKemFYTjBJR1JoZEdFdUluMD0iXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "NoSQL-Database: Document-Store ",
       "description": "A document-oriented database, or document store, is a computer program designed for storing, retrieving and managing document-oriented information, also known as semi-structured data. Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term \"document-oriented database\" has grown with the use of the term NoSQL itself.",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
       ],
       "products": [
-        1,
-        2,
-        14
-      ],
-      "capabilities": [
-        4,
-        6,
-        13
-      ],
-      "patterns": [
-        0
       ],
       "substitutions": [
-        {
-          "id": 4,
-          "name": "No-SQL-Databases: Key-Value-Stores"
-        },
-        {
-          "id": 5,
-          "name": "No-SQL-Databases: Wide-Column-Stores"
-        },
-        {
-          "id": 14,
-          "name": "Relational Database"
-        }
       ],
-      "id": 2
+      "id": "kd31mja9YW1lIjoiTm9TUUwtRGF0YWJhc2U6IERvY3VtZW50LVN0b3JlICIsImRlc2NyaXB0aW9uIjoiQSBkb2N1bWVudC1vcmllbnRlZCBkYXRhYmFzZSwgb3IgZG9jdW1lbnQgc3RvcmUsIGlzIGEgY29tcHV0ZXIgcHJvZ3JhbSBkZXNpZ25lZCBmb3Igc3RvcmluZywgcmV0cmlldmluZyBhbmQgbWFuYWdpbmcgZG9jdW1lbnQtb3JpZW50ZWQgaW5mb3JtYXRpb24sIGFsc28ga25vd24gYXMgc2VtaS1zdHJ1Y3R1cmVkIGRhdGEuIERvY3VtZW50LW9yaWVudGVkIGRhdGFiYXNlcyBhcmUgb25lIG9mIHRoZSBtYWluIGNhdGVnb3JpZXMgb2YgTm9TUUwgZGF0YWJhc2VzLCBhbmQgdGhlIHBvcHVsYXJpdHkgb2YgdGhlIHRlcm0gXCJkb2N1bWVudC1vcmllbnRlZCBkYXRhYmFzZVwiIGhhcyBncm93biB3aXRoIHRoZSB1c2Ugb2YgdGhlIHRlcm0gTm9TUUwgaXRzZWxmLiIsImF0dHJpYnV0ZVNldCI6ImtkMzFsNGtqWVcxbElqb2lSR0YwWVNCVGRHOXlaU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpWVhSMGNtbGlkWFJsY3lJNlcxMHNJblI1Y0dVaU9pSmpiMjF3YjI1bGJuUWlmUT09IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "No-SQL-Database: Graph-Database",
       "description": "In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges, and properties to represent and store data. A key concept of the system is the graph. The graph relates the data items in the store to a collection of nodes and edges, the edges representing the relationships between the nodes.",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd31kbihYW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBhcmUgYWJsZSB0byBwZXJzaXN0IGRhdGEuIn0="
       ],
       "products": [
-        15,
-        16
-      ],
-      "capabilities": [
-        4,
-        12
-      ],
-      "patterns": [
-        0
       ],
       "substitutions": [
-        {
-          "id": 2,
-          "name": "NoSQL-Database: Document-Store "
-        },
-        {
-          "id": 5,
-          "name": "No-SQL-Databases: Wide-Column-Stores"
-        },
-        {
-          "id": 14,
-          "name": "Relational Database"
-        }
       ],
-      "id": 3
+      "id": "kd31mpbqYW1lIjoiTm8tU1FMLURhdGFiYXNlOiBHcmFwaC1EYXRhYmFzZSIsImRlc2NyaXB0aW9uIjoiSW4gY29tcHV0aW5nLCBhIGdyYXBoIGRhdGFiYXNlIGlzIGEgZGF0YWJhc2UgdGhhdCB1c2VzIGdyYXBoIHN0cnVjdHVyZXMgZm9yIHNlbWFudGljIHF1ZXJpZXMgd2l0aCBub2RlcywgZWRnZXMsIGFuZCBwcm9wZXJ0aWVzIHRvIHJlcHJlc2VudCBhbmQgc3RvcmUgZGF0YS4gQSBrZXkgY29uY2VwdCBvZiB0aGUgc3lzdGVtIGlzIHRoZSBncmFwaC4gVGhlIGdyYXBoIHJlbGF0ZXMgdGhlIGRhdGEgaXRlbXMgaW4gdGhlIHN0b3JlIHRvIGEgY29sbGVjdGlvbiBvZiBub2RlcyBhbmQgZWRnZXMsIHRoZSBlZGdlcyByZXByZXNlbnRpbmcgdGhlIHJlbGF0aW9uc2hpcHMgYmV0d2VlbiB0aGUgbm9kZXMuIiwiYXR0cmlidXRlU2V0Ijoia2QzMWw0a2pZVzFsSWpvaVJHRjBZU0JUZEc5eVpTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lZWFIwY21saWRYUmxjeUk2VzEwc0luUjVjR1VpT2lKamIyMXdiMjVsYm5RaWZRPT0iLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
-      "name": "No-SQL-Databases: Key-Value-Stores",
-      "description": "A key–value database, or key–value store, is a data storage paradigm designed for storing, retrieving, and managing associative arrays, a data structure more commonly known today as a dictionary or hash. Dictionaries contain a collection of objects, or records, which in turn have many different fields within them, each containing data. These records are stored and retrieved using a key that uniquely identifies the record, and is used to quickly find the data within the database.",
-      "categories": [
-        2
-      ],
-      "products": [
-        7,
-        20
-      ],
-      "capabilities": [
-        4,
-        7
-      ],
-      "patterns": [
-        0
-      ],
-      "substitutions": [
-        {
-          "id": 2,
-          "name": "NoSQL-Database: Document-Store "
-        }
-      ],
-      "id": 4
-    },
-    {
-      "name": "No-SQL-Databases: Wide-Column-Stores",
+      "name": " No-SQL-Databases: Wide-Column-Stores",
       "description": "A wide column store is a type of NoSQL database. It uses tables, rows, and columns, but unlike a relational database, the names and format of the columns can vary from row to row in the same table. A wide column store can be interpreted as a two-dimensional key-value store.",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
       ],
       "products": [
-        12,
-        13
-      ],
-      "capabilities": [
-        4,
-        6,
-        13
-      ],
-      "patterns": [
-        0
       ],
       "substitutions": [
-        {
-          "id": 2,
-          "name": "NoSQL-Database: Document-Store "
-        },
-        {
-          "id": 14,
-          "name": "Relational Database"
-        }
       ],
-      "id": 5
+      "id": "kd31n98vYW1lIjoiIE5vLVNRTC1EYXRhYmFzZXM6IFdpZGUtQ29sdW1uLVN0b3JlcyIsImRlc2NyaXB0aW9uIjoiQSB3aWRlIGNvbHVtbiBzdG9yZSBpcyBhIHR5cGUgb2YgTm9TUUwgZGF0YWJhc2UuIEl0IHVzZXMgdGFibGVzLCByb3dzLCBhbmQgY29sdW1ucywgYnV0IHVubGlrZSBhIHJlbGF0aW9uYWwgZGF0YWJhc2UsIHRoZSBuYW1lcyBhbmQgZm9ybWF0IG9mIHRoZSBjb2x1bW5zIGNhbiB2YXJ5IGZyb20gcm93IHRvIHJvdyBpbiB0aGUgc2FtZSB0YWJsZS4gQSB3aWRlIGNvbHVtbiBzdG9yZSBjYW4gYmUgaW50ZXJwcmV0ZWQgYXMgYSB0d28tZGltZW5zaW9uYWwga2V5LXZhbHVlIHN0b3JlLiIsImF0dHJpYnV0ZVNldCI6ImtkMzFsNGtqWVcxbElqb2lSR0YwWVNCVGRHOXlaU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpWVhSMGNtbGlkWFJsY3lJNlcxMHNJblI1Y0dVaU9pSmpiMjF3YjI1bGJuUWlmUT09IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Data Catalog",
       "description": "A data catalog is a completely organized service that enables users to explore their required data sources and understand the data sources explored, and at the same time assist organizations to achieve more value from their present investments. A user has to know the location of a data source to connect to the data.",
+      "attributeSet": "kd31nkz9YW1lIjoiTWFuYWdlbWVudCIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        3
+        "kd31kjdsYW1lIjoiTWFuYWdlbWVudCAmIEFkbWluaXN0cmF0aW9uIiwiZGVzY3JpcHRpb24iOiJDb21wb25lbnRzIHRvIHN0YXkgb24gdG9wIG9mIHRoaW5ncyBhbmQgcHJvdmlkZSBhZG1pbmlzdHJhdGl2ZSBjYXBhYmlsaXRlcy4ifQ=="
       ],
       "products": [
-        4,
-        6,
-        39
-      ],
-      "capabilities": [
-        5,
-        14,
-        15
-      ],
-      "patterns": [
-        0,
-        2,
-        3
       ],
       "substitutions": [
       ],
-      "id": 6
+      "id": "kd31nxumYW1lIjoiRGF0YSBDYXRhbG9nIiwiZGVzY3JpcHRpb24iOiJBIGRhdGEgY2F0YWxvZyBpcyBhIGNvbXBsZXRlbHkgb3JnYW5pemVkIHNlcnZpY2UgdGhhdCBlbmFibGVzIHVzZXJzIHRvIGV4cGxvcmUgdGhlaXIgcmVxdWlyZWQgZGF0YSBzb3VyY2VzIGFuZCB1bmRlcnN0YW5kIHRoZSBkYXRhIHNvdXJjZXMgZXhwbG9yZWQsIGFuZCBhdCB0aGUgc2FtZSB0aW1lIGFzc2lzdCBvcmdhbml6YXRpb25zIHRvIGFjaGlldmUgbW9yZSB2YWx1ZSBmcm9tIHRoZWlyIHByZXNlbnQgaW52ZXN0bWVudHMuIEEgdXNlciBoYXMgdG8ga25vdyB0aGUgbG9jYXRpb24gb2YgYSBkYXRhIHNvdXJjZSB0byBjb25uZWN0IHRvIHRoZSBkYXRhLiIsImF0dHJpYnV0ZVNldCI6ImtkMzFua3o5WVcxbElqb2lUV0Z1WVdkbGJXVnVkQ0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpWVhSMGNtbGlkWFJsY3lJNlcxMHNJblI1Y0dVaU9pSmpiMjF3YjI1bGJuUWlmUT09IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6WyJrZDMxa2pkc1lXMWxJam9pVFdGdVlXZGxiV1Z1ZENBbUlFRmtiV2x1YVhOMGNtRjBhVzl1SWl3aVpHVnpZM0pwY0hScGIyNGlPaUpEYjIxd2IyNWxiblJ6SUhSdklITjBZWGtnYjI0Z2RHOXdJRzltSUhSb2FXNW5jeUJoYm1RZ2NISnZkbWxrWlNCaFpHMXBibWx6ZEhKaGRHbDJaU0JqWVhCaFltbHNhWFJsY3k0aWZRPT0iXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Distirbuted Query Engine",
       "description": "Distributed queries involve data that's stored on another server, be it on a server in the same room or on a machine a half a world away. ",
+      "attributeSet": "kd31lg1iYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        1
+        "kd31k210YW1lIjoiQ29ubmVjdCAmIENvb3JkaW5hdGUiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBjb25uZWN0IGFuZCBjb29yZGluYXRlIGRpZmZlcmVudCBjb21wb25lbnRzLiJ9"
       ],
       "products": [
-        28
-      ],
-      "capabilities": [
-        16
-      ],
-      "patterns": [
-        0
       ],
       "substitutions": [
       ],
-      "id": 7
+      "id": "kd31ohrlYW1lIjoiRGlzdGlyYnV0ZWQgUXVlcnkgRW5naW5lIiwiZGVzY3JpcHRpb24iOiJEaXN0cmlidXRlZCBxdWVyaWVzIGludm9sdmUgZGF0YSB0aGF0J3Mgc3RvcmVkIG9uIGFub3RoZXIgc2VydmVyLCBiZSBpdCBvbiBhIHNlcnZlciBpbiB0aGUgc2FtZSByb29tIG9yIG9uIGEgbWFjaGluZSBhIGhhbGYgYSB3b3JsZCBhd2F5LiAiLCJhdHRyaWJ1dGVTZXQiOiJrZDMxbGcxaVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbImtkMzFrMjEwWVcxbElqb2lRMjl1Ym1WamRDQW1JRU52YjNKa2FXNWhkR1VpTENKa1pYTmpjbWx3ZEdsdmJpSTZJa052YlhCdmJtVnVkSE1nZEdoaGRDQmpiMjV1WldOMElHRnVaQ0JqYjI5eVpHbHVZWFJsSUdScFptWmxjbVZ1ZENCamIyMXdiMjVsYm5SekxpSjkiXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Ingestion Engine",
       "description": "An ingestion engine allows to extract and transform data and load it into downstream systems.",
+      "attributeSet": "kd31kz91YW1lIjoiRGF0YSBUcmFuc3BvcnQiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY29tcG9uZW50In0=",
+      "attributeSelection": [
+      ],
       "categories": [
-        0
+        "kd31jw3dYW1lIjoiRXh0cmFjdGlvbiIsImRlc2NyaXB0aW9uIjoiQ29tcG9uZW50cyB0aGF0IGhlbHAgdG8gZXh0cmFjdCBkYXRhIGZyb20gc291cmNlIHN5c3RlbXMifQ=="
       ],
       "products": [
-        21,
-        32
-      ],
-      "capabilities": [
-        17,
-        18
-      ],
-      "patterns": [
-        0,
-        2
       ],
       "substitutions": [
       ],
-      "id": 8
+      "id": "kd31p1f4YW1lIjoiSW5nZXN0aW9uIEVuZ2luZSIsImRlc2NyaXB0aW9uIjoiQW4gaW5nZXN0aW9uIGVuZ2luZSBhbGxvd3MgdG8gZXh0cmFjdCBhbmQgdHJhbnNmb3JtIGRhdGEgYW5kIGxvYWQgaXQgaW50byBkb3duc3RyZWFtIHN5c3RlbXMuIiwiYXR0cmlidXRlU2V0Ijoia2QzMWt6OTFZVzFsSWpvaVJHRjBZU0JVY21GdWMzQnZjblFpTENKa1pYTmpjbWx3ZEdsdmJpSTZJaUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMjl0Y0c5dVpXNTBJbjA9IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6WyJrZDMxazIxMFlXMWxJam9pUTI5dWJtVmpkQ0FtSUVOdmIzSmthVzVoZEdVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWtOdmJYQnZibVZ1ZEhNZ2RHaGhkQ0JqYjI1dVpXTjBJR0Z1WkNCamIyOXlaR2x1WVhSbElHUnBabVpsY21WdWRDQmpiMjF3YjI1bGJuUnpMaUo5Il0sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Edge Processing Engine",
       "description": "Edge computing is a distributed computing paradigm which brings computation and data storage closer to the location where it is needed, to improve response times and save bandwidth.",
+      "attributeSet": "kd31llc5YW1lIjoiVHJhbnNmb3JtYXRpb24iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY29tcG9uZW50In0=",
+      "attributeSelection": [
+      ],
       "categories": [
-        0
+        "kd31jw3dYW1lIjoiRXh0cmFjdGlvbiIsImRlc2NyaXB0aW9uIjoiQ29tcG9uZW50cyB0aGF0IGhlbHAgdG8gZXh0cmFjdCBkYXRhIGZyb20gc291cmNlIHN5c3RlbXMifQ=="
       ],
       "products": [
-        3
-      ],
-      "capabilities": [
-        9
-      ],
-      "patterns": [
-        1,
-        2,
-        3
       ],
       "substitutions": [
-        {
-          "id": 12,
-          "name": "Stream Processing Engine"
-        }
       ],
-      "id": 9
-    },
-    {
-      "name": "Message queue",
-      "description": "In computer science, message queues and mailboxes are software-engineering components used for inter-process communication, or for inter-thread communication within the same process. They use a queue for messaging – the passing of control or of content. Group communication systems provide similar kinds of functionality.",
-      "categories": [
-        1
-      ],
-      "products": [
-        37,
-        38
-      ],
-      "capabilities": [
-        8
-      ],
-      "patterns": [
-        1,
-        3
-      ],
-      "substitutions": [
-        {
-          "id": 11,
-          "name": "Message Broker/Log"
-        },
-        {
-          "id": 12,
-          "name": "Stream Processing Engine"
-        }
-      ],
-      "id": 10
+      "id": "kd31peo4YW1lIjoiRWRnZSBQcm9jZXNzaW5nIEVuZ2luZSIsImRlc2NyaXB0aW9uIjoiRWRnZSBjb21wdXRpbmcgaXMgYSBkaXN0cmlidXRlZCBjb21wdXRpbmcgcGFyYWRpZ20gd2hpY2ggYnJpbmdzIGNvbXB1dGF0aW9uIGFuZCBkYXRhIHN0b3JhZ2UgY2xvc2VyIHRvIHRoZSBsb2NhdGlvbiB3aGVyZSBpdCBpcyBuZWVkZWQsIHRvIGltcHJvdmUgcmVzcG9uc2UgdGltZXMgYW5kIHNhdmUgYmFuZHdpZHRoLiIsImF0dHJpYnV0ZVNldCI6ImtkMzFsbGM1WVcxbElqb2lWSEpoYm5ObWIzSnRZWFJwYjI0aUxDSmtaWE5qY21sd2RHbHZiaUk2SWlJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTI5dGNHOXVaVzUwSW4wPSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOlsia2QzMWp3M2RZVzFsSWpvaVJYaDBjbUZqZEdsdmJpSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVEyOXRjRzl1Wlc1MGN5QjBhR0YwSUdobGJIQWdkRzhnWlhoMGNtRmpkQ0JrWVhSaElHWnliMjBnYzI5MWNtTmxJSE41YzNSbGJYTWlmUT09Il0sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Message Broker/Log",
       "description": "Allows asynchronous commincation by provideng a publish-subscribe pattern for various components",
+      "attributeSet": "kd31kz91YW1lIjoiRGF0YSBUcmFuc3BvcnQiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY29tcG9uZW50In0=",
+      "attributeSelection": [
+      ],
       "categories": [
-        1
+        "kd31k210YW1lIjoiQ29ubmVjdCAmIENvb3JkaW5hdGUiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBjb25uZWN0IGFuZCBjb29yZGluYXRlIGRpZmZlcmVudCBjb21wb25lbnRzLiJ9"
       ],
       "products": [
-        5,
-        11,
-        27,
-        30
-      ],
-      "capabilities": [
-        0,
-        1,
-        8
-      ],
-      "patterns": [
-        3
       ],
       "substitutions": [
-        {
-          "id": 10,
-          "name": "Message queue"
-        },
-        {
-          "id": 12,
-          "name": "Stream Processing Engine"
-        }
       ],
-      "id": 11
+      "id": "kd31qk0kYW1lIjoiTWVzc2FnZSBCcm9rZXIvTG9nIiwiZGVzY3JpcHRpb24iOiJBbGxvd3MgYXN5bmNocm9ub3VzIGNvbW1pbmNhdGlvbiBieSBwcm92aWRlbmcgYSBwdWJsaXNoLXN1YnNjcmliZSBwYXR0ZXJuIGZvciB2YXJpb3VzIGNvbXBvbmVudHMiLCJhdHRyaWJ1dGVTZXQiOiJrZDMxa3o5MVlXMWxJam9pUkdGMFlTQlVjbUZ1YzNCdmNuUWlMQ0prWlhOamNtbHdkR2x2YmlJNklpSXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbImtkMzFrMjEwWVcxbElqb2lRMjl1Ym1WamRDQW1JRU52YjNKa2FXNWhkR1VpTENKa1pYTmpjbWx3ZEdsdmJpSTZJa052YlhCdmJtVnVkSE1nZEdoaGRDQmpiMjV1WldOMElHRnVaQ0JqYjI5eVpHbHVZWFJsSUdScFptWmxjbVZ1ZENCamIyMXdiMjVsYm5SekxpSjkiXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
+    },
+    {
+      "name": "Message queue",
+      "description": "In computer science, message queues and mailboxes are software-engineering components used for inter-process communication, or for inter-thread communication within the same process. They use a queue for messaging – the passing of control or of content. Group communication systems provide similar kinds of functionality.",
+      "attributeSet": "kd31kz91YW1lIjoiRGF0YSBUcmFuc3BvcnQiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY29tcG9uZW50In0=",
+      "attributeSelection": [
+      ],
+      "categories": [
+        "kd31k210YW1lIjoiQ29ubmVjdCAmIENvb3JkaW5hdGUiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBjb25uZWN0IGFuZCBjb29yZGluYXRlIGRpZmZlcmVudCBjb21wb25lbnRzLiJ9"
+      ],
+      "products": [
+      ],
+      "substitutions": [
+      ],
+      "id": "kd31uy4kYW1lIjoiTWVzc2FnZSBxdWV1ZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QzMWt6OTFZVzFsSWpvaVJHRjBZU0JVY21GdWMzQnZjblFpTENKa1pYTmpjbWx3ZEdsdmJpSTZJaUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMjl0Y0c5dVpXNTBJbjA9IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6WyJrZDMxazIxMFlXMWxJam9pUTI5dWJtVmpkQ0FtSUVOdmIzSmthVzVoZEdVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWtOdmJYQnZibVZ1ZEhNZ2RHaGhkQ0JqYjI1dVpXTjBJR0Z1WkNCamIyOXlaR2x1WVhSbElHUnBabVpsY21WdWRDQmpiMjF3YjI1bGJuUnpMaUo5Il0sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Stream Processing Engine",
       "description": "Stream processing is a computer programming paradigm, equivalent to dataflow programming, event stream processing, and reactive programming, that allows some applications to more easily exploit a limited form of parallel processing.",
+      "attributeSet": "kd31kz91YW1lIjoiRGF0YSBUcmFuc3BvcnQiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY29tcG9uZW50In0=",
+      "attributeSelection": [
+      ],
       "categories": [
+        "kd31k210YW1lIjoiQ29ubmVjdCAmIENvb3JkaW5hdGUiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBjb25uZWN0IGFuZCBjb29yZGluYXRlIGRpZmZlcmVudCBjb21wb25lbnRzLiJ9"
       ],
       "products": [
-        21,
-        22,
-        27,
-        42
-      ],
-      "capabilities": [
-        0,
-        1,
-        10,
-        11
-      ],
-      "patterns": [
-        1,
-        2
       ],
       "substitutions": [
-        {
-          "id": 8,
-          "name": "Ingestion Engine"
-        },
-        {
-          "id": 10,
-          "name": "Message queue"
-        },
-        {
-          "id": 11,
-          "name": "Message Broker/Log"
-        }
       ],
-      "id": 12
+      "id": "kd31veg6YW1lIjoiU3RyZWFtIFByb2Nlc3NpbmcgRW5naW5lIiwiZGVzY3JpcHRpb24iOiJTdHJlYW0gcHJvY2Vzc2luZyBpcyBhIGNvbXB1dGVyIHByb2dyYW1taW5nIHBhcmFkaWdtLCBlcXVpdmFsZW50IHRvIGRhdGFmbG93IHByb2dyYW1taW5nLCBldmVudCBzdHJlYW0gcHJvY2Vzc2luZywgYW5kIHJlYWN0aXZlIHByb2dyYW1taW5nLCB0aGF0IGFsbG93cyBzb21lIGFwcGxpY2F0aW9ucyB0byBtb3JlIGVhc2lseSBleHBsb2l0IGEgbGltaXRlZCBmb3JtIG9mIHBhcmFsbGVsIHByb2Nlc3NpbmcuIiwiYXR0cmlidXRlU2V0Ijoia2QzMWt6OTFZVzFsSWpvaVJHRjBZU0JVY21GdWMzQnZjblFpTENKa1pYTmpjbWx3ZEdsdmJpSTZJaUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMjl0Y0c5dVpXNTBJbjA9IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6WyJrZDMxazIxMFlXMWxJam9pUTI5dWJtVmpkQ0FtSUVOdmIzSmthVzVoZEdVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWtOdmJYQnZibVZ1ZEhNZ2RHaGhkQ0JqYjI1dVpXTjBJR0Z1WkNCamIyOXlaR2x1WVhSbElHUnBabVpsY21WdWRDQmpiMjF3YjI1bGJuUnpMaUo5Il0sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Data Warehouse",
       "description": "A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management's decision making process.",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd31kbihYW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBhcmUgYWJsZSB0byBwZXJzaXN0IGRhdGEuIn0="
       ],
       "products": [
-        23,
-        24,
-        25,
-        29,
-        31
-      ],
-      "capabilities": [
-        2
-      ],
-      "patterns": [
-        0,
-        2
       ],
       "substitutions": [
-        {
-          "id": 0,
-          "name": "Distributed File System"
-        },
-        {
-          "id": 2,
-          "name": "NoSQL-Database: Document-Store "
-        }
       ],
-      "id": 13
+      "id": "kd31vsg5YW1lIjoiRGF0YSBXYXJlaG91c2UiLCJkZXNjcmlwdGlvbiI6IkEgZGF0YSB3YXJlaG91c2UgaXMgYSBzdWJqZWN0LW9yaWVudGVkLCBpbnRlZ3JhdGVkLCB0aW1lLXZhcmlhbnQgYW5kIG5vbi12b2xhdGlsZSBjb2xsZWN0aW9uIG9mIGRhdGEgaW4gc3VwcG9ydCBvZiBtYW5hZ2VtZW50J3MgZGVjaXNpb24gbWFraW5nIHByb2Nlc3MuIiwiYXR0cmlidXRlU2V0Ijoia2QzMWw0a2pZVzFsSWpvaVJHRjBZU0JUZEc5eVpTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lZWFIwY21saWRYUmxjeUk2VzEwc0luUjVjR1VpT2lKamIyMXdiMjVsYm5RaWZRPT0iLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbImtkMzFrYmloWVcxbElqb2lVR1Z5YzJsemRHVnVZMlVpTENKa1pYTmpjbWx3ZEdsdmJpSTZJa052YlhCdmJtVnVkSE1nZEdoaGRDQmhjbVVnWVdKc1pTQjBieUJ3WlhKemFYTjBJR1JoZEdFdUluMD0iXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Relational Database",
       "description": "A relational database is a digital database based on the relational model of data, as proposed by E. F. Codd in 1970. A software system used to maintain relational databases is a relational database management system (RDBMS).",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd31kbihYW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBhcmUgYWJsZSB0byBwZXJzaXN0IGRhdGEuIn0="
       ],
       "products": [
-        35,
-        36
-      ],
-      "capabilities": [
-        19
-      ],
-      "patterns": [
-        0,
-        2
       ],
       "substitutions": [
-        {
-          "id": 2,
-          "name": "NoSQL-Database: Document-Store "
-        },
-        {
-          "id": 5,
-          "name": "No-SQL-Databases: Wide-Column-Stores"
-        },
-        {
-          "id": 13,
-          "name": "Data Warehouse"
-        }
       ],
-      "id": 14
+      "id": "kd31w233YW1lIjoiUmVsYXRpb25hbCBEYXRhYmFzZSIsImRlc2NyaXB0aW9uIjoiQSByZWxhdGlvbmFsIGRhdGFiYXNlIGlzIGEgZGlnaXRhbCBkYXRhYmFzZSBiYXNlZCBvbiB0aGUgcmVsYXRpb25hbCBtb2RlbCBvZiBkYXRhLCBhcyBwcm9wb3NlZCBieSBFLiBGLiBDb2RkIGluIDE5NzAuIEEgc29mdHdhcmUgc3lzdGVtIHVzZWQgdG8gbWFpbnRhaW4gcmVsYXRpb25hbCBkYXRhYmFzZXMgaXMgYSByZWxhdGlvbmFsIGRhdGFiYXNlIG1hbmFnZW1lbnQgc3lzdGVtIChSREJNUykuIiwiYXR0cmlidXRlU2V0Ijoia2QzMWw0a2pZVzFsSWpvaVJHRjBZU0JUZEc5eVpTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lZWFIwY21saWRYUmxjeUk2VzEwc0luUjVjR1VpT2lKamIyMXdiMjVsYm5RaWZRPT0iLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbImtkMzFrYmloWVcxbElqb2lVR1Z5YzJsemRHVnVZMlVpTENKa1pYTmpjbWx3ZEdsdmJpSTZJa052YlhCdmJtVnVkSE1nZEdoaGRDQmhjbVVnWVdKc1pTQjBieUJ3WlhKemFYTjBJR1JoZEdFdUluMD0iXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Data Vault Modelling",
       "description": "Data vault modeling is a database modeling method that is designed to provide long-term historical storage of data coming in from multiple operational systems. It is also a method of looking at historical data that deals with issues such as auditing, tracing of data, loading speed and resilience to change as well as emphasizing the need to trace where all the data in the database came from.",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd31kbihYW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBhcmUgYWJsZSB0byBwZXJzaXN0IGRhdGEuIn0="
       ],
       "products": [
-        23,
-        24,
-        25,
-        29,
-        31,
-        35,
-        36
-      ],
-      "capabilities": [
-        2,
-        6,
-        13
-      ],
-      "patterns": [
-        0,
-        2
       ],
       "substitutions": [
       ],
-      "id": 15
+      "id": "kd31wf1yYW1lIjoiRGF0YSBWYXVsdCBNb2RlbGxpbmciLCJkZXNjcmlwdGlvbiI6IkRhdGEgdmF1bHQgbW9kZWxpbmcgaXMgYSBkYXRhYmFzZSBtb2RlbGluZyBtZXRob2QgdGhhdCBpcyBkZXNpZ25lZCB0byBwcm92aWRlIGxvbmctdGVybSBoaXN0b3JpY2FsIHN0b3JhZ2Ugb2YgZGF0YSBjb21pbmcgaW4gZnJvbSBtdWx0aXBsZSBvcGVyYXRpb25hbCBzeXN0ZW1zLiBJdCBpcyBhbHNvIGEgbWV0aG9kIG9mIGxvb2tpbmcgYXQgaGlzdG9yaWNhbCBkYXRhIHRoYXQgZGVhbHMgd2l0aCBpc3N1ZXMgc3VjaCBhcyBhdWRpdGluZywgdHJhY2luZyBvZiBkYXRhLCBsb2FkaW5nIHNwZWVkIGFuZCByZXNpbGllbmNlIHRvIGNoYW5nZSBhcyB3ZWxsIGFzIGVtcGhhc2l6aW5nIHRoZSBuZWVkIHRvIHRyYWNlIHdoZXJlIGFsbCB0aGUgZGF0YSBpbiB0aGUgZGF0YWJhc2UgY2FtZSBmcm9tLiIsImF0dHJpYnV0ZVNldCI6ImtkMzFsNGtqWVcxbElqb2lSR0YwWVNCVGRHOXlaU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpWVhSMGNtbGlkWFJsY3lJNlcxMHNJblI1Y0dVaU9pSmpiMjF3YjI1bGJuUWlmUT09IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6WyJrZDMxa2JpaFlXMWxJam9pVUdWeWMybHpkR1Z1WTJVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWtOdmJYQnZibVZ1ZEhNZ2RHaGhkQ0JoY21VZ1lXSnNaU0IwYnlCd1pYSnphWE4wSUdSaGRHRXVJbjA9Il0sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Big Data Format",
       "description": "Big data formats are abstractions that can be applied to enrich raw data in order to compress it or enhance performance.",
+      "attributeSet": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        2,
-        3
+        "kd31kbihYW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IkNvbXBvbmVudHMgdGhhdCBhcmUgYWJsZSB0byBwZXJzaXN0IGRhdGEuIn0=",
+        "kd31kjdsYW1lIjoiTWFuYWdlbWVudCAmIEFkbWluaXN0cmF0aW9uIiwiZGVzY3JpcHRpb24iOiJDb21wb25lbnRzIHRvIHN0YXkgb24gdG9wIG9mIHRoaW5ncyBhbmQgcHJvdmlkZSBhZG1pbmlzdHJhdGl2ZSBjYXBhYmlsaXRlcy4ifQ=="
       ],
       "products": [
-        0,
-        17,
-        18
-      ],
-      "capabilities": [
-        17,
-        18
-      ],
-      "patterns": [
-        0,
-        1
       ],
       "substitutions": [
       ],
-      "id": 16
+      "id": "kd31wshbYW1lIjoiQmlnIERhdGEgRm9ybWF0IiwiZGVzY3JpcHRpb24iOiJCaWcgZGF0YSBmb3JtYXRzIGFyZSBhYnN0cmFjdGlvbnMgdGhhdCBjYW4gYmUgYXBwbGllZCB0byBlbnJpY2ggcmF3IGRhdGEgaW4gb3JkZXIgdG8gY29tcHJlc3MgaXQgb3IgZW5oYW5jZSBwZXJmb3JtYW5jZS4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMxbDRrallXMWxJam9pUkdGMFlTQlRkRzl5WlNJc0ltUmxjMk55YVhCMGFXOXVJam9pSWl3aVlYUjBjbWxpZFhSbGN5STZXMTBzSW5SNWNHVWlPaUpqYjIxd2IyNWxiblFpZlE9PSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOlsia2QzMWtiaWhZVzFsSWpvaVVHVnljMmx6ZEdWdVkyVWlMQ0prWlhOamNtbHdkR2x2YmlJNklrTnZiWEJ2Ym1WdWRITWdkR2hoZENCaGNtVWdZV0pzWlNCMGJ5QndaWEp6YVhOMElHUmhkR0V1SW4wPSIsImtkMzFramRzWVcxbElqb2lUV0Z1WVdkbGJXVnVkQ0FtSUVGa2JXbHVhWE4wY21GMGFXOXVJaXdpWkdWelkzSnBjSFJwYjI0aU9pSkRiMjF3YjI1bGJuUnpJSFJ2SUhOMFlYa2diMjRnZEc5d0lHOW1JSFJvYVc1bmN5QmhibVFnY0hKdmRtbGtaU0JoWkcxcGJtbHpkSEpoZEdsMlpTQmpZWEJoWW1sc2FYUmxjeTRpZlE9PSJdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ=="
     },
     {
       "name": "Big Data Security Management",
       "description": "A tool to establish a comprehensive security strategy spanning over various tools.",
+      "attributeSet": "kd31nkz9YW1lIjoiTWFuYWdlbWVudCIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ==",
+      "attributeSelection": [
+      ],
       "categories": [
-        3
+        "kd31kjdsYW1lIjoiTWFuYWdlbWVudCAmIEFkbWluaXN0cmF0aW9uIiwiZGVzY3JpcHRpb24iOiJDb21wb25lbnRzIHRvIHN0YXkgb24gdG9wIG9mIHRoaW5ncyBhbmQgcHJvdmlkZSBhZG1pbmlzdHJhdGl2ZSBjYXBhYmlsaXRlcy4ifQ=="
       ],
       "products": [
-        43
-      ],
-      "capabilities": [
-        20
-      ],
-      "patterns": [
-        0
       ],
       "substitutions": [
       ],
-      "id": 17
+      "id": "kd31x3tkYW1lIjoiQmlnIERhdGEgU2VjdXJpdHkgTWFuYWdlbWVudCIsImRlc2NyaXB0aW9uIjoiQSB0b29sIHRvIGVzdGFibGlzaCBhIGNvbXByZWhlbnNpdmUgc2VjdXJpdHkgc3RyYXRlZ3kgc3Bhbm5pbmcgb3ZlciB2YXJpb3VzIHRvb2xzLiIsImF0dHJpYnV0ZVNldCI6ImtkMzFua3o5WVcxbElqb2lUV0Z1WVdkbGJXVnVkQ0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpWVhSMGNtbGlkWFJsY3lJNlcxMHNJblI1Y0dVaU9pSmpiMjF3YjI1bGJuUWlmUT09IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6WyJrZDMxa2pkc1lXMWxJam9pVFdGdVlXZGxiV1Z1ZENBbUlFRmtiV2x1YVhOMGNtRjBhVzl1SWl3aVpHVnpZM0pwY0hScGIyNGlPaUpEYjIxd2IyNWxiblJ6SUhSdklITjBZWGtnYjI0Z2RHOXdJRzltSUhSb2FXNW5jeUJoYm1RZ2NISnZkbWxrWlNCaFpHMXBibWx6ZEhKaGRHbDJaU0JqWVhCaFltbHNhWFJsY3k0aWZRPT0iXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
+    }
+  ],
+  "attributes": [
+  ],
+  "attributeSets": [
+    {
+      "name": "Transport",
+      "description": "",
+      "attributes": [
+      ],
+      "type": "component",
+      "id": "kd31kz91YW1lIjoiRGF0YSBUcmFuc3BvcnQiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY29tcG9uZW50In0="
+    },
+    {
+      "name": "Storage",
+      "description": "",
+      "attributes": [
+      ],
+      "type": "component",
+      "id": "kd31l4kjYW1lIjoiRGF0YSBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ=="
+    },
+    {
+      "name": "Access",
+      "description": "",
+      "attributes": [
+      ],
+      "type": "component",
+      "id": "kd31lg1iYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9"
+    },
+    {
+      "name": "Transformation",
+      "description": "",
+      "attributes": [
+      ],
+      "type": "component",
+      "id": "kd31llc5YW1lIjoiVHJhbnNmb3JtYXRpb24iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY29tcG9uZW50In0="
+    },
+    {
+      "name": "Management",
+      "description": "",
+      "attributes": [
+      ],
+      "type": "component",
+      "id": "kd31nkz9YW1lIjoiTWFuYWdlbWVudCIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjb21wb25lbnQifQ=="
     }
   ]
 }

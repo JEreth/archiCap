@@ -3,957 +3,1001 @@
     {
       "name": "We need to extract and process stream data in order to get real-time input for our machine-learning model.",
       "description": "",
-      "id": 0
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zw87sYW1lIjoiV2UgbmVlZCB0byBleHRyYWN0IGFuZCBwcm9jZXNzIHN0cmVhbSBkYXRhIGluIG9yZGVyIHRvIGdldCByZWFsLXRpbWUgaW5wdXQgZm9yIG91ciBtYWNoaW5lLWxlYXJuaW5nIG1vZGVsLiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QyenU4bThZVzFsSWpvaVFVa2dRMkZ3WVdKcGJHbDBlU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVM0JsWTJsbWFXTmhkR2x2YmlCbWIzSWdRVWtnYkdGdVpITmpZWEJsY3lJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTJGd1lXSnBiR2wwZVNKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W119"
     },
     {
       "name": "We need to regulary extract and transform data in order to get input for our machine-learning model.",
       "description": "",
-      "id": 1
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zweaoYW1lIjoiV2UgbmVlZCB0byByZWd1bGFyeSBleHRyYWN0IGFuZCB0cmFuc2Zvcm0gZGF0YSBpbiBvcmRlciB0byBnZXQgaW5wdXQgZm9yIG91ciBtYWNoaW5lLWxlYXJuaW5nIG1vZGVsLiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QyenU4bThZVzFsSWpvaVFVa2dRMkZ3WVdKcGJHbDBlU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVM0JsWTJsbWFXTmhkR2x2YmlCbWIzSWdRVWtnYkdGdVpITmpZWEJsY3lJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTJGd1lXSnBiR2wwZVNKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W119"
     },
     {
       "name": "We need to extract and transform data only a few times in order to get input for our machine-learning model.",
       "description": "",
-      "id": 2
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zwianYW1lIjoiV2UgbmVlZCB0byBleHRyYWN0IGFuZCB0cmFuc2Zvcm0gZGF0YSBvbmx5IGEgZmV3IHRpbWVzIGluIG9yZGVyIHRvIGdldCBpbnB1dCBmb3Igb3VyIG1hY2hpbmUtbGVhcm5pbmcgbW9kZWwuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
       "name": "We need to consider persisted data that is very structured and has stable schemas",
       "description": "",
-      "id": 3
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zwn2fYW1lIjoiV2UgbmVlZCB0byBjb25zaWRlciBwZXJzaXN0ZWQgZGF0YSB0aGF0IGlzIHZlcnkgc3RydWN0dXJlZCBhbmQgaGFzIHN0YWJsZSBzY2hlbWFzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
       "name": "We need to consider persisted data that is unstructured and/or has changing schemas",
       "description": "",
-      "id": 4
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zwr53YW1lIjoiV2UgbmVlZCB0byBjb25zaWRlciBwZXJzaXN0ZWQgZGF0YSB0aGF0IGlzIHVuc3RydWN0dXJlZCBhbmQvb3IgaGFzIGNoYW5naW5nIHNjaGVtYXMiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need to consider persisted data that can be flawed",
+      "name": "We need to consider persisted data that can be flawed.",
       "description": "",
-      "id": 5
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zxmnlYW1lIjoiV2UgbmVlZCB0byBjb25zaWRlciBwZXJzaXN0ZWQgZGF0YSB0aGF0IGNhbiBiZSBmbGF3ZWQuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to consider large data sets that are very simple and only have one value per entry (e.g. sensor data)",
+      "name": "We need to consider large data sets that are very simple and only have one value per entry (e.g. sensor data).",
       "description": "",
-      "id": 6
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zxr3tYW1lIjoiV2UgbmVlZCB0byBjb25zaWRlciBsYXJnZSBkYXRhIHNldHMgdGhhdCBhcmUgdmVyeSBzaW1wbGUgYW5kIG9ubHkgaGF2ZSBvbmUgdmFsdWUgcGVyIGVudHJ5IChlLmcuIHNlbnNvciBkYXRhKS4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We want to persist and analyze network data that contains relationsships between nodes",
+      "name": "We want to persist and analyze network data that contains relationsships between nodes.",
       "description": "",
-      "id": 7
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zxv3lYW1lIjoiV2Ugd2FudCB0byBwZXJzaXN0IGFuZCBhbmFseXplIG5ldHdvcmsgZGF0YSB0aGF0IGNvbnRhaW5zIHJlbGF0aW9uc3NoaXBzIGJldHdlZW4gbm9kZXMuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to consider a large amount of files that mainly contains text",
+      "name": "We need to consider a large amount of files that mainly contains text.",
       "description": "",
-      "id": 8
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zxzcyYW1lIjoiV2UgbmVlZCB0byBjb25zaWRlciBhIGxhcmdlIGFtb3VudCBvZiBmaWxlcyB0aGF0IG1haW5seSBjb250YWlucyB0ZXh0LiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QyenU4bThZVzFsSWpvaVFVa2dRMkZ3WVdKcGJHbDBlU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVM0JsWTJsbWFXTmhkR2x2YmlCbWIzSWdRVWtnYkdGdVpITmpZWEJsY3lJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTJGd1lXSnBiR2wwZVNKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W119"
     },
     {
-      "name": "We need to consider media files like images and videos",
+      "name": "We need to consider media files like images and videos.",
       "description": "",
-      "id": 9
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zy3waYW1lIjoiV2UgbmVlZCB0byBjb25zaWRlciBtZWRpYSBmaWxlcyBsaWtlIGltYWdlcyBhbmQgdmlkZW9zLiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QyenU4bThZVzFsSWpvaVFVa2dRMkZ3WVdKcGJHbDBlU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVM0JsWTJsbWFXTmhkR2x2YmlCbWIzSWdRVWtnYkdGdVpITmpZWEJsY3lJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTJGd1lXSnBiR2wwZVNKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W119"
     },
     {
-      "name": "We need to save additional meta data to our input files",
+      "name": "We need to save additional meta data to our input files.",
       "description": "",
-      "id": 10
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zy8giYW1lIjoiV2UgbmVlZCB0byBzYXZlIGFkZGl0aW9uYWwgbWV0YSBkYXRhIHRvIG91ciBpbnB1dCBmaWxlcy4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need a model that distinguishes two classes on the basis of existing labeled data",
+      "name": "We need a model that distinguishes two classes on the basis of existing labeled data.",
       "description": "",
-      "id": 11
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zycm4YW1lIjoiV2UgbmVlZCBhIG1vZGVsIHRoYXQgZGlzdGluZ3Vpc2hlcyB0d28gY2xhc3NlcyBvbiB0aGUgYmFzaXMgb2YgZXhpc3RpbmcgbGFiZWxlZCBkYXRhLiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QyenU4bThZVzFsSWpvaVFVa2dRMkZ3WVdKcGJHbDBlU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVM0JsWTJsbWFXTmhkR2x2YmlCbWIzSWdRVWtnYkdGdVpITmpZWEJsY3lJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTJGd1lXSnBiR2wwZVNKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W119"
     },
     {
-      "name": "We need to distinguishe between more than two classes on the basis of existing labeled data",
+      "name": "We need to distinguishe between more than two classes on the basis of existing labeled data.",
       "description": "",
-      "id": 12
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zyk11YW1lIjoiV2UgbmVlZCB0byBkaXN0aW5ndWlzaGUgYmV0d2VlbiBtb3JlIHRoYW4gdHdvIGNsYXNzZXMgb24gdGhlIGJhc2lzIG9mIGV4aXN0aW5nIGxhYmVsZWQgZGF0YS4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need to predict a value on the basis of different input variables and existing labeled data",
+      "name": "We need to predict a value on the basis of different input variables and existing labeled data.",
       "description": "",
-      "id": 13
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zymurYW1lIjoiV2UgbmVlZCB0byBwcmVkaWN0IGEgdmFsdWUgb24gdGhlIGJhc2lzIG9mIGRpZmZlcmVudCBpbnB1dCB2YXJpYWJsZXMgYW5kIGV4aXN0aW5nIGxhYmVsZWQgZGF0YS4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need a predict values on the basis of non-obvious patterns in existing data",
+      "name": "We need a predict values on the basis of non-obvious patterns in existing data.",
       "description": "",
-      "id": 14
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zyrl0YW1lIjoiV2UgbmVlZCBhIHByZWRpY3QgdmFsdWVzIG9uIHRoZSBiYXNpcyBvZiBub24tb2J2aW91cyBwYXR0ZXJucyBpbiBleGlzdGluZyBkYXRhLiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QyenU4bThZVzFsSWpvaVFVa2dRMkZ3WVdKcGJHbDBlU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVM0JsWTJsbWFXTmhkR2x2YmlCbWIzSWdRVWtnYkdGdVpITmpZWEJsY3lJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTJGd1lXSnBiR2wwZVNKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W119"
     },
     {
-      "name": "We need a model that continiously adapts over time",
+      "name": "We need a model that continiously adapts over time.",
       "description": "",
-      "id": 15
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zyv56YW1lIjoiV2UgbmVlZCBhIG1vZGVsIHRoYXQgY29udGluaW91c2x5IGFkYXB0cyBvdmVyIHRpbWUuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to a explore data sets in an interactive manner",
+      "name": "We need to a explore data sets in an interactive manner.",
       "description": "",
-      "id": 16
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zz0ptYW1lIjoiV2UgbmVlZCB0byBhIGV4cGxvcmUgZGF0YSBzZXRzIGluIGFuIGludGVyYWN0aXZlIG1hbm5lci4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need to quickly try different models in an interactive manner",
+      "name": "We need to quickly try different models in an interactive manner.",
       "description": "",
-      "id": 17
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zz51fYW1lIjoiV2UgbmVlZCB0byBxdWlja2x5IHRyeSBkaWZmZXJlbnQgbW9kZWxzIGluIGFuIGludGVyYWN0aXZlIG1hbm5lci4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need to train our model with large data volumes only very few times",
+      "name": "We need to train our model with large data volumes only very few times.",
       "description": "",
-      "id": 18
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zzc0sYW1lIjoiV2UgbmVlZCB0byB0cmFpbiBvdXIgbW9kZWwgd2l0aCBsYXJnZSBkYXRhIHZvbHVtZXMgb25seSB2ZXJ5IGZldyB0aW1lcy4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need to train our model with privacy-critical data",
+      "name": "We need to train our model with privacy-critical data.",
       "description": "",
-      "id": 19
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zzfoiYW1lIjoiV2UgbmVlZCB0byB0cmFpbiBvdXIgbW9kZWwgd2l0aCBwcml2YWN5LWNyaXRpY2FsIGRhdGEuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to provide evidence that the selected models performance better than alternatives",
+      "name": "We need to provide evidence that the selected models performance better than alternatives.",
       "description": "",
-      "id": 20
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zzqp6YW1lIjoiV2UgbmVlZCB0byBwcm92aWRlIGV2aWRlbmNlIHRoYXQgdGhlIHNlbGVjdGVkIG1vZGVscyBwZXJmb3JtYW5jZSBiZXR0ZXIgdGhhbiBhbHRlcm5hdGl2ZXMuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to benchmark our models on a regular basis",
+      "name": "We need to benchmark our models on a regular basis.",
       "description": "",
-      "id": 21
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zzutdYW1lIjoiV2UgbmVlZCB0byBiZW5jaG1hcmsgb3VyIG1vZGVscyBvbiBhIHJlZ3VsYXIgYmFzaXMuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to quickly share our models source code and data in an interactive way that allows discussion and exploration",
+      "name": "We need to quickly share our models source code and data in an interactive way that allows discussion and exploration.",
       "description": "",
-      "id": 22
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd2zzysaYW1lIjoiV2UgbmVlZCB0byBxdWlja2x5IHNoYXJlIG91ciBtb2RlbHMgc291cmNlIGNvZGUgYW5kIGRhdGEgaW4gYW4gaW50ZXJhY3RpdmUgd2F5IHRoYXQgYWxsb3dzIGRpc2N1c3Npb24gYW5kIGV4cGxvcmF0aW9uLiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QyenU4bThZVzFsSWpvaVFVa2dRMkZ3WVdKcGJHbDBlU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVM0JsWTJsbWFXTmhkR2x2YmlCbWIzSWdRVWtnYkdGdVpITmpZWEJsY3lJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTJGd1lXSnBiR2wwZVNKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W119"
     },
     {
-      "name": "We need to document and share our models source code and data in a structured and well defined way",
+      "name": "We need to document and share our models source code and data in a structured and well defined way.",
       "description": "",
-      "id": 23
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd3002w2YW1lIjoiV2UgbmVlZCB0byBkb2N1bWVudCBhbmQgc2hhcmUgb3VyIG1vZGVscyBzb3VyY2UgY29kZSBhbmQgZGF0YSBpbiBhIHN0cnVjdHVyZWQgYW5kIHdlbGwgZGVmaW5lZCB3YXkuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to share our stack to quickly allow repetition in any development environment",
+      "name": "We need to share our stack to quickly allow repetition in any development environment.",
       "description": "",
-      "id": 24
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd30072qYW1lIjoiV2UgbmVlZCB0byBzaGFyZSBvdXIgc3RhY2sgdG8gcXVpY2tseSBhbGxvdyByZXBldGl0aW9uIGluIGFueSBkZXZlbG9wbWVudCBlbnZpcm9ubWVudC4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need to share our model in a packed way that can be run and integrated in other products and environments without sharing the source code",
+      "name": "We need to share our model in a packed way that can be run and integrated in other products and environments without sharing the source code.",
       "description": "",
-      "id": 25
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd300bbeYW1lIjoiV2UgbmVlZCB0byBzaGFyZSBvdXIgbW9kZWwgaW4gYSBwYWNrZWQgd2F5IHRoYXQgY2FuIGJlIHJ1biBhbmQgaW50ZWdyYXRlZCBpbiBvdGhlciBwcm9kdWN0cyBhbmQgZW52aXJvbm1lbnRzIHdpdGhvdXQgc2hhcmluZyB0aGUgc291cmNlIGNvZGUuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to provide our model in a production-ready that can be consumed via a standardized web api",
+      "name": "We need to provide our model in a production-ready that can be consumed via a standardized web api.",
       "description": "",
-      "id": 26
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd300fa3YW1lIjoiV2UgbmVlZCB0byBwcm92aWRlIG91ciBtb2RlbCBpbiBhIHByb2R1Y3Rpb24tcmVhZHkgdGhhdCBjYW4gYmUgY29uc3VtZWQgdmlhIGEgc3RhbmRhcmRpemVkIHdlYiBhcGkuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to embed our model in a web-based application",
+      "name": "We need to embed our model in a web-based application.",
       "description": "",
-      "id": 27
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd300ioyYW1lIjoiV2UgbmVlZCB0byBlbWJlZCBvdXIgbW9kZWwgaW4gYSB3ZWItYmFzZWQgYXBwbGljYXRpb24uIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to know the workload of our models in production",
+      "name": "We need to know the workload of our models in production.",
       "description": "",
-      "id": 28
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd300n3mYW1lIjoiV2UgbmVlZCB0byBrbm93IHRoZSB3b3JrbG9hZCBvZiBvdXIgbW9kZWxzIGluIHByb2R1Y3Rpb24uIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0="
     },
     {
-      "name": "We need to know who is using our models",
+      "name": "We need to know who is using our models.",
       "description": "",
-      "id": 29
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd300r6rYW1lIjoiV2UgbmVlZCB0byBrbm93IHdobyBpcyB1c2luZyBvdXIgbW9kZWxzLiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QyenU4bThZVzFsSWpvaVFVa2dRMkZ3WVdKcGJHbDBlU0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVM0JsWTJsbWFXTmhkR2x2YmlCbWIzSWdRVWtnYkdGdVpITmpZWEJsY3lJc0ltRjBkSEpwWW5WMFpYTWlPbHRkTENKMGVYQmxJam9pWTJGd1lXSnBiR2wwZVNKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W119"
     },
     {
-      "name": "We need insights about our model accuracy in production",
+      "name": "We need insights about our model accuracy in production.",
       "description": "",
-      "id": 30
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd300v3tYW1lIjoiV2UgbmVlZCBpbnNpZ2h0cyBhYm91dCBvdXIgbW9kZWwgYWNjdXJhY3kgaW4gcHJvZHVjdGlvbi4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need to extract data from various sources and asynchronily consume this data",
+      "name": "We need to extract data from various sources and asynchronily consume this data.",
       "description": "",
-      "id": 31
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd30117gYW1lIjoiV2UgbmVlZCB0byBleHRyYWN0IGRhdGEgZnJvbSB2YXJpb3VzIHNvdXJjZXMgYW5kIGFzeW5jaHJvbmlseSBjb25zdW1lIHRoaXMgZGF0YS4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     },
     {
-      "name": "We need to find patterns in a network",
+      "name": "We need to find patterns in a network.",
       "description": "",
-      "id": 32
+      "attributeSet": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9",
+      "attributeSelection": [
+      ],
+      "id": "kd3013cyYW1lIjoiV2UgbmVlZCB0byBmaW5kIHBhdHRlcm5zIGluIGEgbmV0d29yay4iLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
     }
+
   ],
   "categories": [
     {
-      "id": 0,
       "name": "Data Ingestion",
-      "description": "Extract and transform data from data sources"
+      "description": "Extract and transform data from data sources",
+      "id": "kd301f8jYW1lIjoiRGF0YSBJbmdlc3Rpb24iLCJkZXNjcmlwdGlvbiI6IiJ9"
     },
     {
-      "id": 1,
       "name": "Data Storage",
-      "description": "Persist data in adequate data structures"
+      "description": "Persist data in adequate data structures",
+      "id": "kd301q43YW1lIjoiRGF0YSBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiJQZXJzaXN0IGRhdGEgaW4gYWRlcXVhdGUgZGF0YSBzdHJ1Y3R1cmVzIn0="
     },
     {
-      "id": 2,
       "name": "Model Selection and Creation",
-      "description": "Which model seems adequate for a problem"
+      "description": "Which model seems adequate for a problem",
+      "id": "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
     },
     {
-      "id": 3,
       "name": "Model Provision and Execution",
-      "description": "Where to run and how to consume the model"
+      "description": "Where to run and how to consume the model",
+      "id": "kd3023h7YW1lIjoiTW9kZWwgUHJvdmlzaW9uIGFuZCBFeGVjdXRpb24iLCJkZXNjcmlwdGlvbiI6IldoZXJlIHRvIHJ1biBhbmQgaG93IHRvIGNvbnN1bWUgdGhlIG1vZGVsIn0="
     }
+
   ],
   "patterns": [
     {
       "name": "Explorative Sandbox",
       "description": "We try various models in a mainly manual manner",
-      "id": 0
+      "systems": [
+        "kd30763yYW1lIjoiQmF0Y2ggUHJvY2Vzc2luZyIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119",
+        "kd30auxhYW1lIjoiSW50ZXJhY3RpdmUgU2FuZGJveCIsImRlc2NyaXB0aW9uIjoiQSBpbnRlcmFjdGl2ZSBzYW5kYm94IHRvIGV4cGxvcmUgZGF0YSBhbmQgcXVpY2tseSB0cnkgZGlmZmVyZW50IG1vZGVscyBhbmQgYWxnb3JpdGhtcy4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0=",
+        "kd30b6rmYW1lIjoiQ2xvdWQtYmFzZWQgdHJhaW5pbmciLCJkZXNjcmlwdGlvbiI6IkEgY2xvdWQgcGxhdGZvcm0gdG8gdHJhaW4gbW9kZWxzIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119",
+        "kd30bdaaYW1lIjoiT24tUHJlbWlzZSBNb2RlbCBUcmFpbmluZyIsImRlc2NyaXB0aW9uIjoiTW9kZWwgdHJhaW5pbmcgb24gbG9jYWwgbWFjaGluZXMgb3IgYSBsb2NhbCBkYXRhIGNlbnRlciIsImF0dHJpYnV0ZVNldCI6ImtkMzA2azdqWVcxbElqb2lSR0YwWVNCUWNtOWpaWE56YVc1bklpd2laR1Z6WTNKcGNIUnBiMjRpT2lJaUxDSmhkSFJ5YVdKMWRHVnpJanBiWFN3aWRIbHdaU0k2SW1OdmJYQnZibVZ1ZENKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOltdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ==",
+        "kd30bm0qYW1lIjoiQ3Jvc3MgVmFsaWRhdGlvbiIsImRlc2NyaXB0aW9uIjoiQ3Jvc3MtdmFsaWRhdGlvbiBpcyBhbnkgb2YgdmFyaW91cyBzaW1pbGFyIG1vZGVsIHZhbGlkYXRpb24gdGVjaG5pcXVlcyBmb3IgYXNzZXNzaW5nIGhvdyB0aGUgcmVzdWx0cyBvZiBhIHN0YXRpc3RpY2FsIGFuYWx5c2lzIHdpbGwgZ2VuZXJhbGl6ZSB0byBhbiBpbmRlcGVuZGVudCBkYXRhIHNldC4gSXQgaXMgbWFpbmx5IHVzZWQgaW4gc2V0dGluZ3Mgd2hlcmUgdGhlIGdvYWwgaXMgcHJlZGljdGlvbiwgYW5kIG9uZSB3YW50cyB0byBlc3RpbWF0ZSBob3cgYWNjdXJhdGVseSBhIHByZWRpY3RpdmUgbW9kZWwgd2lsbCBwZXJmb3JtIGluIHByYWN0aWNlLiAiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNms3allXMWxJam9pUkdGMFlTQlFjbTlqWlhOemFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0=",
+        "kd30brx5YW1lIjoiTm90ZWJvb2tzIiwiZGVzY3JpcHRpb24iOiJJbnRlcmFjdGl2ZSB3ZWItYmFzZWQgbm90ZWJvb2tzIHRoYXQgcHJlc2VudCBkYXRhIGFuZCBtb2RlbHMiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0=",
+        "kd30c0qtYW1lIjoiU291cmNlIENvZGUgTWFuYWdlbWVudCIsImRlc2NyaXB0aW9uIjoiU2F2ZSBzb3VyY2UgY29kZSBhbmQgcGVyc2lzdCBjaGFuZ2VzLiBPZnRlbiBhbHNvIGNvbnRhaW5zIGFkZGl0aW9uYWwgZmVhdHVyZXMgbGlrZSBpc3N1ZSBtYW5hZ2VtZW50LCB3aWtpIGFuZCB0aGUgbGlrZS4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0=",
+        "kd30capvYW1lIjoiQ29udGFpbmVyIC8gVmlydHVhbCBNYWNoaW5lcyIsImRlc2NyaXB0aW9uIjoiUHJvdmlzaW9uIG9mIGFuIGVudGlyZSBlbnZpcm9ubWVudC9zdGFjayB2aWEgYSBjb250YWluZXIgb3IgdmlydHVhbCBtYWNoaW5lIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZwZ2VZVzFsSWpvaVFXTmpaWE56SWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119",
+        "kd30d5mtYW1lIjoiTWFudWFsIEV4dHJhY3Rpb24gYW5kIENsZWFuc2luZyIsImRlc2NyaXB0aW9uIjoiTWFudWFsIGV4dHJhY3Rpb24gYW5kIGNsZWFuc2luZyBvZiBkYXRhIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
+      ],
+      "capabilities": [
+        "kd2zwianYW1lIjoiV2UgbmVlZCB0byBleHRyYWN0IGFuZCB0cmFuc2Zvcm0gZGF0YSBvbmx5IGEgZmV3IHRpbWVzIGluIG9yZGVyIHRvIGdldCBpbnB1dCBmb3Igb3VyIG1hY2hpbmUtbGVhcm5pbmcgbW9kZWwuIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDJ6dThtOFlXMWxJam9pUVVrZ1EyRndZV0pwYkdsMGVTSXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUzQmxZMmxtYVdOaGRHbHZiaUJtYjNJZ1FVa2diR0Z1WkhOallYQmxjeUlzSW1GMGRISnBZblYwWlhNaU9sdGRMQ0owZVhCbElqb2lZMkZ3WVdKcGJHbDBlU0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXX0=",
+        "kd2zwr53YW1lIjoiV2UgbmVlZCB0byBjb25zaWRlciBwZXJzaXN0ZWQgZGF0YSB0aGF0IGlzIHVuc3RydWN0dXJlZCBhbmQvb3IgaGFzIGNoYW5naW5nIHNjaGVtYXMiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMnp1OG04WVcxbElqb2lRVWtnUTJGd1lXSnBiR2wwZVNJc0ltUmxjMk55YVhCMGFXOXVJam9pVTNCbFkybG1hV05oZEdsdmJpQm1iM0lnUVVrZ2JHRnVaSE5qWVhCbGN5SXNJbUYwZEhKcFluVjBaWE1pT2x0ZExDSjBlWEJsSWpvaVkyRndZV0pwYkdsMGVTSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdfQ=="
+      ],
+      "id": "kd30h6maYW1lIjoiRXhwbG9yYXRpdmUgU2FuZGJveCIsImRlc2NyaXB0aW9uIjoiV2UgdHJ5IHZhcmlvdXMgbW9kZWxzIGluIGEgbWFpbmx5IG1hbnVhbCBtYW5uZXIiLCJzeXN0ZW1zIjpbImtkMzA3NjN5WVcxbElqb2lRbUYwWTJnZ1VISnZZMlZ6YzJsdVp5SXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lZWFIwY21saWRYUmxVMlYwSWpvaWEyUXpNRFpyTjJwWlZ6RnNTV3B2YVZKSFJqQlpVMEpSWTIwNWFscFlUbnBoVnpWdVNXbDNhVnBIVm5wWk0wcHdZMGhTY0dJeU5HbFBhVWxwVEVOS2FHUklVbmxoVjBveFpFZFdla2xxY0dKWVUzZHBaRWhzZDFwVFNUWkpiVTUyWWxoQ2RtSnRWblZrUTBvNUlpd2lZWFIwY21saWRYUmxVMlZzWldOMGFXOXVJanBiWFN3aVkyRjBaV2R2Y21sbGN5STZXMTBzSW5CeWIyUjFZM1J6SWpwYlhTd2ljM1ZpYzNScGRIVjBhVzl1Y3lJNlcxMTkiLCJrZDMwYXV4aFlXMWxJam9pU1c1MFpYSmhZM1JwZG1VZ1UyRnVaR0p2ZUNJc0ltUmxjMk55YVhCMGFXOXVJam9pUVNCcGJuUmxjbUZqZEdsMlpTQnpZVzVrWW05NElIUnZJR1Y0Y0d4dmNtVWdaR0YwWVNCaGJtUWdjWFZwWTJ0c2VTQjBjbmtnWkdsbVptVnlaVzUwSUcxdlpHVnNjeUJoYm1RZ1lXeG5iM0pwZEdodGN5NGlMQ0poZEhSeWFXSjFkR1ZUWlhRaU9pSnJaRE13Tm5CblpWbFhNV3hKYW05cFVWZE9hbHBZVG5wSmFYZHBXa2RXZWxrelNuQmpTRkp3WWpJMGFVOXBTV2xNUTBwb1pFaFNlV0ZYU2pGa1IxWjZTV3B3WWxoVGQybGtTR3gzV2xOSk5rbHRUblppV0VKMlltMVdkV1JEU2praUxDSmhkSFJ5YVdKMWRHVlRaV3hsWTNScGIyNGlPbHRkTENKallYUmxaMjl5YVdWeklqcGJYU3dpY0hKdlpIVmpkSE1pT2x0ZExDSnpkV0p6ZEdsMGRYUnBiMjV6SWpwYlhYMD0iLCJrZDMwYjZybVlXMWxJam9pUTJ4dmRXUXRZbUZ6WldRZ2RISmhhVzVwYm1jaUxDSmtaWE5qY21sd2RHbHZiaUk2SWtFZ1kyeHZkV1FnY0d4aGRHWnZjbTBnZEc4Z2RISmhhVzRnYlc5a1pXeHpJaXdpWVhSMGNtbGlkWFJsVTJWMElqb2lhMlF6TURack4ycFpWekZzU1dwdmFWSkhSakJaVTBKUlkyMDVhbHBZVG5waFZ6VnVTV2wzYVZwSFZucFpNMHB3WTBoU2NHSXlOR2xQYVVscFRFTkthR1JJVW5saFYwb3haRWRXZWtscWNHSllVM2RwWkVoc2QxcFRTVFpKYlU1MllsaENkbUp0Vm5Wa1EwbzVJaXdpWVhSMGNtbGlkWFJsVTJWc1pXTjBhVzl1SWpwYlhTd2lZMkYwWldkdmNtbGxjeUk2VzEwc0luQnliMlIxWTNSeklqcGJYU3dpYzNWaWMzUnBkSFYwYVc5dWN5STZXMTE5Iiwia2QzMGJkYWFZVzFsSWpvaVQyNHRVSEpsYldselpTQk5iMlJsYkNCVWNtRnBibWx1WnlJc0ltUmxjMk55YVhCMGFXOXVJam9pVFc5a1pXd2dkSEpoYVc1cGJtY2diMjRnYkc5allXd2diV0ZqYUdsdVpYTWdiM0lnWVNCc2IyTmhiQ0JrWVhSaElHTmxiblJsY2lJc0ltRjBkSEpwWW5WMFpWTmxkQ0k2SW10a016QTJhemRxV1ZjeGJFbHFiMmxTUjBZd1dWTkNVV050T1dwYVdFNTZZVmMxYmtscGQybGFSMVo2V1ROS2NHTklVbkJpTWpScFQybEphVXhEU21oa1NGSjVZVmRLTVdSSFZucEphbkJpV0ZOM2FXUkliSGRhVTBrMlNXMU9kbUpZUW5aaWJWWjFaRU5LT1NJc0ltRjBkSEpwWW5WMFpWTmxiR1ZqZEdsdmJpSTZXMTBzSW1OaGRHVm5iM0pwWlhNaU9sdGRMQ0p3Y205a2RXTjBjeUk2VzEwc0luTjFZbk4wYVhSMWRHbHZibk1pT2x0ZGZRPT0iLCJrZDMwYm0wcVlXMWxJam9pUTNKdmMzTWdWbUZzYVdSaGRHbHZiaUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lRM0p2YzNNdGRtRnNhV1JoZEdsdmJpQnBjeUJoYm5rZ2IyWWdkbUZ5YVc5MWN5QnphVzFwYkdGeUlHMXZaR1ZzSUhaaGJHbGtZWFJwYjI0Z2RHVmphRzVwY1hWbGN5Qm1iM0lnWVhOelpYTnphVzVuSUdodmR5QjBhR1VnY21WemRXeDBjeUJ2WmlCaElITjBZWFJwYzNScFkyRnNJR0Z1WVd4NWMybHpJSGRwYkd3Z1oyVnVaWEpoYkdsNlpTQjBieUJoYmlCcGJtUmxjR1Z1WkdWdWRDQmtZWFJoSUhObGRDNGdTWFFnYVhNZ2JXRnBibXg1SUhWelpXUWdhVzRnYzJWMGRHbHVaM01nZDJobGNtVWdkR2hsSUdkdllXd2dhWE1nY0hKbFpHbGpkR2x2Yml3Z1lXNWtJRzl1WlNCM1lXNTBjeUIwYnlCbGMzUnBiV0YwWlNCb2IzY2dZV05qZFhKaGRHVnNlU0JoSUhCeVpXUnBZM1JwZG1VZ2JXOWtaV3dnZDJsc2JDQndaWEptYjNKdElHbHVJSEJ5WVdOMGFXTmxMaUFpTENKaGRIUnlhV0oxZEdWVFpYUWlPaUpyWkRNd05tczNhbGxYTVd4SmFtOXBVa2RHTUZsVFFsRmpiVGxxV2xoT2VtRlhOVzVKYVhkcFdrZFdlbGt6U25CalNGSndZakkwYVU5cFNXbE1RMHBvWkVoU2VXRlhTakZrUjFaNlNXcHdZbGhUZDJsa1NHeDNXbE5KTmtsdFRuWmlXRUoyWW0xV2RXUkRTamtpTENKaGRIUnlhV0oxZEdWVFpXeGxZM1JwYjI0aU9sdGRMQ0pqWVhSbFoyOXlhV1Z6SWpwYlhTd2ljSEp2WkhWamRITWlPbHRkTENKemRXSnpkR2wwZFhScGIyNXpJanBiWFgwPSIsImtkMzBicng1WVcxbElqb2lUbTkwWldKdmIydHpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSkpiblJsY21GamRHbDJaU0IzWldJdFltRnpaV1FnYm05MFpXSnZiMnR6SUhSb1lYUWdjSEpsYzJWdWRDQmtZWFJoSUdGdVpDQnRiMlJsYkhNaUxDSmhkSFJ5YVdKMWRHVlRaWFFpT2lKclpETXdObkJuWlZsWE1XeEphbTlwVVZkT2FscFlUbnBKYVhkcFdrZFdlbGt6U25CalNGSndZakkwYVU5cFNXbE1RMHBvWkVoU2VXRlhTakZrUjFaNlNXcHdZbGhUZDJsa1NHeDNXbE5KTmtsdFRuWmlXRUoyWW0xV2RXUkRTamtpTENKaGRIUnlhV0oxZEdWVFpXeGxZM1JwYjI0aU9sdGRMQ0pqWVhSbFoyOXlhV1Z6SWpwYlhTd2ljSEp2WkhWamRITWlPbHRkTENKemRXSnpkR2wwZFhScGIyNXpJanBiWFgwPSIsImtkMzBjMHF0WVcxbElqb2lVMjkxY21ObElFTnZaR1VnVFdGdVlXZGxiV1Z1ZENJc0ltUmxjMk55YVhCMGFXOXVJam9pVTJGMlpTQnpiM1Z5WTJVZ1kyOWtaU0JoYm1RZ2NHVnljMmx6ZENCamFHRnVaMlZ6TGlCUFpuUmxiaUJoYkhOdklHTnZiblJoYVc1eklHRmtaR2wwYVc5dVlXd2dabVZoZEhWeVpYTWdiR2xyWlNCcGMzTjFaU0J0WVc1aFoyVnRaVzUwTENCM2FXdHBJR0Z1WkNCMGFHVWdiR2xyWlM0aUxDSmhkSFJ5YVdKMWRHVlRaWFFpT2lKclpETXdObkJuWlZsWE1XeEphbTlwVVZkT2FscFlUbnBKYVhkcFdrZFdlbGt6U25CalNGSndZakkwYVU5cFNXbE1RMHBvWkVoU2VXRlhTakZrUjFaNlNXcHdZbGhUZDJsa1NHeDNXbE5KTmtsdFRuWmlXRUoyWW0xV2RXUkRTamtpTENKaGRIUnlhV0oxZEdWVFpXeGxZM1JwYjI0aU9sdGRMQ0pqWVhSbFoyOXlhV1Z6SWpwYlhTd2ljSEp2WkhWamRITWlPbHRkTENKemRXSnpkR2wwZFhScGIyNXpJanBiWFgwPSIsImtkMzBjYXB2WVcxbElqb2lRMjl1ZEdGcGJtVnlJQzhnVm1seWRIVmhiQ0JOWVdOb2FXNWxjeUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lVSEp2ZG1semFXOXVJRzltSUdGdUlHVnVkR2x5WlNCbGJuWnBjbTl1YldWdWRDOXpkR0ZqYXlCMmFXRWdZU0JqYjI1MFlXbHVaWElnYjNJZ2RtbHlkSFZoYkNCdFlXTm9hVzVsSWl3aVlYUjBjbWxpZFhSbFUyVjBJam9pYTJRek1EWndaMlZaVnpGc1NXcHZhVkZYVG1wYVdFNTZTV2wzYVZwSFZucFpNMHB3WTBoU2NHSXlOR2xQYVVscFRFTkthR1JJVW5saFYwb3haRWRXZWtscWNHSllVM2RwWkVoc2QxcFRTVFpKYlU1MllsaENkbUp0Vm5Wa1EwbzVJaXdpWVhSMGNtbGlkWFJsVTJWc1pXTjBhVzl1SWpwYlhTd2lZMkYwWldkdmNtbGxjeUk2VzEwc0luQnliMlIxWTNSeklqcGJYU3dpYzNWaWMzUnBkSFYwYVc5dWN5STZXMTE5Iiwia2QzMGQ1bXRZVzFsSWpvaVRXRnVkV0ZzSUVWNGRISmhZM1JwYjI0Z1lXNWtJRU5zWldGdWMybHVaeUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lUV0Z1ZFdGc0lHVjRkSEpoWTNScGIyNGdZVzVrSUdOc1pXRnVjMmx1WnlCdlppQmtZWFJoSWl3aVlYUjBjbWxpZFhSbFUyVjBJam9pYTJRek1EWnJOMnBaVnpGc1NXcHZhVkpIUmpCWlUwSlJZMjA1YWxwWVRucGhWelZ1U1dsM2FWcEhWbnBaTTBwd1kwaFNjR0l5TkdsUGFVbHBURU5LYUdSSVVubGhWMG94WkVkV2VrbHFjR0pZVTNkcFpFaHNkMXBUU1RaSmJVNTJZbGhDZG1KdFZuVmtRMG81SWl3aVlYUjBjbWxpZFhSbFUyVnNaV04wYVc5dUlqcGJYU3dpWTJGMFpXZHZjbWxsY3lJNlcxMHNJbkJ5YjJSMVkzUnpJanBiWFN3aWMzVmljM1JwZEhWMGFXOXVjeUk2VzExOSJdLCJjYXBhYmlsaXRpZXMiOlsia2QyendpYW5ZVzFsSWpvaVYyVWdibVZsWkNCMGJ5QmxlSFJ5WVdOMElHRnVaQ0IwY21GdWMyWnZjbTBnWkdGMFlTQnZibXg1SUdFZ1ptVjNJSFJwYldWeklHbHVJRzl5WkdWeUlIUnZJR2RsZENCcGJuQjFkQ0JtYjNJZ2IzVnlJRzFoWTJocGJtVXRiR1ZoY201cGJtY2diVzlrWld3dUlpd2laR1Z6WTNKcGNIUnBiMjRpT2lJaUxDSmhkSFJ5YVdKMWRHVlRaWFFpT2lKclpESjZkVGh0T0ZsWE1XeEphbTlwVVZWcloxRXlSbmRaVjBwd1lrZHNNR1ZUU1hOSmJWSnNZekpPZVdGWVFqQmhWemwxU1dwdmFWVXpRbXhaTW14dFlWZE9hR1JIYkhaaWFVSnRZak5KWjFGVmEyZGlSMFoxV2toT2FsbFlRbXhqZVVselNXMUdNR1JJU25CWmJsWXdXbGhOYVU5c2RHUk1RMG93WlZoQ2JFbHFiMmxaTWtaM1dWZEtjR0pIYkRCbFUwbzVJaXdpWVhSMGNtbGlkWFJsVTJWc1pXTjBhVzl1SWpwYlhYMD0iLCJrZDJ6d3I1M1lXMWxJam9pVjJVZ2JtVmxaQ0IwYnlCamIyNXphV1JsY2lCd1pYSnphWE4wWldRZ1pHRjBZU0IwYUdGMElHbHpJSFZ1YzNSeWRXTjBkWEpsWkNCaGJtUXZiM0lnYUdGeklHTm9ZVzVuYVc1bklITmphR1Z0WVhNaUxDSmtaWE5qY21sd2RHbHZiaUk2SWlJc0ltRjBkSEpwWW5WMFpWTmxkQ0k2SW10a01ucDFPRzA0V1ZjeGJFbHFiMmxSVld0blVUSkdkMWxYU25CaVIyd3daVk5KYzBsdFVteGpNazU1WVZoQ01HRlhPWFZKYW05cFZUTkNiRmt5YkcxaFYwNW9aRWRzZG1KcFFtMWlNMGxuVVZWcloySkhSblZhU0U1cVdWaENiR041U1hOSmJVWXdaRWhLY0ZsdVZqQmFXRTFwVDJ4MFpFeERTakJsV0VKc1NXcHZhVmt5Um5kWlYwcHdZa2RzTUdWVFNqa2lMQ0poZEhSeWFXSjFkR1ZUWld4bFkzUnBiMjRpT2x0ZGZRPT0iXX0="
     },
     {
       "name": "Productive Factory",
       "description": "The models are part of a product and consumed for real-world services. Therefore the process have to be bullet-proof and highly reliable.",
-      "id": 1
+      "systems": [
+        "kd306ztjYW1lIjoiU3RyZWFtIFByb2Nlc3NpbmciLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMzA2azdqWVcxbElqb2lSR0YwWVNCUWNtOWpaWE56YVc1bklpd2laR1Z6WTNKcGNIUnBiMjRpT2lJaUxDSmhkSFJ5YVdKMWRHVnpJanBiWFN3aWRIbHdaU0k2SW1OdmJYQnZibVZ1ZENKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOltdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ==",
+        "kd30763yYW1lIjoiQmF0Y2ggUHJvY2Vzc2luZyIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119",
+        "kd30b6rmYW1lIjoiQ2xvdWQtYmFzZWQgdHJhaW5pbmciLCJkZXNjcmlwdGlvbiI6IkEgY2xvdWQgcGxhdGZvcm0gdG8gdHJhaW4gbW9kZWxzIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119",
+        "kd30bdaaYW1lIjoiT24tUHJlbWlzZSBNb2RlbCBUcmFpbmluZyIsImRlc2NyaXB0aW9uIjoiTW9kZWwgdHJhaW5pbmcgb24gbG9jYWwgbWFjaGluZXMgb3IgYSBsb2NhbCBkYXRhIGNlbnRlciIsImF0dHJpYnV0ZVNldCI6ImtkMzA2azdqWVcxbElqb2lSR0YwWVNCUWNtOWpaWE56YVc1bklpd2laR1Z6WTNKcGNIUnBiMjRpT2lJaUxDSmhkSFJ5YVdKMWRHVnpJanBiWFN3aWRIbHdaU0k2SW1OdmJYQnZibVZ1ZENKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOltdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ==",
+        "kd30capvYW1lIjoiQ29udGFpbmVyIC8gVmlydHVhbCBNYWNoaW5lcyIsImRlc2NyaXB0aW9uIjoiUHJvdmlzaW9uIG9mIGFuIGVudGlyZSBlbnZpcm9ubWVudC9zdGFjayB2aWEgYSBjb250YWluZXIgb3IgdmlydHVhbCBtYWNoaW5lIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZwZ2VZVzFsSWpvaVFXTmpaWE56SWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119",
+        "kd30chyrYW1lIjoiRXhlY3V0YWJsZSBCaW5hcnkiLCJkZXNjcmlwdGlvbiI6IlByb3Zpc2lvbiBvZiBtb2RlbCBhcyBhIGV4ZWN1dGFibGUgYmluYXJ5IHdpdGhvdXQgdGhlIHBvc3NpYmlsaXR5IHRvIGFjY2VzcyB0aGUgc291cmNlIGNvZGUuIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZwZ2VZVzFsSWpvaVFXTmpaWE56SWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119",
+        "kd30cozxYW1lIjoiV2ViLVNlcnZpY2UiLCJkZXNjcmlwdGlvbiI6IlByb3Zpc2lvbiBvZiB0aGUgcmVzdWx0cyBhcyBhIChSRVNUKS1BUEkgdGhhdCBjYW4gYmUgY29uc3VtZWQgdmlhIHRoZSBpbnRlcm5ldC4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0=",
+        "kd30cwrfYW1lIjoiTW9kZWwgTW9uaXRvcmluZyIsImRlc2NyaXB0aW9uIjoiQSB3YXkgdG8gdHJhY2sgY2FsbHMsIHNjYWxpbmcgYW5kIHJlc3VsdCBhY2N1cmFjeS4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
+      ],
+      "capabilities": [
+      ],
+      "id": "kd30yidyYW1lIjoiUHJvZHVjdGl2ZSBGYWN0b3J5IiwiZGVzY3JpcHRpb24iOiJUaGUgbW9kZWxzIGFyZSBwYXJ0IG9mIGEgcHJvZHVjdCBhbmQgY29uc3VtZWQgZm9yIHJlYWwtd29ybGQgc2VydmljZXMuIFRoZXJlZm9yZSB0aGUgcHJvY2VzcyBoYXZlIHRvIGJlIGJ1bGxldC1wcm9vZiBhbmQgaGlnaGx5IHJlbGlhYmxlLiIsInN5c3RlbXMiOltdLCJjYXBhYmlsaXRpZXMiOltdfQ=="
     },
     {
       "name": "Supervised Learning",
       "description": "Supervised learning is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples.",
-      "id": 2
+      "systems": [
+      ],
+      "capabilities": [
+      ],
+      "id": "kd30yt6tYW1lIjoiU3VwZXJ2aXNlZCBMZWFybmluZyIsImRlc2NyaXB0aW9uIjoiU3VwZXJ2aXNlZCBsZWFybmluZyBpcyB0aGUgbWFjaGluZSBsZWFybmluZyB0YXNrIG9mIGxlYXJuaW5nIGEgZnVuY3Rpb24gdGhhdCBtYXBzIGFuIGlucHV0IHRvIGFuIG91dHB1dCBiYXNlZCBvbiBleGFtcGxlIGlucHV0LW91dHB1dCBwYWlycy4gSXQgaW5mZXJzIGEgZnVuY3Rpb24gZnJvbSBsYWJlbGVkIHRyYWluaW5nIGRhdGEgY29uc2lzdGluZyBvZiBhIHNldCBvZiB0cmFpbmluZyBleGFtcGxlcy4iLCJzeXN0ZW1zIjpbXSwiY2FwYWJpbGl0aWVzIjpbXX0="
     },
     {
       "name": "Unsupervised Learning",
       "description": "Unsupervised learning is a type of self-organized Hebbian learning that helps find previously unknown patterns in data set without pre-existing labels. It is also known as self-organization and allows modeling probability densities of given inputs. It is one of the main three categories of machine learning, along with supervised and reinforcement learning. Semi-supervised learning has also been described, and is a hybridization of supervised and unsupervised techniques. ",
-      "id": 3
+      "systems": [
+        "kd30ao1nYW1lIjoiRGVlcCBOZXVyYWwgTmV0d29ya3MiLCJkZXNjcmlwdGlvbiI6IkRlZXAgbmV1cmFsIG5ldHdvcmtzIChBTk4pIG9yIGNvbm5lY3Rpb25pc3Qgc3lzdGVtcyBhcmUgY29tcHV0aW5nIHN5c3RlbXMgdGhhdCBhcmUgaW5zcGlyZWQgYnksIGJ1dCBub3QgaWRlbnRpY2FsIHRvLCBiaW9sb2dpY2FsIG5ldXJhbCBuZXR3b3JrcyB0aGF0IGNvbnN0aXR1dGUgYW5pbWFsIGJyYWlucy4gU3VjaCBzeXN0ZW1zIFwibGVhcm5cIiB0byBwZXJmb3JtIHRhc2tzIGJ5IGNvbnNpZGVyaW5nIGV4YW1wbGVzLCBnZW5lcmFsbHkgd2l0aG91dCBiZWluZyBwcm9ncmFtbWVkIHdpdGggdGFzay1zcGVjaWZpYyBydWxlcy4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNms3allXMWxJam9pUkdGMFlTQlFjbTlqWlhOemFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
+      ],
+      "capabilities": [
+      ],
+      "id": "kd30ze12YW1lIjoiVW5zdXBlcnZpc2VkIExlYXJuaW5nIiwiZGVzY3JpcHRpb24iOiJVbnN1cGVydmlzZWQgbGVhcm5pbmcgaXMgYSB0eXBlIG9mIHNlbGYtb3JnYW5pemVkIEhlYmJpYW4gbGVhcm5pbmcgdGhhdCBoZWxwcyBmaW5kIHByZXZpb3VzbHkgdW5rbm93biBwYXR0ZXJucyBpbiBkYXRhIHNldCB3aXRob3V0IHByZS1leGlzdGluZyBsYWJlbHMuIEl0IGlzIGFsc28ga25vd24gYXMgc2VsZi1vcmdhbml6YXRpb24gYW5kIGFsbG93cyBtb2RlbGluZyBwcm9iYWJpbGl0eSBkZW5zaXRpZXMgb2YgZ2l2ZW4gaW5wdXRzLiBJdCBpcyBvbmUgb2YgdGhlIG1haW4gdGhyZWUgY2F0ZWdvcmllcyBvZiBtYWNoaW5lIGxlYXJuaW5nLCBhbG9uZyB3aXRoIHN1cGVydmlzZWQgYW5kIHJlaW5mb3JjZW1lbnQgbGVhcm5pbmcuIFNlbWktc3VwZXJ2aXNlZCBsZWFybmluZyBoYXMgYWxzbyBiZWVuIGRlc2NyaWJlZCwgYW5kIGlzIGEgaHlicmlkaXphdGlvbiBvZiBzdXBlcnZpc2VkIGFuZCB1bnN1cGVydmlzZWQgdGVjaG5pcXVlcy4gIiwic3lzdGVtcyI6WyJrZDMwYW8xbllXMWxJam9pUkdWbGNDQk9aWFZ5WVd3Z1RtVjBkMjl5YTNNaUxDSmtaWE5qY21sd2RHbHZiaUk2SWtSbFpYQWdibVYxY21Gc0lHNWxkSGR2Y210eklDaEJUazRwSUc5eUlHTnZibTVsWTNScGIyNXBjM1FnYzNsemRHVnRjeUJoY21VZ1kyOXRjSFYwYVc1bklITjVjM1JsYlhNZ2RHaGhkQ0JoY21VZ2FXNXpjR2x5WldRZ1lua3NJR0oxZENCdWIzUWdhV1JsYm5ScFkyRnNJSFJ2TENCaWFXOXNiMmRwWTJGc0lHNWxkWEpoYkNCdVpYUjNiM0pyY3lCMGFHRjBJR052Ym5OMGFYUjFkR1VnWVc1cGJXRnNJR0p5WVdsdWN5NGdVM1ZqYUNCemVYTjBaVzF6SUZ3aWJHVmhjbTVjSWlCMGJ5QndaWEptYjNKdElIUmhjMnR6SUdKNUlHTnZibk5wWkdWeWFXNW5JR1Y0WVcxd2JHVnpMQ0JuWlc1bGNtRnNiSGtnZDJsMGFHOTFkQ0JpWldsdVp5QndjbTluY21GdGJXVmtJSGRwZEdnZ2RHRnpheTF6Y0dWamFXWnBZeUJ5ZFd4bGN5NGlMQ0poZEhSeWFXSjFkR1ZUWlhRaU9pSnJaRE13Tm1zM2FsbFhNV3hKYW05cFVrZEdNRmxUUWxGamJUbHFXbGhPZW1GWE5XNUphWGRwV2tkV2Vsa3pTbkJqU0ZKd1lqSTBhVTlwU1dsTVEwcG9aRWhTZVdGWFNqRmtSMVo2U1dwd1lsaFRkMmxrU0d4M1dsTkpOa2x0VG5aaVdFSjJZbTFXZFdSRFNqa2lMQ0poZEhSeWFXSjFkR1ZUWld4bFkzUnBiMjRpT2x0ZExDSmpZWFJsWjI5eWFXVnpJanBiWFN3aWNISnZaSFZqZEhNaU9sdGRMQ0p6ZFdKemRHbDBkWFJwYjI1eklqcGJYWDA9Il0sImNhcGFiaWxpdGllcyI6W119"
     },
     {
       "name": "Network Analysis",
-      "description": "Finding patterns in networks",
-      "id": 4
+      "description": "Finding patterns in networks.",
+      "systems": [
+        "kd309i2jYW1lIjoiR3JhcGggRGF0YWJhc2UiLCJkZXNjcmlwdGlvbiI6IkEgZGF0YWJhc2UgdGhhdCBzYXZlcyBkYXRhIGluIGdyYXBoLW9yaWVudGVkIHN0cnVjdHVyZXMiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNTRzOFlXMWxJam9pVUdWeWMybHpkR1Z1WTJVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWlJc0ltRjBkSEpwWW5WMFpYTWlPbHNpYTJRek1EUndhRFpaVnpGc1NXcHZhVlpJYkhkYVUwSjJXbWxDUkdJeU5UQmFWelV3U1dsM2FWcEhWbnBaTTBwd1kwaFNjR0l5TkdsUGFVbHBURU5LTWxsWGVERmFXRTFwVDJ4emFWWlhOWHBrU0VveFdUTlNNV050Vm10SmFYZHBWVEpXZEdGVE1WUmtTRW94V1ROU01XTnRWbXRKYVhkcFZUTlNlV1JYVGpCa1dFcHNXa05LWkV4RFNqQmxXRUpzU1dwdmFWa3lPWFJqUnpsMVdsYzFNRWx1TUQwaVhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0=",
+        "kd30ddx2YW1lIjoiTmV0d29yayBBbmFseXNpcyIsImRlc2NyaXB0aW9uIjoiTmV0d29yayBmb2N1c2VkIGFsZ29yaXRobXMiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNms3allXMWxJam9pUkdGMFlTQlFjbTlqWlhOemFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
+      ],
+      "capabilities": [
+      ],
+      "id": "kd30zwstYW1lIjoiTmV0d29yayBBbmFseXNpcyIsImRlc2NyaXB0aW9uIjoiRmluZGluZyBwYXR0ZXJucyBpbiBuZXR3b3Jrcy4iLCJzeXN0ZW1zIjpbImtkMzA5aTJqWVcxbElqb2lSM0poY0dnZ1JHRjBZV0poYzJVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWtFZ1pHRjBZV0poYzJVZ2RHaGhkQ0J6WVhabGN5QmtZWFJoSUdsdUlHZHlZWEJvTFc5eWFXVnVkR1ZrSUhOMGNuVmpkSFZ5WlhNaUxDSmhkSFJ5YVdKMWRHVlRaWFFpT2lKclpETXdOVFJ6T0ZsWE1XeEphbTlwVlVkV2VXTXliSHBrUjFaMVdUSlZhVXhEU210YVdFNXFZMjFzZDJSSGJIWmlhVWsyU1dsSmMwbHRSakJrU0Vwd1dXNVdNRnBZVFdsUGJITnBZVEpSZWsxRVVuZGhSRnBhVm5wR2MxTlhjSFpoVmxwSllraGtZVlV3U2pKWGJXeERVa2RKZVU1VVFtRldlbFYzVTFkc00yRldjRWhXYm5CYVRUQndkMWt3YUZOalIwbDVUa2RzVUdGVmJIQlVSVTVMVFd4c1dHVkVSbUZYUlRGd1ZESjRlbUZXV2xoT1dIQnJVMFZ2ZUZkVVRsTk5WMDUwVm0xMFNtRllaSEJXVkVwWFpFZEdWRTFXVW10VFJXOTRWMVJPVTAxWFRuUldiWFJLWVZoa2NGWlVUbE5sVjFKWVZHcENhMWRGY0hOWGEwNUxXa1Y0UkZOcVFteFhSVXB6VTFkd2RtRldhM2xQV0ZKcVVucHNNVmRzWXpGTlJXeDFUVVF3YVZoVGQybGtTR3gzV2xOSk5rbHRUblppV0VKMlltMVdkV1JEU2praUxDSmhkSFJ5YVdKMWRHVlRaV3hsWTNScGIyNGlPbHRkTENKallYUmxaMjl5YVdWeklqcGJYU3dpY0hKdlpIVmpkSE1pT2x0ZExDSnpkV0p6ZEdsMGRYUnBiMjV6SWpwYlhYMD0iLCJrZDMwZGR4MllXMWxJam9pVG1WMGQyOXlheUJCYm1Gc2VYTnBjeUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lUbVYwZDI5eWF5Qm1iMk4xYzJWa0lHRnNaMjl5YVhSb2JYTWlMQ0poZEhSeWFXSjFkR1ZUWlhRaU9pSnJaRE13Tm1zM2FsbFhNV3hKYW05cFVrZEdNRmxUUWxGamJUbHFXbGhPZW1GWE5XNUphWGRwV2tkV2Vsa3pTbkJqU0ZKd1lqSTBhVTlwU1dsTVEwcG9aRWhTZVdGWFNqRmtSMVo2U1dwd1lsaFRkMmxrU0d4M1dsTkpOa2x0VG5aaVdFSjJZbTFXZFdSRFNqa2lMQ0poZEhSeWFXSjFkR1ZUWld4bFkzUnBiMjRpT2x0ZExDSmpZWFJsWjI5eWFXVnpJanBiWFN3aWNISnZaSFZqZEhNaU9sdGRMQ0p6ZFdKemRHbDBkWFJwYjI1eklqcGJYWDA9Il0sImNhcGFiaWxpdGllcyI6W119"
     }
+
   ],
   "products": [
     {
       "name": "Apache Spark",
       "description": "",
-      "id": 0
+      "id": "kd30nxqeYW1lIjoiQXBhY2hlIFNwYXJrIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "Apache Kafka",
       "description": "",
-      "id": 1
+      "id": "kd30o13wYW1lIjoiQXBhY2hlIEthZmthIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "Informatica ETL",
       "description": "",
-      "id": 2
+      "id": "kd30odd2YW1lIjoiSW5mb3JtYXRpY2EgRVRMIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "Apache Storm",
       "description": "",
-      "id": 3
+      "id": "kd30ohc2YW1lIjoiQXBhY2hlIFN0b3JtIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "MySQL",
       "description": "",
-      "id": 4
+      "id": "kd30onb2YW1lIjoiTXlTUUwiLCJkZXNjcmlwdGlvbiI6IiJ9"
     },
     {
       "name": "PostgreSQL",
       "description": "",
-      "id": 5
+      "id": "kd30owhgYW1lIjoiUG9zdGdyZVNRTCIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
       "name": "Elastic",
       "description": "",
-      "id": 6
+      "id": "kd30p26dYW1lIjoiRWxhc3RpYyIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
       "name": "SAP Hana",
       "description": "",
-      "id": 7
+      "id": "kd30pmcdYW1lIjoiU0FQIEhhbmEiLCJkZXNjcmlwdGlvbiI6IiJ9"
     },
     {
       "name": "Apache Hadoop",
       "description": "",
-      "id": 8
+      "id": "kd30pv13YW1lIjoiQXBhY2hlIEhhZG9vcCIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
       "name": "AWS S3",
       "description": "",
-      "id": 9
+      "id": "kd30q2wuYW1lIjoiQVdTIFMzIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "IBM Object Store",
       "description": "",
-      "id": 10
+      "id": "kd30q80nYW1lIjoiSUJNIE9iamVjdCBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
       "name": "Neo4J",
       "description": "",
-      "id": 11
+      "id": "kd30qe5aYW1lIjoiTmVvNEoiLCJkZXNjcmlwdGlvbiI6IiJ9"
     },
     {
       "name": "Hypergraph DB",
       "description": "",
-      "id": 12
+      "id": "kd30qirbYW1lIjoiSHlwZXJncmFwaCBEQiIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
       "name": "Redis",
       "description": "",
-      "id": 13
+      "id": "kd30qnn5YW1lIjoiUmVkaXMiLCJkZXNjcmlwdGlvbiI6IiJ9"
     },
     {
       "name": "Riak",
       "description": "",
-      "id": 14
+      "id": "kd30r152YW1lIjoiUmlhayIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
       "name": "TensorFlow",
       "description": "",
-      "id": 15
+      "id": "kd30r8lqYW1lIjoiVGVuc29yRmxvdyIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
       "name": "PyTorch",
       "description": "",
-      "id": 16
+      "id": "kd30smgeYW1lIjoiUHlUb3JjaCIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
       "name": "Google Cloud",
       "description": "",
-      "id": 17
+      "id": "kd30swxsYW1lIjoiR29vZ2xlIENsb3VkIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "AWS",
       "description": "",
-      "id": 18
+      "id": "kd30t3xkYW1lIjoiQVdTIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "Docker",
       "description": "",
-      "id": 19
-    },
-    {
-      "name": "Jupyter Notebooks",
-      "description": "",
-      "id": 20
+      "id": "kd30tg3mYW1lIjoiRG9ja2VyIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "GitHub",
       "description": "",
-      "id": 21
+      "id": "kd30ttfcYW1lIjoiR2l0SHViIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "GitLab",
       "description": "",
-      "id": 22
+      "id": "kd30tyk2YW1lIjoiR2l0TGFiIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
-      "name": "VirtualBox",
+      "name": "SVN",
       "description": "",
-      "id": 23
+      "id": "kd30u76oYW1lIjoiU1ZOIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "VMWare",
       "description": "",
-      "id": 24
+      "id": "kd30ug13YW1lIjoiVk1XYXJlIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
-      "name": "Data Robot",
+      "name": "DataRobot",
       "description": "",
-      "id": 25
+      "id": "kd30uyxeYW1lIjoiRGF0YVJvYm90IiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "AutoML",
       "description": "",
-      "id": 26
+      "id": "kd30vdtuYW1lIjoiQXV0b01MIiwiZGVzY3JpcHRpb24iOiIifQ=="
     },
     {
       "name": "Algorithmia",
       "description": "",
-      "id": 27
+      "id": "kd30vtrmYW1lIjoiQWxnb3JpdGhtaWEiLCJkZXNjcmlwdGlvbiI6IiJ9"
     },
     {
       "name": "Numericcal",
       "description": "",
-      "id": 28
+      "id": "kd30w6zoYW1lIjoiTnVtZXJpY2NhbCIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
-      "name": "Seldon",
+      "name": " Seldon",
       "description": "",
-      "id": 29
+      "id": "kd30x66bYW1lIjoiIFNlbGRvbiIsImRlc2NyaXB0aW9uIjoiIn0="
     }
+
   ],
   "systems": [
     {
       "name": "Stream Processing",
       "description": "Real time extraction and transformation of data.",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        0
+        "kd301f8jYW1lIjoiRGF0YSBJbmdlc3Rpb24iLCJkZXNjcmlwdGlvbiI6IiJ9"
       ],
       "products": [
-        0,
-        1,
-        3
-      ],
-      "capabilities": [
-        0
-      ],
-      "patterns": [
-        1
+        "kd30nxqeYW1lIjoiQXBhY2hlIFNwYXJrIiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30ohc2YW1lIjoiQXBhY2hlIFN0b3JtIiwiZGVzY3JpcHRpb24iOiIifQ=="
       ],
       "substitutions": [
-        {
-          "id": 1,
-          "name": "Batch Processing"
-        }
       ],
-      "id": 0
+      "id": "kd306ztjYW1lIjoiU3RyZWFtIFByb2Nlc3NpbmciLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMzA2azdqWVcxbElqb2lSR0YwWVNCUWNtOWpaWE56YVc1bklpd2laR1Z6WTNKcGNIUnBiMjRpT2lJaUxDSmhkSFJ5YVdKMWRHVnpJanBiWFN3aWRIbHdaU0k2SW1OdmJYQnZibVZ1ZENKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOltdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ=="
     },
     {
       "name": "Batch Processing",
       "description": "Regular running jobs that extract, transform and load data.",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        0
+        "kd301f8jYW1lIjoiRGF0YSBJbmdlc3Rpb24iLCJkZXNjcmlwdGlvbiI6IiJ9"
       ],
       "products": [
-        2
-      ],
-      "capabilities": [
-        1
-      ],
-      "patterns": [
-        0,
-        1
       ],
       "substitutions": [
-        {
-          "id": 0,
-          "name": "Stream Processing"
-        },
-        {
-          "id": 23,
-          "name": "Manual Extraction and Cleansing"
-        }
       ],
-      "id": 1
+      "id": "kd30763yYW1lIjoiQmF0Y2ggUHJvY2Vzc2luZyIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Message Broker",
       "description": "A message broker consumes various data sources and provides topic-specifc queues for upstream system.",
+      "attributeSet": "kd3054s8YW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOlsia2QzMDRwaDZZVzFsSWpvaVZIbHdaU0J2WmlCRGIyNTBaVzUwSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXpkSEoxWTNSMWNtVmtJaXdpVTJWdGFTMVRkSEoxWTNSMWNtVmtJaXdpVTNSeWRXTjBkWEpsWkNKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        0
+        "kd301f8jYW1lIjoiRGF0YSBJbmdlc3Rpb24iLCJkZXNjcmlwdGlvbiI6IiJ9"
       ],
       "products": [
-        1
-      ],
-      "capabilities": [
-        31
-      ],
-      "patterns": [
+        "kd30o13wYW1lIjoiQXBhY2hlIEthZmthIiwiZGVzY3JpcHRpb24iOiIifQ=="
       ],
       "substitutions": [
       ],
-      "id": 2
+      "id": "kd307h3zYW1lIjoiTWVzc2FnZSBCcm9rZXIiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMzA1NHM4WVcxbElqb2lVR1Z5YzJsemRHVnVZMlVpTENKa1pYTmpjbWx3ZEdsdmJpSTZJaUlzSW1GMGRISnBZblYwWlhNaU9sc2lhMlF6TURSd2FEWlpWekZzU1dwdmFWWkliSGRhVTBKMldtbENSR0l5TlRCYVZ6VXdTV2wzYVZwSFZucFpNMHB3WTBoU2NHSXlOR2xQYVVscFRFTktNbGxYZURGYVdFMXBUMnh6YVZaWE5YcGtTRW94V1ROU01XTnRWbXRKYVhkcFZUSldkR0ZUTVZSa1NFb3hXVE5TTVdOdFZtdEphWGRwVlROU2VXUlhUakJrV0Vwc1drTktaRXhEU2pCbFdFSnNTV3B2YVZreU9YUmpSemwxV2xjMU1FbHVNRDBpWFN3aWRIbHdaU0k2SW1OdmJYQnZibVZ1ZENKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOltdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ=="
     },
     {
       "name": "Relational Data Store",
       "description": "Relational databases that persist data in fixed schemas and follow the idea of normalization.",
+      "attributeSet": "kd3054s8YW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOlsia2QzMDRwaDZZVzFsSWpvaVZIbHdaU0J2WmlCRGIyNTBaVzUwSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXpkSEoxWTNSMWNtVmtJaXdpVTJWdGFTMVRkSEoxWTNSMWNtVmtJaXdpVTNSeWRXTjBkWEpsWkNKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        1
+        "kd301q43YW1lIjoiRGF0YSBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiJQZXJzaXN0IGRhdGEgaW4gYWRlcXVhdGUgZGF0YSBzdHJ1Y3R1cmVzIn0="
       ],
       "products": [
-        4,
-        5,
-        7
-      ],
-      "capabilities": [
-        3
-      ],
-      "patterns": [
+        "kd30onb2YW1lIjoiTXlTUUwiLCJkZXNjcmlwdGlvbiI6IiJ9",
+        "kd30owhgYW1lIjoiUG9zdGdyZVNRTCIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30pmcdYW1lIjoiU0FQIEhhbmEiLCJkZXNjcmlwdGlvbiI6IiJ9"
       ],
       "substitutions": [
       ],
-      "id": 3
+      "id": "kd307ndhYW1lIjoiUmVsYXRpb25hbCBEYXRhIFN0b3JlIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNTRzOFlXMWxJam9pVUdWeWMybHpkR1Z1WTJVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWlJc0ltRjBkSEpwWW5WMFpYTWlPbHNpYTJRek1EUndhRFpaVnpGc1NXcHZhVlpJYkhkYVUwSjJXbWxDUkdJeU5UQmFWelV3U1dsM2FWcEhWbnBaTTBwd1kwaFNjR0l5TkdsUGFVbHBURU5LTWxsWGVERmFXRTFwVDJ4emFWWlhOWHBrU0VveFdUTlNNV050Vm10SmFYZHBWVEpXZEdGVE1WUmtTRW94V1ROU01XTnRWbXRKYVhkcFZUTlNlV1JYVGpCa1dFcHNXa05LWkV4RFNqQmxXRUpzU1dwdmFWa3lPWFJqUnpsMVdsYzFNRWx1TUQwaVhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Distribute File Storage",
       "description": "A distributed file system that saves massive amounts of files on various nodes in a distributed manner.",
+      "attributeSet": "kd3054s8YW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOlsia2QzMDRwaDZZVzFsSWpvaVZIbHdaU0J2WmlCRGIyNTBaVzUwSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXpkSEoxWTNSMWNtVmtJaXdpVTJWdGFTMVRkSEoxWTNSMWNtVmtJaXdpVTNSeWRXTjBkWEpsWkNKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        1
+        "kd301q43YW1lIjoiRGF0YSBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiJQZXJzaXN0IGRhdGEgaW4gYWRlcXVhdGUgZGF0YSBzdHJ1Y3R1cmVzIn0="
       ],
       "products": [
-        8
-      ],
-      "capabilities": [
-        4,
-        5,
-        8
-      ],
-      "patterns": [
+        "kd30pv13YW1lIjoiQXBhY2hlIEhhZG9vcCIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
-        {
-          "id": 5,
-          "name": "Blob Storage"
-        },
-        {
-          "id": 6,
-          "name": "NoSQL Document Store"
-        }
       ],
-      "id": 4
+      "id": "kd307sxdYW1lIjoiRGlzdHJpYnV0ZSBGaWxlIFN0b3JhZ2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMzA1NHM4WVcxbElqb2lVR1Z5YzJsemRHVnVZMlVpTENKa1pYTmpjbWx3ZEdsdmJpSTZJaUlzSW1GMGRISnBZblYwWlhNaU9sc2lhMlF6TURSd2FEWlpWekZzU1dwdmFWWkliSGRhVTBKMldtbENSR0l5TlRCYVZ6VXdTV2wzYVZwSFZucFpNMHB3WTBoU2NHSXlOR2xQYVVscFRFTktNbGxYZURGYVdFMXBUMnh6YVZaWE5YcGtTRW94V1ROU01XTnRWbXRKYVhkcFZUSldkR0ZUTVZSa1NFb3hXVE5TTVdOdFZtdEphWGRwVlROU2VXUlhUakJrV0Vwc1drTktaRXhEU2pCbFdFSnNTV3B2YVZreU9YUmpSemwxV2xjMU1FbHVNRDBpWFN3aWRIbHdaU0k2SW1OdmJYQnZibVZ1ZENKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOltdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ=="
     },
     {
       "name": "Blob Storage",
       "description": "A binary object storage that saves many large files for processing and allows to add arbitrary meta data and enhanced meta-analytics.",
+      "attributeSet": "kd3054s8YW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOlsia2QzMDRwaDZZVzFsSWpvaVZIbHdaU0J2WmlCRGIyNTBaVzUwSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXpkSEoxWTNSMWNtVmtJaXdpVTJWdGFTMVRkSEoxWTNSMWNtVmtJaXdpVTNSeWRXTjBkWEpsWkNKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        1
+        "kd301q43YW1lIjoiRGF0YSBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiJQZXJzaXN0IGRhdGEgaW4gYWRlcXVhdGUgZGF0YSBzdHJ1Y3R1cmVzIn0="
       ],
       "products": [
-        9,
-        10
-      ],
-      "capabilities": [
-        8,
-        9,
-        10
-      ],
-      "patterns": [
+        "kd30q2wuYW1lIjoiQVdTIFMzIiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30q80nYW1lIjoiSUJNIE9iamVjdCBTdG9yZSIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
-        {
-          "id": 4,
-          "name": "Distribute File Storage"
-        }
       ],
-      "id": 5
+      "id": "kd307xnyYW1lIjoiQmxvYiBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNTRzOFlXMWxJam9pVUdWeWMybHpkR1Z1WTJVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWlJc0ltRjBkSEpwWW5WMFpYTWlPbHNpYTJRek1EUndhRFpaVnpGc1NXcHZhVlpJYkhkYVUwSjJXbWxDUkdJeU5UQmFWelV3U1dsM2FWcEhWbnBaTTBwd1kwaFNjR0l5TkdsUGFVbHBURU5LTWxsWGVERmFXRTFwVDJ4emFWWlhOWHBrU0VveFdUTlNNV050Vm10SmFYZHBWVEpXZEdGVE1WUmtTRW94V1ROU01XTnRWbXRKYVhkcFZUTlNlV1JYVGpCa1dFcHNXa05LWkV4RFNqQmxXRUpzU1dwdmFWa3lPWFJqUnpsMVdsYzFNRWx1TUQwaVhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "NoSQL Document Store",
       "description": "A database for unstructured content that is fast and allows to save data in arbitrary semi-structed schemas (XML/JSON)",
+      "attributeSet": "kd3054s8YW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOlsia2QzMDRwaDZZVzFsSWpvaVZIbHdaU0J2WmlCRGIyNTBaVzUwSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXpkSEoxWTNSMWNtVmtJaXdpVTJWdGFTMVRkSEoxWTNSMWNtVmtJaXdpVTNSeWRXTjBkWEpsWkNKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        1
+        "kd301q43YW1lIjoiRGF0YSBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiJQZXJzaXN0IGRhdGEgaW4gYWRlcXVhdGUgZGF0YSBzdHJ1Y3R1cmVzIn0="
       ],
       "products": [
-        6
-      ],
-      "capabilities": [
-        4,
-        5
-      ],
-      "patterns": [
+        "kd30p26dYW1lIjoiRWxhc3RpYyIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
-        {
-          "id": 3,
-          "name": "Relational Data Store"
-        }
       ],
-      "id": 6
+      "id": "kd3082miYW1lIjoiTm9TUUwgRG9jdW1lbnQgU3RvcmUiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZVNldCI6ImtkMzA1NHM4WVcxbElqb2lVR1Z5YzJsemRHVnVZMlVpTENKa1pYTmpjbWx3ZEdsdmJpSTZJaUlzSW1GMGRISnBZblYwWlhNaU9sc2lhMlF6TURSd2FEWlpWekZzU1dwdmFWWkliSGRhVTBKMldtbENSR0l5TlRCYVZ6VXdTV2wzYVZwSFZucFpNMHB3WTBoU2NHSXlOR2xQYVVscFRFTktNbGxYZURGYVdFMXBUMnh6YVZaWE5YcGtTRW94V1ROU01XTnRWbXRKYVhkcFZUSldkR0ZUTVZSa1NFb3hXVE5TTVdOdFZtdEphWGRwVlROU2VXUlhUakJrV0Vwc1drTktaRXhEU2pCbFdFSnNTV3B2YVZreU9YUmpSemwxV2xjMU1FbHVNRDBpWFN3aWRIbHdaU0k2SW1OdmJYQnZibVZ1ZENKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOltdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ=="
     },
     {
       "name": "NoSQL Key-Value-Store",
       "description": "A fast database that simply saves one value with a key.",
+      "attributeSet": "kd3054s8YW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOlsia2QzMDRwaDZZVzFsSWpvaVZIbHdaU0J2WmlCRGIyNTBaVzUwSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXpkSEoxWTNSMWNtVmtJaXdpVTJWdGFTMVRkSEoxWTNSMWNtVmtJaXdpVTNSeWRXTjBkWEpsWkNKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        1
+        "kd301q43YW1lIjoiRGF0YSBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiJQZXJzaXN0IGRhdGEgaW4gYWRlcXVhdGUgZGF0YSBzdHJ1Y3R1cmVzIn0="
       ],
       "products": [
-        13,
-        14
-      ],
-      "capabilities": [
-        5,
-        6
-      ],
-      "patterns": [
+        "kd30qirbYW1lIjoiSHlwZXJncmFwaCBEQiIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30qnn5YW1lIjoiUmVkaXMiLCJkZXNjcmlwdGlvbiI6IiJ9",
+        "kd30r152YW1lIjoiUmlhayIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
-        {
-          "id": 6,
-          "name": "NoSQL Document Store"
-        }
       ],
-      "id": 7
+      "id": "kd308cxzYW1lIjoiTm9TUUwgS2V5LVZhbHVlLVN0b3JlIiwiZGVzY3JpcHRpb24iOiJBIGZhc3QgZGF0YWJhc2UgdGhhdCBzaW1wbHkgc2F2ZXMgb25lIHZhbHVlIHdpdGggYSBrZXkuIiwiYXR0cmlidXRlU2V0Ijoia2QzMDU0czhZVzFsSWpvaVVHVnljMmx6ZEdWdVkyVWlMQ0prWlhOamNtbHdkR2x2YmlJNklpSXNJbUYwZEhKcFluVjBaWE1pT2xzaWEyUXpNRFJ3YURaWlZ6RnNTV3B2YVZaSWJIZGFVMEoyV21sQ1JHSXlOVEJhVnpVd1NXbDNhVnBIVm5wWk0wcHdZMGhTY0dJeU5HbFBhVWxwVEVOS01sbFhlREZhV0UxcFQyeHphVlpYTlhwa1NFb3hXVE5TTVdOdFZtdEphWGRwVlRKV2RHRlRNVlJrU0VveFdUTlNNV050Vm10SmFYZHBWVE5TZVdSWFRqQmtXRXBzV2tOS1pFeERTakJsV0VKc1NXcHZhVmt5T1hSalJ6bDFXbGMxTUVsdU1EMGlYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Graph Database",
       "description": "A database that saves data in graph-oriented structures",
+      "attributeSet": "kd3054s8YW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOlsia2QzMDRwaDZZVzFsSWpvaVZIbHdaU0J2WmlCRGIyNTBaVzUwSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXpkSEoxWTNSMWNtVmtJaXdpVTJWdGFTMVRkSEoxWTNSMWNtVmtJaXdpVTNSeWRXTjBkWEpsWkNKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        1
+        "kd301q43YW1lIjoiRGF0YSBTdG9yYWdlIiwiZGVzY3JpcHRpb24iOiJQZXJzaXN0IGRhdGEgaW4gYWRlcXVhdGUgZGF0YSBzdHJ1Y3R1cmVzIn0="
       ],
       "products": [
-        11,
-        12
-      ],
-      "capabilities": [
-        7
-      ],
-      "patterns": [
-        4
+        "kd30qe5aYW1lIjoiTmVvNEoiLCJkZXNjcmlwdGlvbiI6IiJ9"
       ],
       "substitutions": [
-        {
-          "id": 3,
-          "name": "Relational Data Store"
-        },
-        {
-          "id": 6,
-          "name": "NoSQL Document Store"
-        }
       ],
-      "id": 8
+      "id": "kd309i2jYW1lIjoiR3JhcGggRGF0YWJhc2UiLCJkZXNjcmlwdGlvbiI6IkEgZGF0YWJhc2UgdGhhdCBzYXZlcyBkYXRhIGluIGdyYXBoLW9yaWVudGVkIHN0cnVjdHVyZXMiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNTRzOFlXMWxJam9pVUdWeWMybHpkR1Z1WTJVaUxDSmtaWE5qY21sd2RHbHZiaUk2SWlJc0ltRjBkSEpwWW5WMFpYTWlPbHNpYTJRek1EUndhRFpaVnpGc1NXcHZhVlpJYkhkYVUwSjJXbWxDUkdJeU5UQmFWelV3U1dsM2FWcEhWbnBaTTBwd1kwaFNjR0l5TkdsUGFVbHBURU5LTWxsWGVERmFXRTFwVDJ4emFWWlhOWHBrU0VveFdUTlNNV050Vm10SmFYZHBWVEpXZEdGVE1WUmtTRW94V1ROU01XTnRWbXRKYVhkcFZUTlNlV1JYVGpCa1dFcHNXa05LWkV4RFNqQmxXRUpzU1dwdmFWa3lPWFJqUnpsMVdsYzFNRWx1TUQwaVhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Binary Classification Model",
       "description": "A classification model that distinguishes input to be either A or B",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        15,
-        16
-      ],
-      "capabilities": [
-        12
-      ],
-      "patterns": [
-        2
+        "kd30r8lqYW1lIjoiVGVuc29yRmxvdyIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30smgeYW1lIjoiUHlUb3JjaCIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
-        {
-          "id": 10,
-          "name": "Multiclass Classification Model"
-        }
       ],
-      "id": 9
+      "id": "kd309ss3YW1lIjoiQmluYXJ5IENsYXNzaWZpY2F0aW9uIE1vZGVsIiwiZGVzY3JpcHRpb24iOiJBIGNsYXNzaWZpY2F0aW9uIG1vZGVsIHRoYXQgZGlzdGluZ3Vpc2hlcyBpbnB1dCB0byBiZSBlaXRoZXIgQSBvciBCIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Multiclass Classification Model",
       "description": "A model that distinguishes between more than two values (e.g. Dog, Cat, Mouse, ...)",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        15,
-        16
-      ],
-      "capabilities": [
-        12
-      ],
-      "patterns": [
-        2
+        "kd30r8lqYW1lIjoiVGVuc29yRmxvdyIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30smgeYW1lIjoiUHlUb3JjaCIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
       ],
-      "id": 10
+      "id": "kd30a0rmYW1lIjoiTXVsdGljbGFzcyBDbGFzc2lmaWNhdGlvbiBNb2RlbCIsImRlc2NyaXB0aW9uIjoiQSBtb2RlbCB0aGF0IGRpc3Rpbmd1aXNoZXMgYmV0d2VlbiBtb3JlIHRoYW4gdHdvIHZhbHVlcyAoZS5nLiBEb2csIENhdCwgTW91c2UsIC4uLikiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNms3allXMWxJam9pUkdGMFlTQlFjbTlqWlhOemFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Regression Model",
       "description": "A regression model that predicts a value on the basis of existing data.",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        15,
-        16
-      ],
-      "capabilities": [
-        13
-      ],
-      "patterns": [
-        2
+        "kd30r8lqYW1lIjoiVGVuc29yRmxvdyIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30smgeYW1lIjoiUHlUb3JjaCIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
       ],
-      "id": 11
+      "id": "kd30a8a2YW1lIjoiUmVncmVzc2lvbiBNb2RlbCIsImRlc2NyaXB0aW9uIjoiQSByZWdyZXNzaW9uIG1vZGVsIHRoYXQgcHJlZGljdHMgYSB2YWx1ZSBvbiB0aGUgYmFzaXMgb2YgZXhpc3RpbmcgZGF0YS4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNms3allXMWxJam9pUkdGMFlTQlFjbTlqWlhOemFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Deep Neural Networks",
       "description": "Deep neural networks (ANN) or connectionist systems are computing systems that are inspired by, but not identical to, biological neural networks that constitute animal brains. Such systems \"learn\" to perform tasks by considering examples, generally without being programmed with task-specific rules.",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        15,
-        16
-      ],
-      "capabilities": [
-        14,
-        15
-      ],
-      "patterns": [
-        3
+        "kd30r8lqYW1lIjoiVGVuc29yRmxvdyIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30smgeYW1lIjoiUHlUb3JjaCIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
       ],
-      "id": 12
+      "id": "kd30ao1nYW1lIjoiRGVlcCBOZXVyYWwgTmV0d29ya3MiLCJkZXNjcmlwdGlvbiI6IkRlZXAgbmV1cmFsIG5ldHdvcmtzIChBTk4pIG9yIGNvbm5lY3Rpb25pc3Qgc3lzdGVtcyBhcmUgY29tcHV0aW5nIHN5c3RlbXMgdGhhdCBhcmUgaW5zcGlyZWQgYnksIGJ1dCBub3QgaWRlbnRpY2FsIHRvLCBiaW9sb2dpY2FsIG5ldXJhbCBuZXR3b3JrcyB0aGF0IGNvbnN0aXR1dGUgYW5pbWFsIGJyYWlucy4gU3VjaCBzeXN0ZW1zIFwibGVhcm5cIiB0byBwZXJmb3JtIHRhc2tzIGJ5IGNvbnNpZGVyaW5nIGV4YW1wbGVzLCBnZW5lcmFsbHkgd2l0aG91dCBiZWluZyBwcm9ncmFtbWVkIHdpdGggdGFzay1zcGVjaWZpYyBydWxlcy4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNms3allXMWxJam9pUkdGMFlTQlFjbTlqWlhOemFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Interactive Sandbox",
       "description": "A interactive sandbox to explore data and quickly try different models and algorithms.",
+      "attributeSet": "kd306pgeYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        16,
-        20
-      ],
-      "capabilities": [
-        16,
-        17
-      ],
-      "patterns": [
-        0
+        "kd30smgeYW1lIjoiUHlUb3JjaCIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
       ],
-      "id": 13
+      "id": "kd30auxhYW1lIjoiSW50ZXJhY3RpdmUgU2FuZGJveCIsImRlc2NyaXB0aW9uIjoiQSBpbnRlcmFjdGl2ZSBzYW5kYm94IHRvIGV4cGxvcmUgZGF0YSBhbmQgcXVpY2tseSB0cnkgZGlmZmVyZW50IG1vZGVscyBhbmQgYWxnb3JpdGhtcy4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Cloud-based training",
       "description": "A cloud platform to train models",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        17,
-        18
-      ],
-      "capabilities": [
-        18
-      ],
-      "patterns": [
-        0,
-        1
+        "kd30r8lqYW1lIjoiVGVuc29yRmxvdyIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30swxsYW1lIjoiR29vZ2xlIENsb3VkIiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30t3xkYW1lIjoiQVdTIiwiZGVzY3JpcHRpb24iOiIifQ=="
       ],
       "substitutions": [
-        {
-          "id": 15,
-          "name": "On-Premise Model Training"
-        }
       ],
-      "id": 14
+      "id": "kd30b6rmYW1lIjoiQ2xvdWQtYmFzZWQgdHJhaW5pbmciLCJkZXNjcmlwdGlvbiI6IkEgY2xvdWQgcGxhdGZvcm0gdG8gdHJhaW4gbW9kZWxzIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "On-Premise Model Training",
       "description": "Model training on local machines or a local data center",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        16,
-        19
-      ],
-      "capabilities": [
-        19
-      ],
-      "patterns": [
-        0,
-        1
+        "kd30smgeYW1lIjoiUHlUb3JjaCIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30tg3mYW1lIjoiRG9ja2VyIiwiZGVzY3JpcHRpb24iOiIifQ=="
       ],
       "substitutions": [
-        {
-          "id": 14,
-          "name": "Cloud-based training"
-        }
       ],
-      "id": 15
+      "id": "kd30bdaaYW1lIjoiT24tUHJlbWlzZSBNb2RlbCBUcmFpbmluZyIsImRlc2NyaXB0aW9uIjoiTW9kZWwgdHJhaW5pbmcgb24gbG9jYWwgbWFjaGluZXMgb3IgYSBsb2NhbCBkYXRhIGNlbnRlciIsImF0dHJpYnV0ZVNldCI6ImtkMzA2azdqWVcxbElqb2lSR0YwWVNCUWNtOWpaWE56YVc1bklpd2laR1Z6WTNKcGNIUnBiMjRpT2lJaUxDSmhkSFJ5YVdKMWRHVnpJanBiWFN3aWRIbHdaU0k2SW1OdmJYQnZibVZ1ZENKOSIsImF0dHJpYnV0ZVNlbGVjdGlvbiI6W10sImNhdGVnb3JpZXMiOltdLCJwcm9kdWN0cyI6W10sInN1YnN0aXR1dGlvbnMiOltdfQ=="
     },
     {
       "name": "Cross Validation",
       "description": "Cross-validation is any of various similar model validation techniques for assessing how the results of a statistical analysis will generalize to an independent data set. It is mainly used in settings where the goal is prediction, and one wants to estimate how accurately a predictive model will perform in practice. ",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        25,
-        26,
-        27
-      ],
-      "capabilities": [
-        20,
-        21
-      ],
-      "patterns": [
-        0
+        "kd30uyxeYW1lIjoiRGF0YVJvYm90IiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30vdtuYW1lIjoiQXV0b01MIiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30vtrmYW1lIjoiQWxnb3JpdGhtaWEiLCJkZXNjcmlwdGlvbiI6IiJ9"
       ],
       "substitutions": [
       ],
-      "id": 16
+      "id": "kd30bm0qYW1lIjoiQ3Jvc3MgVmFsaWRhdGlvbiIsImRlc2NyaXB0aW9uIjoiQ3Jvc3MtdmFsaWRhdGlvbiBpcyBhbnkgb2YgdmFyaW91cyBzaW1pbGFyIG1vZGVsIHZhbGlkYXRpb24gdGVjaG5pcXVlcyBmb3IgYXNzZXNzaW5nIGhvdyB0aGUgcmVzdWx0cyBvZiBhIHN0YXRpc3RpY2FsIGFuYWx5c2lzIHdpbGwgZ2VuZXJhbGl6ZSB0byBhbiBpbmRlcGVuZGVudCBkYXRhIHNldC4gSXQgaXMgbWFpbmx5IHVzZWQgaW4gc2V0dGluZ3Mgd2hlcmUgdGhlIGdvYWwgaXMgcHJlZGljdGlvbiwgYW5kIG9uZSB3YW50cyB0byBlc3RpbWF0ZSBob3cgYWNjdXJhdGVseSBhIHByZWRpY3RpdmUgbW9kZWwgd2lsbCBwZXJmb3JtIGluIHByYWN0aWNlLiAiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNms3allXMWxJam9pUkdGMFlTQlFjbTlqWlhOemFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Notebooks",
       "description": "Interactive web-based notebooks that present data and models",
+      "attributeSet": "kd306pgeYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        3
+        "kd3023h7YW1lIjoiTW9kZWwgUHJvdmlzaW9uIGFuZCBFeGVjdXRpb24iLCJkZXNjcmlwdGlvbiI6IldoZXJlIHRvIHJ1biBhbmQgaG93IHRvIGNvbnN1bWUgdGhlIG1vZGVsIn0="
       ],
       "products": [
-        20
-      ],
-      "capabilities": [
-        22
-      ],
-      "patterns": [
-        0
       ],
       "substitutions": [
-        {
-          "id": 18,
-          "name": "Source Code Management"
-        }
       ],
-      "id": 17
+      "id": "kd30brx5YW1lIjoiTm90ZWJvb2tzIiwiZGVzY3JpcHRpb24iOiJJbnRlcmFjdGl2ZSB3ZWItYmFzZWQgbm90ZWJvb2tzIHRoYXQgcHJlc2VudCBkYXRhIGFuZCBtb2RlbHMiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Source Code Management",
       "description": "Save source code and persist changes. Often also contains additional features like issue management, wiki and the like.",
+      "attributeSet": "kd306pgeYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        3
+        "kd3023h7YW1lIjoiTW9kZWwgUHJvdmlzaW9uIGFuZCBFeGVjdXRpb24iLCJkZXNjcmlwdGlvbiI6IldoZXJlIHRvIHJ1biBhbmQgaG93IHRvIGNvbnN1bWUgdGhlIG1vZGVsIn0="
       ],
       "products": [
-        21,
-        22
-      ],
-      "capabilities": [
-        23,
-        24
-      ],
-      "patterns": [
-        0
+        "kd30ttfcYW1lIjoiR2l0SHViIiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30tyk2YW1lIjoiR2l0TGFiIiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30u76oYW1lIjoiU1ZOIiwiZGVzY3JpcHRpb24iOiIifQ=="
       ],
       "substitutions": [
-        {
-          "id": 17,
-          "name": "Notebooks"
-        }
       ],
-      "id": 18
+      "id": "kd30c0qtYW1lIjoiU291cmNlIENvZGUgTWFuYWdlbWVudCIsImRlc2NyaXB0aW9uIjoiU2F2ZSBzb3VyY2UgY29kZSBhbmQgcGVyc2lzdCBjaGFuZ2VzLiBPZnRlbiBhbHNvIGNvbnRhaW5zIGFkZGl0aW9uYWwgZmVhdHVyZXMgbGlrZSBpc3N1ZSBtYW5hZ2VtZW50LCB3aWtpIGFuZCB0aGUgbGlrZS4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Container / Virtual Machines",
       "description": "Provision of an entire environment/stack via a container or virtual machine",
+      "attributeSet": "kd306pgeYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        3
+        "kd3023h7YW1lIjoiTW9kZWwgUHJvdmlzaW9uIGFuZCBFeGVjdXRpb24iLCJkZXNjcmlwdGlvbiI6IldoZXJlIHRvIHJ1biBhbmQgaG93IHRvIGNvbnN1bWUgdGhlIG1vZGVsIn0="
       ],
       "products": [
-        19,
-        23,
-        24
-      ],
-      "capabilities": [
-        24
-      ],
-      "patterns": [
-        0,
-        1
+        "kd30tg3mYW1lIjoiRG9ja2VyIiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30ug13YW1lIjoiVk1XYXJlIiwiZGVzY3JpcHRpb24iOiIifQ=="
       ],
       "substitutions": [
       ],
-      "id": 19
+      "id": "kd30capvYW1lIjoiQ29udGFpbmVyIC8gVmlydHVhbCBNYWNoaW5lcyIsImRlc2NyaXB0aW9uIjoiUHJvdmlzaW9uIG9mIGFuIGVudGlyZSBlbnZpcm9ubWVudC9zdGFjayB2aWEgYSBjb250YWluZXIgb3IgdmlydHVhbCBtYWNoaW5lIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZwZ2VZVzFsSWpvaVFXTmpaWE56SWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Executable Binary",
       "description": "Provision of model as a executable binary without the possibility to access the source code.",
+      "attributeSet": "kd306pgeYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        3
+        "kd3023h7YW1lIjoiTW9kZWwgUHJvdmlzaW9uIGFuZCBFeGVjdXRpb24iLCJkZXNjcmlwdGlvbiI6IldoZXJlIHRvIHJ1biBhbmQgaG93IHRvIGNvbnN1bWUgdGhlIG1vZGVsIn0="
       ],
       "products": [
       ],
-      "capabilities": [
-        25
-      ],
-      "patterns": [
-        1
-      ],
       "substitutions": [
-        {
-          "id": 19,
-          "name": "Container / Virtual Machines"
-        }
       ],
-      "id": 20
+      "id": "kd30chyrYW1lIjoiRXhlY3V0YWJsZSBCaW5hcnkiLCJkZXNjcmlwdGlvbiI6IlByb3Zpc2lvbiBvZiBtb2RlbCBhcyBhIGV4ZWN1dGFibGUgYmluYXJ5IHdpdGhvdXQgdGhlIHBvc3NpYmlsaXR5IHRvIGFjY2VzcyB0aGUgc291cmNlIGNvZGUuIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZwZ2VZVzFsSWpvaVFXTmpaWE56SWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Web-Service",
       "description": "Provision of the results as a (REST)-API that can be consumed via the internet.",
+      "attributeSet": "kd306pgeYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        3
+        "kd3023h7YW1lIjoiTW9kZWwgUHJvdmlzaW9uIGFuZCBFeGVjdXRpb24iLCJkZXNjcmlwdGlvbiI6IldoZXJlIHRvIHJ1biBhbmQgaG93IHRvIGNvbnN1bWUgdGhlIG1vZGVsIn0="
       ],
       "products": [
       ],
-      "capabilities": [
-        26,
-        27
-      ],
-      "patterns": [
-        1
-      ],
       "substitutions": [
-        {
-          "id": 19,
-          "name": "Container / Virtual Machines"
-        },
-        {
-          "id": 20,
-          "name": "Executable Binary"
-        }
       ],
-      "id": 21
+      "id": "kd30cozxYW1lIjoiV2ViLVNlcnZpY2UiLCJkZXNjcmlwdGlvbiI6IlByb3Zpc2lvbiBvZiB0aGUgcmVzdWx0cyBhcyBhIChSRVNUKS1BUEkgdGhhdCBjYW4gYmUgY29uc3VtZWQgdmlhIHRoZSBpbnRlcm5ldC4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Model Monitoring",
       "description": "A way to track calls, scaling and result accuracy.",
+      "attributeSet": "kd306pgeYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        3
+        "kd3023h7YW1lIjoiTW9kZWwgUHJvdmlzaW9uIGFuZCBFeGVjdXRpb24iLCJkZXNjcmlwdGlvbiI6IldoZXJlIHRvIHJ1biBhbmQgaG93IHRvIGNvbnN1bWUgdGhlIG1vZGVsIn0="
       ],
       "products": [
-        25,
-        26,
-        27,
-        28,
-        29
-      ],
-      "capabilities": [
-        28,
-        29,
-        30
-      ],
-      "patterns": [
-        1
+        "kd30uyxeYW1lIjoiRGF0YVJvYm90IiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30vdtuYW1lIjoiQXV0b01MIiwiZGVzY3JpcHRpb24iOiIifQ==",
+        "kd30vtrmYW1lIjoiQWxnb3JpdGhtaWEiLCJkZXNjcmlwdGlvbiI6IiJ9",
+        "kd30w6zoYW1lIjoiTnVtZXJpY2NhbCIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30x66bYW1lIjoiIFNlbGRvbiIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
       ],
-      "id": 22
+      "id": "kd30cwrfYW1lIjoiTW9kZWwgTW9uaXRvcmluZyIsImRlc2NyaXB0aW9uIjoiQSB3YXkgdG8gdHJhY2sgY2FsbHMsIHNjYWxpbmcgYW5kIHJlc3VsdCBhY2N1cmFjeS4iLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNnBnZVlXMWxJam9pUVdOalpYTnpJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
     },
     {
       "name": "Manual Extraction and Cleansing",
       "description": "Manual extraction and cleansing of data",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        0
+        "kd301f8jYW1lIjoiRGF0YSBJbmdlc3Rpb24iLCJkZXNjcmlwdGlvbiI6IiJ9"
       ],
       "products": [
-      ],
-      "capabilities": [
-        2
-      ],
-      "patterns": [
-        0
+        "kd30odd2YW1lIjoiSW5mb3JtYXRpY2EgRVRMIiwiZGVzY3JpcHRpb24iOiIifQ=="
       ],
       "substitutions": [
-        {
-          "id": 0,
-          "name": "Stream Processing"
-        },
-        {
-          "id": 1,
-          "name": "Batch Processing"
-        }
       ],
-      "id": 23
+      "id": "kd30d5mtYW1lIjoiTWFudWFsIEV4dHJhY3Rpb24gYW5kIENsZWFuc2luZyIsImRlc2NyaXB0aW9uIjoiTWFudWFsIGV4dHJhY3Rpb24gYW5kIGNsZWFuc2luZyBvZiBkYXRhIiwiYXR0cmlidXRlU2V0Ijoia2QzMDZrN2pZVzFsSWpvaVJHRjBZU0JRY205alpYTnphVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKaGRIUnlhV0oxZEdWeklqcGJYU3dpZEhsd1pTSTZJbU52YlhCdmJtVnVkQ0o5IiwiYXR0cmlidXRlU2VsZWN0aW9uIjpbXSwiY2F0ZWdvcmllcyI6W10sInByb2R1Y3RzIjpbXSwic3Vic3RpdHV0aW9ucyI6W119"
     },
     {
       "name": "Network Analysis",
       "description": "Network focused algorithms",
+      "attributeSet": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9",
+      "attributeSelection": [
+      ],
       "categories": [
-        2
+        "kd301w8qYW1lIjoiTW9kZWwgU2VsZWN0aW9uIGFuZCBDcmVhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hpY2ggbW9kZWwgc2VlbXMgYWRlcXVhdGUgZm9yIGEgcHJvYmxlbSJ9"
       ],
       "products": [
-        15,
-        16
-      ],
-      "capabilities": [
-        32
-      ],
-      "patterns": [
-        4
+        "kd30r8lqYW1lIjoiVGVuc29yRmxvdyIsImRlc2NyaXB0aW9uIjoiIn0=",
+        "kd30smgeYW1lIjoiUHlUb3JjaCIsImRlc2NyaXB0aW9uIjoiIn0="
       ],
       "substitutions": [
       ],
-      "id": 24
+      "id": "kd30ddx2YW1lIjoiTmV0d29yayBBbmFseXNpcyIsImRlc2NyaXB0aW9uIjoiTmV0d29yayBmb2N1c2VkIGFsZ29yaXRobXMiLCJhdHRyaWJ1dGVTZXQiOiJrZDMwNms3allXMWxJam9pUkdGMFlTQlFjbTlqWlhOemFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0poZEhSeWFXSjFkR1Z6SWpwYlhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJhdHRyaWJ1dGVTZWxlY3Rpb24iOltdLCJjYXRlZ29yaWVzIjpbXSwicHJvZHVjdHMiOltdLCJzdWJzdGl0dXRpb25zIjpbXX0="
+    }
+  ],
+  "attributes": [
+    {
+      "name": "Automation",
+      "description": "Level of automation",
+      "values": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "type": "capability",
+      "id": "kd2zvj2oYW1lIjoiQXV0b21hdGlvbiIsImRlc2NyaXB0aW9uIjoiTGV2ZWwgb2YgYXV0b21hdGlvbiIsInZhbHVlcyI6WyJMb3ciLCJNZWRpdW0iLCJIaWdoIl0sInR5cGUiOiJjYXBhYmlsaXR5In0="
+    },
+    {
+      "name": "Accuracy",
+      "description": "Level of accuracy",
+      "values": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "type": "capability",
+      "id": "kd2zvyu8YW1lIjoiQWNjdXJhY3kiLCJkZXNjcmlwdGlvbiI6IkxldmVsIG9mIGFjY3VyYWN5IiwidmFsdWVzIjpbIkxvdyIsIk1lZGl1bSIsIkhpZ2giXSwidHlwZSI6ImNhcGFiaWxpdHkifQ=="
+    },
+    {
+      "name": "Type of Content",
+      "description": "",
+      "values": [
+        "Unstructured",
+        "Semi-Structured",
+        "Structured"
+      ],
+      "type": "component",
+      "id": "kd304ph6YW1lIjoiVHlwZSBvZiBDb250ZW50IiwiZGVzY3JpcHRpb24iOiIiLCJ2YWx1ZXMiOlsiVW5zdHJ1Y3R1cmVkIiwiU2VtaS1TdHJ1Y3R1cmVkIiwiU3RydWN0dXJlZCJdLCJ0eXBlIjoiY29tcG9uZW50In0="
+    }
+  ],
+  "attributeSets": [
+    {
+      "name": "AI Capability",
+      "description": "Specification for AI landscapes",
+      "attributes": [
+        "kd2zvj2oYW1lIjoiQXV0b21hdGlvbiIsImRlc2NyaXB0aW9uIjoiTGV2ZWwgb2YgYXV0b21hdGlvbiIsInZhbHVlcyI6WyJMb3ciLCJNZWRpdW0iLCJIaWdoIl0sInR5cGUiOiJjYXBhYmlsaXR5In0=",
+        "kd2zvyu8YW1lIjoiQWNjdXJhY3kiLCJkZXNjcmlwdGlvbiI6IkxldmVsIG9mIGFjY3VyYWN5IiwidmFsdWVzIjpbIkxvdyIsIk1lZGl1bSIsIkhpZ2giXSwidHlwZSI6ImNhcGFiaWxpdHkifQ=="
+      ],
+      "type": "capability",
+      "id": "kd2zu8m8YW1lIjoiQUkgQ2FwYWJpbGl0eSIsImRlc2NyaXB0aW9uIjoiU3BlY2lmaWNhdGlvbiBmb3IgQUkgbGFuZHNjYXBlcyIsImF0dHJpYnV0ZXMiOltdLCJ0eXBlIjoiY2FwYWJpbGl0eSJ9"
+    },
+    {
+      "name": "Persistence",
+      "description": "",
+      "attributes": [
+        "kd304ph6YW1lIjoiVHlwZSBvZiBDb250ZW50IiwiZGVzY3JpcHRpb24iOiIiLCJ2YWx1ZXMiOlsiVW5zdHJ1Y3R1cmVkIiwiU2VtaS1TdHJ1Y3R1cmVkIiwiU3RydWN0dXJlZCJdLCJ0eXBlIjoiY29tcG9uZW50In0="
+      ],
+      "type": "component",
+      "id": "kd3054s8YW1lIjoiUGVyc2lzdGVuY2UiLCJkZXNjcmlwdGlvbiI6IiIsImF0dHJpYnV0ZXMiOlsia2QzMDRwaDZZVzFsSWpvaVZIbHdaU0J2WmlCRGIyNTBaVzUwSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXpkSEoxWTNSMWNtVmtJaXdpVTJWdGFTMVRkSEoxWTNSMWNtVmtJaXdpVTNSeWRXTjBkWEpsWkNKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9"
+    },
+    {
+      "name": "Data Processing",
+      "description": "",
+      "attributes": [
+      ],
+      "type": "component",
+      "id": "kd306k7jYW1lIjoiRGF0YSBQcm9jZXNzaW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9"
+    },
+    {
+      "name": "Access",
+      "description": "",
+      "attributes": [
+      ],
+      "type": "component",
+      "id": "kd306pgeYW1lIjoiQWNjZXNzIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbXSwidHlwZSI6ImNvbXBvbmVudCJ9"
     }
   ]
 }
