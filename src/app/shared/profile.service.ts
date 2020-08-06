@@ -19,7 +19,7 @@ export class ProfileService {
 
   async init(): Promise<boolean> {
     if (!this.profile) {
-      const p = await this.data.get('profile');
+      const p = await this.data.get('profile') || {};
       this.profile = {
         capabilities: p.capabilities || [],
         systems: p.systems || [],
