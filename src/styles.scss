@@ -66,7 +66,8 @@ body {
 }
 
 .system-info {
-  min-width: 250px;
+  width: 750px;
+  max-width: 100%;
 }
 
 .text-center {
@@ -75,6 +76,16 @@ body {
 
 .text-right {
   text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.close-top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .mat-button-toggle-label-content {
@@ -117,6 +128,8 @@ body {
 }
 
 .content-wrapper, .general-wrapper {
+  position: relative;
+
   mat-nav-list {
     max-width: 100%;
     min-height: 60px;

@@ -8,6 +8,10 @@
     margin-bottom: 5px;
     padding: 20px 10px;
 
+    &.dense {
+      padding: 5px 10px;
+    }
+
     .lbl-col {
       display: inline-block;
       width: 25%;

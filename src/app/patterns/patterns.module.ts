@@ -6,6 +6,7 @@ import {PatternEditComponent} from './pattern-edit/pattern-edit.component';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
+import {PatternInfoModule} from './pattern-info/pattern-info.module';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    PatternInfoModule,
     MaterialModule,
     RouterModule.forChild(routes),
   ]

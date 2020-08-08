@@ -1,7 +1,7 @@
 <div *ngIf="attributes && attributeSelection">
   Type: {{ attributeSet.name }}
   <div class="specification-block">
-    <div *ngFor="let attribute of attributes" class="specification-row">
+    <div *ngFor="let attribute of attributes" class="specification-row" [class.dense]="dense">
       <div class="lbl-col">
         {{ attribute.name }}
       </div>

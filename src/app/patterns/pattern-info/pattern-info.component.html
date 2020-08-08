@@ -1,31 +1,66 @@
-<div class="system-info general-wrapper" *ngIf="pattern">
-  <h1 mat-dialog-title>Capability: {{ pattern.name}}</h1>
+<div class="pattern-info general-wrapper" *ngIf="pattern">
+  <div mat-dialog-actions class="close-top-right">
+    <button mat-icon-button (click)="closePopover()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <h1 mat-dialog-title>Pattern: {{ pattern.name}}</h1>
   <div mat-dialog-content>
 
     <div [innerHTML]="pattern.description"></div>
 
+    <div class="row">
+      <div class="col-6">
+        <h3>Components:</h3>
+        <mat-card *ngFor="let system of relatedSystems" class="text-left">
+          <mat-card-header>
+            <mat-card-title>{{ system.name }}</mat-card-title>
+            <mat-card-subtitle>{{ system.description }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <app-attribute-selection [attributeSetId]="system.attributeSet"
+                                     [attributeSelection]="system.attributeSelection"
+                                     [entityId]="system.id"
+                                     [readonly]="true"
+                                     [dense]="true"
+                                     [skipValues]="['-']"
+                                     *ngIf="system"></app-attribute-selection>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="showSystemInfo($event, system)">
+              <mat-icon mat-list-icon color="primary">info</mat-icon>
+              More information
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
 
-    <!-- COMPONENTS -->
-    <mat-nav-list *ngIf="relatedSystems">
-      <h3>Components of pattern:</h3>
-      <p *ngIf="relatedSystems.length === 0">No items</p>
-      <mat-list-item *ngFor="let system of relatedSystems" (click)="showSystemInfo($event, system)">
-        <mat-icon mat-list-icon color="primary">info</mat-icon>
-        {{ system.name }}
-      </mat-list-item>
-    </mat-nav-list>
+      <div class="col-6">
+        <h3>Capabilities:</h3>
+        <mat-card *ngFor="let capability of relatedCapabilities" class="text-left">
+          <mat-card-header>
+            <mat-card-title>{{ capability.name }}</mat-card-title>
+            <mat-card-subtitle>{{ capability.description }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <app-attribute-selection [attributeSetId]="capability.attributeSet"
+                                     [attributeSelection]="capability.attributeSelection"
+                                     [entityId]="capability.id"
+                                     [readonly]="true"
+                                     [dense]="true"
+                                     [skipValues]="['-']"
+                                     *ngIf="capability"></app-attribute-selection>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="showCapabilityInfo($event, capability)">
+              <mat-icon mat-list-icon color="primary">info</mat-icon>
+              More information
+            </button>
+          </mat-card-actions>
+        </mat-card>
 
-    <!-- CAPABILITIES -->
-    <mat-nav-list *ngIf="relatedCapabilities">
-      <h3>Capabilities of pattern:</h3>
-      <p *ngIf="relatedCapabilities.length === 0">No items</p>
-      <mat-list-item *ngFor="let capability of relatedCapabilities" (click)="showCapabilityInfo($event, capability)">
-        {{ capability.name }}
-        <mat-icon mat-list-icon color="primary">info</mat-icon>
-      </mat-list-item>
-    </mat-nav-list>
-  </div>
-  <div mat-dialog-actions>
-    <button mat-button (click)="closePopover()">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>

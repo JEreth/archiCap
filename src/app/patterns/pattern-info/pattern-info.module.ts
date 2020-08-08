@@ -4,6 +4,7 @@ import {PatternInfoComponent} from './pattern-info.component';
 import {MaterialModule} from '../../material.module';
 import {SystemInfoModule} from '../../systems/system-info/system-info.module';
 import {CapabilityInfoModule} from '../../capabilities/capability-info/capability-info.module';
+import {AttributeSelectionModule} from '../../eav/attribute-selection/attribute-selection.module';
 
 @NgModule({
   declarations: [PatternInfoComponent],
@@ -11,7 +12,8 @@ import {CapabilityInfoModule} from '../../capabilities/capability-info/capabilit
     CommonModule,
     MaterialModule,
     SystemInfoModule,
-    CapabilityInfoModule
+    CapabilityInfoModule,
+    AttributeSelectionModule
   ],
   exports: [PatternInfoComponent]
 })

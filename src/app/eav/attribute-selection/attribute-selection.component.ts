@@ -18,6 +18,8 @@ export class AttributeSelectionComponent implements OnInit {
   @Input() attributeSelection: AttributeSelection[] = [];
   @Input() persistService: EntityService;
   @Input() readonly = false;
+  @Input() skipValues = [];
+  @Input() dense = false;
 
   // Getter and setter to listen on update
   get attributeSetId(): string {
@@ -45,7 +47,11 @@ export class AttributeSelectionComponent implements OnInit {
 
   async update() {
     this.attributeSet = await this.attributeSetService.get(this.attributeSetId) as AttributeSet;
-    this.attributes = await this.attributeService.findBy(this.attributeSet.attributes) as Attribute[];
+    const attr = await this.attributeService.findBy(this.attributeSet.attributes) as Attribute[];
+    this.attributes = attr.map(a => {
+      a.values = a.values.filter(v => !this.skipValues.includes(v));
+      return a;
+    });
   }
 
   isSelected(attributeId: string, value: string): boolean {

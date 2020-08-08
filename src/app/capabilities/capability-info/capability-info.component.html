@@ -1,4 +1,9 @@
 <div class="system-info general-wrapper" *ngIf="capability">
+  <div mat-dialog-actions class="close-top-right">
+    <button mat-icon-button (click)="closePopover()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
   <h1 mat-dialog-title>Capability: {{ capability.name}}</h1>
   <div mat-dialog-content>
 
@@ -19,8 +24,5 @@
         {{ pattern.name }}
       </mat-list-item>
     </mat-list>
-  </div>
-  <div mat-dialog-actions>
-    <button mat-button (click)="closePopover()">Close</button>
   </div>
 </div>
