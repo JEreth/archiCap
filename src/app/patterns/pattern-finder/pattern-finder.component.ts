@@ -68,7 +68,7 @@ export class PatternFinderComponent implements OnInit {
       const matchingElements = [];
       for (const element of patternElements) {
         // If element has same attribute set as searched
-        if (element.attributeSet) {
+        if (element.attributeSet && element.attributeSet === this.selectedAttributeSetId) {
           // compare how good we match
           const intersectionCount = element.attributeSelection.filter(s => searchSpecification.find(i =>
             i.attribute === s.attribute && i.value === s.value
@@ -88,6 +88,10 @@ export class PatternFinderComponent implements OnInit {
         });
       }
     }
+    // Sort results by percentage of matching
+    this.resultPatterns.sort((a, b) => {
+      return Math.max(...b.matchingElements.map(i => i.percentage)) - Math.max(...a.matchingElements.map(i => i.percentage));
+    });
   }
 
   showPatternInfo(event, pattern: Pattern) {
