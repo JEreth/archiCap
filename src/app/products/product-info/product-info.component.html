@@ -15,6 +15,9 @@
       <h3>Products is used in these components:</h3>
       <p *ngIf="relatedSystems.length === 0">No items</p>
       <mat-list-item *ngFor="let system of relatedSystems">
+        <a mat-icon-button (click)="showSystemInfo($event, system)" color="primary">
+          <mat-icon>info</mat-icon>
+        </a>
         {{ system.name }}
       </mat-list-item>
     </mat-list>

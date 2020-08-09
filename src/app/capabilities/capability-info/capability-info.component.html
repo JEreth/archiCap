@@ -21,6 +21,9 @@
       <h3>Pattern is used in these components:</h3>
       <p *ngIf="relatedPatterns.length === 0">No items</p>
       <mat-list-item *ngFor="let pattern of relatedPatterns">
+        <a mat-icon-button (click)="showPatternInfo($event, pattern)" color="primary">
+          <mat-icon>info</mat-icon>
+        </a>
         {{ pattern.name }}
       </mat-list-item>
     </mat-list>

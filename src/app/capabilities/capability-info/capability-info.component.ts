@@ -1,8 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {Pattern} from '../../patterns/shared/pattern';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {Capability} from '../shared/capability';
 import {PatternService} from '../../patterns/shared/pattern.service';
+import {PatternInfoComponent} from '../../patterns/pattern-info/pattern-info.component';
 
 @Component({
   selector: 'app-capability-info',
@@ -16,6 +17,7 @@ export class CapabilityInfoComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<CapabilityInfoComponent>,
+    private dialog: MatDialog,
     private patternService: PatternService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
@@ -31,6 +33,13 @@ export class CapabilityInfoComponent implements OnInit {
   // close popover
   closePopover() {
     this.dialogRef.close();
+  }
+
+  showPatternInfo(event, pattern: Pattern) {
+    event.stopPropagation();
+    this.dialog.open(PatternInfoComponent, {
+      data: {pattern},
+    });
   }
 
 }
