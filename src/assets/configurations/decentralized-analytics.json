@@ -2837,7 +2837,7 @@
       "id": "kdivo2nsYW1lIjoiQWJzdHJha3Rpb25zZ3JhZCIsImRlc2NyaXB0aW9uIjoiIiwidmFsdWVzIjpbIkRpcmVrdCIsIkFic3RyYWhpZXJ0Il0sInR5cGUiOiJjb21wb25lbnQifQ=="
     },
     {
-      "name": "Persistenz",
+      "name": "Bereitstellung",
       "description": "",
       "values": [
         "Materialisiert",
@@ -2857,7 +2857,7 @@
       "id": "kdivom7sYW1lIjoiU3BlemlmaXTkdCIsImRlc2NyaXB0aW9uIjoiIiwidmFsdWVzIjpbIkFudy4gTmV1dHJhbCIsIkFudy4gU3BlemlmaXNjaCJdLCJ0eXBlIjoiY29tcG9uZW50In0="
     },
     {
-      "name": "Normative Admin.",
+      "name": "Fachliche Admin.",
       "description": "",
       "values": [
         "Zentral",
