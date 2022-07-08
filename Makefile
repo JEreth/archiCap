@@ -18,4 +18,4 @@ dependencies: ## Get build dependencies
 
 build: ## Build the app
 	make dependencies
-	ng build --prod
+	ng build

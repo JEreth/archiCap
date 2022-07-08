@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {StorageMap} from '@ngx-pwa/local-storage';
+import {firstValueFrom} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class DataService {
 
   async set(key: string, data: any): Promise<boolean> {
     try {
-      await this.storage.set(key, data).toPromise();
+      await firstValueFrom(this.storage.set(key, data));
       return true;
     } catch (e) {
       console.log(e);
@@ -20,10 +21,10 @@ export class DataService {
   }
 
   async get(key: string): Promise<any> {
-    return this.storage.get<any>(key).toPromise();
+    return firstValueFrom(this.storage.get(key));
   }
 
   async delete(key: string): Promise<boolean> {
-    return this.storage.delete(key).toPromise();
+    return firstValueFrom(this.storage.delete(key));
   }
 }
