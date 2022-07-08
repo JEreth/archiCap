@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {System} from '../shared/system';
 import {SystemService} from '../shared/system.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
 import {Pattern} from '../../patterns/shared/pattern';
 import {PatternService} from '../../patterns/shared/pattern.service';
@@ -16,7 +16,7 @@ import {AttributeSet} from '../../eav/shared/models';
 })
 export class SystemEditComponent implements OnInit {
 
-  public form: FormGroup;
+  public form: UntypedFormGroup;
   public system: System = {
     name: '',
     description: '',
@@ -35,7 +35,7 @@ export class SystemEditComponent implements OnInit {
     private route: ActivatedRoute,
     private systemService: SystemService,
     private snackBar: MatSnackBar,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private configurationService: ConfigurationService,
     private patternService: PatternService
   ) {

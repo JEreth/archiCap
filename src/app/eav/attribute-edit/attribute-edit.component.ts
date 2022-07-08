@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Attribute} from '../shared/models';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {AttributeService} from '../shared/attribute.service';
 import {ActivatedRoute} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -14,14 +14,14 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class AttributeEditComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
   attribute: Attribute = {name: '', description: '', values: [], type: 'capability'};
   type = 'capability';
 
   constructor(private route: ActivatedRoute,
               private attributeService: AttributeService,
               private snackBar: MatSnackBar,
-              private formBuilder: FormBuilder,
+              private formBuilder: UntypedFormBuilder,
               private _location: Location) {
   }
 

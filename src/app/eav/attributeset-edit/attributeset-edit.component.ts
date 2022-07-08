@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
 import {AttributeSetService} from '../shared/attribute-set.service';
 import {Attribute, AttributeSet} from '../shared/models';
@@ -17,7 +17,7 @@ export class AttributesetEditComponent implements OnInit {
 
   id: string;
   type: string;
-  form: FormGroup;
+  form: UntypedFormGroup;
   configuration: Configuration;
   returnLink: string;
   attributeSet: AttributeSet = {name: '', description: '', attributes: [], type: 'capability'};
@@ -28,7 +28,7 @@ export class AttributesetEditComponent implements OnInit {
               private route: ActivatedRoute,
               private attributeSetService: AttributeSetService,
               private snackBar: MatSnackBar,
-              private formBuilder: FormBuilder,
+              private formBuilder: UntypedFormBuilder,
               private attributeService: AttributeService,
               private configurationService: ConfigurationService) {
   }

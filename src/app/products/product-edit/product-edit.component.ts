@@ -4,7 +4,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {ProductService} from '../shared/product.service';
 import {Product} from '../shared/product';
 import {System} from '../../systems/shared/system';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {SystemService} from '../../systems/shared/system.service';
 import {Category} from "../../categories/shared/category";
 import {Configuration, ConfigurationService} from "../../shared/configuration.service";
@@ -16,7 +16,7 @@ import {Configuration, ConfigurationService} from "../../shared/configuration.se
 })
 export class ProductEditComponent implements OnInit {
 
-  public form: FormGroup;
+  public form: UntypedFormGroup;
   public product: Product = {name: '', description: ''};
   public relatedSystems: System[] = [];
   public configuration: Configuration;
@@ -26,7 +26,7 @@ export class ProductEditComponent implements OnInit {
     private route: ActivatedRoute,
     private productService: ProductService,
     private snackBar: MatSnackBar,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private systemService: SystemService,
     private configurationService: ConfigurationService
   ) {

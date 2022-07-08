@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Pattern} from '../shared/pattern';
 import {PatternService} from '../shared/pattern.service';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {Configuration, ConfigurationService} from "../../shared/configuration.service";
 
 @Component({
@@ -13,7 +13,7 @@ import {Configuration, ConfigurationService} from "../../shared/configuration.se
 })
 export class PatternEditComponent implements OnInit {
 
-  public form: FormGroup;
+  public form: UntypedFormGroup;
   public pattern: Pattern = {name: '', description: '', systems: [], capabilities: []};
   public configuration: Configuration;
 
@@ -22,7 +22,7 @@ export class PatternEditComponent implements OnInit {
     private route: ActivatedRoute,
     private patternService: PatternService,
     private snackBar: MatSnackBar,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private configurationService: ConfigurationService
   ) {
   }

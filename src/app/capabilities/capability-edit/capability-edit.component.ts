@@ -3,7 +3,7 @@ import {Capability} from '../shared/capability';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {CapabilityService} from '../shared/capability.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
 import {Pattern} from '../../patterns/shared/pattern';
 import {PatternService} from '../../patterns/shared/pattern.service';
@@ -16,7 +16,7 @@ import {AttributeSet} from '../../eav/shared/models';
 })
 export class CapabilityEditComponent implements OnInit {
 
-  public form: FormGroup;
+  public form: UntypedFormGroup;
   public capability: Capability = {name: '', description: '', attributeSet: '', attributeSelection: []};
   public relatedPatters: Pattern[] = [];
   public configuration: Configuration;
@@ -27,7 +27,7 @@ export class CapabilityEditComponent implements OnInit {
     private route: ActivatedRoute,
     private capabilityService: CapabilityService,
     private snackBar: MatSnackBar,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private configurationService: ConfigurationService,
     private patternService: PatternService
   ) {

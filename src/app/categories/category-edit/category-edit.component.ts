@@ -5,7 +5,7 @@ import {CategoryService} from '../shared/category.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {System} from '../../systems/shared/system';
 import {SystemService} from '../../systems/shared/system.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {Configuration, ConfigurationService} from '../../shared/configuration.service';
 
 @Component({
@@ -15,7 +15,7 @@ import {Configuration, ConfigurationService} from '../../shared/configuration.se
 })
 export class CategoryEditComponent implements OnInit {
 
-  public form: FormGroup;
+  public form: UntypedFormGroup;
   public category: Category = {name: '', description: ''};
   public relatedSystems: System[] = [];
   public configuration: Configuration;
@@ -26,7 +26,7 @@ export class CategoryEditComponent implements OnInit {
     private categoryService: CategoryService,
     private systemService: SystemService,
     private snackBar: MatSnackBar,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private configurationService: ConfigurationService
   ) {
   }
