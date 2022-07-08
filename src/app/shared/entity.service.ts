@@ -22,9 +22,9 @@ export abstract class EntityService {
   protected constructor(protected data: DataService) {
   }
 
-  // Generate random uid from timestamp and object hash
+  // Generate random uid from timestamp and object hash (url safe without padding ===)
   protected uid(object: any): string {
-    return (new Date().getTime()).toString(36) + window.btoa(JSON.stringify(object)).substr(4);
+    return ((new Date().getTime()).toString(36) + window.btoa(JSON.stringify(object)).substr(4)).replace(/\=+$/, '');
   }
 
   async init(): Promise<boolean> {

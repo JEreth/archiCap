@@ -6,14 +6,9 @@ const routes: Routes = [
   {path: 'patterns', loadChildren: () => import('./patterns/patterns.module').then(m => m.PatternsModule)},
   {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
   {path: 'categories', loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)},
-  {
-    path: 'capabilities',
-    loadChildren: () => import('./capabilities/capabilities.module').then(m => m.CapabilitiesModule)
-  },
-  {
-    path: 'configuration',
-    loadChildren: () => import('./pages/configuration/configuration.module').then(m => m.ConfigurationModule)
-  },
+  {path: 'cases', loadChildren: () => import('./cases/cases.module').then(m => m.CasesModule)},
+  {path: 'capabilities', loadChildren: () => import('./capabilities/capabilities.module').then(m => m.CapabilitiesModule)},
+  {path: 'configuration', loadChildren: () => import('./pages/configuration/configuration.module').then(m => m.ConfigurationModule)},
   {path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)},
   {path: 'profile', loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)},
   {path: 'stage', loadChildren: () => import('./pages/stage/stage.module').then(m => m.StageModule)},

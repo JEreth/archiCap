@@ -12,6 +12,8 @@ import {System} from '../systems/shared/system';
 import {Attribute, AttributeSet} from '../eav/shared/models';
 import {AttributeService} from '../eav/shared/attribute.service';
 import {AttributeSetService} from '../eav/shared/attribute-set.service';
+import {CaseService} from '../cases/shared/case.service';
+import {Case} from '../cases/shared/case';
 
 export interface Configuration {
   capabilities: Capability[];
@@ -34,7 +36,8 @@ export class ConfigurationService {
               private productService: ProductService,
               private systemService: SystemService,
               private attributeService: AttributeService,
-              private attributeSetService: AttributeSetService
+              private attributeSetService: AttributeSetService,
+              private caseService: CaseService
   ) {
   }
 
@@ -52,6 +55,7 @@ export class ConfigurationService {
       await this.systemService.add(input.systems || [], true, true);
       await this.attributeSetService.add(input.attributeSets || [], true, true);
       await this.attributeService.add(input.attributes || [], true, true);
+      await this.caseService.add(input.cases || [], true, true);
       return true;
     } catch (e) {
       console.log(e);
@@ -69,6 +73,7 @@ export class ConfigurationService {
       systems: (await this.systemService.all()) as System[],
       attributes: (await this.attributeService.all()) as Attribute[],
       attributeSets: (await this.attributeSetService.all()) as AttributeSet[],
+      cases: (await this.caseService.all()) as Case[],
     } as Configuration;
   }
 
@@ -82,6 +87,7 @@ export class ConfigurationService {
       await this.systemService.reset();
       await this.attributeService.reset();
       await this.attributeSetService.reset();
+      await this.caseService.reset();
       return true;
     } catch (e) {
       console.log(e);
@@ -98,6 +104,7 @@ export class ConfigurationService {
       input.products && Array.isArray(input.products) &&
       input.attributes && Array.isArray(input.attributes) &&
       input.attributeSets && Array.isArray(input.attributeSets) &&
-      input.systems && Array.isArray(input.systems));
+      input.systems && Array.isArray(input.systems) &&
+      input.cases && Array.isArray(input.cases));
   }
 }

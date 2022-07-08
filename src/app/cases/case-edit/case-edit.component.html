@@ -1,0 +1,80 @@
+<a mat-button routerLink="/cases">
+  <mat-icon>arrow_back</mat-icon>
+  Go back
+</a>
+<section class="mat-typography">
+  <h2 *ngIf="case && case.name==''">Add new case</h2>
+  <h2 *ngIf="case && case.name!=''">Edit case: {{ case.name }}</h2>
+</section>
+<div class="form-wrap" *ngIf="form">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name of the case" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Description of this case ..."
+                formControlName="description"></textarea>
+    </mat-form-field>
+
+    <button mat-flat-button color="accent" type="submit" [disabled]="!form.valid">Save</button>
+  </form>
+</div>
+
+
+<div class="row" *ngIf="case && case.id">
+
+  <!-- CIRCUMSTANCES -->
+  <div class="col-12">
+    <h3>Circumstances:</h3>
+
+    <div id="circumstance-list">
+      <p *ngIf="case.circumstances.length === 0" class="muted">No circumstances defined yet</p>
+      <mat-nav-list *ngIf="case.circumstances.length > 0">
+        <mat-list-item *ngFor="let circumstance of case.circumstances;let ix=index;">
+          <p matLine>{{ circumstance.description }}</p>
+          <a mat-icon-button routerLink="/cases/edit/{{ case.id }}/circumstance/specify/{{ ix }}">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <button mat-icon-button (click)="removeCircumstance(ix)" color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+    <a mat-flat-button color="primary" routerLink="/cases/edit/{{ case.id }}/circumstance/specify">
+      <mat-icon>add</mat-icon>
+      Add new circumstance
+    </a>
+  </div>
+
+  <!-- SYSTEMS -->
+  <div class="col-12">
+    <h3>Systems:</h3>
+
+    <div id="systems-list">
+      <p *ngIf="case.systems.length === 0" class="muted">No systems defined yet</p>
+      <mat-nav-list *ngIf="case.systems.length > 0">
+        <mat-list-item *ngFor="let system of case.systems;let ix=index;">
+          <p matLine>{{ system.description }}</p>
+          <a mat-icon-button routerLink="/cases/edit/{{ case.id }}/system/specify/{{ ix }}">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <button mat-icon-button (click)="removeSystem(ix)" color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+
+    <a mat-flat-button color="primary" routerLink="/cases/edit/{{ case.id }}/system/specify">
+      <mat-icon>add</mat-icon>
+      Add new system
+    </a>
+  </div>
+
+</div>
+
+
