@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {CategoryListComponent} from './category-list.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {MatSnackBarMock} from '../../../mocks';
@@ -13,7 +13,7 @@ describe('CategoryListComponent', () => {
   let component: CategoryListComponent;
   let fixture: ComponentFixture<CategoryListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [CategoryListComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {CapabilitiesComponent} from './capabilities.component';
 import {FormsModule} from '@angular/forms';
@@ -8,7 +8,7 @@ describe('CapabilitiesComponent', () => {
   let component: CapabilitiesComponent;
   let fixture: ComponentFixture<CapabilitiesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [CapabilitiesComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],

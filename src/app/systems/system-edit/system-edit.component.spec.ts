@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {SystemEditComponent} from './system-edit.component';
 import {FormsModule} from '@angular/forms';
@@ -22,7 +22,7 @@ describe('SystemEditComponent', () => {
   let component: SystemEditComponent;
   let fixture: ComponentFixture<SystemEditComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [SystemEditComponent],
       imports: [

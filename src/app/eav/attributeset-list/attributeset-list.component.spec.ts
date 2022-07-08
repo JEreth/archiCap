@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {AttributesetListComponent} from './attributeset-list.component';
 
@@ -6,7 +6,7 @@ describe('AttributesetListComponent', () => {
   let component: AttributesetListComponent;
   let fixture: ComponentFixture<AttributesetListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [AttributesetListComponent]
     })

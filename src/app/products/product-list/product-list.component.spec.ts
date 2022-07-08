@@ -1,5 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {ProductListComponent} from './product-list.component';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../../material.module';
@@ -13,7 +13,7 @@ describe('ProductListComponent', () => {
   let component: ProductListComponent;
   let fixture: ComponentFixture<ProductListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ProductListComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],

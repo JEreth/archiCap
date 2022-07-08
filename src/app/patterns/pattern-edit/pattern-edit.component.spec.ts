@@ -1,5 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {PatternEditComponent} from './pattern-edit.component';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../../material.module';
@@ -9,7 +9,7 @@ describe('PatternEditComponent', () => {
   let component: PatternEditComponent;
   let fixture: ComponentFixture<PatternEditComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [PatternEditComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],

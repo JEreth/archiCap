@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {ExploreComponent} from './explore.component';
 import {ConfigurationService} from '../../shared/configuration.service';
@@ -11,7 +11,7 @@ describe('ExploreComponent', () => {
   let component: ExploreComponent;
   let fixture: ComponentFixture<ExploreComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ExploreComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,5 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {CapabilityEditComponent} from './capability-edit.component';
 import {FormsModule} from '@angular/forms';
@@ -17,7 +17,7 @@ describe('CapabilityEditComponent', () => {
   let component: CapabilityEditComponent;
   let fixture: ComponentFixture<CapabilityEditComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [CapabilityEditComponent],
       imports: [

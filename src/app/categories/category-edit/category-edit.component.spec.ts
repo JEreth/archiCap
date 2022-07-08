@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {CategoryEditComponent} from './category-edit.component';
 import {ActivatedRouteMock, MatSnackBarMock, RouterMock} from '../../../mocks';
@@ -17,7 +17,7 @@ describe('CategoryEditComponent', () => {
   let component: CategoryEditComponent;
   let fixture: ComponentFixture<CategoryEditComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [CategoryEditComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
