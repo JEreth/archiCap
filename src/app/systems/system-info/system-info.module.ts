@@ -5,14 +5,13 @@ import {SystemInfoComponent} from './system-info.component';
 import {AttributeSelectionModule} from '../../eav/attribute-selection/attribute-selection.module';
 
 @NgModule({
-  declarations: [SystemInfoComponent],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    AttributeSelectionModule
-  ],
-  entryComponents: [SystemInfoComponent],
-  exports: [SystemInfoComponent]
+    declarations: [SystemInfoComponent],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        AttributeSelectionModule
+    ],
+    exports: [SystemInfoComponent]
 })
 export class SystemInfoModule {
 }
