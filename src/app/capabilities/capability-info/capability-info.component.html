@@ -9,6 +9,8 @@
 
     <div [innerHTML]="capability.description"></div>
 
+    <div *ngIf="category"><b>Action:</b> {{ category.name }}</div>
+
     <app-attribute-selection [attributeSetId]="capability.attributeSet"
                              [attributeSelection]="capability.attributeSelection"
                              [entityId]="capability.id"
