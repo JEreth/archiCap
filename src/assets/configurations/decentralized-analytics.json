@@ -2980,5 +2980,95 @@
       "type": "component",
       "id": "kdivsqw8YW1lIjoiR292ZXJuYW5jZSIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6WyJrZGl2cDNlb1lXMWxJam9pVG05eWJXRjBhWFpsSUVGa2JXbHVMaUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpZG1Gc2RXVnpJanBiSWxwbGJuUnlZV3dpTENKRzltUmxjbWxsY25RaUxDSldaWEowWldsc2RDSmRMQ0owZVhCbElqb2lZMjl0Y0c5dVpXNTBJbjA9Iiwia2RpdnBneHVZVzFsSWpvaVZHVmphRzR1SUVGa2JXbHVMaUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpZG1Gc2RXVnpJanBiSWxwbGJuUnlZV3dpTENKRzltUmxjbWxsY25RaUxDSldaWEowWldsc2RDSmRMQ0owZVhCbElqb2lZMjl0Y0c5dVpXNTBJbjA9Il0sInR5cGUiOiJjb21wb25lbnQifQ=="
     }
-  ]
+  ],
+  "cases":[
+      {
+         "name":"HF1: Verkehrscontrolling in einem Seehafen",
+         "description":"Verkehrscontrolling in einem Seehafen",
+         "circumstances":[
+            
+         ],
+         "systems":[
+            
+         ],
+         "id":"l5dwncnmYW1lIjoiSEYxOiBWZXJrZWhyc2NvbnRyb2xsaW5nIGluIGVpbmVtIFNlZWhhZmVuIiwiZGVzY3JpcHRpb24iOiJWZXJrZWhyc2NvbnRyb2xsaW5nIGluIGVpbmVtIFNlZWhhZmVuIiwiY2lyY3Vtc3RhbmNlcyI6W10sInN5c3RlbXMiOltdfQ"
+      },
+      {
+         "name":"HF2: Datenplattform eines Car-Sharing-Anbieters",
+         "description":"Datenplattform eines Car-Sharing-Anbieters",
+         "circumstances":[
+            
+         ],
+         "systems":[
+            
+         ],
+         "id":"l5dwntn3YW1lIjoiSEYyOiBEYXRlbnBsYXR0Zm9ybSBlaW5lcyBDYXItU2hhcmluZy1BbmJpZXRlcnMiLCJkZXNjcmlwdGlvbiI6IkRhdGVucGxhdHRmb3JtIGVpbmVzIENhci1TaGFyaW5nLUFuYmlldGVycyIsImNpcmN1bXN0YW5jZXMiOltdLCJzeXN0ZW1zIjpbXX0"
+      },
+      {
+         "name":"UE1: Datenplattform eines Chemie-Unternehmen",
+         "description":"Datenplattform eines Chemie-Unternehmen",
+         "circumstances":[
+            
+         ],
+         "systems":[
+            
+         ],
+         "id":"l5dwo75sYW1lIjoiVUUxOiBEYXRlbnBsYXR0Zm9ybSBlaW5lcyBDaGVtaWUtVW50ZXJuZWhtZW4iLCJkZXNjcmlwdGlvbiI6IkRhdGVucGxhdHRmb3JtIGVpbmVzIENoZW1pZS1VbnRlcm5laG1lbiIsImNpcmN1bXN0YW5jZXMiOltdLCJzeXN0ZW1zIjpbXX0"
+      },
+      {
+         "name":"UE2: Integrierte Analysen eines Flughafen",
+         "description":"Verbindung operativer und dispositiver Daten.",
+         "circumstances":[
+            
+         ],
+         "systems":[
+            
+         ],
+         "id":"l5dwouklYW1lIjoiVUUyOiBJbnRlZ3JpZXJ0ZSBBbmFseXNlbiBlaW5lcyBGbHVnaGFmZW4iLCJkZXNjcmlwdGlvbiI6IlZlcmJpbmR1bmcgb3BlcmF0aXZlciB1bmQgZGlzcG9zaXRpdmVyIERhdGVuLiIsImNpcmN1bXN0YW5jZXMiOltdLCJzeXN0ZW1zIjpbXX0"
+      },
+      {
+         "name":"UE3: Datenplattform einer Kommune",
+         "description":"Bereitstellung kommunaler und anderer Daten einer Stadt.",
+         "circumstances":[
+            
+         ],
+         "systems":[
+            
+         ],
+         "id":"l5dwpibqYW1lIjoiVUUzOiBEYXRlbnBsYXR0Zm9ybSBlaW5lciBLb21tdW5lIiwiZGVzY3JpcHRpb24iOiJCZXJlaXRzdGVsbHVuZyBrb21tdW5hbGVyIHVuZCBhbmRlcmVyIERhdGVuIGVpbmVyIFN0YWR0LiIsImNpcmN1bXN0YW5jZXMiOltdLCJzeXN0ZW1zIjpbXX0"
+      },
+      {
+         "name":"UE4: Stoffstrom-Controlling im Seehafen",
+         "description":"Verfolgung von Wertströmen in einem Seehafen.",
+         "circumstances":[
+            
+         ],
+         "systems":[
+            
+         ],
+         "id":"l5dwq1wuYW1lIjoiVUU0OiBTdG9mZnN0cm9tLUNvbnRyb2xsaW5nIGltIFNlZWhhZmVuIiwiZGVzY3JpcHRpb24iOiJWZXJmb2xndW5nIHZvbiBXZXJ0c3Ry9m1lbiBpbiBlaW5lbSBTZWVoYWZlbi4iLCJjaXJjdW1zdGFuY2VzIjpbXSwic3lzdGVtcyI6W119"
+      },
+      {
+         "name":"UE5: Offshore-Sensorauswertung eines Windpark-Betreiber",
+         "description":"Auswertung von Daten eines Offshore-Windparks.",
+         "circumstances":[
+            
+         ],
+         "systems":[
+            
+         ],
+         "id":"l5dwqt47YW1lIjoiVUU1OiBPZmZzaG9yZS1TZW5zb3JhdXN3ZXJ0dW5nIGVpbmVzIFdpbmRwYXJrLUJldHJlaWJlciIsImRlc2NyaXB0aW9uIjoiQXVzd2VydHVuZyB2b24gRGF0ZW4gZWluZXMgT2Zmc2hvcmUtV2luZHBhcmtzLiIsImNpcmN1bXN0YW5jZXMiOltdLCJzeXN0ZW1zIjpbXX0"
+      },
+      {
+         "name":"UE6: Integrierte Analysen bei einem Energie-Anbieter",
+         "description":"Integrierte Analysen operativer und dispositiver Daten eines Energie-Anbieters",
+         "circumstances":[
+            
+         ],
+         "systems":[
+            
+         ],
+         "id":"l5dwrdaoYW1lIjoiVUU2OiBJbnRlZ3JpZXJ0ZSBBbmFseXNlbiBiZWkgZWluZW0gRW5lcmdpZS1BbmJpZXRlciIsImRlc2NyaXB0aW9uIjoiSW50ZWdyaWVydGUgQW5hbHlzZW4gb3BlcmF0aXZlciB1bmQgZGlzcG9zaXRpdmVyIERhdGVuIGVpbmVzIEVuZXJnaWUtQW5iaWV0ZXJzIiwiY2lyY3Vtc3RhbmNlcyI6W10sInN5c3RlbXMiOltdfQ"
+      }
+   ]
 }
