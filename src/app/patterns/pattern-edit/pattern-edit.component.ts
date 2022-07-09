@@ -5,6 +5,7 @@ import {Pattern} from '../shared/pattern';
 import {PatternService} from '../shared/pattern.service';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {Configuration, ConfigurationService} from "../../shared/configuration.service";
+import {AttributeSet} from '../../eav/shared/models';
 
 @Component({
   selector: 'app-pattern-edit',
@@ -14,8 +15,19 @@ import {Configuration, ConfigurationService} from "../../shared/configuration.se
 export class PatternEditComponent implements OnInit {
 
   public form: UntypedFormGroup;
-  public pattern: Pattern = {name: '', description: '', systems: [], capabilities: []};
+  public pattern: Pattern = {
+    name: '',
+    description: '',
+    systems: [],
+    capabilities: [],
+    componentType: null,
+    componentSelection: [],
+    capabilityType: null,
+    capabilitySelection: [],
+  };
   public configuration: Configuration;
+  public componentTypes: AttributeSet[] = [];
+  public capabilityTypes: AttributeSet[] = [];
 
   constructor(
     private router: Router,
@@ -33,9 +45,13 @@ export class PatternEditComponent implements OnInit {
       this.pattern = await this.patternService.get(id) as Pattern || this.pattern;
     }
     this.configuration = await this.configurationService.get();
+    this.componentTypes = this.configuration.attributeSets.filter(i => i.type === 'component');
+    this.capabilityTypes = this.configuration.attributeSets.filter(i => i.type === 'capability');
     this.form = this.formBuilder.group({
       name: [this.pattern.name, Validators.required],
       description: [this.pattern.description],
+      componentType: [this.pattern.componentType || this.componentTypes[0].id],
+      capabilityType: [this.pattern.capabilityType || this.capabilityTypes[0].id],
       systems: [this.pattern.systems],
       capabilities: [this.pattern.capabilities],
     });

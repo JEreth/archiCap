@@ -7,26 +7,31 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../material.module';
 import {PatternInfoModule} from './pattern-info/pattern-info.module';
+import { PatternSpecifyComponent } from './pattern-specify/pattern-specify.component';
+import {AttributeSelectionModule} from '../eav/attribute-selection/attribute-selection.module';
 
 const routes: Routes = [
   {
     path: '',
     component: PatternsComponent,
     children: [
-      {path: ':id', component: PatternEditComponent},
+      {path: 'specify/:id', component: PatternSpecifyComponent},
+      {path: 'edit/:id', component: PatternEditComponent},
+      {path: 'new', component: PatternEditComponent},
       {path: '', component: PatternListComponent},
     ]
   }
 ];
 
 @NgModule({
-  declarations: [PatternsComponent, PatternListComponent, PatternEditComponent],
+  declarations: [PatternsComponent, PatternListComponent, PatternEditComponent, PatternSpecifyComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     PatternInfoModule,
     MaterialModule,
+    AttributeSelectionModule,
     RouterModule.forChild(routes),
   ]
 })

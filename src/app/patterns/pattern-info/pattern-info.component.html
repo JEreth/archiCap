@@ -11,53 +11,51 @@
 
     <div class="row">
       <div class="col-6">
-        <h3>Components:</h3>
-        <mat-card *ngFor="let system of relatedSystems" class="text-left">
-          <mat-card-header>
-            <mat-card-title>{{ system.name }}</mat-card-title>
-            <mat-card-subtitle>{{ system.description }}</mat-card-subtitle>
-          </mat-card-header>
+        <h3>Technical Context</h3>
+        <mat-card class="text-left">
           <mat-card-content>
-            <app-attribute-selection [attributeSetId]="system.attributeSet"
-                                     [attributeSelection]="system.attributeSelection"
-                                     [entityId]="system.id"
+            <app-attribute-selection [attributeSetId]="pattern.componentType"
+                                     [attributeSelection]="pattern.componentSelection"
                                      [readonly]="true"
                                      [dense]="true"
-                                     [skipValues]="['-']"
-                                     *ngIf="system"></app-attribute-selection>
+                                     [skipValues]="['-']"></app-attribute-selection>
           </mat-card-content>
-          <mat-card-actions>
+        </mat-card>
+
+        <!-- SYSTEMS -->
+        <h4>Based on:</h4>
+        <mat-nav-list>
+          <mat-list-item *ngFor="let system of relatedSystems">
+            <h3 matLine>{{ system.name }}</h3>
             <button mat-button (click)="showSystemInfo($event, system)">
               <mat-icon mat-list-icon color="primary">info</mat-icon>
-              More information
             </button>
-          </mat-card-actions>
-        </mat-card>
+          </mat-list-item>
+        </mat-nav-list>
       </div>
 
       <div class="col-6">
-        <h3>Capabilities:</h3>
-        <mat-card *ngFor="let capability of relatedCapabilities" class="text-left">
-          <mat-card-header>
-            <mat-card-title>{{ capability.name }}</mat-card-title>
-            <mat-card-subtitle>{{ capability.description }}</mat-card-subtitle>
-          </mat-card-header>
+        <h3>Capability Context</h3>
+        <mat-card class="text-left">
           <mat-card-content>
-            <app-attribute-selection [attributeSetId]="capability.attributeSet"
-                                     [attributeSelection]="capability.attributeSelection"
-                                     [entityId]="capability.id"
+            <app-attribute-selection [attributeSetId]="pattern.capabilityType"
+                                     [attributeSelection]="pattern.capabilitySelection"
                                      [readonly]="true"
                                      [dense]="true"
-                                     [skipValues]="['-']"
-                                     *ngIf="capability"></app-attribute-selection>
+                                     [skipValues]="['-']"></app-attribute-selection>
           </mat-card-content>
-          <mat-card-actions>
+        </mat-card>
+
+        <!-- CAPABILITIES -->
+        <h4>Based on:</h4>
+        <mat-nav-list>
+          <mat-list-item *ngFor="let capability of relatedCapabilities">
+            <h3 matLine>{{ capability.name }}</h3>
             <button mat-button (click)="showCapabilityInfo($event, capability)">
               <mat-icon mat-list-icon color="primary">info</mat-icon>
-              More information
             </button>
-          </mat-card-actions>
-        </mat-card>
+          </mat-list-item>
+        </mat-nav-list>
 
       </div>
     </div>

@@ -1,0 +1,25 @@
+<a mat-button routerLink="/patterns" style="">
+  <mat-icon>arrow_back</mat-icon>
+  Go back
+</a>
+<ng-container *ngIf="pattern">
+  <section class="mat-typography">
+    <h2>Specify Pattern</h2>
+  </section>
+
+  <!-- TECHNICAL CONTEXT -->
+  <h3>Technical Context</h3>
+
+  <app-attribute-selection [attributeSetId]="pattern.componentType"
+                           [attributeSelection]="pattern.componentSelection || []"
+                           #componentAttributeSelection></app-attribute-selection>
+
+  <!-- CAPABILITY CONTEXT -->
+  <h3>Capability Context</h3>
+
+  <app-attribute-selection [attributeSetId]="pattern.capabilityType"
+                           [attributeSelection]="pattern.capabilitySelection || []"
+                           #capabilityAttributeSelection></app-attribute-selection>
+
+  <button mat-flat-button color="accent" (click)="save()">Save</button>
+</ng-container>

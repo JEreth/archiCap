@@ -19,6 +19,24 @@
                 formControlName="description"></textarea>
     </mat-form-field>
 
+    <!-- TECHNICAL CONTEXT -->
+    <mat-form-field appearance="standard">
+      <mat-label>Component Type</mat-label>
+      <mat-select formControlName="componentType">
+        <mat-option *ngFor="let componentType of componentTypes"
+                    [value]="componentType.id">{{componentType.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- CAPABILITY CONTEXT -->
+    <mat-form-field appearance="standard">
+      <mat-label>Capability Type</mat-label>
+      <mat-select formControlName="capabilityType">
+        <mat-option *ngFor="let capabilityType of capabilityTypes"
+                    [value]="capabilityType.id">{{capabilityType.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <div *ngIf="configuration">
       <!-- SYSTEMS -->
       <mat-selection-list formControlName="systems">
