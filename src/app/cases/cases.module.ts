@@ -10,6 +10,8 @@ import { CaseEditComponent } from './case-edit/case-edit.component';
 import { CircumstanceSpecifyComponent } from './circumstance-specify/circumstance-specify.component';
 import { SystemSpecifyComponent } from './system-specify/system-specify.component';
 import {AttributeSelectionModule} from '../eav/attribute-selection/attribute-selection.module';
+import { CircumstanceCompareComponent } from './circumstance-compare/circumstance-compare.component';
+import { SystemCompareComponent } from './system-compare/system-compare.component';
 
 const routes: Routes = [
   {
@@ -18,7 +20,9 @@ const routes: Routes = [
     children: [
       {path: 'edit/:id/system/specify/:index', component: SystemSpecifyComponent},
       {path: 'edit/:id/system/specify', component: SystemSpecifyComponent},
+      {path: 'edit/:id/system/compare/:index', component: SystemCompareComponent},
       {path: 'edit/:id/circumstance/specify/:index', component: CircumstanceSpecifyComponent},
+      {path: 'edit/:id/circumstance/compare/:index', component: CircumstanceCompareComponent},
       {path: 'edit/:id/circumstance/specify', component: CircumstanceSpecifyComponent},
       {path: 'edit/:id', component: CaseEditComponent},
       {path: 'new', component: CaseEditComponent},
@@ -33,7 +37,9 @@ const routes: Routes = [
     CaseListComponent,
     CaseEditComponent,
     CircumstanceSpecifyComponent,
-    SystemSpecifyComponent
+    SystemSpecifyComponent,
+    CircumstanceCompareComponent,
+    SystemCompareComponent
   ],
   imports: [
     CommonModule,

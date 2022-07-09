@@ -28,6 +28,7 @@ export class CaseEditComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.case = await (this.caseService.get(id)) as Case || this.case;
+      console.log(this.case);
     }
     this.form = this.formBuilder.group({
       name: [this.case.name, Validators.required],
