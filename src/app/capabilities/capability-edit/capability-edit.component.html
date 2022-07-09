@@ -21,10 +21,19 @@
     </mat-form-field>
     <br>
     <mat-form-field appearance="standard">
-      <mat-label>Capability Set</mat-label>
+      <mat-label>Quantification Model</mat-label>
       <mat-select formControlName="attributeSet">
         <mat-option *ngFor="let attributeSet of attributeSets"
                     [value]="attributeSet.id">{{attributeSet.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- SELECT CATEGORY -->
+    <mat-form-field appearance="standard">
+      <mat-label>Action</mat-label>
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let category of configuration.categories"
+                    [value]="category.id">{{category.name}}</mat-option>
       </mat-select>
     </mat-form-field>
     <button mat-flat-button color="accent" type="submit" [disabled]="!form.valid">Save</button>

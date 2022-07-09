@@ -17,7 +17,7 @@ import {AttributeSet} from '../../eav/shared/models';
 export class CapabilityEditComponent implements OnInit {
 
   public form: UntypedFormGroup;
-  public capability: Capability = {name: '', description: '', attributeSet: '', attributeSelection: []};
+  public capability: Capability = {name: '', description: '', attributeSet: null, attributeSelection: [], category: null};
   public relatedPatters: Pattern[] = [];
   public configuration: Configuration;
   public attributeSets: AttributeSet[] = [];
@@ -44,7 +44,8 @@ export class CapabilityEditComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: [this.capability.name, Validators.required],
       description: [this.capability.description],
-      attributeSet: [this.capability.attributeSet]
+      category: [this.capability.category || this.configuration.categories[0].id],
+      attributeSet: [this.capability.attributeSet || this.attributeSets[0].id]
     });
   }
 

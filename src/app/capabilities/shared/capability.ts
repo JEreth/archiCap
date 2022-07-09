@@ -5,6 +5,7 @@ export interface Capability extends Entity {
   id?: string;
   name: string;
   description?: string;
+  category: string;
   attributeSet: string;
   attributeSelection: AttributeSelection[];
 }
