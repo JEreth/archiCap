@@ -1375,12 +1375,12 @@
   ],
   "categories": [
     {
-      "name": "Zugriff",
-      "description": "Komponenten zum Abruf von Daten",
+      "name": "Bereitstellung",
+      "description": "Komponenten zur Bereitstellung von Daten",
       "id": "kdivm1doYW1lIjoiWnVncmlmZiIsImRlc2NyaXB0aW9uIjoiIn0="
     },
     {
-      "name": "Datenhaltung",
+      "name": "Speicherung",
       "description": "Komponenten zur Speicherung von Daten",
       "id": "kdivmc8cYW1lIjoiRGF0ZW5oYWx0dW5nIiwiZGVzY3JpcHRpb24iOiJLb21wb25lbnRlbiB6dXIgU3BlaWNoZXJ1bmcgdm9uIERhdGVuIn0="
     },
@@ -1390,8 +1390,8 @@
       "id": "kdivmqikYW1lIjoiS29tbXVuaWthdGlvbiIsImRlc2NyaXB0aW9uIjoiS29tcG9uZW50ZW4genVtIEF1c3RhdXNjaCB1bmQgenVyIEtvb3JkaW5hdGlvbiJ9"
     },
     {
-      "name": "Governance",
-      "description": "Komponenten zur Steuerung und Regulierung",
+      "name": "Metadatenmgt.",
+      "description": "Komponenten zur Erfassung und Verwaltung von Metadaten",
       "id": "kdivnh9yYW1lIjoiR292ZXJuYW5jZSIsImRlc2NyaXB0aW9uIjoiS29tcG9uZW50ZW4genVyIFN0ZXVlcnVuZyB1bmQgUmVndWxpZXJ1bmcifQ=="
     }
   ],
@@ -2934,7 +2934,7 @@
       "id": "kdiv9lh5YW1lIjoiQW5hbHl0aXNjaGUgQ2FwYWJpbGl0IiwiZGVzY3JpcHRpb24iOiJDYXBhYmlsaXR5IGb8ciBkZXplbnRyYWxlIERhdGVuaGFsdHVuZyBpbiBhbmFseXRpc2NoZW4gTGFuZHNjaGFmdGVuIiwiYXR0cmlidXRlcyI6W10sInR5cGUiOiJjYXBhYmlsaXR5In0="
     },
     {
-      "name": "Zugriff",
+      "name": "Bereitstellung",
       "description": "",
       "attributes": [
         "kdivo2nsYW1lIjoiQWJzdHJha3Rpb25zZ3JhZCIsImRlc2NyaXB0aW9uIjoiIiwidmFsdWVzIjpbIkRpcmVrdCIsIkFic3RyYWhpZXJ0Il0sInR5cGUiOiJjb21wb25lbnQifQ==",
@@ -2947,7 +2947,7 @@
       "id": "kdivppbmYW1lIjoiWnVncmlmZiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6WyJrZGl2bzJuc1lXMWxJam9pUVdKemRISmhhM1JwYjI1elozSmhaQ0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpZG1Gc2RXVnpJanBiSWtScGNtVnJkQ0lzSWtGaWMzUnlZV2hwWlhKMElsMHNJblI1Y0dVaU9pSmpiMjF3YjI1bGJuUWlmUT09Iiwia2Rpdm9kaTdZVzFsSWpvaVVHVnljMmx6ZEdWdWVpSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lkbUZzZFdWeklqcGJJazFoZEdWeWFXRnNhWE5wWlhKMElpd2lWbWx5ZEhWaGJHbHphV1Z5ZENKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iLCJrZGl2b203c1lXMWxJam9pVTNCbGVtbG1hWFRrZENJc0ltUmxjMk55YVhCMGFXOXVJam9pSWl3aWRtRnNkV1Z6SWpwYklrRnVkeTRnVG1WMWRISmhiQ0lzSWtGdWR5NGdVM0JsZW1sbWFYTmphQ0pkTENKMGVYQmxJam9pWTI5dGNHOXVaVzUwSW4wPSIsImtkaXZwM2VvWVcxbElqb2lUbTl5YldGMGFYWmxJRUZrYldsdUxpSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lkbUZzZFdWeklqcGJJbHBsYm5SeVlXd2lMQ0pHOW1SbGNtbGxjblFpTENKV1pYSjBaV2xzZENKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iLCJrZGl2cGd4dVlXMWxJam9pVkdWamFHNHVJRUZrYldsdUxpSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lkbUZzZFdWeklqcGJJbHBsYm5SeVlXd2lMQ0pHOW1SbGNtbGxjblFpTENKV1pYSjBaV2xzZENKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iXSwidHlwZSI6ImNvbXBvbmVudCJ9"
     },
     {
-      "name": "Datenhaltung",
+      "name": "Speicherung",
       "description": "",
       "attributes": [
         "kdivq4hmYW1lIjoiRGF0ZW50eXAiLCJkZXNjcmlwdGlvbiI6IiIsInZhbHVlcyI6WyJTdHJ1a3R1cmllcnQiLCJVbnN0cnVrdHVyaWVydCJdLCJ0eXBlIjoiY29tcG9uZW50In0=",
@@ -2959,7 +2959,7 @@
       "id": "kdivqq7nYW1lIjoiRGF0ZW5oYWx0dW5nIiwiZGVzY3JpcHRpb24iOiIiLCJhdHRyaWJ1dGVzIjpbImtkaXZxNGhtWVcxbElqb2lSR0YwWlc1MGVYQWlMQ0prWlhOamNtbHdkR2x2YmlJNklpSXNJblpoYkhWbGN5STZXeUpUZEhKMWEzUjFjbWxsY25RaUxDSlZibk4wY25WcmRIVnlhV1Z5ZENKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iLCJrZGl2b203c1lXMWxJam9pVTNCbGVtbG1hWFRrZENJc0ltUmxjMk55YVhCMGFXOXVJam9pSWl3aWRtRnNkV1Z6SWpwYklrRnVkeTRnVG1WMWRISmhiQ0lzSWtGdWR5NGdVM0JsZW1sbWFYTmphQ0pkTENKMGVYQmxJam9pWTI5dGNHOXVaVzUwSW4wPSIsImtkaXZwM2VvWVcxbElqb2lUbTl5YldGMGFYWmxJRUZrYldsdUxpSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lkbUZzZFdWeklqcGJJbHBsYm5SeVlXd2lMQ0pHOW1SbGNtbGxjblFpTENKV1pYSjBaV2xzZENKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iLCJrZGl2cGd4dVlXMWxJam9pVkdWamFHNHVJRUZrYldsdUxpSXNJbVJsYzJOeWFYQjBhVzl1SWpvaUlpd2lkbUZzZFdWeklqcGJJbHBsYm5SeVlXd2lMQ0pHOW1SbGNtbGxjblFpTENKV1pYSjBaV2xzZENKZExDSjBlWEJsSWpvaVkyOXRjRzl1Wlc1MEluMD0iLCJrZGl2b2RpN1lXMWxJam9pVUdWeWMybHpkR1Z1ZWlJc0ltUmxjMk55YVhCMGFXOXVJam9pSWl3aWRtRnNkV1Z6SWpwYklrMWhkR1Z5YVdGc2FYTnBaWEowSWl3aVZtbHlkSFZoYkdsemFXVnlkQ0pkTENKMGVYQmxJam9pWTI5dGNHOXVaVzUwSW4wPSJdLCJ0eXBlIjoiY29tcG9uZW50In0="
     },
     {
-      "name": "Kommunikation",
+      "name": "Verarbeitung",
       "description": "",
       "attributes": [
         "kdivrwzzYW1lIjoiVG9wb2xvZ2llIiwiZGVzY3JpcHRpb24iOiIiLCJ2YWx1ZXMiOlsiVW5pbGF0ZXJhbCIsIkJpbGF0ZXJhbCIsIk11bHRpbGF0ZXJhbCJdLCJ0eXBlIjoiY29tcG9uZW50In0=",
@@ -2971,7 +2971,7 @@
       "id": "kdivsgzyYW1lIjoiS29tbXVuaWthdGlvbiIsImRlc2NyaXB0aW9uIjoiIiwiYXR0cmlidXRlcyI6WyJrZGl2cnd6ellXMWxJam9pVkc5d2IyeHZaMmxsSWl3aVpHVnpZM0pwY0hScGIyNGlPaUlpTENKMllXeDFaWE1pT2xzaVZXNXBiR0YwWlhKaGJDSXNJa0pwYkdGMFpYSmhiQ0lzSWsxMWJIUnBiR0YwWlhKaGJDSmRMQ0owZVhCbElqb2lZMjl0Y0c5dVpXNTBJbjA9Iiwia2RpdnM2bmdZVzFsSWpvaVUzbHVZMmh5YjI1cGRPUjBJaXdpWkdWelkzSnBjSFJwYjI0aU9pSWlMQ0oyWVd4MVpYTWlPbHNpVTNsdVkyaHliMjRpTENKQmMzbHVZMmh5YjI0aVhTd2lkSGx3WlNJNkltTnZiWEJ2Ym1WdWRDSjkiLCJrZGl2cDNlb1lXMWxJam9pVG05eWJXRjBhWFpsSUVGa2JXbHVMaUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpZG1Gc2RXVnpJanBiSWxwbGJuUnlZV3dpTENKRzltUmxjbWxsY25RaUxDSldaWEowWldsc2RDSmRMQ0owZVhCbElqb2lZMjl0Y0c5dVpXNTBJbjA9Iiwia2RpdnBneHVZVzFsSWpvaVZHVmphRzR1SUVGa2JXbHVMaUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lJaXdpZG1Gc2RXVnpJanBiSWxwbGJuUnlZV3dpTENKRzltUmxjbWxsY25RaUxDSldaWEowWldsc2RDSmRMQ0owZVhCbElqb2lZMjl0Y0c5dVpXNTBJbjA9Il0sInR5cGUiOiJjb21wb25lbnQifQ=="
     },
     {
-      "name": "Governance",
+      "name": "Metadatenmgt.",
       "description": "",
       "attributes": [
         "kdivp3eoYW1lIjoiTm9ybWF0aXZlIEFkbWluLiIsImRlc2NyaXB0aW9uIjoiIiwidmFsdWVzIjpbIlplbnRyYWwiLCJG9mRlcmllcnQiLCJWZXJ0ZWlsdCJdLCJ0eXBlIjoiY29tcG9uZW50In0=",
