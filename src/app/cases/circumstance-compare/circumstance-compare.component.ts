@@ -30,10 +30,10 @@ export class CircumstanceCompareComponent implements OnInit {
       this.ix = Number(ix);
       // now compare
       for (const [i, circumstance] of this.case.circumstances.entries()) {
-        console.log(this.ix);
-        console.log('compare', circumstance, this.case.circumstances[this.ix]);
+        // skip same circumstance and only compare same attribute sets / categories (actions)
         if (i !== this.ix
-          && circumstance.attributeSet === this.case.circumstances[this.ix].attributeSet) { // skip same circumstance and only compare same attribute sets
+          && circumstance.category === this.case.circumstances[this.ix].category
+          && circumstance.attributeSet === this.case.circumstances[this.ix].attributeSet) {
           this.results.push({
               circumstance,
               similarity: CaseService.compareCircumstances(this.case.circumstances[this.ix], circumstance),

@@ -1,1 +1,46 @@
-<p>system-compare works!</p>
+<ng-container *ngIf="case">
+  <a mat-button routerLink="/cases/edit/{{ case.id }}">
+    <mat-icon>arrow_back</mat-icon>
+    Go back
+  </a>
+  <section class="mat-typography">
+    <h2>Compare technical Systems in all cases</h2>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ case.systems[ix].description }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <app-attribute-selection [attributeSetId]="case.systems[ix].attributeSet"
+                               [attributeSelection]="case.systems[ix].attributeSelection"
+                               [readonly]="true"></app-attribute-selection>
+    </mat-expansion-panel>
+  </section>
+
+  <div id="circumstance-list" *ngIf="results">
+    <h2>Result</h2>
+    <p *ngIf="results.length === 0" class="muted">No other systems to compare</p>
+
+    <ng-container *ngIf="results.length > 0">
+      <mat-expansion-panel *ngFor="let result of results" style="margin-bottom: 10px">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>{{result.similarity}}%</b>
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ result.system.description }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-attribute-selection [attributeSetId]="result.system.attributeSet"
+                                 [attributeSelection]="result.system.attributeSelection"
+                                 [readonly]="true"></app-attribute-selection>
+      </mat-expansion-panel>
+    </ng-container>
+  </div>
+
+
+
+</ng-container>
