@@ -26,10 +26,7 @@ export class PatternFinderComponent implements OnInit {
 
   resultPatterns: {
     pattern: Pattern,
-    matchingElements: {
-      element: Capability | System,
-      percentage: number
-    }[]
+    percentage: number
   }[];
 
   @ViewChild('attributeSelectionComponent') attributeSelectionComponent: AttributeSelectionComponent;
@@ -57,41 +54,20 @@ export class PatternFinderComponent implements OnInit {
   async find() {
     this.resultPatterns = [];
     const searchSpecification = this.attributeSelectionComponent.attributeSelection as AttributeSelection[];
-    const pattern = await this.patternService.all() as Pattern[];
-    for (const p of pattern) {
+    const patterns = await this.patternService.all() as Pattern[];
+    for (const pattern of patterns) {
 
-      // Find capabilites or systems of this pattern
-      const patternElements = (this.type === 'capability') ?
-        (await this.capabilityService.findBy(p.capabilities)) as Capability[] :
-        (await this.systemService.findBy(p.systems)) as System[];
-
-      const matchingElements = [];
-      for (const element of patternElements) {
-        // If element has same attribute set as searched
-        if (element.attributeSet && element.attributeSet === this.selectedAttributeSetId) {
-          // compare how good we match
-          const intersectionCount = element.attributeSelection.filter(s => searchSpecification.find(i =>
-            i.attribute === s.attribute && i.value === s.value
-          )).length;
-          const percentage = Math.round((intersectionCount / Math.max(1, element.attributeSelection.length)) * 100);
-          matchingElements.push({
-            element,
-            percentage
-          });
-        }
-      }
-
-      if (matchingElements.length > 0 && matchingElements.map(i => i.percentage).reduce((a, b) => a + b, 0) > 0) {
+      // compare search specification with technical context of each pattern
+      const percentage = AttributeSetService.CompareAttributeSelection(searchSpecification, (this.type === 'capability') ? pattern.capabilitySelection : pattern.componentSelection);
+      if (percentage > 0) {
         this.resultPatterns.push({
-          pattern: p,
-          matchingElements: matchingElements
+          pattern,
+          percentage
         });
       }
     }
     // Sort results by percentage of matching
-    this.resultPatterns.sort((a, b) => {
-      return Math.max(...b.matchingElements.map(i => i.percentage)) - Math.max(...a.matchingElements.map(i => i.percentage));
-    });
+    this.resultPatterns.sort((a, b) => b.percentage - a.percentage);
   }
 
   showPatternInfo(event, pattern: Pattern) {

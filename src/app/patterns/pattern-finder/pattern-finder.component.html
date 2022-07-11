@@ -47,20 +47,12 @@
     <ng-container *ngFor="let result of resultPatterns">
       <mat-list-item (click)="showPatternInfo($event, result.pattern)">
         <mat-icon mat-list-icon color="primary">info</mat-icon>
-        <h3 matLine>{{ result.pattern.name }}</h3>
+        <h3 matLine>{{ result.pattern.name }}
+        </h3>
         <p matLine class="muted" *ngIf="result.pattern.description">{{ result.pattern.description }}</p>
+        <span class="spacer"></span>
+        <b>{{ result.percentage }}%</b>
       </mat-list-item>
-      <mat-list class="styled-list" style="margin-left:30px;">
-        <mat-list-item *ngFor="let matchingElement of result.matchingElements"
-                       (click)="showElementInfo($event, matchingElement.element)">
-          <mat-icon mat-list-icon color="primary">info</mat-icon>
-          {{ matchingElement.element.name }}
-          <span class="spacer"></span>
-          <b>{{matchingElement.percentage}}%</b>
-        </mat-list-item>
-      </mat-list>
     </ng-container>
-
   </mat-list>
-
 </div>
