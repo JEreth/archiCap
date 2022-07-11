@@ -40,6 +40,16 @@
         </mat-list-option>
       </mat-selection-list>
 
+      <!-- BASED ON CIRCUMSTANCES -->
+      <mat-selection-list formControlName="basedOnSystems" *ngIf="allSystems.length > 0">
+        <h3>Based on:</h3>
+        <mat-list-option *ngFor="let baseSystem of allSystems"
+                         [selected]="selectedBasedOn(baseSystem.value)"
+                         [value]="baseSystem.value">
+          {{ baseSystem.label }}
+        </mat-list-option>
+      </mat-selection-list>
+
       <!-- PRODUCTS -->
       <mat-selection-list formControlName="products">
         <h3 matHeader>Products</h3>

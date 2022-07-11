@@ -8,4 +8,8 @@ export interface Capability extends Entity {
   category: string;
   attributeSet: string;
   attributeSelection: AttributeSelection[];
+  basedOnCircumstances?: {
+    case: string;
+    index: number;
+  }[]
 }

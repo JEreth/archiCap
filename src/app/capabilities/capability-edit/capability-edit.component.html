@@ -36,6 +36,18 @@
                     [value]="category.id">{{category.name}}</mat-option>
       </mat-select>
     </mat-form-field>
+
+
+    <!-- BASED ON CIRCUMSTANCES -->
+    <mat-selection-list formControlName="basedOnCircumstances">
+      <h3>Based on:</h3>
+      <mat-list-option *ngFor="let circumstance of allCircumstances"
+                        [selected]="selectedBasedOn(circumstance.value)"
+                       [value]="circumstance.value">
+        {{ circumstance.label }}
+      </mat-list-option>
+    </mat-selection-list>
+
     <button mat-flat-button color="accent" type="submit" [disabled]="!form.valid">Save</button>
   </form>
 </div>

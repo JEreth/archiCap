@@ -8,6 +8,8 @@ import {Configuration, ConfigurationService} from '../../shared/configuration.se
 import {Pattern} from '../../patterns/shared/pattern';
 import {PatternService} from '../../patterns/shared/pattern.service';
 import {AttributeSet} from '../../eav/shared/models';
+import {CaseService} from '../../cases/shared/case.service';
+import {Case} from '../../cases/shared/case';
 
 @Component({
   selector: 'app-capability-edit',
@@ -22,6 +24,14 @@ export class CapabilityEditComponent implements OnInit {
   public configuration: Configuration;
   public attributeSets: AttributeSet[] = [];
 
+  public allCircumstances: {
+    label: string;
+    value: {
+      case: string
+      index: number;
+    };
+  }[] = [];
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -29,7 +39,8 @@ export class CapabilityEditComponent implements OnInit {
     private snackBar: MatSnackBar,
     private formBuilder: UntypedFormBuilder,
     private configurationService: ConfigurationService,
-    private patternService: PatternService
+    private patternService: PatternService,
+    private caseService: CaseService
   ) {
   }
 
@@ -41,11 +52,25 @@ export class CapabilityEditComponent implements OnInit {
     }
     this.configuration = await this.configurationService.get();
     this.attributeSets = this.configuration.attributeSets.filter(i => i.type === 'capability');
+    const cases = (await this.caseService.all()) as Case[];
+    for (const c of cases) {
+      for (const [i, s] of c.circumstances.entries()) {
+        this.allCircumstances.push({
+          label: c.name + ': ' + s.description,
+          value: {
+            case: c.id,
+            index: i
+          }
+        });
+      }
+    }
+
     this.form = this.formBuilder.group({
       name: [this.capability.name, Validators.required],
       description: [this.capability.description],
       category: [this.capability.category || this.configuration.categories[0].id],
-      attributeSet: [this.capability.attributeSet || this.attributeSets[0].id]
+      attributeSet: [this.capability.attributeSet || this.attributeSets[0].id],
+      basedOnCircumstances: [this.capability.basedOnCircumstances || []]
     });
   }
 
@@ -60,5 +85,13 @@ export class CapabilityEditComponent implements OnInit {
       this.snackBar.open('There has been an error.');
     }
   }
+
+  selectedBasedOn(value: {
+    case: string
+    index: number;
+  }): boolean {
+    return this.capability.basedOnCircumstances.filter(i => i.case === value.case && i.index === value.index).length > 0
+  }
+
 
 }

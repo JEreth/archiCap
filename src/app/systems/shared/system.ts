@@ -10,4 +10,8 @@ export interface System extends Entity {
   categories: string[];
   products: string[];
   substitutions?: string[];
+  basedOnSystems?: {
+    case: string;
+    index: number;
+  }[]
 }

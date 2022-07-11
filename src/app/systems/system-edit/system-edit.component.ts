@@ -8,6 +8,8 @@ import {Configuration, ConfigurationService} from '../../shared/configuration.se
 import {Pattern} from '../../patterns/shared/pattern';
 import {PatternService} from '../../patterns/shared/pattern.service';
 import {AttributeSet} from '../../eav/shared/models';
+import {Case} from '../../cases/shared/case';
+import {CaseService} from '../../cases/shared/case.service';
 
 @Component({
   selector: 'app-system-edit',
@@ -29,6 +31,13 @@ export class SystemEditComponent implements OnInit {
   public relatedPatters: Pattern[] = [];
   public configuration: Configuration;
   public attributeSets: AttributeSet[] = [];
+  public allSystems: {
+    label: string;
+    value: {
+      case: string
+      index: number;
+    };
+  }[] = [];
 
   constructor(
     private router: Router,
@@ -37,7 +46,8 @@ export class SystemEditComponent implements OnInit {
     private snackBar: MatSnackBar,
     private formBuilder: UntypedFormBuilder,
     private configurationService: ConfigurationService,
-    private patternService: PatternService
+    private patternService: PatternService,
+    private caseService: CaseService
   ) {
   }
 
@@ -49,13 +59,26 @@ export class SystemEditComponent implements OnInit {
     }
     this.configuration = await this.configurationService.get();
     this.attributeSets = this.configuration.attributeSets.filter(i => i.type === 'component');
+    const cases = (await this.caseService.all()) as Case[];
+    for (const c of cases) {
+      for (const [i, s] of c.systems.entries()) {
+        this.allSystems.push({
+          label: c.name + ': ' + s.description,
+          value: {
+            case: c.id,
+            index: i
+          }
+        });
+      }
+    }
     this.form = this.formBuilder.group({
       name: [this.system.name, Validators.required],
       description: [this.system.description],
       attributeSet: [this.system.attributeSet],
       categories: [this.system.categories],
-      products: [this.system.products],
-      substitutions: [this.system.substitutions],
+      products: [this.system.products || []],
+      substitutions: [this.system.substitutions || []],
+      basedOnSystems: [this.system.basedOnSystems || []]
     });
   }
 
@@ -69,4 +92,12 @@ export class SystemEditComponent implements OnInit {
       this.snackBar.open('There has been an error');
     }
   }
+
+  selectedBasedOn(value: {
+    case: string
+    index: number;
+  }): boolean {
+    return this.system.basedOnSystems && this.system.basedOnSystems.filter(i => i.case === value.case && i.index === value.index).length > 0
+  }
+
 }
