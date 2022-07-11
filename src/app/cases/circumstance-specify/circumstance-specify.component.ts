@@ -45,7 +45,8 @@ export class CircumstanceSpecifyComponent implements OnInit {
           description: '',
           category: this.configuration.categories[0].id,
           attributeSelection: [],
-          attributeSet : this.attributeSets[0].id
+          attributeSet : this.attributeSets[0].id,
+          systems: []
         });
         this.ix = this.case.circumstances.length - 1;
       }
@@ -53,7 +54,8 @@ export class CircumstanceSpecifyComponent implements OnInit {
       this.form = this.formBuilder.group({
         description: [this.case.circumstances[this.ix].description || '', Validators.required],
         category: [this.case.circumstances[this.ix].category || this.configuration.categories[0].id, Validators.required],
-        attributeSet: [this.case.circumstances[this.ix].attributeSet ||  this.attributeSets[0].id, Validators.required]
+        attributeSet: [this.case.circumstances[this.ix].attributeSet ||  this.attributeSets[0].id, Validators.required],
+        systems: [this.case.circumstances[this.ix].systems || []]
       });
     } else {
       await this.router.navigateByUrl('/cases');

@@ -42,6 +42,14 @@
                                [attributeSelection]="case.circumstances[ix].attributeSelection"
                                *ngIf="ix !== null && case.circumstances[ix]" #attributeSelection></app-attribute-selection>
 
+      <!-- RELATED CASE SYSTEMS -->
+      <mat-selection-list formControlName="systems">
+        <h3>Related Case Systems</h3>
+        <mat-list-option *ngFor="let system of case.systems; let ix=index;" [value]="ix">
+          {{ system.description }}
+        </mat-list-option>
+      </mat-selection-list>
+
       <button mat-flat-button color="accent" type="submit" [disabled]="!form.valid">Save</button>
     </form>
   </div>

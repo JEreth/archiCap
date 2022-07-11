@@ -6,6 +6,7 @@ export interface Circumstance {
   category: string;
   attributeSet: string;
   attributeSelection: AttributeSelection[];
+  systems: number[];
 }
 
 export interface CaseSystem {
