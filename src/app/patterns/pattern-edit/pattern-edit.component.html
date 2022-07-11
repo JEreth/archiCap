@@ -38,6 +38,15 @@
     </mat-form-field>
 
     <div *ngIf="configuration">
+
+      <!-- CATEGORIES -->
+      <mat-selection-list formControlName="categories">
+        <h3 matHeader>Categories</h3>
+        <mat-list-option *ngFor="let category of configuration.categories" [value]="category.id">
+          {{ category.name }}
+        </mat-list-option>
+      </mat-selection-list>
+
       <!-- SYSTEMS -->
       <mat-selection-list formControlName="systems">
         <h3 matHeader>Systems</h3>

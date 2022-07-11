@@ -18,7 +18,7 @@ import {ProductService} from '../../products/shared/product.service';
 
 interface StackLayer {
   category: Category;
-  systems: System[];
+  patterns: Pattern[];
 }
 
 @Component({
@@ -35,11 +35,9 @@ export class CompositionComponent implements OnInit {
   @Input() showAnalyze = false;
   @Input() showLabel = true;
 
-
   // get current configuration
   configuration: Configuration;
   profile: Profile;
-
 
   // selected elements
   highlightedSystems: string[] = [];
@@ -48,7 +46,7 @@ export class CompositionComponent implements OnInit {
   highlightedProducts: string[] = [];
 
   // other values
-  desiredSystems: string[] = [];
+  //desiredPatt: string[] = [];
   possibleCapabilites: Capability[] = [];
   desiredCapabilites: Capability[] = [];
   analyzeResult: {
@@ -77,68 +75,73 @@ export class CompositionComponent implements OnInit {
 
     const c = await this.configurationService.get();
     this.profile = await this.profileService.get();
-    this.desiredSystems = [];
+    // this.desiredPatterns = [];
 
     // Filter configuration
     if (mode === 'currentStack') {
-      // Use profile systems to filter
-      c.systems = await this.systemService.findBy(this.profile.systems) as System[];
-
-      c.patterns = await this.patternService.findBy(this.profile.systems, 'systems') as Pattern[];
-      const capabilityIds = c.patterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
-      c.capabilities = await this.capabilityService.findBy(capabilityIds) as Capability[];
+      c.patterns = ((await this.patternService.all() || []) as Pattern[]).filter(p => this.isCurrentPattern(p));
     } else if (mode === 'desiredCapabilities') {
-      // Use profile capabilites to filter
-      c.capabilities = await this.capabilityService.findBy(this.profile.capabilities) as Capability[];
-
-      c.patterns = await this.patternService.findBy(this.profile.capabilities, 'capabilities') as Pattern[];
-      const systemIds = c.patterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
-      c.systems = await this.systemService.findBy(systemIds) as System[];
+      // Desired stack, show patterns that you should implement, i.e. by capabilities
+      c.patterns = ((await this.patternService.all() || []) as Pattern[]).filter(p => this.isDesiredPattern(p));
+      console.log(c.patterns);
     } else if (mode === 'compare' || mode === 'analyze') {
-      // Compare and show both existing and desired stack
-      const patternByCapabilites = (await this.patternService.findBy(this.profile.capabilities, 'capabilities') as Pattern[]);
-      this.desiredSystems = patternByCapabilites.map(i => i.systems)
-        .reduce((a, b) => a.concat(b), []);
-      const relevantSystemIds = this.profile.systems.concat(this.desiredSystems);
-
-      const patternBySystems = (await this.patternService.findBy(this.profile.systems, 'systems') as Pattern[]);
-      const relevantCapabilityIds = this.profile.capabilities.concat(patternBySystems.map(i => i.capabilities)
-        .reduce((a, b) => a.concat(b), []));
-
-      const relevantPatternIds = (patternByCapabilites.map(i => i.id)).concat(patternBySystems.map(i => i.id));
-
-      c.systems = await this.systemService.findBy(relevantSystemIds) as System[];
-      c.capabilities = await this.capabilityService.findBy(relevantCapabilityIds) as Capability[];
-      c.patterns = await this.patternService.findBy(relevantPatternIds) as Pattern[];
+      // Compare and show both existing and desired stack, show all and highlight
+      c.patterns = ((await this.patternService.all() || []) as Pattern[]).filter(p => this.isCurrentPattern(p) || this.isDesiredPattern(p));
     }
 
     // find relevant relations
+    const systemIds = c.patterns.map(i => i.systems).reduce((a, b) => a.concat(b), []);
+    c.systems = await this.systemService.findBy(systemIds) as System[];
+    const capabilityIds = c.patterns.map(i => i.capabilities).reduce((a, b) => a.concat(b), []);
+    c.capabilities = await this.capabilityService.findBy(capabilityIds) as Capability[];
     const productsIds = c.systems.map(i => i.products).reduce((a, b) => a.concat(b), []);
     c.products = await this.productService.findBy(productsIds) as Product[];
 
 
-    // fill layers with relevant systems
+    // fill layers with relevant patterns
     this.layers = [];
-    const availableSystemIds = c.systems.map(i => i.id);
+    // const availablePatternIds = c.patterns.map(i => i.id);
     for (const cat of c.categories) {
       this.layers.push({
         category: cat,
-        systems: (await this.systemService.findBy(cat.id, 'categories') as System[])
-          .filter(i => availableSystemIds.includes(i.id)) // only include available systems
+        patterns: c.patterns.filter(p => p.categories.includes(cat.id))
       });
     }
 
     this.configuration = c;
   }
 
-  isCurrentSystem(system: System): boolean {
-    return this.profile.systems.includes(system.id);
+  // Is implemented pattern, i.e. with implemented component (and capability)
+  isCurrentPattern(pattern: Pattern): boolean {
+    let hasComponent = false;
+    // let hasCapability = false;
+    for (const s of pattern.systems) {
+      if (this.profile.systems.includes(s)) {
+        hasComponent = true;
+      }
+    }
+    /* for (const s of pattern.capabilities) {
+      if (this.profile.capabilities.includes(s)) {
+        hasCapability = true;
+      }
+    } */
+    return hasComponent; // && hasCapability;
   }
 
-  isDesiredSystem(system: System): boolean {
-    return this.desiredSystems.includes(system.id);
+  // Is desired pattern, i.e. with capability
+  isDesiredPattern(pattern: Pattern): boolean {
+    for (const s of pattern.capabilities) {
+      if (this.profile.capabilities.includes(s)) {
+        return true;
+      }
+    }
+    return false;
   }
 
+  // Is redundant pattern, i.e. no capability (reverse of desired)
+  isRedundantPattern(pattern: Pattern): boolean {
+    return !this.isDesiredPattern(pattern);
+  }
 
   showSystemInfo(event, system: System) {
     event.stopPropagation();

@@ -4,6 +4,7 @@ import {AttributeSelection} from '../../eav/shared/models';
 export interface Pattern extends Entity {
   name: string;
   description?: string;
+  categories: string[];
   componentType: string;
   componentSelection: AttributeSelection[];
   capabilityType: string;

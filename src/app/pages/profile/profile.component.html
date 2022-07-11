@@ -18,7 +18,7 @@
         <mat-selection-list [(ngModel)]="profile.capabilities">
           <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
             <mat-icon mat-list-icon (click)="showCapabilityInfo($event, capability)" color="primary">info</mat-icon>
-            {{capability.name}}
+            <b>{{capability.name}}</b> <span class="muted">{{ capability.description }}</span>
           </mat-list-option>
         </mat-selection-list>
 
@@ -41,7 +41,7 @@
         <mat-selection-list [(ngModel)]="profile.systems">
           <mat-list-option *ngFor="let system of configuration.systems" [value]="system.id">
             <mat-icon mat-list-icon (click)="showSystemInfo($event, system)" color="primary">info</mat-icon>
-            {{system.name}}
+            <b>{{system.name}}</b> <span class="muted">{{system.description}}</span>
           </mat-list-option>
         </mat-selection-list>
 

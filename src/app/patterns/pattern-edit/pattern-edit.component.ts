@@ -24,6 +24,7 @@ export class PatternEditComponent implements OnInit {
     componentSelection: [],
     capabilityType: null,
     capabilitySelection: [],
+    categories: []
   };
   public configuration: Configuration;
   public componentTypes: AttributeSet[] = [];
@@ -54,6 +55,7 @@ export class PatternEditComponent implements OnInit {
       capabilityType: [this.pattern.capabilityType || this.capabilityTypes[0].id],
       systems: [this.pattern.systems],
       capabilities: [this.pattern.capabilities],
+      categories: [this.pattern.categories || []]
     });
   }
 

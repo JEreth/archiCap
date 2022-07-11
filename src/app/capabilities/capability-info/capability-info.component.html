@@ -20,7 +20,7 @@
 
     <!-- COMPONENTS -->
     <mat-list *ngIf="relatedPatterns">
-      <h3>Pattern is used in these components:</h3>
+      <h3>Capability is used in these patterns:</h3>
       <p *ngIf="relatedPatterns.length === 0">No items</p>
       <mat-list-item *ngFor="let pattern of relatedPatterns">
         <a mat-icon-button (click)="showPatternInfo($event, pattern)" color="primary">
