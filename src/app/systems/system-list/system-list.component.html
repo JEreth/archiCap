@@ -16,6 +16,9 @@
     <mat-list-item *ngFor="let system of systems">
       <h3 matLine>{{ system.name }}</h3>
       <p matLine class="muted" *ngIf="system.description">{{ system.description }}</p>
+      <a mat-icon-button routerLink="/components/find-relation/{{ system.id }}">
+        <mat-icon>insert_link</mat-icon>
+      </a>
       <a mat-icon-button routerLink="/components/specify/{{ system.id }}" *ngIf="system.attributeSet">
         <mat-icon>tune</mat-icon>
       </a>

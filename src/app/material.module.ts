@@ -18,6 +18,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSortModule} from '@angular/material/sort';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [],
@@ -41,6 +42,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSortModule,
     DragDropModule,
     MatExpansionModule,
+    MatChipsModule
   ],
   exports: [
     MatButtonModule,
@@ -60,7 +62,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatButtonToggleModule,
     MatSortModule,
     DragDropModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatChipsModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

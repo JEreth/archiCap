@@ -9,12 +9,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {AttributesetListModule} from '../eav/attributeset-list/attributeset-list.module';
 import {SystemSpecifyComponent} from './system-specify/system-specify.component';
 import {AttributeSelectionModule} from '../eav/attribute-selection/attribute-selection.module';
+import { BuildRelationComponent } from './build-relation/build-relation.component';
 
 const routes: Routes = [
   {
     path: '',
     component: SystemsComponent,
     children: [
+      {path: 'find-relation/:id', component: BuildRelationComponent},
       {path: 'specify/:id', component: SystemSpecifyComponent},
       {path: 'edit/:id', component: SystemEditComponent},
       {path: 'add', component: SystemEditComponent},
@@ -24,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SystemsComponent, SystemListComponent, SystemEditComponent, SystemSpecifyComponent],
+  declarations: [SystemsComponent, SystemListComponent, SystemEditComponent, SystemSpecifyComponent, BuildRelationComponent],
   imports: [
     CommonModule,
     FormsModule,

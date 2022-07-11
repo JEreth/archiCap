@@ -1,0 +1,50 @@
+<section class="mat-typography">
+  <h1>Find Relation for component <span *ngIf="system">{{ system.name }}</span></h1>
+  <p>
+    This screen suggest relations between technical components and analytical capabilities based on their case-based relations.
+  </p>
+</section>
+
+<div id="relation-list" *ngIf="relations">
+
+  <mat-card>
+
+    <div class="row">
+      <div class="col-2">
+        <b>Case</b>
+      </div>
+      <div class="col-2">
+        <b>Tech. Sys.</b>
+      </div>
+      <div class="col-4">
+        <b>Circumstances</b>
+      </div>
+      <div class="col-4">
+        <b>Capability</b>
+      </div>
+    </div>
+    <div class="row" *ngFor="let relation of relations">
+      <div class="col-2">
+        <b>{{relation.case.name}}</b>
+      </div>
+      <div class="col-2">
+        {{ relation.case.systems[relation.relevantSystem].description }}
+      </div>
+      <div class="col-4">
+        <mat-chip-list>
+          <mat-chip *ngFor="let i of relation.relevantCircumstances">{{ relation.case.circumstances[i].description }}</mat-chip>
+        </mat-chip-list>
+      </div>
+      <div class="col-4">
+        <mat-chip-list>
+          <mat-chip *ngFor="let capability of relation.relatedCapabilities"
+                    (click)="showCapabilityInfo($event, capability)"
+          >{{ capability.name }}</mat-chip>
+        </mat-chip-list>
+      </div>
+
+    </div>
+
+  </mat-card>
+
+</div>
