@@ -41,8 +41,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatButtonToggleModule,
     MatSortModule,
     DragDropModule,
-    MatExpansionModule,
-    MatChipsModule
+    MatExpansionModule
   ],
   exports: [
     MatButtonModule,
@@ -62,8 +61,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatButtonToggleModule,
     MatSortModule,
     DragDropModule,
-    MatExpansionModule,
-    MatChipsModule
+    MatExpansionModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

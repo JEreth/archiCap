@@ -43,12 +43,12 @@ export class BuildRelationComponent implements OnInit {
       const cases = (await this.caseService.all()) as Case[];
 
       // now iterate over all relevant systems and find relations to capabilitites
-      for (const baseSystem of this.system.basedOnSystems) {
+      for (const baseSystem of (this.system.basedOnSystems || [])) {
         const relevantCase = cases.find(i => i.id === baseSystem.case);
         const relevantCircumstances: number[] = [];
         let relatedCapabilities: Capability[] = [];
         for (let i = 0; i < relevantCase.circumstances.length; i++) {
-          if (relevantCase.circumstances[i].systems.includes(baseSystem.index)) {
+          if ((relevantCase.circumstances[i].systems || []).includes(baseSystem.index)) {
             relevantCircumstances.push(i); // found fitting circumstance!
 
             // now find actual capabilities that belong to this circumstance

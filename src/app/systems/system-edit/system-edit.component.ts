@@ -97,7 +97,7 @@ export class SystemEditComponent implements OnInit {
     case: string
     index: number;
   }): boolean {
-    return this.system.basedOnSystems && this.system.basedOnSystems.filter(i => i.case === value.case && i.index === value.index).length > 0
+    return (this.system.basedOnSystems || []).filter(i => i.case === value.case && i.index === value.index).length > 0
   }
 
 }

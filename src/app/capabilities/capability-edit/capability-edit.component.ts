@@ -90,7 +90,7 @@ export class CapabilityEditComponent implements OnInit {
     case: string
     index: number;
   }): boolean {
-    return this.capability.basedOnCircumstances.filter(i => i.case === value.case && i.index === value.index).length > 0
+    return (this.capability.basedOnCircumstances || []).filter(i => i.case === value.case && i.index === value.index).length > 0
   }
 
 
