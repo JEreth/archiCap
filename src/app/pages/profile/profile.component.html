@@ -15,7 +15,7 @@
       </mat-card-header>
       <mat-card-content>
 
-        <mat-selection-list [(ngModel)]="profile.capabilities">
+        <mat-selection-list [(ngModel)]="profile.capabilities" class="grow-list">
           <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
             <mat-icon mat-list-icon (click)="showCapabilityInfo($event, capability)" color="primary">info</mat-icon>
             <b>{{capability.name}}</b> <span class="muted">{{ capability.description }}</span>
@@ -38,7 +38,7 @@
       </mat-card-header>
       <mat-card-content>
 
-        <mat-selection-list [(ngModel)]="profile.systems">
+        <mat-selection-list [(ngModel)]="profile.systems" class="grow-list">
           <mat-list-option *ngFor="let system of configuration.systems" [value]="system.id">
             <mat-icon mat-list-icon (click)="showSystemInfo($event, system)" color="primary">info</mat-icon>
             <b>{{system.name}}</b> <span class="muted">{{system.description}}</span>

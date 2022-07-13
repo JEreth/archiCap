@@ -19,7 +19,7 @@
           </mat-toolbar>
           <p>This wizard helps you setting up your planing environment. More concrete, this software supports strategic
             IT architecture planning by linking business strategy and technology components via business
-            capabilites.</p>
+            capabilities.</p>
           <p>To get going you should first be aware that there are thee use cases that might be relevant for you:</p>
           <ol>
             <li><strong>Greenfield (Capability-First)</strong>
@@ -80,9 +80,11 @@
             step.</p>
 
 
-          <mat-selection-list [(ngModel)]="profile.capabilities">
+          <mat-selection-list [(ngModel)]="profile.capabilities" class="grow-list">
             <mat-list-option *ngFor="let capability of configuration.capabilities" [value]="capability.id">
-              {{capability.name}}
+              <mat-icon mat-list-icon (click)="showCapabilityInfo($event, capability)" color="primary">info</mat-icon>
+              <b>{{capability.name}}</b>
+              <span class="muted">{{ capability.description }}</span>
             </mat-list-option>
           </mat-selection-list>
 
@@ -169,9 +171,10 @@
 
           <button mat-flat-button (click)="suggestComponents()" color="primary">Suggest components by products</button>
 
-          <mat-selection-list [(ngModel)]="profile.systems">
+          <mat-selection-list [(ngModel)]="profile.systems" class="grow-list">
             <mat-list-option *ngFor="let system of configuration.systems" [value]="system.id">
-              {{system.name}}
+              <mat-icon mat-list-icon (click)="showSystemInfo($event, system)" color="primary">info</mat-icon>
+              <b>{{system.name}}</b> <span class="muted">{{system.description}}</span>
             </mat-list-option>
           </mat-selection-list>
 
