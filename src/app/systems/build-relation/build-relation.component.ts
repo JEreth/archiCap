@@ -63,7 +63,7 @@ export class BuildRelationComponent implements OnInit {
             case: relevantCase,
             relevantSystem: baseSystem.index,
             relevantCircumstances: relevantCircumstances,
-            relatedCapabilities: relatedCapabilities
+            relatedCapabilities: [...new Map(relatedCapabilities.map(item => [item[id], item])).values()] // unique capabilities
           })
         }
       }
