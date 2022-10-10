@@ -16,10 +16,11 @@
     <mat-list-item *ngFor="let capability of capabilities">
       <h3 matLine>{{ capability.name }}</h3>
       <p matLine class="muted" *ngIf="capability.description">{{ capability.description }}</p>
-      <a mat-icon-button routerLink="/capabilities/specify/{{ capability.id }}" *ngIf="capability.attributeSet">
+      <a mat-icon-button [routerLink]="['/capabilities/specify/', capability.id]"
+         *ngIf="capability.attributeSet">
         <mat-icon>tune</mat-icon>
       </a>
-      <a mat-icon-button routerLink="/capabilities/edit/{{ capability.id }}">
+      <a mat-icon-button [routerLink]="['/capabilities/edit/', capability.id]">
         <mat-icon>edit</mat-icon>
       </a>
       <button mat-icon-button (click)="remove(capability.id)" color="warn">
