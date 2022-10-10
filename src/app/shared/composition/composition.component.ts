@@ -83,7 +83,6 @@ export class CompositionComponent implements OnInit {
     } else if (mode === 'desiredCapabilities') {
       // Desired stack, show patterns that you should implement, i.e. by capabilities
       c.patterns = ((await this.patternService.all() || []) as Pattern[]).filter(p => this.isDesiredPattern(p));
-      console.log(c.patterns);
     } else if (mode === 'compare' || mode === 'analyze') {
       // Compare and show both existing and desired stack, show all and highlight
       c.patterns = ((await this.patternService.all() || []) as Pattern[]).filter(p => this.isCurrentPattern(p) || this.isDesiredPattern(p));
@@ -108,6 +107,7 @@ export class CompositionComponent implements OnInit {
       });
     }
 
+
     this.configuration = c;
   }
 
@@ -116,7 +116,7 @@ export class CompositionComponent implements OnInit {
     let hasComponent = false;
     // let hasCapability = false;
     for (const s of pattern.systems) {
-      if (this.profile.systems.includes(s)) {
+      if (this.profile && this.profile.systems && this.profile.systems.includes(s)) {
         hasComponent = true;
       }
     }
@@ -131,7 +131,7 @@ export class CompositionComponent implements OnInit {
   // Is desired pattern, i.e. with capability
   isDesiredPattern(pattern: Pattern): boolean {
     for (const s of pattern.capabilities) {
-      if (this.profile.capabilities.includes(s)) {
+      if (this.profile && this.profile.capabilities && this.profile.capabilities.includes(s)) {
         return true;
       }
     }
@@ -205,7 +205,7 @@ export class CompositionComponent implements OnInit {
   async analyze() {
     await this.calculateIdentifiedPatterns();
     // calculate other stuff
-    const patternBySystems = (await this.patternService.findBy(this.profile.systems, 'systems') as Pattern[]);
+    const patternBySystems = (await this.patternService.findBy(this.profile.systems || [], 'systems') as Pattern[]);
     this.possibleCapabilites = (await this.capabilityService.findBy(patternBySystems.map(i => i.capabilities)
       .reduce((a, b) => a.concat(b), []))) as Capability[];
     this.desiredCapabilites = await this.capabilityService.findBy(this.profile.capabilities) as Capability[];
@@ -215,7 +215,7 @@ export class CompositionComponent implements OnInit {
   async calculateIdentifiedPatterns() {
     this.analyzeResult = [];
     for (const pattern of (await this.patternService.all()) as Pattern[]) {
-      const intersectionCount = pattern.systems.filter(s => this.profile.systems.includes(s)).length;
+      const intersectionCount = pattern.systems.filter(s => (this.profile.systems || []).includes(s)).length;
       const percentage = Math.round((intersectionCount / Math.max(1, pattern.systems.length)) * 100);
       if (percentage > 0) {
         this.analyzeResult.push({
